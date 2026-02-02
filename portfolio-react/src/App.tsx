@@ -5,19 +5,72 @@ import { About } from './sections/about'
 import { Projects } from './sections/projects'
 import { useEffect, useRef, useState } from 'react'
 import { Home } from './sections/home'
+import { Skills } from './sections/skills'
+import { scroller } from 'react-scroll'
+import { ArrowBigDown, ArrowBigUp } from 'lucide-react'
 
-const sections = ["home", "about", "projects", "contact"]
+const sections = ["home", "about", "projects", /* "skills", */ "contact"]
 
 function App() {
   const [pinnedSections, setPinnedSections] = useState(new Set(['home']))
+  const [lowerSections, setLowerSections] = useState(new Set<string>())
   const [activeSection, setActiveSection] = useState('home')
+  const [keepCurrentPinned, setKeepCurrentPinned] = useState(false)
 
   // Ref to keep track of the current section
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({})
+  const activeSectionRef = useRef(activeSection)
 
   // Function to handle section visibility change
   const handleSectionChange = (section: string) => {
-    sectionRefs.current[section]?.scrollIntoView({ behavior: 'smooth' })
+    const targetElement = sectionRefs.current[section]
+    if (!targetElement) return
+
+    const targetIndex = sections.indexOf(section)
+    const currentIndex = sections.indexOf(activeSection)
+
+    if (Math.abs(targetIndex - currentIndex) > 1) {
+      const start = Math.min(currentIndex, targetIndex)
+      const end = Math.max(currentIndex, targetIndex)
+      const intermediateSections = sections.slice(start + 1, end)
+      
+      // First: Pin intermediate sections behind current section
+      setPinnedSections(prev => {
+        const newSet = new Set(prev)
+        intermediateSections.forEach(sectionName => newSet.add(sectionName))
+        return newSet
+      })
+      
+      // Hide them behind current section with lower z-index
+      /* setLowerSections(new Set(intermediateSections)) */
+      setKeepCurrentPinned(true)
+      
+      // Small delay to ensure pinning takes effect, then scroll
+      requestAnimationFrame(() => {
+        targetElement.scrollIntoView({ behavior: 'smooth' })
+        setActiveSection(section)
+      })
+
+      // Clean up after scroll
+      setTimeout(() => {
+        setKeepCurrentPinned(false)
+        /* setLowerSections(new Set()) */
+        setPinnedSections(new Set([section]))
+      }, 1000)
+    } else {
+      targetElement?.scrollIntoView({ behavior: 'smooth' })
+      scroller.scrollTo(section, {
+        duration: 800,
+        smooth: 'easeInOutQuart',
+        offset: 0,
+        containerId: 'main-container',
+      })
+    }
+  }
+
+  const getSectionZIndex = (sectionName: string) => {
+    const baseIndex = sections.indexOf(sectionName)
+    return lowerSections.has(sectionName) ? -(baseIndex + 1) : baseIndex
   }
 
   const setSectionRef = (section: string) => (el: HTMLDivElement | null) => {
@@ -26,6 +79,8 @@ function App() {
 
   // Intersection Observer to handle pinning sections
   const handleEntry = (entries: IntersectionObserverEntry[]) => {
+    if (keepCurrentPinned) return
+
     entries.forEach(entry => {
       const id = entry.target.id;
       const currentIndex = sections.indexOf(id);
@@ -59,10 +114,15 @@ function App() {
     });
   }
 
+  useEffect(() => {
+    // Update the active section ref whenever activeSection changes
+    activeSectionRef.current = activeSection;
+  }, [activeSection]);
+
   // Set up the Intersection Observer when the component mounts
   useEffect(() => {
     const observer = new IntersectionObserver(handleEntry, {
-      threshold: [0.01, 0.5, 0.99],
+      threshold: [0.01, 0.99],
     });
 
     sections.forEach(section => {
@@ -78,11 +138,30 @@ function App() {
   return (
     <>
       <Header navigate={handleSectionChange} activeSection={activeSection} />
-      <main className="flex-1 scroll-smooth w-full">
-        <Home pinned={pinnedSections.has('home')} ref={setSectionRef('home')} />
-        <About pinned={pinnedSections.has('about')} ref={setSectionRef('about')} />
-        <Projects pinned={pinnedSections.has('projects')} ref={setSectionRef('projects')} />
-        <Contact pinned={pinnedSections.has('contact')} ref={setSectionRef('contact')} />
+      <main id='main-container' className="flex-1 scroll-smooth w-full bg-black">
+        <Home pinned={pinnedSections.has('home')} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />
+        <About pinned={pinnedSections.has('about')} lower={lowerSections.has('about')} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
+        <Projects pinned={pinnedSections.has('projects')} lower={lowerSections.has('projects')} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />
+        {/* <Skills pinned={pinnedSections.has('skills')} lower={lowerSections.has('skills')} ref={setSectionRef('skills')} zIndex={getSectionZIndex('skills')} /> */}
+        <Contact pinned={pinnedSections.has('contact')} ref={setSectionRef('contact')} zIndex={getSectionZIndex('contact')} />
+        <div id='arrow-nav' className='flex flex-col gap-1'>
+          <button disabled={sections.indexOf(activeSectionRef.current) <= 0} id='prev' onClick={() => {
+            const currentIndex = sections.indexOf(activeSectionRef.current)
+            if (currentIndex > 0) {
+              handleSectionChange(sections[currentIndex - 1])
+            }
+          }}>
+            <ArrowBigUp />
+          </button>
+          <button disabled={sections.indexOf(activeSectionRef.current) >= sections.length - 1} id='next' onClick={() => {
+            const currentIndex = sections.indexOf(activeSectionRef.current)
+            if (currentIndex < sections.length - 1) {
+              handleSectionChange(sections[currentIndex + 1])
+            }
+          }}>
+            <ArrowBigDown />
+          </button>
+        </div>
       </main>
     </>
   )

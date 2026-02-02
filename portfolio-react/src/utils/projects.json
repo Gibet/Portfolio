@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Personal Portfolio Website",
+    "description": "A personal portfolio website built with React and Tailwind CSS to showcase myprojects and skills.",
+    "imageSrc": "/portfolio-website.png",
+    "stack": [
+      {
+        "name": "React",
+        "imageSrc": "/react.svg"
+      }, {
+        "name": "Tailwind CSS",
+        "imageSrc": "/tailwindcss.svg"
+      }
+    ]
+  }
+]
