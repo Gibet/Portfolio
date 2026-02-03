@@ -1,7 +1,7 @@
 import { forwardRef, useState } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
-import { ProjectThumbnail } from '../components/projects/thumbnail'
+import ProjectThumbnail from '../components/projects/thumbnail'
 import * as ProjectsList from '../utils/projects.json'
 
 const categories = ['Tous', 'Web', 'Mobile']

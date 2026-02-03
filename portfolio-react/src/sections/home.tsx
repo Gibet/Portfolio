@@ -1,8 +1,7 @@
 import { forwardRef } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
-import { Link } from 'react-scroll'
-import { Github, Linkedin, Mail,  } from 'lucide-react'
+import { Github, Linkedin, Mail, File} from 'lucide-react'
 
 
 export const Home = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref) =>  {
@@ -25,8 +24,8 @@ export const Home = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref) =
               <a href="http://github.com/gibet" target="_blank" rel="noopener noreferrer">
                 <Github />
               </a>
-              <a href="http://mailto:laguerrejb13@gmail.com" target="_blank" rel="noopener noreferrer">
-                <Mail />
+              <a href="https://drive.google.com/file/d/1NZyFFAsyqDmLNJQVqSQoIBoJxT2LkMUH/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <File />
               </a>
             </div>
           </div>

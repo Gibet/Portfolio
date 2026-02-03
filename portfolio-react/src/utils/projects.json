@@ -2,106 +2,45 @@
   "projects": [
     {
       "category": "Web",
-      "name": "Personal Portfolio Website",
+      "name": "Portfolio",
       "description": "A personal portfolio website built with React and Tailwind CSS to showcase myprojects and skills.",
       "imageSrc": "/images/logo/portfolio-website.png",
-      "stack": [
-        {
-          "name": "React",
-          "imageSrc": "/images/logo/react.svg"
-        }, {
-          "name": "Tailwind CSS",
-          "imageSrc": "/images/logo/tailwindcss.svg"
-        }
-      ]
+      "stack": ["React","Tailwind CSS"]
     },
     {
       "category": "Mobile",
       "name": "Skillly",
       "description": "Application mobile de recrutement et de recherche d'emploi",
       "imageSrc": "/images/logo/skilly-app.png",
-      "stack": [
-        {
-          "name": "Golang",
-          "imageSrc": "/images/logo/golang.svg"
-        },
-        {
-          "name": "TypeScript",
-          "imageSrc": "/images/logo/typescript.svg"
-        },
-        {
-          "name": "React Native",
-          "imageSrc": "/images/logo/react.svg"
-        }
-      ]
+      "stack": ["Golang","TypeScript","React Native"]
     },
     {
       "category": "Mobile",
       "name": "MiliMili",
       "description": "Application mobile de gestion d'emplois du temps pour les étudiants",
       "imageSrc": "/images/logo/milimili-app.png",
-      "stack": [
-        {
-          "name": "TypeScript",
-          "imageSrc": "/images/logo/typescript.svg"
-        },
-        {
-          "name": "React Native",
-          "imageSrc": "/images/logo/react.svg"
-        }
-      ]
+      "stack": ["TypeScript","React Native"]
     },
     {
       "category": "Web",
       "name": "SafeBase",
       "description": "Application web de gestion de bases de données",
       "imageSrc": "/images/logo/safebase-web.png",
-      "stack": [
-        {
-          "name": "React",
-          "imageSrc": "/images/logo/react.svg"
-        },
-        {
-          "name": "TypeScript",
-          "imageSrc": "/images/logo/typescript.svg"
-        },
-        {
-          "name": "Golang",
-          "imageSrc": "/images/logo/golang.svg"
-        }
-      ]
+      "stack": ["React","TypeScript","Golang"]
     }, 
     {
       "category": "Web",
       "name": "SRIAS",
       "description": "plateforme de gestion des échanges entre la SRIAS PACA, ses partenaires et les agents bénéficiaires.",
       "imageSrc": "/images/logo/srias-web.png",
-      "stack": [
-        {
-          "name": "React",
-          "imageSrc": "/images/logo/react.svg"
-        },
-        {
-          "name": "TypeScript",
-          "imageSrc": "/images/logo/typescript.svg"
-        }
-      ]
+      "stack": ["React","TypeScript"]
     },
     {
       "category": "Web",
       "name": "Cyberpark",
       "description": "application interactive accompagnant un escape game pour jeunes (12-18 ans), avec une interface ludique et ergonomique",
       "imageSrc": "/images/logo/cyberpark-web.png",
-      "stack": [
-        {
-          "name": "React",
-          "imageSrc": "/images/logo/react.svg"
-        },
-        {
-          "name": "Electron",
-          "imageSrc": "/images/logo/electron.svg"
-        }
-      ]
+      "stack": ["React","Electron"]
     }
   ]
 }
