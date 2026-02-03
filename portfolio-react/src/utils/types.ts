@@ -5,3 +5,11 @@ export interface SectionProps {
   children?: React.ReactNode;
   zIndex?: number;
 }
+
+export interface ProjectProps {
+  category: string;
+  name: string;
+  description: string;
+  imageSrc: string;
+  stack: string[];
+}

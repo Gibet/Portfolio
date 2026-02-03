@@ -1,18 +1,68 @@
-[
-  {
-    "name": "React",
-    "imageSrc": "/react.svg"
-  },
-  {
-    "name": "TypeScript",
-    "imageSrc": "/typescript.svg"
-  },
-  {
-    "name": "Tailwind CSS",
-    "imageSrc": "/tailwindcss.svg"
-  },
-  {
-    "name": "Golang",
-    "imageSrc": "/golang.svg"
-  }
-]
+{
+  "skills": [
+    {
+      "name": "React",
+      "imageSrc": "/images/logo/react.svg"
+    },
+    {
+      "name": "TypeScript",
+      "imageSrc": "/images/logo/typescript.svg"
+    },
+    {
+      "name": "Tailwind CSS",
+      "imageSrc": "/images/logo/tailwindcss.svg"
+    },
+    {
+      "name": "Golang",
+      "imageSrc": "/images/logo/golang.svg"
+    },
+    {
+      "name": "React Native",
+      "imageSrc": "/images/logo/react.svg"
+    },
+    {
+      "name": "Node.js",
+      "imageSrc": "/images/logo/nodejs.svg"
+    },
+    {
+      "name": "Express.js",
+      "imageSrc": "/images/logo/expressjs.svg"
+    },
+    {
+      "name": "MongoDB",
+      "imageSrc": "/images/logo/mongodb.svg"
+    },
+    {
+      "name": "PostgreSQL",
+      "imageSrc": "/images/logo/postgresql.svg"
+    },
+    {
+      "name": "Docker",
+      "imageSrc": "/images/logo/docker.svg"
+    },
+    {
+      "name": "Git",
+      "imageSrc": "/images/logo/git.svg"
+    },
+    {
+      "name": "HTML5",
+      "imageSrc": "/images/logo/html5.svg"
+    },
+    {
+      "name": "CSS3",
+      "imageSrc": "/images/logo/css3.svg"
+    },
+    {
+      "name": "JavaScript",
+      "imageSrc": "/images/logo/javascript.svg"
+    },
+    {
+      "name": "Python",
+      "imageSrc": "/images/logo/python.svg"
+    },
+    {
+      "name": "Electron",
+      "imageSrc": "/images/logo/electron.svg"
+    }
+  ]
+}

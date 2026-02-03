@@ -5,7 +5,6 @@ import { About } from './sections/about'
 import { Projects } from './sections/projects'
 import { useEffect, useRef, useState } from 'react'
 import { Home } from './sections/home'
-import { Skills } from './sections/skills'
 import { scroller } from 'react-scroll'
 import { ArrowBigDown, ArrowBigUp } from 'lucide-react'
 
