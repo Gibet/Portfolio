@@ -11,7 +11,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower =
 
   return (
     <CustomSection id='about' pinned={pinned} lower={lower} ref={ref} zIndex={4}>
-      <div className='flex flex-col items-center  w-5/6 h-full sm:py-20 py-10'>
+      <div className='flex flex-col items-center  w-5/6 h-full sm:py-20 py-6'>
         <div className='container flex flex-col gap-2.5'>
           <h1 className="text-2xl font-bold">A propos de moi</h1>
           <div className="flex flex-wrap gap-2">
@@ -28,12 +28,12 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower =
         </div>
           <div className="mt-4 container w-full h-full overflow-y-auto">
             {currentTab === 'Education' && (
-                <ol className='border-l sm:ml-6 relative'>
+                <ol className='border-l sm:ml-6 relative py-10'>
                   <li className=''></li>
                   <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
                     <span className="absolute left-0 w-3.5 h-3.5 bg-blue-500"></span>
                     <div>
-                      <h2 className="text-xl font-semibold">Bachelor Concepteur Développeur d'Applications</h2>
+                      <h2 className="text-xl font-semibold">Bachelor Concepteur Développeur d'Applications (CDA)</h2>
                       <h4 className="text-md font-medium">La Plateforme_ - 2022-2025</h4>
                       <ul className='list-disc ml-5'>
                         <li>Développement full stack, avec JavaScript, Node.js, React et Symfony</li>
@@ -47,7 +47,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower =
                 </ol>
             )}
             {currentTab === 'Experience' && (
-                <ol className='border-l sm:ml-6 relative'>
+                <ol className='border-l sm:ml-6 relative py-10'>
                   <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
                     <span className="absolute left-0 w-3.5 h-3.5 bg-blue-500"></span>
                     <div>

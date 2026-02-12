@@ -59,6 +59,13 @@ header {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.modal {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
 /* home section */
 
 #home {

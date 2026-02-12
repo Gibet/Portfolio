@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "React",
-      "imageSrc": "/images/logo/react.svg"
+      "imageSrc": "images/logo/react.svg"
     },
     {
       "name": "TypeScript",

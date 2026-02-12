@@ -6,7 +6,7 @@ import CustomSection from '../components/customSection'
 export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref) => {
   return (
     <CustomSection id="contact" pinned={pinned} ref={ref} zIndex={1}>
-      <div className='flex flex-col items-center w-5/6 gap-6 sm:py-20 py-10'>
+      <div className='flex flex-col items-center w-5/6 gap-6 sm:py-20 py-6'>
         <div className="container">
           <h1 className="text-2xl font-bold">Contactez-moi</h1>
         </div>

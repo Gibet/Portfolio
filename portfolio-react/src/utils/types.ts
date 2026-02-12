@@ -13,3 +13,13 @@ export interface ProjectProps {
   imageSrc: string;
   stack: string[];
 }
+
+export interface ThumbnailProps {
+  project: ProjectProps;
+  onClick: () => void
+}
+
+export interface ModalProps {
+  project: ProjectProps;
+  onClose: () => void;
+}
