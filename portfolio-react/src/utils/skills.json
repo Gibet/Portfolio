@@ -1,48 +1,32 @@
 {
   "skills": [
     {
-      "name": "React",
-      "imageSrc": "images/logo/react.svg"
+      "name": "JavaScript",
+      "imageSrc": "/images/logo/javascript.svg"
     },
     {
       "name": "TypeScript",
       "imageSrc": "/images/logo/typescript.svg"
     },
     {
-      "name": "Tailwind CSS",
-      "imageSrc": "/images/logo/tailwindcss.svg"
-    },
-    {
-      "name": "Golang",
-      "imageSrc": "/images/logo/golang.svg"
-    },
-    {
-      "name": "React Native",
+      "name": "React",
       "imageSrc": "/images/logo/react.svg"
     },
     {
-      "name": "Node.js",
-      "imageSrc": "/images/logo/nodejs.svg"
+      "name": "React Native",
+      "imageSrc": "/images/logo/reactnative.svg"
     },
     {
-      "name": "Express.js",
-      "imageSrc": "/images/logo/expressjs.svg"
+      "name": "Next.js",
+      "imageSrc": "/images/logo/nextjs.svg"
     },
     {
-      "name": "MongoDB",
-      "imageSrc": "/images/logo/mongodb.svg"
+      "name": "Vite",
+      "imageSrc": "/images/logo/vitejs.svg"
     },
     {
-      "name": "PostgreSQL",
-      "imageSrc": "/images/logo/postgresql.svg"
-    },
-    {
-      "name": "Docker",
-      "imageSrc": "/images/logo/docker.svg"
-    },
-    {
-      "name": "Git",
-      "imageSrc": "/images/logo/git.svg"
+      "name": "Tailwind CSS",
+      "imageSrc": "/images/logo/tailwindcss.svg"
     },
     {
       "name": "HTML5",
@@ -53,16 +37,52 @@
       "imageSrc": "/images/logo/css3.svg"
     },
     {
-      "name": "JavaScript",
-      "imageSrc": "/images/logo/javascript.svg"
+      "name": "Golang",
+      "imageSrc": "/images/logo/go.svg"
     },
     {
-      "name": "Python",
-      "imageSrc": "/images/logo/python.svg"
+      "name": "Node.js",
+      "imageSrc": "/images/logo/nodejs.svg"
+    },
+    {
+      "name": "Express.js",
+      "imageSrc": "/images/logo/express.svg"
+    },
+    {
+      "name": "Nest",
+      "imageSrc": "/images/logo/nestjs.svg"
+    },
+    {
+      "name": "MySQL",
+      "imageSrc": "/images/logo/mysql.svg"
+    },
+    {
+      "name": "PostgreSQL",
+      "imageSrc": "/images/logo/postgresql.svg"
+    },
+    {
+      "name": "MongoDB",
+      "imageSrc": "/images/logo/mongodb.svg"
+    },
+    {
+      "name": "Docker",
+      "imageSrc": "/images/logo/docker.svg"
+    },
+    {
+      "name": "Git",
+      "imageSrc": "/images/logo/git.svg"
+    },
+    {
+      "name": "GitHub",
+      "imageSrc": "/images/logo/github.svg"
     },
     {
       "name": "Electron",
       "imageSrc": "/images/logo/electron.svg"
+    },
+    {
+      "name": "Python",
+      "imageSrc": "/images/logo/python.svg"
     }
   ]
 }

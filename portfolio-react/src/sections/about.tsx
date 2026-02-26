@@ -2,6 +2,7 @@ import { forwardRef, useState } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
 import * as skills from "../utils/skills.json"
+import { Skill } from '../components/skill'
 
 const AboutTabs = ['Competences', 'Education', 'Experience']
 
@@ -66,10 +67,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower =
             {currentTab === 'Competences' && (
               <div className='flex flex-wrap gap-3'>
                 {skills.skills.map((skill) => (
-                  <div key={skill.name} className="border px-2 flex items-center">
-                    <img src={skill.imageSrc} alt={skill.name} className="w-10 h-10 inline-block mr-2" />
-                    <span className="text-md font-medium">{skill.name}</span>
-                  </div>
+                  <Skill imageSrc={skill.imageSrc} name={skill.name} key={skill.name} />
                 ))}
               </div>
             )}

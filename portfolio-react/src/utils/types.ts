@@ -6,12 +6,18 @@ export interface SectionProps {
   zIndex?: number;
 }
 
+export interface HeaderProps {
+  navigate: (section: string) => void;
+  activeSection: string;
+}
+
 export interface ProjectProps {
   category: string;
   name: string;
   description: string;
   imageSrc: string;
   stack: string[];
+  link: string;
 }
 
 export interface ThumbnailProps {
@@ -22,4 +28,9 @@ export interface ThumbnailProps {
 export interface ModalProps {
   project: ProjectProps;
   onClose: () => void;
+}
+
+export interface SkillProps {
+  name: string;
+  imageSrc: string;
 }

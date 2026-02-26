@@ -1,21 +1,55 @@
 import { forwardRef } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
+import { Footer } from '../components/footer'
+import { useForm, ValidationError } from '@formspree/react';
 
 
 export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref) => {
+
+  const [state, handleSubmit] = useForm("xkovbadl");
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+  }
+
   return (
     <CustomSection id="contact" pinned={pinned} ref={ref} zIndex={1}>
-      <div className='flex flex-col items-center w-5/6 gap-6 sm:py-20 py-6'>
+      <div className='flex flex-col h-full items-center w-5/6 gap-6 sm:py-20 py-6'>
         <div className="container">
           <h1 className="text-2xl font-bold">Contactez-moi</h1>
         </div>
-        <div className="container md:w-2/5">
-          <form action="" className='flex flex-col'>
-            <input type="text" placeholder="Votre nom" className="border p-2 mb-4 w-full" />
-            <input type="email" placeholder="Votre email" className="border p-2 mb-4 w-full" />
-            <textarea placeholder="Votre message" className="border p-2 mb-4 w-full h-32"></textarea>
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Envoyer</button>
+        <div className="container md:w-2/5 sm:mt-16">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <input
+              id="email"
+              type="email" 
+              name="email"
+              placeholder='Votre Email'
+              className='px-4 py-6'
+            />
+            <ValidationError 
+              prefix="Email" 
+              field="email"
+              errors={state.errors}
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder='Votre Message'
+              className='px-4 py-6'
+              rows={6}
+            />
+            <ValidationError 
+              prefix="Message" 
+              field="message"
+              errors={state.errors}
+            />
+            <button 
+              type="submit"
+              disabled={state.submitting}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Submit
+            </button>
           </form>
         </div>
       </div>

@@ -1,15 +1,11 @@
 import React from 'react'
+import type { SkillProps } from '../utils/types'
 
-interface SkillProps {
-  name: string
-  imageSrc: string
-}
-
-export const skill = ({ name, imageSrc }: SkillProps) => {
+export const Skill = (props : SkillProps) => {
   return (
-    <div className="flex flex-col items-center m-4">
-      <img src={imageSrc} loading='lazy' alt={name} className="w-16 h-16 mb-2" />
-      <span className="text-center">{name}</span>
+    <div className="border px-2 flex items-center py-1 w-fit">
+      <img src={props.imageSrc} loading='lazy' alt={props.name} className="w-8 h-8 inline-block" />
+      <span className="ml-2 text-md font-medium">{props.name}</span>
     </div>
   )
 }

@@ -4,9 +4,10 @@ import CustomSection from '../components/customSection'
 import ProjectThumbnail from '../components/projects/thumbnail'
 import * as ProjectsList from '../utils/projects.json'
 import ProjectModal from '../components/projects/modal'
+import { useResponsivePageSize } from '../hooks/useResponsive'
 
 const categories = ['Tous', 'Web', 'Mobile']
-const pageSize = 3
+/* const pageSize = 10 */
 
 export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower = false }, ref) => {
 
@@ -14,6 +15,7 @@ export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lowe
   const [currentPage, setCurrentPage] = useState(1)
   const [viewModal, setViewModal] = useState(false)
   const [currentProject, setCurrentProject] = useState<ProjectProps>()
+  const pageSize = useResponsivePageSize()
 
   const openModal = (project : ProjectProps) => {
     setCurrentProject(project)
@@ -38,7 +40,7 @@ export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lowe
           </div>
         </div>
         <div className="mt-4 container flex flex-col w-full h-full gap-5">
-            <div className="flex flex-wrap gap-5 h-full">
+            <div className="flex flex-wrap content-start gap-5 h-full">
               {ProjectsList.projects.filter(project => currentCategory === 'Tous' || project.category === currentCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize).map((project) => (
                 <ProjectThumbnail key={project.name} project={project} onClick={() => {openModal(project)}} />
               ))}
