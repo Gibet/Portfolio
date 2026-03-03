@@ -4,7 +4,7 @@ import CustomSection from '../components/customSection'
 import * as skills from "../utils/skills.json"
 import { Skill } from '../components/skill'
 
-const AboutTabs = ['Competences', 'Education', 'Experience']
+const AboutTabs = ['Competences', 'Éducation', 'Éxperience']
 
 export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower = false }, ref) => {
 
@@ -20,7 +20,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower =
               <button
                 key={tab}
                 onClick={() => setCurrentTab(tab)}
-                className={`px-4 py-2 ${currentTab === tab ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
+                className={`px-4 py-2 ${currentTab === tab ? 'active' : ''}`}
               >
                 {tab}
               </button>
@@ -28,7 +28,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower =
           </div>
         </div>
           <div className="mt-4 container w-full h-full overflow-y-auto">
-            {currentTab === 'Education' && (
+            {currentTab === 'Éducation' && (
                 <ol className='border-l sm:ml-6 relative py-10'>
                   <li className=''></li>
                   <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
@@ -47,7 +47,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower =
                   </li>
                 </ol>
             )}
-            {currentTab === 'Experience' && (
+            {currentTab === 'Éxperience' && (
                 <ol className='border-l sm:ml-6 relative py-10'>
                   <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
                     <span className="absolute left-0 w-3.5 h-3.5 bg-blue-500"></span>
@@ -65,7 +65,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower =
                 </ol>
             )}
             {currentTab === 'Competences' && (
-              <div className='flex flex-wrap gap-3'>
+              <div className='flex flex-wrap gap-3 sm:px-6'>
                 {skills.skills.map((skill) => (
                   <Skill imageSrc={skill.imageSrc} name={skill.name} key={skill.name} />
                 ))}

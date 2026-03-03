@@ -1,0 +1,15 @@
+:where(html, body, body *) {
+  transition:
+    background-color 500ms ease,
+    color 500ms ease,
+    border-color 500ms ease,
+    fill 500ms ease,
+    stroke 500ms ease,
+    box-shadow 500ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(html, body, body *) {
+    transition: none !important;
+  }
+}

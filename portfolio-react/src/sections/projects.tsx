@@ -32,7 +32,7 @@ export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lowe
               <button
                 key={category}
                 onClick={() => { setCurrentCategory(category); setCurrentPage(1); }}
-                className={`px-4 py-2 mr-2 mb-2 ${currentCategory === category ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
+                className={`px-4 py-2 mr-2 mb-2 ${currentCategory === category ? 'active' : ''}`}
               >
                 {category}
               </button>
@@ -40,7 +40,7 @@ export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lowe
           </div>
         </div>
         <div className="mt-4 container flex flex-col w-full h-full gap-5">
-            <div className="flex flex-wrap content-start gap-5 h-full">
+            <div className="flex flex-wrap content-start lg:gap-5 gap-2 h-full">
               {ProjectsList.projects.filter(project => currentCategory === 'Tous' || project.category === currentCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize).map((project) => (
                 <ProjectThumbnail key={project.name} project={project} onClick={() => {openModal(project)}} />
               ))}
@@ -49,13 +49,13 @@ export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lowe
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className="px-4 py-2 mr-2 mb-2 bg-gray-200 text-black rounded"
+              className="px-4 py-2 mr-2 mb-2 bg-gray-200 text-black"
             >
               Précédent
             </button>
             <button
               onClick={() => setCurrentPage((prev) => prev + 1)}
-              className="px-4 py-2 mr-2 mb-2 bg-gray-200 text-black rounded"
+              className="px-4 py-2 mr-2 mb-2 bg-gray-200 text-black"
               disabled={currentPage * pageSize >= ProjectsList.projects.filter(project => currentCategory === 'Tous' || project.category === currentCategory).length}
             >
               Suivant

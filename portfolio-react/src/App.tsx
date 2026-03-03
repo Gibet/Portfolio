@@ -8,6 +8,7 @@ import { Home } from './sections/home'
 import { scroller } from 'react-scroll'
 import { ArrowBigDown, ArrowBigUp } from 'lucide-react'
 import { Footer } from './components/footer'
+import { useTheme } from './hooks/useTheme'
 
 const sections = ["home", "about", "projects", /* "skills", */ "contact"]
 
@@ -138,7 +139,7 @@ function App() {
   return (
     <>
       <Header navigate={handleSectionChange} activeSection={activeSection} />
-      <main id='main-container' className="flex-1 scroll-smooth w-screen bg-black">
+      <main id='main-container' className="relative 2xl:w-4/5 w-full flex-1 scroll-smooth w-screen light bg-black">
         <Home pinned={pinnedSections.has('home')} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />
         <About pinned={pinnedSections.has('about')} lower={lowerSections.has('about')} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
         <Projects pinned={pinnedSections.has('projects')} lower={lowerSections.has('projects')} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />

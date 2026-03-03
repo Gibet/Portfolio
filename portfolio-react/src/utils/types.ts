@@ -16,8 +16,9 @@ export interface ProjectProps {
   name: string;
   description: string;
   imageSrc: string;
+  videoSrc?: string;
   stack: string[];
-  link: string;
+  github: string;
 }
 
 export interface ThumbnailProps {

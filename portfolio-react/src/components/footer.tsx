@@ -4,7 +4,7 @@ import type { HeaderProps } from '../utils/types'
 
 export const Footer = (props: HeaderProps) => {
   return (
-    <footer className='w-full flex gap-8 justify-center text-white text-center py-16 mt-8'>
+    <footer className='2xl:w-4/5 backdrop-blur-md w-full flex gap-8 justify-center text-center py-16 mt-8'>
       <div className='flex flex-col w-1/3 items-start gap-2'>
         <h3 className='text-lg font-bold'>Menu</h3>
         <hr className='w-full'/>

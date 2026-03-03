@@ -4,49 +4,51 @@
       "category": "Web",
       "name": "Portfolio",
       "description": "A personal portfolio website built with React and Tailwind CSS to showcase myprojects and skills.",
-      "imageSrc": "/images/logo/portfolio-website.png",
+      "imageSrc": "/images/projects/portfolio.png",
       "stack": ["React","Tailwind CSS"],
-      "link": "#"
+      "github": "#"
     },
     {
       "category": "Mobile",
       "name": "Skillly",
       "description": "Application mobile de recrutement et de recherche d'emploi",
-      "imageSrc": "/images/logo/skilly-app.png",
+      "imageSrc": "/images/projects/Skillly.svg",
+      "videoSrc": "https://drive.google.com/file/d/1yXlrHW62z5QKOlisd5XtkLaONVTXHyTi/view?usp=drive_link",
       "stack": ["Golang","TypeScript","React Native"],
-      "link": "#"
+      "github": "#"
     },
     {
       "category": "Mobile",
       "name": "MiliMili",
       "description": "Application mobile de gestion d'emplois du temps pour les étudiants",
-      "imageSrc": "/images/logo/milimili-app.png",
+      "imageSrc": "/images/projects/MiliMili.png",
+      "videoSrc": "https://drive.google.com/file/d/1Kl0kBDHRGY1RnbOG10fXSvYn8WeYE6b5/view?usp=sharing",
       "stack": ["TypeScript","React Native"],
-      "link": "#"
+      "github": "#"
     },
     {
       "category": "Web",
       "name": "SafeBase",
       "description": "Application web de gestion de bases de données",
-      "imageSrc": "/images/logo/safebase-web.png",
+      "imageSrc": "/images/projects/SafeBase.png",
       "stack": ["React","TypeScript","Golang"],
-      "link": "#"
+      "github": "#"
     }, 
     {
       "category": "Web",
       "name": "SRIAS",
       "description": "plateforme de gestion des échanges entre la SRIAS PACA, ses partenaires et les agents bénéficiaires.",
-      "imageSrc": "/images/logo/srias-web.png",
+      "imageSrc": "/images/projects/SRIAS.png",
       "stack": ["React","TypeScript"],
-      "link": "#"
+      "github": "#"
     },
     {
       "category": "Web",
       "name": "Cyberpark",
       "description": "application interactive accompagnant un escape game pour jeunes (12-18 ans), avec une interface ludique et ergonomique",
-      "imageSrc": "/images/logo/cyberpark-web.png",
+      "imageSrc": "/images/projects/Cyberpark.png",
       "stack": ["React","Electron"],
-      "link": "#"
+      "github": "#"
     }
   ]
 }

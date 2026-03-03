@@ -2,17 +2,42 @@ import { useEffect, useState } from 'react';
 import type { ModalProps } from '../../utils/types';
 import { Skill } from '../skill';
 
+const ProjectImages = import.meta.glob<{default: string}>('/src/assets/images/projects/**/*.{png,jpg,jpeg}'); 
+const imagesCache = new Map<string, string[]>();
 
 const ProjectModal = (props: ModalProps) => {
   const [images, setImages] = useState<string[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   //Load project images
-  const getProjectImage = (name: string) => {
-    const imagesFolder = import.meta.glob<{default: string}>(`../../assets/projects/${name}/*.{png,jpg,jpeg,svg}`, { eager: true });
-    
-    const imagePaths = Object.values(imagesFolder).map(image => image.default);
-    setImages(imagePaths);
+  const getProjectImage = async (name: string) => {
+
+    // Check cache first
+    if (imagesCache.has(name)) {
+      setImages(imagesCache.get(name) || []);
+      return;
+    }
+
+    // If not in cache, load images
+    const imagePath: string[] = [];
+    for (const [path, resolver] of Object.entries(ProjectImages)) {
+      if (path.includes(`/projects/${name}`)) {
+        const resolvedPath = await resolver();
+        imagePath.push(resolvedPath.default);// Debug log
+      }
+    }
+
+    // Cache the loaded images
+    (imagePath.length > 0) && imagesCache.set(name, imagePath);
+    setImages(imagePath);
+  }
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   }
 
   useEffect(() => {
@@ -21,21 +46,29 @@ const ProjectModal = (props: ModalProps) => {
 
   return (
     <div className='absolute inset-0 bg-black/50 flex items-center justify-center' onClick={props.onClose}>
-      <div className="modal sm:w-3/4 w-5/6 h-5/6 flex flex-col" onClick={e => e.stopPropagation()}>
-        <div className="flex justify-between items-center mb-4">
-          <p className="modal-title">{props.project.name}</p>
-          <button onClick={props.onClose} className="close-button">X</button>
-        </div>
-        <div className="modal-body h-full flex flex-col justify-between gap-4">
-          <div className="modal-image-container w-full h-full">
-            <img src={props.project.imageSrc} alt={props.project.name} className="modal-image h-full" />
+      <div className="relative modal sm:w-fit w-5/6 max-h-5/6 flex flex-col" onClick={e => e.stopPropagation()}>
+        <button onClick={props.onClose} className="close-button absolute top-4 right-4">X</button>
+        <div className="modal-body h-full flex flex-col gap-4">
+          <div className="modal-image-container w-full relative">
+            <img src={images[currentImageIndex]} alt={`${props.project.name} screenshot`} className="modal-image mx-auto object-contain" />
+            {images.length > 1 && (
+              <>
+                <button onClick={prevImage} className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
+                  &lt;
+                </button>
+                <button onClick={nextImage} className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
+                  &gt;
+                </button>
+              </>
+            )}
           </div>
-          <div>
+          <div className="modal-content p-6 pt-2">
+            <h3 className="text-2xl font-bold">{props.project.name}</h3>
             <p>{props.project.description}</p>
             <div className="modal-stack flex flex-wrap gap-2 mt-4 items-center">
               <h5 className="text-sm font-bold">Stack:</h5>
               {props.project.stack.map((tech) => (
-                <Skill key={tech} name={tech} imageSrc={`/images/logo/${tech}.svg`} />
+                <Skill key={tech} name={tech} imageSrc={`/images/logo/${tech.toLocaleLowerCase()}.svg`} />
               ))}
             </div>
           </div>

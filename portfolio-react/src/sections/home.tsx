@@ -19,13 +19,13 @@ export const Home = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref) =
           <div id='square3' className='left'>
             <div className="flex space-x-4">
               <a href="http://linkedin.com/in/jean-bernard-laguerre" target="_blank" rel="noopener noreferrer">
-                <Linkedin />
+                <Linkedin strokeWidth={1.25}/>
               </a>
               <a href="http://github.com/gibet" target="_blank" rel="noopener noreferrer">
-                <Github />
+                <Github strokeWidth={1.25}/>
               </a>
               <a href="https://drive.google.com/file/d/1NZyFFAsyqDmLNJQVqSQoIBoJxT2LkMUH/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                <File />
+                <File strokeWidth={1.25}/>
               </a>
             </div>
           </div>
