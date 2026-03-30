@@ -11,8 +11,8 @@ export const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
         <div className="flex text-lg font-bold">
           <button onClick={theme.toggleTheme}>
             { theme.theme === 'light' ? 
-              <Sun size={30} className='cursor-pointer' /> :
-              <Moon size={30} className='cursor-pointer' />
+              <Sun size={25} strokeWidth={1} className='cursor-pointer' /> :
+              <Moon size={25} strokeWidth={1} className='cursor-pointer' />
             }
           </button>
         </div>

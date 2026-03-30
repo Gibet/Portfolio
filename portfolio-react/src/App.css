@@ -37,7 +37,7 @@
 
 html, body {
   height: 100%;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
 }
 
@@ -90,12 +90,12 @@ header {
 footer {
   position: fixed;
   bottom: 0;
-  background-color: var(--footerBg);
-  color: var(--footerText);
+  background-color: var(--headerBg);
+  color: var(--text);
   z-index: 1;
   box-shadow: var(--shadowTertiary);
   button {
-    color: var(--footerText);
+    color: var(--text);
     cursor: pointer;
     border: none;
     background-color: transparent;
@@ -171,10 +171,15 @@ a:hover {
 
 .thumbnail {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden  ;
 }
 
 .thumbnail:hover {
   transform: scale(1.02);
+}
+
+.thumbnail img {
+  filter: drop-shadow(var(--shadowTertiary));
 }
 
 .modal {

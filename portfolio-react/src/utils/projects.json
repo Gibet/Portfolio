@@ -4,7 +4,7 @@
       "category": "Web",
       "name": "Portfolio",
       "description": "A personal portfolio website built with React and Tailwind CSS to showcase myprojects and skills.",
-      "imageSrc": "/images/projects/portfolio.png",
+      "imageSrc": "/images/projects/Portfolio.png",
       "stack": ["React","Tailwind CSS"],
       "github": "#"
     },

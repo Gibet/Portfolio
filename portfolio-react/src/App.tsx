@@ -23,12 +23,26 @@ function App() {
   const activeSectionRef = useRef(activeSection)
 
   // Function to handle section visibility change
-  const handleSectionChange = (section: string) => {
+  const handleSectionChange = (section: string, from = activeSectionRef.current) => {
     const targetElement = sectionRefs.current[section]
     if (!targetElement) return
 
     const targetIndex = sections.indexOf(section)
-    const currentIndex = sections.indexOf(activeSection)
+    const currentIndex = sections.indexOf(from)
+    
+    // If navigating to the same section, but with another one on top, scroll down to reveal it
+    if (section === activeSectionRef.current && from !== activeSectionRef.current) {
+      const fromElement = sectionRefs.current[from]
+      if (fromElement) {
+        const { bottom } = fromElement.getBoundingClientRect()
+        const delta = Math.max(bottom, 1)
+        
+        // Scroll down by the delta to reveal the section below
+        const rootElement = document.getElementById('root')
+        rootElement?.scrollBy({ top: delta, behavior: 'smooth' })
+        return
+      }
+    }
 
     if (Math.abs(targetIndex - currentIndex) > 1) {
       const start = Math.min(currentIndex, targetIndex)
@@ -60,12 +74,12 @@ function App() {
       }, 1000)
     } else {
       targetElement?.scrollIntoView({ behavior: 'smooth' })
-      scroller.scrollTo(section, {
+      /* scroller.scrollTo(section, {
         duration: 800,
         smooth: 'easeInOutQuart',
         offset: 0,
         containerId: 'main-container',
-      })
+      }) */
     }
   }
 
@@ -115,6 +129,25 @@ function App() {
     });
   }
 
+  const getVisibleSection = () => {
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    let visibleSection: { id: string, top: number } | null = null;
+
+    for (const name of sections) {
+      const el = sectionRefs.current[name];
+      if (!el) continue;
+
+      const rect = el.getBoundingClientRect();
+      const isVisible = rect.top < viewportHeight && rect.bottom > 0;
+      if (!isVisible) continue;
+      
+      if (!visibleSection || rect.top < visibleSection.top) {
+        visibleSection = { id: name, top: rect.top };
+      }
+  }
+    return visibleSection?.id || activeSectionRef.current;
+  }
+
   useEffect(() => {
     // Update the active section ref whenever activeSection changes
     activeSectionRef.current = activeSection;
@@ -148,6 +181,7 @@ function App() {
         <div id='arrow-nav' className='flex flex-col gap-1'>
           <button disabled={sections.indexOf(activeSectionRef.current) <= 0} id='prev' onClick={() => {
             const currentIndex = sections.indexOf(activeSectionRef.current)
+            console.log('Current section:', activeSectionRef.current, 'Index:', currentIndex)
             if (currentIndex > 0) {
               handleSectionChange(sections[currentIndex - 1])
             }
@@ -155,9 +189,10 @@ function App() {
             <ArrowBigUp />
           </button>
           <button disabled={sections.indexOf(activeSectionRef.current) >= sections.length - 1} id='next' onClick={() => {
-            const currentIndex = sections.indexOf(activeSectionRef.current)
+            const visibleSection = getVisibleSection();
+            const currentIndex = sections.indexOf(visibleSection);
             if (currentIndex < sections.length - 1) {
-              handleSectionChange(sections[currentIndex + 1])
+              handleSectionChange(sections[currentIndex + 1], visibleSection)
             }
           }}>
             <ArrowBigDown />
