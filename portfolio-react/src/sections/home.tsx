@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
-import { Github, Linkedin, Mail, File} from 'lucide-react'
+import { Github, Linkedin, File} from 'lucide-react'
 
 
 export const Home = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref) =>  {
@@ -10,7 +10,7 @@ export const Home = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref) =
       <div className="flex flex-col flex-1 items-center justify-center h-full gap-6">
         <div className='flex flex-col items-end items-center gap-6'>
           <div id='square1' className='w-full flex flex-col gap-6'>
-            <h1 className="md:text-9xl text-6xl font-bold">Laguerre</h1>
+            <h1 className="md:text-9xl text-6xl font-bold ubuntu-bold">Laguerre</h1>
             <h2 className="md:text-5xl text-2xl font-normal">Jean-Bernard</h2>
           </div>
           <div id='square2' className='w-full'>

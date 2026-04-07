@@ -1,4 +1,4 @@
-import { Contact, Home, Info, Cog, BarChartHorizontal, Sun, Moon } from 'lucide-react'
+import { Contact, Home, Info, Cog, Sun, Moon } from 'lucide-react'
 import type { HeaderProps } from '../utils/types'
 import { useTheme } from '../hooks/useTheme'
 
@@ -20,7 +20,6 @@ export const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
           <button onClick={() => navigate('home')} className={activeSection === 'home' ? 'active' : ''}><Home size={30} strokeWidth={activeSection === 'home' ? 1.5 : 1} /></button>
           <button onClick={() => navigate('about')} className={activeSection === 'about' ? 'active' : ''}><Info size={30} strokeWidth={activeSection === 'about' ? 1.5 : 1} /></button>
           <button onClick={() => navigate('projects')} className={activeSection === 'projects' ? 'active' : ''}><Cog size={30} strokeWidth={activeSection === 'projects' ? 1.5 : 1} /></button>
-          {/* <button onClick={() => navigate('skills')} className={activeSection === 'skills' ? 'active'}><BarChartHorizontal size={40} strokeWidth={1.5} /></button> */}
           <button onClick={() => navigate('contact')} className={activeSection === 'contact' ? 'active' : ''}><Contact size={30} strokeWidth={activeSection === 'contact' ? 1.5 : 1} /></button>
         </div>
       </nav>

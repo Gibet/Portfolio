@@ -1,3 +1,6 @@
+import type React from "react";
+import type { RefObject } from "react";
+
 export interface SectionProps {
   id?: string;
   pinned: boolean;
@@ -11,13 +14,14 @@ export interface HeaderProps {
   activeSection: string;
 }
 
+export type SkillKey = keyof typeof import("./skills.json");
 export interface ProjectProps {
   category: string;
   name: string;
   description: string;
   imageSrc: string;
   videoSrc?: string;
-  stack: string[];
+  stack: SkillKey[];
   github: string;
 }
 
@@ -35,3 +39,21 @@ export interface SkillProps {
   name: string;
   imageSrc: string;
 }
+
+
+export const sections = ['home', 'about', 'projects', 'contact'];
+export interface NavigationProps {
+  index: number;
+  sectionRefs: RefObject<{ [key: string]: HTMLElement | null }>;
+  activeSectionRef: RefObject<string>;
+  handleSectionChange: (section: string, from?: string) => void;
+}
+
+export interface ProjectNavProps {
+  ProjectsList: { projects: ProjectProps[] },
+  currentCategory: string,
+  currentPage: number,
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>,
+  openModal: (project: ProjectProps) => void,
+  pageSize: number;
+};

@@ -7,15 +7,17 @@
   --secondary : #333333;
   --accent : #007acc;
   --background : #ffffff;
-  --disabled : rgba(0, 0, 0, 0.2);
+  --disabled : rgba(150, 150, 150, 0.1);
+  --disabledColor : rgba(150, 150, 150, 0.2);
   --text : #131313;
   --footerText : #ffffff;
   --headerBg : rgba(255, 255, 255, 0.3);
   --footerBg : rgba(0, 0, 0, 0.7);
   --buttonBg : #e9e9e9;
   --shadow : 0px 4px 4px 2px rgba(65, 65, 65, 0.05);
+  --sectionShadow : 0px 75px 30px 0px rgba(225, 225, 225, 0.3);
   --shadowSecondary : 0px 4px 8px rgba(185, 185, 185, 0.3);
-  --shadowTertiary : 0px 4px 8px rgba(32, 32, 32, 0.3);
+  --shadowTertiary : 0px 4px 8px rgba(185, 185, 185, 0.3);
 }
 
 [data-theme="dark"] {
@@ -23,14 +25,45 @@
   --secondary : #0f0f0f;
   --accent : #6dbdf1;
   --background : #333333;
+  --disabled : rgba(150, 150, 150, 0.1);
+  --disabledColor : rgba(150, 150, 150, 0.2);
   --text : #dfdfdf ;
   --footerText : #ffffff;
   --headerBg : rgba(100, 100, 100, 0.3);
   --footerBg : rgba(20, 20, 20, 0.7);
   --buttonBg : #222222;
   --shadow : 0px 8px 8px 5px rgba(0, 0, 0, 0.05);
+  --sectionShadow : 0px 75px 30px 0px rgba(40, 40, 40, 0.3);
   --shadowSecondary : 0px 4px 8px rgba(65, 65, 65, 0.3);
   --shadowTertiary : 0px 4px 8px rgba(65, 65, 65, 0.3);
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-bold {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 700;
 }
 
 /* Global Styles */
@@ -39,12 +72,15 @@ html, body {
   height: 100%;
   /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   padding: 0;
   margin: 0;
   color : var(--text);
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 #root {
@@ -52,7 +88,7 @@ body {
 }
 
 .custom-section {
-  box-shadow: var(--shadow);
+  box-shadow: var(--sectionShadow);
   background-color: var(--background);
 }
 
@@ -65,6 +101,11 @@ section{
 
     padding-top: 64px; /* Adjusted for header height */
     transition: transform 0.3s ease;
+}
+
+.terminal::before {
+  content: '> ';
+  color: var(--accent);
 }
 
 header {
@@ -106,6 +147,11 @@ footer {
     border: none;
     background-color: transparent;
   }
+  li a, button{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
 }
 
 .pinned {
@@ -117,7 +163,20 @@ button {
   color: var(--text);
   cursor: pointer;
   background-color: var(--buttonBg);
-  border: 1px solid transparent;
+  border: 1px solid var(--primary);
+}
+
+button:hover {
+  background-color: var(--background);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+button:disabled {
+  background-color: var(--disabled);
+  color: var(--disabledColor);
+  cursor: not-allowed;
+  border: none;
 }
 
 .active {
@@ -126,11 +185,6 @@ button {
   color: var(--accent);
 }
 
-button:hover {
-  background-color: var(--background);
-  border: 1px solid var(--accent);
-  color: var(--accent);
-}
 
 a {
   color: inherit;
@@ -157,42 +211,33 @@ a:hover {
     transition: background-color 0.3s ease;
   }
   button:disabled {
-    background-color: rgba(150, 150, 150, 0.1);
-    color: rgba(150, 150, 150, 0.2);
+    background-color: var(--disabled);
+    color: var(--disabledColor);
     cursor: not-allowed;
   }
 }
 
 .container {
-  background-color: var(--background);
   padding: 20px;
   box-shadow: var(--shadow);
+  background:
+    linear-gradient(to right, var(--text) 1px, transparent 1px) 0 0,
+    linear-gradient(to right, var(--text) 1px, transparent 1px) 0 100%,
+    linear-gradient(to left, var(--text) 1px, transparent 1px) 100% 0,
+    linear-gradient(to left, var(--text) 1px, transparent 1px) 100% 100%,
+    linear-gradient(to bottom, var(--text) 1px, transparent 1px) 0 0,
+    linear-gradient(to bottom, var(--text) 1px, transparent 1px) 100% 0,
+    linear-gradient(to top, var(--text) 1px, transparent 1px) 0 100%,
+    linear-gradient(to top, var(--text) 1px, transparent 1px) 100% 100%;
+  
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
 }
-
-.thumbnail {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden  ;
-}
-
-.thumbnail:hover {
-  transform: scale(1.02);
-}
-
-.thumbnail img {
-  filter: drop-shadow(var(--shadowTertiary));
-}
-
-.modal {
+.sect-header {
   background-color: var(--background);
-  box-shadow: var(--shadow);
-  z-index: 1001;
 }
-
-.modal-image-container {
-  img {
-    max-width: 100%;
-    max-height: 60vh;
-  }
+.sect-body {
+  background-color: var(--primary);
 }
 
 /* home section */
@@ -229,13 +274,87 @@ a:hover {
   background-color: var(--background);
 }
 
+.chrono-line {
+  border-color: var(--text);
+}
+
+.chrono-dot {
+  background-color: var(--accent);
+}
+
+.skill {
+  background-color: var(--background);
+}
+
 /* projects section */
 #projects {
   background-color: var(--background);
+}
+
+.thumbnail {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--background);
+  overflow: hidden  ;
+}
+
+.thumbnail:hover {
+  transform: scale(1.02);
+  background:
+    linear-gradient(to right, var(--accent) 1px, transparent 1px) 0 0,
+    linear-gradient(to right, var(--accent) 1px, transparent 1px) 0 100%,
+    linear-gradient(to left, var(--accent) 1px, transparent 1px) 100% 0,
+    linear-gradient(to left, var(--accent) 1px, transparent 1px) 100% 100%,
+    linear-gradient(to bottom, var(--accent) 1px, transparent 1px) 0 0,
+    linear-gradient(to bottom, var(--accent) 1px, transparent 1px) 100% 0,
+    linear-gradient(to top, var(--accent) 1px, transparent 1px) 0 100%,
+    linear-gradient(to top, var(--accent) 1px, transparent 1px) 100% 100%;
+
+  background-color: var(--primary);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  img {
+    filter: drop-shadow(var(--shadowTertiary));
+  }
+}
+
+
+.modal {
+  background-color: var(--primary);
+  box-shadow: var(--shadow);
+  z-index: 1001;
+}
+
+.close-button {
+  z-index: 1002;
+  background-color: transparent;
+}
+
+.modal-image-container {
+  img {
+    max-width: 100%;
+    max-height: 60vh;
+  }
 }
 
 /* contact section */
 
 #contact {
   background-color: var(--background);
+}
+
+input, textarea {
+  background-color: var(--background);
+  color: var(--text);
+  border: 1px solid var(--primary);
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+form button {
+  background-color: var(--buttonBg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  padding: 10px 20px;
+  cursor: pointer;
 }

@@ -1,16 +1,14 @@
 import './App.css'
+import { sections } from './utils/types'
 import { Header } from './components/header'
 import { Contact } from './sections/contact'
 import { About } from './sections/about'
 import { Projects } from './sections/projects'
 import { useEffect, useRef, useState } from 'react'
 import { Home } from './sections/home'
-import { scroller } from 'react-scroll'
-import { ArrowBigDown, ArrowBigUp } from 'lucide-react'
 import { Footer } from './components/footer'
-import { useTheme } from './hooks/useTheme'
+import { SectionNavigation } from './components/navigation'
 
-const sections = ["home", "about", "projects", /* "skills", */ "contact"]
 
 function App() {
   const [pinnedSections, setPinnedSections] = useState(new Set(['home']))
@@ -57,7 +55,6 @@ function App() {
       })
       
       // Hide them behind current section with lower z-index
-      /* setLowerSections(new Set(intermediateSections)) */
       setKeepCurrentPinned(true)
       
       // Small delay to ensure pinning takes effect, then scroll
@@ -74,12 +71,6 @@ function App() {
       }, 1000)
     } else {
       targetElement?.scrollIntoView({ behavior: 'smooth' })
-      /* scroller.scrollTo(section, {
-        duration: 800,
-        smooth: 'easeInOutQuart',
-        offset: 0,
-        containerId: 'main-container',
-      }) */
     }
   }
 
@@ -129,25 +120,6 @@ function App() {
     });
   }
 
-  const getVisibleSection = () => {
-    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-    let visibleSection: { id: string, top: number } | null = null;
-
-    for (const name of sections) {
-      const el = sectionRefs.current[name];
-      if (!el) continue;
-
-      const rect = el.getBoundingClientRect();
-      const isVisible = rect.top < viewportHeight && rect.bottom > 0;
-      if (!isVisible) continue;
-      
-      if (!visibleSection || rect.top < visibleSection.top) {
-        visibleSection = { id: name, top: rect.top };
-      }
-  }
-    return visibleSection?.id || activeSectionRef.current;
-  }
-
   useEffect(() => {
     // Update the active section ref whenever activeSection changes
     activeSectionRef.current = activeSection;
@@ -178,26 +150,12 @@ function App() {
         <Projects pinned={pinnedSections.has('projects')} lower={lowerSections.has('projects')} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />
         {/* <Skills pinned={pinnedSections.has('skills')} lower={lowerSections.has('skills')} ref={setSectionRef('skills')} zIndex={getSectionZIndex('skills')} /> */}
         <Contact pinned={pinnedSections.has('contact')} ref={setSectionRef('contact')} zIndex={getSectionZIndex('contact')} />
-        <div id='arrow-nav' className='flex flex-col gap-1'>
-          <button disabled={sections.indexOf(activeSectionRef.current) <= 0} id='prev' onClick={() => {
-            const currentIndex = sections.indexOf(activeSectionRef.current)
-            console.log('Current section:', activeSectionRef.current, 'Index:', currentIndex)
-            if (currentIndex > 0) {
-              handleSectionChange(sections[currentIndex - 1])
-            }
-          }}>
-            <ArrowBigUp />
-          </button>
-          <button disabled={sections.indexOf(activeSectionRef.current) >= sections.length - 1} id='next' onClick={() => {
-            const visibleSection = getVisibleSection();
-            const currentIndex = sections.indexOf(visibleSection);
-            if (currentIndex < sections.length - 1) {
-              handleSectionChange(sections[currentIndex + 1], visibleSection)
-            }
-          }}>
-            <ArrowBigDown />
-          </button>
-        </div>
+        <SectionNavigation
+          index={sections.indexOf(activeSection)}
+          sectionRefs={sectionRefs}
+          activeSectionRef={activeSectionRef}
+          handleSectionChange={handleSectionChange}
+        />
       </main>
       { (activeSection === 'contact') &&
         <Footer navigate={handleSectionChange} activeSection={activeSection} />

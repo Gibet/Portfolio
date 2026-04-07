@@ -2,32 +2,36 @@
   "projects": [
     {
       "category": "Web",
+      "context": "Projet personnel",
       "name": "Portfolio",
       "description": "A personal portfolio website built with React and Tailwind CSS to showcase myprojects and skills.",
       "imageSrc": "/images/projects/Portfolio.png",
-      "stack": ["React","Tailwind CSS"],
+      "stack": ["React","TailwindCSS"],
       "github": "#"
     },
     {
       "category": "Mobile",
+      "context": "Projet etudiant",
       "name": "Skillly",
       "description": "Application mobile de recrutement et de recherche d'emploi",
       "imageSrc": "/images/projects/Skillly.svg",
       "videoSrc": "https://drive.google.com/file/d/1yXlrHW62z5QKOlisd5XtkLaONVTXHyTi/view?usp=drive_link",
-      "stack": ["Golang","TypeScript","React Native"],
+      "stack": ["Golang","TypeScript","ReactNative"],
       "github": "#"
     },
     {
       "category": "Mobile",
+      "context": "Projet etudiant",
       "name": "MiliMili",
       "description": "Application mobile de gestion d'emplois du temps pour les étudiants",
       "imageSrc": "/images/projects/MiliMili.png",
       "videoSrc": "https://drive.google.com/file/d/1Kl0kBDHRGY1RnbOG10fXSvYn8WeYE6b5/view?usp=sharing",
-      "stack": ["TypeScript","React Native"],
+      "stack": ["TypeScript","ReactNative"],
       "github": "#"
     },
     {
       "category": "Web",
+      "context": "Projet etudiant",      
       "name": "SafeBase",
       "description": "Application web de gestion de bases de données",
       "imageSrc": "/images/projects/SafeBase.png",
@@ -36,16 +40,18 @@
     }, 
     {
       "category": "Web",
+      "context": "Projet professionnel",
       "name": "SRIAS",
-      "description": "plateforme de gestion des échanges entre la SRIAS PACA, ses partenaires et les agents bénéficiaires.",
+      "description": "Plateforme de gestion des échanges entre la SRIAS PACA, ses partenaires et les agents bénéficiaires.",
       "imageSrc": "/images/projects/SRIAS.png",
       "stack": ["React","TypeScript"],
       "github": "#"
     },
     {
       "category": "Web",
+      "context": "Projet professionnel",
       "name": "Cyberpark",
-      "description": "application interactive accompagnant un escape game pour jeunes (12-18 ans), avec une interface ludique et ergonomique",
+      "description": "Application interactive accompagnant un escape game pour jeunes (12-18 ans), avec une interface ludique et ergonomique",
       "imageSrc": "/images/projects/Cyberpark.png",
       "stack": ["React","Electron"],
       "github": "#"

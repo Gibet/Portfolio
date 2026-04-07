@@ -1,15 +1,21 @@
 import React from 'react'
 
-interface ContainerProps {
-  class ?: string
-  children: React.ReactNode
-  variant ?: 'default' | 'wide'
+interface ContainerProps
+  extends React.ComponentProps<'div'> {
+  variant ?: 'default' | 'wide' | 'body' | 'header';
 }
 
-export const Container = ({ children, variant }: ContainerProps) => {
-  const variantClasses = variant === 'wide' ? 'container-wide' : 'container';
+const variants = {
+  default: 'container',
+  wide: 'container wide',
+  body: 'container sect-body',
+  header: 'container sect-header'
+}
+
+export const Container = ({variant = 'default', children, className}: ContainerProps) => {
+  const variantClasses = variants[variant]
   return (
-    <div className={variantClasses}>
+    <div className={`${variantClasses} ${className || ''}`}>
       {children}
     </div>
   )

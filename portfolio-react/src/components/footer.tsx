@@ -1,27 +1,25 @@
-import React from 'react'
-import { Link } from 'react-scroll'
 import type { HeaderProps } from '../utils/types'
+import { Cog, Contact, Github, Home, Info, Linkedin } from 'lucide-react'
 
 export const Footer = (props: HeaderProps) => {
   return (
     <footer className='2xl:w-4/5 backdrop-blur-md w-full flex gap-8 justify-center text-center py-16 mt-8'>
       <div className='flex flex-col w-1/3 items-start gap-2'>
-        <h3 className='text-lg font-bold'>Menu</h3>
+        <h3 className='text-lg font-bold terminal'>Menu</h3>
         <hr className='w-full'/>
         <ul className='text-left'>
-          <li><button onClick={() => props.navigate('home')}>Accueil</button></li>
-          <li><button onClick={() => props.navigate('about')}>À propos</button></li>
-          <li><button onClick={() => props.navigate('projects')}>Projets</button></li>
-          {/* <li><Link to="skills" smooth={true} duration={500}>Compétences</Link></li> */}
-          <li><button onClick={() => props.navigate('contact')}>Contact</button></li>
+          <li><button onClick={() => props.navigate('home')}><Home size={20} strokeWidth={ 1} /><span>Accueil</span></button></li>
+          <li><button onClick={() => props.navigate('about')}><Info size={20} strokeWidth={ 1} /><span>À propos</span></button></li>
+          <li><button onClick={() => props.navigate('projects')}><Cog size={20} strokeWidth={ 1} /><span>Projets</span></button></li>
+          <li><button onClick={() => props.navigate('contact')}><Contact size={20} strokeWidth={ 1} /><span>Contact</span></button></li>
         </ul>
       </div>
       <div className='flex flex-col w-1/3 items-start gap-2'>
-        <h3 className='text-lg font-bold'>Liens</h3>
+        <h3 className='text-lg font-bold terminal'>Liens</h3>
         <hr className='w-full'/>
         <ul className='text-left'>
-          <li><a href="" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="" target="_blank" rel="noopener noreferrer"><Github size={20} strokeWidth={ 1} /><span>GitHub</span></a></li>
+          <li><a href="" target="_blank" rel="noopener noreferrer"><Linkedin size={20} strokeWidth={ 1} /><span>LinkedIn</span></a></li>
         </ul>
       </div>
     </footer>

@@ -1,88 +1,86 @@
 {
-  "skills": [
-    {
-      "name": "JavaScript",
-      "imageSrc": "/images/logo/javascript.svg"
-    },
-    {
-      "name": "TypeScript",
-      "imageSrc": "/images/logo/typescript.svg"
-    },
-    {
-      "name": "React",
-      "imageSrc": "/images/logo/react.svg"
-    },
-    {
-      "name": "React Native",
-      "imageSrc": "/images/logo/reactnative.svg"
-    },
-    {
-      "name": "Next.js",
-      "imageSrc": "/images/logo/nextjs.svg"
-    },
-    {
-      "name": "Vite",
-      "imageSrc": "/images/logo/vitejs.svg"
-    },
-    {
-      "name": "Tailwind CSS",
-      "imageSrc": "/images/logo/tailwindcss.svg"
-    },
-    {
-      "name": "HTML5",
-      "imageSrc": "/images/logo/html5.svg"
-    },
-    {
-      "name": "CSS3",
-      "imageSrc": "/images/logo/css3.svg"
-    },
-    {
-      "name": "Golang",
-      "imageSrc": "/images/logo/go.svg"
-    },
-    {
-      "name": "Node.js",
-      "imageSrc": "/images/logo/nodejs.svg"
-    },
-    {
-      "name": "Express.js",
-      "imageSrc": "/images/logo/express.svg"
-    },
-    {
-      "name": "Nest",
-      "imageSrc": "/images/logo/nestjs.svg"
-    },
-    {
-      "name": "MySQL",
-      "imageSrc": "/images/logo/mysql.svg"
-    },
-    {
-      "name": "PostgreSQL",
-      "imageSrc": "/images/logo/postgresql.svg"
-    },
-    {
-      "name": "MongoDB",
-      "imageSrc": "/images/logo/mongodb.svg"
-    },
-    {
-      "name": "Docker",
-      "imageSrc": "/images/logo/docker.svg"
-    },
-    {
-      "name": "Git",
-      "imageSrc": "/images/logo/git.svg"
-    },
-    {
-      "name": "GitHub",
-      "imageSrc": "/images/logo/github.svg"
-    },
-    {
-      "name": "Electron",
-      "imageSrc": "/images/logo/electron.svg"
-    },
-    {
-      "name": "Python",
-      "imageSrc": "/images/logo/python.svg"
-    }
-  ]
+  "JavaScript": {
+    "name": "JavaScript",
+    "imageSrc": "/images/logo/javascript.svg"
+  },
+  "TypeScript": {
+    "name": "TypeScript",
+    "imageSrc": "/images/logo/typescript.svg"
+  },
+  "React": {
+    "name": "React",
+    "imageSrc": "/images/logo/react.svg"
+  },
+  "ReactNative": {
+    "name": "React Native",
+    "imageSrc": "/images/logo/reactnative.svg"
+  },
+  "Nextjs": {
+    "name": "Next.js",
+    "imageSrc": "/images/logo/nextjs.svg"
+  },
+  "Vite": {
+    "name": "Vite",
+    "imageSrc": "/images/logo/vitejs.svg"
+  },
+  "TailwindCSS": {
+    "name": "Tailwind CSS",
+    "imageSrc": "/images/logo/tailwindcss.svg"
+  },
+  "HTML5": {
+    "name": "HTML5",
+    "imageSrc": "/images/logo/html5.svg"
+  },
+  "CSS3": {
+    "name": "CSS3",
+    "imageSrc": "/images/logo/css3.svg"
+  },
+  "Golang": {
+    "name": "Golang",
+    "imageSrc": "/images/logo/go.svg"
+  },
+  "Nodejs": {
+    "name": "Node.js",
+    "imageSrc": "/images/logo/nodejs.svg"
+  },
+  "Expressjs": {
+    "name": "Express.js",
+    "imageSrc": "/images/logo/express.svg"
+  },
+  "Nest": {
+    "name": "Nest",
+    "imageSrc": "/images/logo/nestjs.svg"
+  },
+  "MySQL": {
+    "name": "MySQL",
+    "imageSrc": "/images/logo/mysql.svg"
+  },
+  "PostgreSQL": {
+    "name": "PostgreSQL",
+    "imageSrc": "/images/logo/postgresql.svg"
+  },
+  "MongoDB": {
+    "name": "MongoDB",
+    "imageSrc": "/images/logo/mongodb.svg"
+  },
+  "Docker": {
+    "name": "Docker",
+    "imageSrc": "/images/logo/docker.svg"
+  },
+  "Git": {
+    "name": "Git",
+    "imageSrc": "/images/logo/git.svg"
+  },
+  "GitHub": {
+    "name": "GitHub",
+    "imageSrc": "/images/logo/github.svg"
+  },
+  "Electron": {
+    "name": "Electron",
+    "imageSrc": "/images/logo/electron.svg"
+  },
+  "Python": {
+    "name": "Python",
+    "imageSrc": "/images/logo/python.svg"
+  }
 }
