@@ -6,7 +6,7 @@
       "name": "Portfolio",
       "description": "A personal portfolio website built with React and Tailwind CSS to showcase myprojects and skills.",
       "imageSrc": "/images/projects/Portfolio.png",
-      "stack": ["React","TailwindCSS"],
+      "stack": ["React", "Vite","TailwindCSS"],
       "github": "#"
     },
     {
@@ -16,7 +16,7 @@
       "description": "Application mobile de recrutement et de recherche d'emploi",
       "imageSrc": "/images/projects/Skillly.svg",
       "videoSrc": "https://drive.google.com/file/d/1yXlrHW62z5QKOlisd5XtkLaONVTXHyTi/view?usp=drive_link",
-      "stack": ["Golang","TypeScript","ReactNative"],
+      "stack": ["Golang","TypeScript","ReactNative", "PostgreSQL", "Docker", "MongoDB"],
       "github": "#"
     },
     {
@@ -26,7 +26,7 @@
       "description": "Application mobile de gestion d'emplois du temps pour les étudiants",
       "imageSrc": "/images/projects/MiliMili.png",
       "videoSrc": "https://drive.google.com/file/d/1Kl0kBDHRGY1RnbOG10fXSvYn8WeYE6b5/view?usp=sharing",
-      "stack": ["TypeScript","ReactNative"],
+      "stack": ["TypeScript","ReactNative", "Nest", "MySQL"],
       "github": "#"
     },
     {
@@ -35,7 +35,7 @@
       "name": "SafeBase",
       "description": "Application web de gestion de bases de données",
       "imageSrc": "/images/projects/SafeBase.png",
-      "stack": ["React","TypeScript","Golang"],
+      "stack": ["React","TypeScript","Golang", "PostgreSQL", "Docker", "MySQL"],
       "github": "#"
     }, 
     {
@@ -44,7 +44,7 @@
       "name": "SRIAS",
       "description": "Plateforme de gestion des échanges entre la SRIAS PACA, ses partenaires et les agents bénéficiaires.",
       "imageSrc": "/images/projects/SRIAS.png",
-      "stack": ["React","TypeScript"],
+      "stack": ["React","TypeScript", "Nest"],
       "github": "#"
     },
     {

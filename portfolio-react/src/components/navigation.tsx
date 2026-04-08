@@ -50,12 +50,12 @@ export const SectionNavigation = (props: NavigationProps) => {
       <button disabled={props.index <= 0} id='prev' onClick={() => {
         prev()
       }}>
-        <ArrowBigUp />
+        <ArrowBigUp strokeWidth={1.25} />
       </button>
       <button disabled={handleNextDisabled()} id='next' onClick={() => {
         next()
       }}>
-        <ArrowBigDown />
+        <ArrowBigDown strokeWidth={1.25} />
       </button>
     </div>
   )

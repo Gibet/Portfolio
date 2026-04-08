@@ -67,7 +67,7 @@ const ProjectModal = (props: ModalProps) => {
           </div>
           <div className="modal-content p-6 pt-2">
             <h3 className="text-2xl mb-4 font-bold terminal">{props.project.name}</h3>
-            <p>{props.project.description}</p>
+            <p className="text-sm">{props.project.description}</p>
             <div className="modal-stack flex flex-wrap gap-2 mt-4 items-center">
               <h5 className="text-sm font-bold">Stack:</h5>
               {props.project.stack.map((tech) => (

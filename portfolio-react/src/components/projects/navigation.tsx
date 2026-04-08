@@ -3,7 +3,7 @@ import type { ProjectNavProps } from '../../utils/types';
 
 export const ProjectsNavigation = (props : ProjectNavProps) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center text-sm">
       <button
         disabled={props.currentPage === 1}
         onClick={() => props.setCurrentPage((prev) => Math.max(prev - 1, 1))}

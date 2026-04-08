@@ -17,7 +17,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref
     <CustomSection id="contact" pinned={pinned} ref={ref} zIndex={1}>
       <div className='flex flex-col h-full items-center w-5/6 gap-6 sm:py-20 py-6'>
         <Container variant='header'>
-          <h1 className="text-2xl font-bold terminal">Contactez-moi</h1>
+          <h1 className="text-xl font-bold terminal">Contactez-moi</h1>
         </Container>
         <Container variant='body' className="md:w-2/5 sm:mt-16">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -26,7 +26,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref
               type="email" 
               name="email"
               placeholder='> Votre Email'
-              className='px-4 py-6'
+              className='px-4 py-6 text-sm'
             />
             <ValidationError 
               prefix="Email" 
@@ -37,7 +37,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref
               id="message"
               name="message"
               placeholder='> Votre Message'
-              className='px-4 py-6'
+              className='px-4 py-6 text-sm'
               rows={6}
             />
             <ValidationError 
@@ -48,7 +48,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref
             <button 
               type="submit"
               disabled={state.submitting}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+              className="font-bold text-sm py-2 px-4">
               <Mail className='inline-block mr-2' strokeWidth={1.25}/>
               Envoyer
             </button>

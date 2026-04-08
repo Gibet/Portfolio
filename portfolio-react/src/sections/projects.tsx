@@ -29,13 +29,13 @@ export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lowe
     <CustomSection id="projects" pinned={pinned} lower={lower} ref={ref} zIndex={3}>
       <div className="relative flex flex-col items-center w-5/6 h-full sm:py-20 py-6">
         <Container variant='header' className='flex flex-col gap-2.5'>
-          <h1 className="text-2xl font-bold terminal">Mes Projets</h1>
+          <h1 className="text-xl font-bold terminal">Mes Projets</h1>
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => { setCurrentCategory(category); setCurrentPage(1); }}
-                className={`px-3 py-1 mr-2 mb-2 ${currentCategory === category ? 'active' : ''}`}
+                className={`px-3 py-1 mr-2 mb-2 text-sm ${currentCategory === category ? 'active' : ''}`}
               >
                 {category}
               </button>
