@@ -144,7 +144,7 @@ function App() {
   return (
     <>
       <Header navigate={handleSectionChange} activeSection={activeSection} />
-      <main id='main-container' className="relative 2xl:w-4/5 w-full flex-1 scroll-smooth light">
+      <main id='main-container' className="relative 2xl:w-3/4 w-full flex-1 scroll-smooth light">
         <Home pinned={pinnedSections.has('home')} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />
         <About pinned={pinnedSections.has('about')} lower={lowerSections.has('about')} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
         <Projects pinned={pinnedSections.has('projects')} lower={lowerSections.has('projects')} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />

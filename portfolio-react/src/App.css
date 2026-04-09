@@ -118,13 +118,20 @@ header {
   button {
     cursor: pointer;
     border: none !important;
+    border-bottom: 3px solid transparent !important;
     background-color: transparent !important;
-    transition: color 0.3s ease;
+    transition: color border 0.5s ease;
+    padding: 10px;
+    height: 70px;
   }
   button:hover {
     color: var(--accent);
     border: none;
     background-color: transparent;
+  }
+
+  .active {
+    border-bottom: 3px solid var(--accent) !important;
   }
 }
 
@@ -290,11 +297,23 @@ a:hover {
   background-color: var(--background);
   width: 100%;
   padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* box-shadow: var(--shadow); */
+}
+
+.event:hover {
+  box-shadow: var(--shadowSecondary);
+  transform: scale(1.005);
 }
 
 .skill {
   background-color: var(--background);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  box-shadow: var(--shadowSecondary);
+  transform: scale(1.03);
 }
 
 /* projects section */
@@ -309,7 +328,7 @@ a:hover {
 }
 
 .thumbnail:hover {
-  shadow: var(--shadowSecondary);
+  box-shadow: var(--shadowSecondary);
   transform: scale(1.02);
   background:
     linear-gradient(to right, var(--accent) 1px, transparent 1px) 0 0,

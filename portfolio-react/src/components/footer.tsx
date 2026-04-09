@@ -3,7 +3,7 @@ import { Cog, Contact, Github, Home, Info, Linkedin } from 'lucide-react'
 
 export const Footer = (props: HeaderProps) => {
   return (
-    <footer className='2xl:w-4/5 backdrop-blur-md w-full flex gap-8 justify-center text-center py-12'>
+    <footer className='2xl:w-3/4 backdrop-blur-md w-full flex gap-8 justify-center text-center py-12'>
       <div className='flex flex-col w-1/3 items-start gap-2'>
         <h3 className='text-lg font-bold terminal'>Menu</h3>
         <hr className='w-full'/>

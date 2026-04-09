@@ -6,7 +6,7 @@ export const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
   const theme = useTheme()
 
   return (
-    <header className='2xl:w-4/5 w-full z-60 backdrop-blur-md sm:p-6 p-4'>
+    <header className='2xl:w-3/4 w-full z-60 backdrop-blur-md'>
       <nav className="flex justify-between items-center w-full">
         <div className="flex text-lg font-bold">
           <button onClick={theme.toggleTheme}>
@@ -16,7 +16,7 @@ export const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
             }
           </button>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex">
           <button onClick={() => navigate('home')} className={activeSection === 'home' ? 'active' : ''}><Home size={30} strokeWidth={activeSection === 'home' ? 1.5 : 1} /></button>
           <button onClick={() => navigate('about')} className={activeSection === 'about' ? 'active' : ''}><Info size={30} strokeWidth={activeSection === 'about' ? 1.5 : 1} /></button>
           <button onClick={() => navigate('projects')} className={activeSection === 'projects' ? 'active' : ''}><Cog size={30} strokeWidth={activeSection === 'projects' ? 1.5 : 1} /></button>
