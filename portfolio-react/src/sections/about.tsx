@@ -7,12 +7,12 @@ import { Container } from '../components/container'
 
 const AboutTabs = ['Competences', 'Éducation', 'Éxperience']
 
-export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower = false }, ref) => {
+export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPinned, pinCount, lower = false }, ref) => {
 
   const [currentTab, setCurrentTab] = useState(AboutTabs[0])
 
   return (
-    <CustomSection id='about' pinned={pinned} lower={lower} ref={ref} zIndex={4}>
+    <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} lower={lower} ref={ref} zIndex={4}>
       <div className='flex flex-col items-center  w-5/6 h-full sm:py-20 py-6'>
         <Container variant='header' className='flex flex-col gap-2.5'>
           <h1 className="text-xl font-bold terminal">A propos de moi</h1>
@@ -31,9 +31,10 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower =
         <Container variant='body' className="mt-4 w-full h-full overflow-y-auto">
           {currentTab === 'Éducation' && (
               <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative py-10 overflow-y-auto'>
-                <li className=''></li>
+                <span className="pointer-events-none absolute inset-y-0 top-5 bottom-0 left-1.5 w-0">
+                  <span className="sticky left-1.5 h-full border-l chrono-line"></span>
+                </span>  
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
-                  <span className="absolute left-1.5 top-6 bottom-6 border-l chrono-line"></span>
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
                     <h2 className="text-lg font-semibold terminal">Bachelor Concepteur Développeur d'Applications (CDA)</h2>
@@ -45,14 +46,25 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower =
                     </ul>
                   </div>
                 </li>
-                <li className='mb-2'>
+                <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
+                  <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
+                  <div className='event'>
+                    <h2 className="text-lg font-semibold terminal">Supinfo Marseille</h2>
+                    <h4 className="text-md font-medium sm:ml-6">2012-2016</h4>
+                    <ul className='list-disc sm:ml-10 ml-6 text-sm'>
+                      <li>Formation en développement web et mobile, avec JavaScript, Java, PHP, et les frameworks associés</li>
+                      <li>Projets de développement en équipe, avec gestion de versions Git et méthodologies agiles</li>
+                    </ul>
+                  </div>
                 </li>
               </ol>
           )}
           {currentTab === 'Éxperience' && (
               <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative py-10 overflow-y-auto'>
+                <span className="pointer-events-none absolute inset-y-0 left-1.5 top-5 bottom-0 w-0">
+                  <span className="sticky left-1.5 h-full border-l chrono-line"></span>
+                </span> 
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
-                  <span className="absolute left-1.5 top-6 bottom-6 border-l chrono-line"></span>
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
                     <h2 className="text-lg font-semibold terminal">Développeur Web Junior (Alternance)</h2>

@@ -12,7 +12,7 @@ const ProjectsList = ProjectsData as { projects: ProjectProps[] }
 const categories = ['Tous', 'Web', 'Mobile']
 /* const pageSize = 10 */
 
-export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lower = false }, ref) => {
+export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPinned, pinCount, lower = false }, ref) => {
 
   const [currentCategory, setCurrentCategory] = useState(categories[0])  
   const [currentPage, setCurrentPage] = useState(1)
@@ -26,7 +26,7 @@ export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, lowe
   }
   
   return (
-    <CustomSection id="projects" pinned={pinned} lower={lower} ref={ref} zIndex={3}>
+    <CustomSection id="projects" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} lower={lower} ref={ref} zIndex={3}>
       <div className="relative flex flex-col items-center w-5/6 h-full sm:py-20 py-6">
         <Container variant='header' className='flex flex-col gap-2.5'>
           <h1 className="text-xl font-bold terminal">Mes Projets</h1>

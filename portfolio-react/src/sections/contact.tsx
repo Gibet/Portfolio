@@ -6,7 +6,7 @@ import { Container } from '../components/container';
 import { Mail } from 'lucide-react';
 
 
-export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref) => {
+export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCount }, ref) => {
 
   const [state, handleSubmit] = useForm("xkovbadl");
   if (state.succeeded) {
@@ -14,7 +14,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref
   }
 
   return (
-    <CustomSection id="contact" pinned={pinned} ref={ref} zIndex={1}>
+    <CustomSection id="contact" pinned={pinned} pinCount={pinCount} ref={ref} zIndex={1}>
       <div className='flex flex-col h-full items-center w-5/6 gap-6 sm:py-20 py-6'>
         <Container variant='header'>
           <h1 className="text-xl font-bold terminal">Contactez-moi</h1>

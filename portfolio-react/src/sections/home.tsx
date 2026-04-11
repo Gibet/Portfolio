@@ -4,9 +4,9 @@ import CustomSection from '../components/customSection'
 import { Github, Linkedin, File} from 'lucide-react'
 
 
-export const Home = forwardRef<HTMLDivElement, SectionProps>(({ pinned }, ref) =>  {
+export const Home = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPinned, pinCount }, ref) =>  {
   return (
-    <CustomSection id="home" pinned={pinned} ref={ref} zIndex={5}>
+    <CustomSection id="home" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={5}>
       <div className="flex flex-col flex-1 items-center justify-center h-full gap-6">
         <div className='flex flex-col items-end items-center gap-6'>
           <div id='square1' className='w-full flex flex-col gap-6'>

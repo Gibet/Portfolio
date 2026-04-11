@@ -79,6 +79,11 @@ function App() {
     return lowerSections.has(sectionName) ? -(baseIndex + 1) : baseIndex
   }
 
+  const getFirstPinnedSection = () => {
+    if (pinnedSections.size === 0) return null
+    return [...pinnedSections][0]
+  }
+
   const setSectionRef = (section: string) => (el: HTMLDivElement | null) => {
     sectionRefs.current[section] = el
   }
@@ -145,11 +150,10 @@ function App() {
     <>
       <Header navigate={handleSectionChange} activeSection={activeSection} />
       <main id='main-container' className="relative 2xl:w-3/4 w-full flex-1 scroll-smooth light">
-        <Home pinned={pinnedSections.has('home')} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />
-        <About pinned={pinnedSections.has('about')} lower={lowerSections.has('about')} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
-        <Projects pinned={pinnedSections.has('projects')} lower={lowerSections.has('projects')} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />
-        {/* <Skills pinned={pinnedSections.has('skills')} lower={lowerSections.has('skills')} ref={setSectionRef('skills')} zIndex={getSectionZIndex('skills')} /> */}
-        <Contact pinned={pinnedSections.has('contact')} ref={setSectionRef('contact')} zIndex={getSectionZIndex('contact')} />
+        <Home pinned={pinnedSections.has('home')} firstPinned={getFirstPinnedSection() === 'home'} pinCount={pinnedSections.size} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />
+        <About pinned={pinnedSections.has('about')} firstPinned={getFirstPinnedSection() === 'about'} pinCount={pinnedSections.size} lower={lowerSections.has('about')} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
+        <Projects pinned={pinnedSections.has('projects')} firstPinned={getFirstPinnedSection() === 'projects'} pinCount={pinnedSections.size} lower={lowerSections.has('projects')} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />
+        <Contact pinned={pinnedSections.has('contact')} firstPinned={getFirstPinnedSection() === 'contact'} pinCount={pinnedSections.size} ref={setSectionRef('contact')} zIndex={getSectionZIndex('contact')} />
         <SectionNavigation
           index={sections.indexOf(activeSection)}
           sectionRefs={sectionRefs}

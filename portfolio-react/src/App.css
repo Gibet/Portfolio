@@ -15,9 +15,14 @@
   --footerBg : rgba(0, 0, 0, 0.7);
   --buttonBg : #e9e9e9;
   --shadow : 0px 4px 4px 2px rgba(65, 65, 65, 0.05);
-  --sectionShadow : 0px 75px 30px 0px rgba(225, 225, 225, 0.3);
+  --sectionShadow : 0px 75px 30px 20px rgba(0, 0, 0, 0.1);
+  --pinnedShadow : 0px 20px 30px 20px rgba(100, 0, 0, 0.5);
   --shadowSecondary : 0px 4px 8px rgba(185, 185, 185, 0.3);
   --shadowTertiary : 0px 4px 25px rgba(185, 185, 185, 0.3);
+  --sublayerColor: #ffffff;
+  --toplayerColor: rgba(255, 255, 255, 0.5);
+  --maskBgColor: rgba(0, 0, 0, 0.2);
+  --maskColor: rgba(0, 0, 0, 0.7);
 }
 
 [data-theme="dark"] {
@@ -33,9 +38,14 @@
   --footerBg : rgba(20, 20, 20, 0.7);
   --buttonBg : #222222;
   --shadow : 0px 8px 8px 5px rgba(0, 0, 0, 0.05);
-  --sectionShadow : 0px 75px 30px 0px rgba(40, 40, 40, 0.3);
+  --sectionShadow : 0px 75px 30px 20px rgba(0, 0, 0, 0.2);
+  --pinnedShadow : 0px 0px 30px 20px rgba(100, 0, 0, 0.5);
   --shadowSecondary : 0px 4px 8px rgba(65, 65, 65, 0.3);
   --shadowTertiary : 0px 4px 8px rgba(65, 65, 65, 0.3);
+  --sublayerColor: #333333;
+  --toplayerColor: rgba(255, 255, 255, 0.1);
+  --maskBgColor: rgba(0, 0, 0, 0.2);
+  --maskColor: rgba(255, 255, 255, 0.7);
 }
 
 /* Fonts */
@@ -88,8 +98,25 @@ body {
 }
 
 .custom-section {
-  box-shadow: var(--sectionShadow);
-  background-color: var(--background);
+  overflow-y: hidden;
+  .sublayer, .toplayer {
+    pointer-events: none;
+  }
+  .sublayer {
+    z-index: 0;
+    background-color: var(--sublayerColor);
+    background-size: 100% 100%;
+    animation: drift 12s ease-in-out infinite alternate;
+  }
+  .toplayer {
+    z-index: 1;
+    background: linear-gradient(120deg, var(--toplayerColor) 0%, var(--maskBgColor) 100%);
+    mask-image: 
+    -webkit-mask-image: ;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    animation: sweep 8s linear infinite;
+  }
 }
 
 section{
@@ -163,8 +190,19 @@ footer {
 }
 
 .pinned {
+  box-shadow: var(--sectionShadow);
+  transition: box-shadow .2s ease-in, transform 0.2s ease-in-out;
   position: sticky;
   bottom: 0;
+}
+
+.pinned[data-first="true"] {
+  transform-origin: bottom center;
+  transform: scaleX(1.01);
+}
+
+.pinned > :last-child {
+  box-shadow: var(--pinnedShadow);
 }
 
 button {
@@ -254,7 +292,8 @@ a:hover {
 /* home section */
 
 #home {
-  background-color: var(--background);
+  background-size: contain;
+  background-position: center;
 }
 
 #square1, #square2, #square3 {
@@ -282,11 +321,13 @@ a:hover {
 /* about section */
 
 #about {
-  background-color: var(--background);
+  
 }
 
 .chrono-line {
   border-color: var(--background);
+  height: calc(100% - 1.5rem);
+  display: block;
 }
 
 .chrono-dot {
@@ -297,6 +338,7 @@ a:hover {
   background-color: var(--background);
   width: 100%;
   padding: 15px;
+  margin-bottom: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* box-shadow: var(--shadow); */
 }
@@ -318,7 +360,7 @@ a:hover {
 
 /* projects section */
 #projects {
-  background-color: var(--background);
+  
 }
 
 .thumbnail {
@@ -370,7 +412,7 @@ a:hover {
 /* contact section */
 
 #contact {
-  background-color: var(--background);
+  
 }
 
 input, textarea {
@@ -388,4 +430,16 @@ form button {
   border: 1px solid var(--text);
   padding: 10px 20px;
   cursor: pointer;
+}
+
+/* Animations */
+
+@keyframes drift {
+  from { transform: scale(1) translate3d(0,0,0); }
+  to   { transform: scale(1.08) translate3d(-2%, 2%, 0); }
+}
+
+@keyframes sweep {
+  from { transform: translate3d(-100%, -100%, 0) rotate(45deg); }
+  to   { transform: translate3d(100%, 100%, 0) rotate(45deg); }
 }

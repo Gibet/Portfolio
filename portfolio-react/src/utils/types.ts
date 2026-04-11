@@ -6,6 +6,8 @@ export interface SectionProps {
   pinned: boolean;
   lower?: boolean;
   children?: React.ReactNode;
+  firstPinned?: boolean;
+  pinCount?: number;
   zIndex?: number;
 }
 
