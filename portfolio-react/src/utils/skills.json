@@ -51,6 +51,10 @@
     "name": "Nest",
     "imageSrc": "/images/logo/nestjs.svg"
   },
+  "Fiber": {
+    "name": "Fiber",
+    "imageSrc": "/images/logo/fiber.svg"
+  },
   "MySQL": {
     "name": "MySQL",
     "imageSrc": "/images/logo/mysql.svg"
@@ -74,6 +78,10 @@
   "GitHub": {
     "name": "GitHub",
     "imageSrc": "/images/logo/github.svg"
+  },
+  "GithubActions": {
+    "name": "GitHub Actions",
+    "imageSrc": "/images/logo/githubactions.svg"
   },
   "Electron": {
     "name": "Electron",

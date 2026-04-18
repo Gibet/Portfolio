@@ -19,12 +19,14 @@ export interface HeaderProps {
 export type SkillKey = keyof typeof import("./skills.json");
 export interface ProjectProps {
   category: string;
+  context: string;
   name: string;
   description: string;
   imageSrc: string;
   videoSrc?: string;
   stack: SkillKey[];
   github: string;
+  role: string[];
 }
 
 export interface ThumbnailProps {
@@ -59,3 +61,10 @@ export interface ProjectNavProps {
   openModal: (project: ProjectProps) => void,
   pageSize: number;
 };
+
+export interface CommandLineProps {
+  title: string
+  subtitle?: string
+  additionalInfo?: string
+  link?: string
+}

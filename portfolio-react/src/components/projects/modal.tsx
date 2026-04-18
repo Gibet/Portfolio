@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { ModalProps } from '../../utils/types';
 import { Skill } from '../skill';
 import * as skills from "../../utils/skills.json";
+import { CommandLine } from '../commandLine';
 
 const ProjectImages = import.meta.glob<{default: string}>('/src/assets/images/projects/**/*.{png,jpg,jpeg}'); 
 const imagesCache = new Map<string, string[]>();
@@ -65,14 +66,27 @@ const ProjectModal = (props: ModalProps) => {
               </>
             )}
           </div>
-          <div className="modal-content p-6 pt-2">
-            <h3 className="text-2xl mb-4 font-bold terminal">{props.project.name}</h3>
-            <p className="text-sm">{props.project.description}</p>
-            <div className="modal-stack flex flex-wrap gap-2 mt-4 items-center">
-              <h5 className="text-sm font-bold">Stack:</h5>
-              {props.project.stack.map((tech) => (
-                <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
-              ))}
+          <div className="modal-content flex sm:flex-row flex-col overflow-y-auto">
+            <div className="p-6 pt-2 gap-2 flex w-full flex-col">
+              <CommandLine title={props.project.name} subtitle={props.project.context} additionalInfo={props.project.category} link={props.project.github} />
+              <p className="terminal text-sm">{props.project.description}</p>
+              <div className="modal-stack flex flex-wrap gap-2 items-center">
+                <h5 className="text-sm font-bold">Stack:</h5>
+                {props.project.stack.map((tech) => (
+                  <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
+                ))}
+              </div>
+            </div>
+            <div className='p-6 sm:pt-2 pt-0 gap-2 flex w-full flex-col'>
+              <h5 className="text-sm font-bold">Roles:</h5>
+              <div className="flex flex-col gap-2">
+                {props.project.role.map((role) => (
+                  <span key={role} className="terminal text-sm px-2 py-1">
+                    {role}
+                  </span>
+                ))}
+              </div>
+
             </div>
           </div>
         </div>

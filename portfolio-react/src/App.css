@@ -16,13 +16,16 @@
   --buttonBg : #e9e9e9;
   --shadow : 0px 4px 4px 2px rgba(65, 65, 65, 0.05);
   --sectionShadow : 0px 75px 30px 20px rgba(0, 0, 0, 0.1);
-  --pinnedShadow : 0px 20px 30px 20px rgba(100, 0, 0, 0.5);
+  --pinnedShadow : 0px 20px 30px 20px rgba(0, 0, 0, 0.5);
   --shadowSecondary : 0px 4px 8px rgba(185, 185, 185, 0.3);
   --shadowTertiary : 0px 4px 25px rgba(185, 185, 185, 0.3);
   --sublayerColor: #ffffff;
-  --toplayerColor: rgba(255, 255, 255, 0.5);
-  --maskBgColor: rgba(0, 0, 0, 0.2);
+  --toplayerColor: rgba(255, 255, 255, 0.2);
+  --maskBgColor: rgba(0, 0, 0, 0.1);
   --maskColor: rgba(0, 0, 0, 0.7);
+  --commandBgMain: rgb(255, 220, 40);
+  --commandBgSub: rgb(255, 155, 40);
+  --commandText: #131313;
 }
 
 [data-theme="dark"] {
@@ -39,13 +42,16 @@
   --buttonBg : #222222;
   --shadow : 0px 8px 8px 5px rgba(0, 0, 0, 0.05);
   --sectionShadow : 0px 75px 30px 20px rgba(0, 0, 0, 0.2);
-  --pinnedShadow : 0px 0px 30px 20px rgba(100, 0, 0, 0.5);
+  --pinnedShadow : 0px 0px 30px 20px rgba(0, 0, 0, 0.5);
   --shadowSecondary : 0px 4px 8px rgba(65, 65, 65, 0.3);
   --shadowTertiary : 0px 4px 8px rgba(65, 65, 65, 0.3);
   --sublayerColor: #333333;
-  --toplayerColor: rgba(255, 255, 255, 0.1);
-  --maskBgColor: rgba(0, 0, 0, 0.2);
+  --toplayerColor: rgba(55, 55, 55, 0.1);
+  --maskBgColor: rgba(0, 0, 0, 0.1);
   --maskColor: rgba(255, 255, 255, 0.7);
+  --commandBgMain: rgb(255, 155, 40);
+  --commandBgSub: rgb(255, 220, 40);
+  --commandText: #ffffff;
 }
 
 /* Fonts */
@@ -106,16 +112,23 @@ body {
     z-index: 0;
     background-color: var(--sublayerColor);
     background-size: 100% 100%;
-    animation: drift 12s ease-in-out infinite alternate;
+    /* animation: drift 12s ease-in-out infinite; */
+  }
+  .toplayer, .offset {
+    z-index: 1;
+    background-size: 140% 140%;
+    background: linear-gradient(180deg, var(--toplayerColor) 0%, var(--maskBgColor) 50%, var(--toplayerColor) 100%);
+    mask-image: linear-gradient(180deg, var(--toplayerColor) 0%, var(--maskColor) 50%, var(--toplayerColor));
+    -webkit-mask-image: linear-gradient(180deg, var(--toplayerColor) 0%, var(--maskColor) 50%, var(--toplayerColor));
+    mask-repeat: repeat;
+    -webkit-mask-repeat: repeat;
   }
   .toplayer {
-    z-index: 1;
-    background: linear-gradient(120deg, var(--toplayerColor) 0%, var(--maskBgColor) 100%);
-    mask-image: 
-    -webkit-mask-image: ;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    animation: sweep 8s linear infinite;
+    animation: sweep 20s linear infinite;
+  }
+  .offset {
+    animation: sweep 20s linear infinite reverse;
+    animation-delay: -10s
   }
 }
 
@@ -289,6 +302,70 @@ a:hover {
   background-color: var(--primary);
 }
 
+.command-line {
+  color: var(--commandText) !important;
+}
+
+.command-line-dot {
+  margin-right: 6px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent);
+}
+
+.command-line-title, .command-line-sub, .command-line-add, .command-line-link {
+  height: 28px;
+  padding: 2px 20px 2px 24px;
+  /* clip right side */
+  --tip-depth: 16px; /* how far the tip extends inward */
+}
+
+.command-line-sub, .command-line-add, .command-line-link {
+  /* clip left side */
+  margin-left: calc(-1 * var(--tip-depth) - 1px);
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--tip-depth)) 0,
+    100% 50%,
+    calc(100% - var(--tip-depth)) 100%,
+    0 100%,
+    var(--tip-depth) 50%
+  );
+}
+
+.command-line-title {
+  background-color: var(--commandBgMain);
+  padding: 2px 20px 2px 8px !important;
+  margin: 0 12px 0 8px;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--tip-depth)) 0,
+    100% 50%,
+    calc(100% - var(--tip-depth)) 100%,
+    0 100%
+  );
+}
+
+.command-line-sub {
+  background-color: var(--commandBgSub);
+}
+
+.command-line-add {
+  background-color: var(--commandBgMain);
+  margin-right: 12px;
+}
+
+.command-line-link {
+  background-color: var(--accent);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.command-line-link:hover {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
 /* home section */
 
 #home {
@@ -341,6 +418,9 @@ a:hover {
   margin-bottom: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* box-shadow: var(--shadow); */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .event:hover {
@@ -399,7 +479,8 @@ a:hover {
 
 .close-button {
   z-index: 1002;
-  background-color: transparent;
+  background-color: var(--background);
+  color: var(--text);
 }
 
 .modal-image-container {
@@ -440,6 +521,6 @@ form button {
 }
 
 @keyframes sweep {
-  from { transform: translate3d(-100%, -100%, 0) rotate(45deg); }
-  to   { transform: translate3d(100%, 100%, 0) rotate(45deg); }
+  from { transform: translate3d(0%, -100%, 0) }
+  to   { transform: translate3d(0%, 100%, 0) }
 }

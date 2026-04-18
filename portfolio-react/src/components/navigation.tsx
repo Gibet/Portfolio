@@ -41,7 +41,6 @@ export const SectionNavigation = (props: NavigationProps) => {
   const handleNextDisabled = () => {
     const visibleSection = getVisibleSection();
     const currentIndex = sections.indexOf(visibleSection);
-    console.log('visibleSection:', visibleSection, 'currentIndex:', currentIndex);
     return currentIndex > sections.length - 1;
   }
 

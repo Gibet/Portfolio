@@ -1,11 +1,12 @@
 import type { HeaderProps } from '../utils/types'
 import { Cog, Contact, Github, Home, Info, Linkedin } from 'lucide-react'
+import { CommandLine } from './commandLine'
 
 export const Footer = (props: HeaderProps) => {
   return (
     <footer className='2xl:w-3/4 backdrop-blur-md w-full flex gap-8 justify-center text-center py-12'>
       <div className='flex flex-col w-1/3 items-start gap-2'>
-        <h3 className='text-lg font-bold terminal'>Menu</h3>
+        <CommandLine title="Menu" />
         <hr className='w-full'/>
         <ul className='text-left text-sm'>
           <li><button onClick={() => props.navigate('home')}><Home size={18} strokeWidth={ 1} /><span>Accueil</span></button></li>
@@ -15,7 +16,7 @@ export const Footer = (props: HeaderProps) => {
         </ul>
       </div>
       <div className='flex flex-col w-1/3 items-start gap-2'>
-        <h3 className='text-lg font-bold terminal'>Liens</h3>
+        <CommandLine title="Liens" />
         <hr className='w-full'/>
         <ul className='text-left text-sm'>
           <li><a href="" target="_blank" rel="noopener noreferrer"><Github size={18} strokeWidth={ 1} /><span>GitHub</span></a></li>

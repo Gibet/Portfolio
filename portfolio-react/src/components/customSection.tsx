@@ -10,6 +10,8 @@ const CustomSection = forwardRef<HTMLDivElement, SectionProps>(({ id, pinned, lo
     >
       <div id={`${id}-sublayer`} className='sublayer absolute h-full w-full'></div>
       <div id={`${id}-toplayer`} className='toplayer absolute h-full w-full'></div>
+      <div id={`${id}-offset`} className='offset absolute h-full w-full'></div>
+      
       <Element name={id!}>
         <section id={id} className={`h-screen flex flex-col`} ref={ref} style={{ zIndex: zIndex ? (zIndex + 1) : undefined }}>
           {children}

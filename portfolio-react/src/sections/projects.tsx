@@ -7,6 +7,7 @@ import ProjectModal from '../components/projects/modal'
 import { useResponsivePageSize } from '../hooks/useResponsive'
 import { Container } from '../components/container'
 import { ProjectsNavigation } from '../components/projects/navigation'
+import { CommandLine } from '../components/commandLine'
 
 const ProjectsList = ProjectsData as { projects: ProjectProps[] }
 const categories = ['Tous', 'Web', 'Mobile']
@@ -29,7 +30,7 @@ export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firs
     <CustomSection id="projects" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} lower={lower} ref={ref} zIndex={3}>
       <div className="relative flex flex-col items-center w-5/6 h-full sm:py-20 py-6">
         <Container variant='header' className='flex flex-col gap-2.5'>
-          <h1 className="text-xl font-bold terminal">Mes Projets</h1>
+          <CommandLine title="Mes Projets" />
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
               <button
