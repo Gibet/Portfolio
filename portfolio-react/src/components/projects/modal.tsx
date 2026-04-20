@@ -63,6 +63,13 @@ const ProjectModal = (props: ModalProps) => {
                 <button onClick={nextImage} className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
                   &gt;
                 </button>
+                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white px-2 py-1 text-sm">
+                  {images.map((_, i) => {
+                    return (
+                      <span key={i} className={`mx-1 w-2 h-2 image-index ${i === currentImageIndex && 'current-image'}`}></span>
+                    );
+                  })}
+                </div>
               </>
             )}
           </div>

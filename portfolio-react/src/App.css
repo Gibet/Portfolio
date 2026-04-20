@@ -429,6 +429,7 @@ a:hover {
 }
 
 .skill {
+  cursor: default;
   background-color: var(--background);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -487,6 +488,16 @@ a:hover {
   img {
     max-width: 100%;
     max-height: 60vh;
+  }
+  .image-index {
+    display: inline-block;
+    background-color: var(--text);
+    opacity: 0.7;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+  .current-image {
+    background-color: var(--accent);
+    display: inline-block;
   }
 }
 

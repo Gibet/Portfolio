@@ -85,7 +85,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </ol>
           )}
           {currentTab === 'Competences' && (
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 sm:ml-6 py-8">
               <div className="flex flex-col gap-3 sm:gap-0">
                 <CommandLine title="Langages" />
                 <div className='flex flex-wrap gap-3 sm:px-6 sm:py-6'>
