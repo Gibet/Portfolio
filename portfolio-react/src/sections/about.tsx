@@ -85,10 +85,10 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </ol>
           )}
           {currentTab === 'Competences' && (
-            <div className="flex flex-col gap-6 sm:ml-6 py-8">
+            <div className="flex flex-col gap-6 sm:gap-2 sm:ml-6 py-8">
               <div className="flex flex-col gap-3 sm:gap-0">
                 <CommandLine title="Langages" />
-                <div className='flex flex-wrap gap-3 sm:px-6 sm:py-6'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-6'>
                   {languages.map((lang) => (
                     <Skill key={lang} name={skills[lang]?.name || lang} imageSrc={skills[lang]?.imageSrc} />
                   ))}
@@ -96,7 +96,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </div>
               <div className="flex flex-col gap-3 sm:gap-0">
                 <CommandLine title="Front-end" />
-                <div className='flex flex-wrap gap-3 sm:px-6 sm:py-6'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-6'>
                   {frontendSkills.map((tech) => (
                     <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
                   ))}
@@ -104,7 +104,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </div>
               <div className="flex flex-col gap-3 sm:gap-0">
                 <CommandLine title="Back-end" />
-                <div className='flex flex-wrap gap-3 sm:px-6 sm:py-6'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-6'>
                   {backendSkills.map((tech) => (
                     <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
                   ))}
@@ -112,7 +112,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </div>
               <div className="flex flex-col gap-3 sm:gap-0">
                 <CommandLine title="Outils" />
-                <div className='flex flex-wrap gap-3 sm:px-6 sm:py-6'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-6'>
                   {toolsSkills.map((tech) => (
                     <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
                   ))}

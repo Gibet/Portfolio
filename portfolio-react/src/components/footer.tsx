@@ -8,7 +8,7 @@ export const Footer = (props: HeaderProps) => {
       <div className='flex flex-col w-1/3 items-start gap-2'>
         <CommandLine title="Menu" />
         <hr className='w-full'/>
-        <ul className='text-left text-sm'>
+        <ul className='text-left text-xs'>
           <li><button onClick={() => props.navigate('home')}><Home size={18} strokeWidth={ 1} /><span>Accueil</span></button></li>
           <li><button onClick={() => props.navigate('about')}><Info size={18} strokeWidth={ 1} /><span>À propos</span></button></li>
           <li><button onClick={() => props.navigate('projects')}><Cog size={18} strokeWidth={ 1} /><span>Projets</span></button></li>
@@ -18,12 +18,12 @@ export const Footer = (props: HeaderProps) => {
       <div className='flex flex-col w-1/3 items-start gap-2'>
         <CommandLine title="Liens" />
         <hr className='w-full'/>
-        <ul className='text-left text-sm'>
+        <ul className='text-left text-xs'>
           <li><a href="" target="_blank" rel="noopener noreferrer"><Github size={18} strokeWidth={ 1} /><span>GitHub</span></a></li>
           <li><a href="" target="_blank" rel="noopener noreferrer"><Linkedin size={18} strokeWidth={ 1} /><span>LinkedIn</span></a></li>
         </ul>
       </div>
-      <span className='absolute bottom-4 text-sm opacity-50'>© 2025 - Jean-Bernard Laguerre.</span>
+      <span className='absolute bottom-4 text-xs opacity-50'>© 2025 - Jean-Bernard Laguerre.</span>
     </footer>
   )
 }

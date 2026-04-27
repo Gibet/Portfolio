@@ -84,9 +84,10 @@ const ProjectModal = (props: ModalProps) => {
                 ))}
               </div>
             </div>
+            <span className="self-stretch divider hidden sm:flex"></span>
             <div className='p-6 sm:pt-2 pt-0 gap-2 flex w-full flex-col'>
               <h5 className="text-sm font-bold">Roles:</h5>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col">
                 {props.project.role.map((role) => (
                   <span key={role} className="terminal text-sm px-2 py-1">
                     {role}

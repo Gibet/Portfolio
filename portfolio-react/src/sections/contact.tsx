@@ -74,7 +74,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
               type="submit"
               disabled={state.submitting}
               className="font-bold text-sm py-2 px-4">
-              <Mail className='inline-block mr-2' strokeWidth={1.25}/>
+              <Mail size={20} className='inline-block mr-2' strokeWidth={1.25}/>
               Envoyer
             </button>
           </form>

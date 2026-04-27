@@ -11,16 +11,16 @@ export const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
         <div className="flex text-lg font-bold">
           <button onClick={theme.toggleTheme}>
             { theme.theme === 'light' ? 
-              <Sun size={25} strokeWidth={1} className='cursor-pointer' /> :
-              <Moon size={25} strokeWidth={1} className='cursor-pointer' />
+              <Sun size={20} strokeWidth={1} className='cursor-pointer' /> :
+              <Moon size={20} strokeWidth={1} className='cursor-pointer' />
             }
           </button>
         </div>
         <div className="flex">
-          <button onClick={() => navigate('home')} className={activeSection === 'home' ? 'active' : ''}><Home size={30} strokeWidth={activeSection === 'home' ? 1.5 : 1} /></button>
-          <button onClick={() => navigate('about')} className={activeSection === 'about' ? 'active' : ''}><Info size={30} strokeWidth={activeSection === 'about' ? 1.5 : 1} /></button>
-          <button onClick={() => navigate('projects')} className={activeSection === 'projects' ? 'active' : ''}><Cog size={30} strokeWidth={activeSection === 'projects' ? 1.5 : 1} /></button>
-          <button onClick={() => navigate('contact')} className={activeSection === 'contact' ? 'active' : ''}><Contact size={30} strokeWidth={activeSection === 'contact' ? 1.5 : 1} /></button>
+          <button onClick={() => navigate('home')} className={activeSection === 'home' ? 'active' : ''}><Home size={24} strokeWidth={activeSection === 'home' ? 1.5 : 1} /></button>
+          <button onClick={() => navigate('about')} className={activeSection === 'about' ? 'active' : ''}><Info size={24} strokeWidth={activeSection === 'about' ? 1.5 : 1} /></button>
+          <button onClick={() => navigate('projects')} className={activeSection === 'projects' ? 'active' : ''}><Cog size={24} strokeWidth={activeSection === 'projects' ? 1.5 : 1} /></button>
+          <button onClick={() => navigate('contact')} className={activeSection === 'contact' ? 'active' : ''}><Contact size={24} strokeWidth={activeSection === 'contact' ? 1.5 : 1} /></button>
         </div>
       </nav>
     </header>
