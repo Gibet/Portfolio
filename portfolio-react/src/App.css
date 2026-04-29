@@ -383,16 +383,44 @@ a:hover {
   color: var(--text)
 }
 
+.line-1 .char, .line-2 .char, .line-3 .char {
+  opacity: 0;
+  display: inline;
+}
+
 #square1 {
   background-color: var(--primary);
   padding: 20px;
   box-shadow: var(--shadow);
+  will-change: text-shadow;
+  /* animation: rgbText 3s steps(9) 0s infinite alternate; */
+  .line-1 .char {
+    animation: type 60ms forwards;
+    animation-delay: calc(60ms * var(--char-index));
+  }
+  .line-2 .char {
+    animation: type 60ms forwards;
+    animation-delay: calc(60ms * var(--char-index) + .7s);
+  }
 }
 
 #square2 {
   background-color: var(--primary);
   padding: 20px;
   box-shadow: var(--shadow);
+  /* animation: rgbText 3s steps(9) 0s infinite alternate; */
+  .line-3 .char {
+    animation: type 60ms forwards;
+    animation-delay: calc(60ms * var(--char-index) + 1.6s);
+  }
+  .blink-cursor::after {
+    content: '█';
+    opacity: 0;
+    animation: blink 1s step-start infinite;
+    animation-delay: calc(60ms * 27 + 1.6s);
+    margin-left: 4px;
+    color: var(--accent);
+  }
 }
 
 #square3 {
@@ -554,4 +582,15 @@ input:focus, textarea:focus {
 @keyframes sweep {
   from { transform: translate3d(0%, -100%, 0) }
   to   { transform: translate3d(0%, 100%, 0) }
+}
+
+@keyframes type {
+  0%, 9% {opacity:0; background-color: transparent;}
+  10%, 99% {opacity:1; color: transparent; background-color: var(--accent);}
+  100% {opacity:1; color: var(--text); background-color: transparent;}
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
 }
