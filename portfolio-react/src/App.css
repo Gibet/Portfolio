@@ -5,7 +5,7 @@
 :root {
   --primary : #f0f0f0;
   --secondary : #333333;
-  --accent : #007acc;
+  --accent : #6dbdf1;
   --background : #ffffff;
   --disabled : rgba(150, 150, 150, 0.1);
   --disabledColor : rgba(150, 150, 150, 0.2);
@@ -50,9 +50,9 @@
   --toplayerColor: rgba(55, 55, 55, 0.1);
   --maskBgColor: rgba(0, 0, 0, 0.1);
   --maskColor: rgba(255, 255, 255, 0.7);
-  --commandBgMain: rgb(255, 155, 40);
-  --commandBgSub: rgb(255, 220, 40);
-  --commandText: #ffffff;
+  --commandBgMain: rgb(255, 220, 40);
+  --commandBgSub: rgb(255, 155, 40);
+  --commandText: #131313;
   --dividerColor: rgba(255, 255, 255, 0.1);
 }
 

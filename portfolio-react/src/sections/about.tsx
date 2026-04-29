@@ -86,33 +86,33 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
           )}
           {currentTab === 'Competences' && (
             <div className="flex flex-col gap-6 sm:gap-2 sm:ml-6 py-8">
-              <div className="flex flex-col gap-3 sm:gap-0">
+              <div className="flex flex-col gap-3 sm:gap-1">
                 <CommandLine title="Langages" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-6'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {languages.map((lang) => (
                     <Skill key={lang} name={skills[lang]?.name || lang} imageSrc={skills[lang]?.imageSrc} />
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col gap-3 sm:gap-0">
+              <div className="flex flex-col gap-3 sm:gap-1">
                 <CommandLine title="Front-end" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-6'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {frontendSkills.map((tech) => (
                     <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col gap-3 sm:gap-0">
+              <div className="flex flex-col gap-3 sm:gap-1">
                 <CommandLine title="Back-end" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-6'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {backendSkills.map((tech) => (
                     <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col gap-3 sm:gap-0">
+              <div className="flex flex-col gap-3 sm:gap-1">
                 <CommandLine title="Outils" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-6'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {toolsSkills.map((tech) => (
                     <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
                   ))}
