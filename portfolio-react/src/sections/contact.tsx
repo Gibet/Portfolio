@@ -16,7 +16,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
 
   return (
     <CustomSection id="contact" pinned={pinned} pinCount={pinCount} ref={ref} zIndex={1}>
-      <div className='flex flex-col h-full items-center w-5/6 gap-6 sm:py-20 py-6'>
+      <div className='flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-20 py-6'>
         <Container variant='header'>
           <CommandLine title="Contactez-moi" />
         </Container>

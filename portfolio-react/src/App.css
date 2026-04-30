@@ -5,11 +5,13 @@
 :root {
   --primary : #f0f0f0;
   --secondary : #333333;
-  --accent : #6dbdf1;
+  --accent : #007acc;
   --background : #ffffff;
+  --sectHeader : #ffffffd5;
+  --sectBody : #f0f0f0d5;
   --disabled : rgba(150, 150, 150, 0.1);
   --disabledColor : rgba(150, 150, 150, 0.2);
-  --text : #131313;
+  --text : #252525;
   --footerText : #ffffff;
   --headerBg : rgba(255, 255, 255, 0.3);
   --footerBg : rgba(0, 0, 0, 0.7);
@@ -23,6 +25,12 @@
   --toplayerColor: rgba(255, 255, 255, 0.2);
   --maskBgColor: rgba(0, 0, 0, 0.1);
   --maskColor: rgba(0, 0, 0, 0.7);
+  --bgPattern1: rgba(0, 0, 0, 0.05);
+  --bgPattern2: rgba(0, 0, 0, 0.1);
+  --bgPattern3: rgba(0, 0, 0, 0.15);
+  --bgPattern4: rgba(0, 0, 0, 0.2);
+  --bgPattern5: rgba(0, 0, 0, 0.25);
+  --bgPattern6: rgba(0, 0, 0, 0.3);
   --commandBgMain: rgb(255, 220, 40);
   --commandBgSub: rgb(255, 155, 40);
   --commandText: #131313;
@@ -34,6 +42,8 @@
   --secondary : #0f0f0f;
   --accent : #6dbdf1;
   --background : #333333;
+  --sectHeader : #333333d5;
+  --sectBody : #2c2c2cd5;
   --disabled : rgba(150, 150, 150, 0.1);
   --disabledColor : rgba(150, 150, 150, 0.2);
   --text : #dfdfdf ;
@@ -50,6 +60,12 @@
   --toplayerColor: rgba(55, 55, 55, 0.1);
   --maskBgColor: rgba(0, 0, 0, 0.1);
   --maskColor: rgba(255, 255, 255, 0.7);
+  --bgPattern1: rgba(150, 150, 150, 0.05);
+  --bgPattern2: rgba(150, 150, 150, 0.1);
+  --bgPattern3: rgba(150, 150, 150, 0.15);
+  --bgPattern4: rgba(150, 150, 150, 0.2);
+  --bgPattern5: rgba(150, 150, 150, 0.25);
+  --bgPattern6: rgba(150, 150, 150, 0.3);
   --commandBgMain: rgb(255, 220, 40);
   --commandBgSub: rgb(255, 155, 40);
   --commandText: #131313;
@@ -106,15 +122,36 @@ body {
 }
 
 .custom-section {
+  --size: 12px;
   overflow-y: hidden;
   .sublayer, .toplayer {
     pointer-events: none;
+  }
+  .grid-layer {
+    display: grid;
+    place-items: center;
+    background: var(--primary);
+  }
+  .bglayer {
+    background: conic-gradient(from 180deg at 50% 70%,
+      var(--bgPattern1) 0deg,
+      var(--bgPattern2) 72.0000010728836deg,
+      var(--bgPattern3) 144.0000021457672deg,
+      var(--bgPattern4) 216.00000858306885deg,
+      var(--bgPattern5) 288.0000042915344deg,
+      var(--bgPattern1) 1turn);
+    width: 100%;
+    height: 100%;
+    mask:
+      radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / var(--size) var(--size),
+      url("/images/backgrounds/noise-mask.png") 512px 50% / 512px 512px;
+    mask-composite: intersect;
+    animation: flicker 20s infinite linear;
   }
   .sublayer {
     z-index: 0;
     background-color: var(--sublayerColor);
     background-size: 100% 100%;
-    /* animation: drift 12s ease-in-out infinite; */
   }
   .toplayer, .offset {
     z-index: 1;
@@ -302,10 +339,10 @@ a:hover {
   background-size: 20px 20px;
 }
 .sect-header {
-  background-color: var(--background);
+  background-color: var(--sectHeader);
 }
 .sect-body {
-  background-color: var(--primary);
+  background-color: var(--sectBody);
 }
 
 .command-line {
@@ -380,7 +417,8 @@ a:hover {
 }
 
 #square1, #square2, #square3 {
-  color: var(--text)
+  color: var(--text);
+  --typeSpeed: 45ms;
 }
 
 .line-1 .char, .line-2 .char, .line-3 .char {
@@ -389,42 +427,45 @@ a:hover {
 }
 
 #square1 {
-  background-color: var(--primary);
+  background-color: var(--sectBody);
   padding: 20px;
   box-shadow: var(--shadow);
   will-change: text-shadow;
   /* animation: rgbText 3s steps(9) 0s infinite alternate; */
   .line-1 .char {
-    animation: type 60ms forwards;
-    animation-delay: calc(60ms * var(--char-index));
+    color: transparent;
+    animation: type var(--typeSpeed) forwards;
+    animation-delay: calc(var(--typeSpeed) * var(--char-index));
   }
   .line-2 .char {
-    animation: type 60ms forwards;
-    animation-delay: calc(60ms * var(--char-index) + .7s);
+    color: transparent;
+    animation: type var(--typeSpeed) forwards;
+    animation-delay: calc(var(--typeSpeed) * var(--char-index) + .7s);
   }
 }
 
 #square2 {
-  background-color: var(--primary);
+  background-color: var(--sectBody);
   padding: 20px;
   box-shadow: var(--shadow);
   /* animation: rgbText 3s steps(9) 0s infinite alternate; */
   .line-3 .char {
-    animation: type 60ms forwards;
-    animation-delay: calc(60ms * var(--char-index) + 1.6s);
+    color: transparent;
+    animation: type var(--typeSpeed) forwards;
+    animation-delay: calc(var(--typeSpeed) * var(--char-index) + 1.6s);
   }
   .blink-cursor::after {
     content: '█';
     opacity: 0;
-    animation: blink 1s step-start infinite;
-    animation-delay: calc(60ms * 27 + 1.6s);
-    margin-left: 4px;
+    animation: blink 1.25s step-start infinite;
+    animation-delay: calc(var(--typeSpeed) * 27 + 1.6s);
+    margin-left: 5px;
     color: var(--accent);
   }
 }
 
 #square3 {
-  background-color: var(--primary);
+  background-color: var(--sectBody);
   padding: 20px;
   box-shadow: var(--shadow);
 }
@@ -439,6 +480,12 @@ a:hover {
   border-color: var(--background);
   height: calc(100% - 1.5rem);
   display: block;
+}
+
+@media (max-width: 640px) {
+  .chrono-line {
+    height: calc(100% - .5rem) !important;
+  }
 }
 
 .chrono-dot {
@@ -482,6 +529,10 @@ a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: var(--background);
   overflow: hidden  ;
+  img {
+    filter: saturate(.05);
+    transition: filter 0.3s ease
+  }
 }
 
 .thumbnail:hover {
@@ -502,6 +553,7 @@ a:hover {
   background-size: 20px 20px;
   img {
     filter: drop-shadow(var(--shadowTertiary));
+    filter: saturate(1);
   }
 }
 
@@ -585,7 +637,7 @@ input:focus, textarea:focus {
 }
 
 @keyframes type {
-  0%, 9% {opacity:0; background-color: transparent;}
+  0%, 9% {opacity:0; color: transparent; background-color: transparent;}
   10%, 99% {opacity:1; color: transparent; background-color: var(--accent);}
   100% {opacity:1; color: var(--text); background-color: transparent;}
 }
@@ -593,4 +645,10 @@ input:focus, textarea:focus {
 @keyframes blink {
   0%, 50% { opacity: 1; }
   50.01%, 100% { opacity: 0; }
+}
+
+@keyframes flicker {
+  to {
+    mask-position: 50% 50%, 0 50%;
+  }
 }

@@ -2,8 +2,10 @@ import type { CommandLineProps } from '../utils/types'
 import { Github } from 'lucide-react'
 
 export const CommandLine = (props: CommandLineProps) => {
+
+  
   return (
-    <div className="command-line flex items-center overflow-x-auto">
+    <div className="command-line flex items-center overflow-x-auto whitespace-nowrap">
       <span className="command-line-dot">
         
       </span>

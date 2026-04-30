@@ -18,8 +18,8 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
 
   return (
     <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} lower={lower} ref={ref} zIndex={4}>
-      <div className='flex flex-col items-center  w-5/6 h-full sm:py-20 py-6'>
-        <Container variant='header' className='flex flex-col gap-2.5'>
+      <div className='flex flex-col items-center w-11/12 sm:w-5/6 h-full sm:py-20 py-6'>
+        <Container variant='header' className='flex flex-col gap-2'>
           <CommandLine title="A propos de moi" />
           <div className="flex flex-wrap gap-2">
             {AboutTabs.map((tab) => (
@@ -35,7 +35,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
         </Container>
         <Container variant='body' className="mt-4 w-full h-full overflow-y-auto">
           {currentTab === 'Éducation' && (
-              <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative py-10 overflow-y-auto'>
+              <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative overflow-y-auto'>
                 <span className="pointer-events-none absolute inset-y-0 top-5 bottom-0 left-1.5 w-0">
                   <span className="sticky left-1.5 h-full border-l chrono-line"></span>
                 </span>  
@@ -65,7 +65,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </ol>
           )}
           {currentTab === 'Éxperience' && (
-              <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative py-10 overflow-y-auto'>
+              <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative overflow-y-auto'>
                 <span className="pointer-events-none absolute inset-y-0 left-1.5 top-5 bottom-0 w-0">
                   <span className="sticky left-1.5 h-full border-l chrono-line"></span>
                 </span> 
@@ -85,7 +85,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </ol>
           )}
           {currentTab === 'Competences' && (
-            <div className="flex flex-col gap-6 sm:gap-2 sm:ml-6 py-8">
+            <div className="flex flex-col gap-6 sm:gap-2 sm:ml-6 sm:py-6">
               <div className="flex flex-col gap-3 sm:gap-1">
                 <CommandLine title="Langages" />
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
