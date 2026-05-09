@@ -66,7 +66,7 @@ function App() {
       // Clean up after scroll
       setTimeout(() => {
         setKeepCurrentPinned(false)
-        /* setLowerSections(new Set()) */
+        setLowerSections(new Set())
         setPinnedSections(new Set([section]))
       }, 1000)
     } else {
