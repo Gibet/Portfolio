@@ -5,6 +5,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { Container } from '../components/container';
 import { Mail } from 'lucide-react';
 import { CommandLine } from '../components/commandLine';
+import { Alert } from '../components/alert';
 
 
 export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCount }, ref) => {
@@ -81,10 +82,9 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
         </Container>
       </div>
       {state.succeeded && (
-        <Container variant='body' className="absolute  ">
-          <p className="text-green-500">Message envoyé avec succès !</p>
-        </Container>
+        <Alert type="success" message="Message envoyé avec succès !" />
       )}
+
     </CustomSection>
   )
 })

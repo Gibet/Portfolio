@@ -69,3 +69,8 @@ export interface CommandLineProps {
   link?: string
   variant?: 'primary' | 'secondary' | 'tertiary'
 }
+
+export interface AlertProps {
+  type: 'success' | 'error' | 'info'
+  message: string
+}
