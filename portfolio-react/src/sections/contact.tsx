@@ -80,6 +80,11 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
           </form>
         </Container>
       </div>
+      {state.succeeded && (
+        <Container variant='body' className="absolute  ">
+          <p className="text-green-500">Message envoyé avec succès !</p>
+        </Container>
+      )}
     </CustomSection>
   )
 })

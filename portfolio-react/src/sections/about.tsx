@@ -42,7 +42,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
-                    <CommandLine title="Bachelor Concepteur Développeur d'Applications (CDA)" />
+                    <CommandLine variant='secondary' title="Bachelor Concepteur Développeur d'Applications (CDA)" />
                     <h4 className="terminal text-md font-medium sm:ml-6">La Plateforme_ - 2022-2025</h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-sm'>
                       <li>Développement full stack, avec JavaScript, Node.js, React et Symfony</li>
@@ -54,7 +54,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
-                    <CommandLine title="Supinfo Marseille" />
+                    <CommandLine variant='secondary' title="Supinfo Marseille" />
                     <h4 className="terminal text-md font-medium sm:ml-6">2012-2016</h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-sm'>
                       <li>Formation en développement web et mobile, avec JavaScript, Java, PHP, et les frameworks associés</li>
@@ -72,7 +72,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
-                    <CommandLine title="Développeur Web Junior (Alternance)" />
+                    <CommandLine variant='secondary' title="Développeur Web Junior (Alternance)" />
                     <h4 className="terminal text-md font-medium sm:ml-6">L'Atelier de La Plateforme - 2023-2025</h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-sm'>
                       <li>Participation à plusieurs projets de développement web et mobile en environnement agile.</li>
@@ -85,9 +85,9 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </ol>
           )}
           {currentTab === 'Competences' && (
-            <div className="flex flex-col gap-6 sm:gap-2 sm:ml-6 sm:py-6">
+            <div className="flex flex-col gap-6 sm:gap-4 sm:ml-6 sm:py-6">
               <div className="flex flex-col gap-3 sm:gap-1">
-                <CommandLine title="Langages" />
+                <CommandLine variant='tertiary' title="Langages" />
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {languages.map((lang) => (
                     <Skill key={lang} name={skills[lang]?.name || lang} imageSrc={skills[lang]?.imageSrc} />
@@ -95,7 +95,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                 </div>
               </div>
               <div className="flex flex-col gap-3 sm:gap-1">
-                <CommandLine title="Front-end" />
+                <CommandLine variant='tertiary' title="Front-end" />
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {frontendSkills.map((tech) => (
                     <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
@@ -103,7 +103,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                 </div>
               </div>
               <div className="flex flex-col gap-3 sm:gap-1">
-                <CommandLine title="Back-end" />
+                <CommandLine variant='tertiary' title="Back-end" />
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {backendSkills.map((tech) => (
                     <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
@@ -111,7 +111,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                 </div>
               </div>
               <div className="flex flex-col gap-3 sm:gap-1">
-                <CommandLine title="Outils" />
+                <CommandLine variant='tertiary' title="Outils" />
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {toolsSkills.map((tech) => (
                     <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />

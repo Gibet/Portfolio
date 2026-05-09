@@ -7,8 +7,8 @@
   --secondary : #333333;
   --accent : #007acc;
   --background : #ffffff;
-  --sectHeader : #ffffffd5;
-  --sectBody : #f0f0f0d5;
+  --sectHeader : #ffffffb5;
+  --sectBody : #f0f0f0b5;
   --disabled : rgba(150, 150, 150, 0.1);
   --disabledColor : rgba(150, 150, 150, 0.2);
   --text : #252525;
@@ -32,23 +32,26 @@
   --bgPattern5: rgba(0, 0, 0, 0.25);
   --bgPattern6: rgba(0, 0, 0, 0.3);
   --commandBgMain: rgb(255, 220, 40);
+  --commandBgMainSecondary: rgb(151, 193, 221);
+  --commandBgMainTertiary: rgb(255, 255, 255, 0.9);
   --commandBgSub: rgb(255, 155, 40);
-  --commandText: #131313;
+  --commandShadow: 3px 3px 1px rgba(65, 65, 65, 0.1);
+  --commandText: #333333;
   --dividerColor: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
   --primary : #2c2c2c;
   --secondary : #0f0f0f;
-  --accent : #6dbdf1;
+  --accent : #65aedf;
   --background : #333333;
-  --sectHeader : #333333d5;
-  --sectBody : #2c2c2cd5;
+  --sectHeader : #333333b5;
+  --sectBody : #2c2c2cb5;
   --disabled : rgba(150, 150, 150, 0.1);
   --disabledColor : rgba(150, 150, 150, 0.2);
   --text : #dfdfdf ;
   --footerText : #ffffff;
-  --headerBg : rgba(100, 100, 100, 0.3);
+  --headerBg : rgba(75, 75, 75, 0.3);
   --footerBg : rgba(20, 20, 20, 0.7);
   --buttonBg : #222222;
   --shadow : 0px 8px 8px 5px rgba(0, 0, 0, 0.05);
@@ -67,8 +70,11 @@
   --bgPattern5: rgba(150, 150, 150, 0.25);
   --bgPattern6: rgba(150, 150, 150, 0.3);
   --commandBgMain: rgb(255, 220, 40);
+  --commandBgMainSecondary: rgb(151, 193, 221);
+  --commandBgMainTertiary: rgb(36, 36, 36, 0.8);
   --commandBgSub: rgb(255, 155, 40);
-  --commandText: #131313;
+  --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
+  --commandText: #333333;
   --dividerColor: rgba(255, 255, 255, 0.1);
 }
 
@@ -122,7 +128,7 @@ body {
 }
 
 .custom-section {
-  --size: 12px;
+  --size: 10px;
   overflow-y: hidden;
   .sublayer, .toplayer {
     pointer-events: none;
@@ -347,6 +353,27 @@ a:hover {
 
 .command-line {
   color: var(--commandText) !important;
+  filter: drop-shadow(var(--commandShadow));
+}
+
+.secondary {
+  .command-line-title {
+  background-color: var(--buttonBg) !important;
+  color: var(--text) !important;
+  }
+  .command-line-dot {
+    /* background-color: var(--buttonBg) !important; */
+  }
+}
+
+.tertiary {
+  .command-line-title {
+    background-color: var(--commandBgMainTertiary) !important;
+    color: var(--text) !important;
+  }
+  .command-line-dot {
+    /* background-color: var(--commandBgMainTertiary) !important; */
+  }
 }
 
 .command-line-dot {
@@ -358,9 +385,14 @@ a:hover {
 
 .command-line-title, .command-line-sub, .command-line-add, .command-line-link {
   height: 28px;
+  text-shadow: var(--shadowTertiary);
   padding: 2px 20px 2px 24px;
   /* clip right side */
   --tip-depth: 16px; /* how far the tip extends inward */
+}
+
+.command-line-title, .command-line-sub, .command-line-add {
+  cursor: default;
 }
 
 .command-line-sub, .command-line-add, .command-line-link {
@@ -490,6 +522,7 @@ a:hover {
 
 .chrono-dot {
   background-color: var(--accent);
+  filter: drop-shadow(var(--commandShadow));
 }
 
 .event {
@@ -610,7 +643,7 @@ input, textarea {
 form button {
   background-color: var(--buttonBg);
   color: var(--text);
-  border: 1px solid var(--text);
+  border: 1px solid transparent;
   padding: 10px 20px;
   cursor: pointer;
 }

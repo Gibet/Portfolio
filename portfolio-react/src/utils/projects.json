@@ -59,6 +59,16 @@
       "imageSrc": "/images/projects/Cyberpark.png",
       "role": ["Design", "Development", "Dev Solo"],
       "stack": ["React","Electron"]
+    },
+    {
+      "category": "Web",
+      "context": "Projet Perso",
+      "name": "GW2 Dashboard",
+      "description": "Dashboard de suivi de progression pour le jeu Guild Wars 2, avec des fonctionnalités de suivi d'achievements, de statistiques de jeu et de gestion d'inventaire.",
+      "imageSrc": "/images/projects/GW2Dashboard.png",
+      "role": ["Design", "Development"],
+      "stack": ["React","TypeScript", "TailwindCSS"],
+      "github": "#"
     }
   ]
 }

@@ -67,5 +67,5 @@ export interface CommandLineProps {
   subtitle?: string
   additionalInfo?: string
   link?: string
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'tertiary'
 }

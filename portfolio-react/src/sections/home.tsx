@@ -1,4 +1,4 @@
-import React, { type CSSProperties } from 'react'
+import { type CSSProperties } from 'react'
 import { forwardRef } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'

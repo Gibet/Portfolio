@@ -8,6 +8,9 @@ const ProjectImages = import.meta.glob<{default: string}>('/src/assets/images/pr
 const imagesCache = new Map<string, string[]>();
 
 const ProjectModal = (props: ModalProps) => {
+
+  const [loading, setLoading] = useState(true);
+
   const [images, setImages] = useState<string[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -17,10 +20,12 @@ const ProjectModal = (props: ModalProps) => {
     // Check cache first
     if (imagesCache.has(name)) {
       setImages(imagesCache.get(name) || []);
+      setLoading(false);
       return;
     }
-
+ 
     // If not in cache, load images
+    setLoading(true);
     const imagePath: string[] = [];
     for (const [path, resolver] of Object.entries(ProjectImages)) {
       if (path.includes(`/projects/${name}`)) {
@@ -32,6 +37,7 @@ const ProjectModal = (props: ModalProps) => {
     // Cache the loaded images
     (imagePath.length > 0) && imagesCache.set(name, imagePath);
     setImages(imagePath);
+    setLoading(false);
   }
 
   const nextImage = () => {
@@ -54,7 +60,13 @@ const ProjectModal = (props: ModalProps) => {
         </button>
         <div className="modal-body h-full flex flex-col gap-4">
           <div className="modal-image-container w-full relative">
-            <img src={images[currentImageIndex]} alt={`${props.project.name} screenshot`} className="modal-image mx-auto object-contain" />
+            {loading ? (
+              <div className="modal-image mx-auto object-contain flex items-center justify-center">
+                <p>Loading...</p>
+              </div>
+            ) : (
+              <img src={images[currentImageIndex]} alt={`${props.project.name} screenshot`} className="modal-image mx-auto object-contain" />
+            )}
             {images.length > 1 && (
               <>
                 <button onClick={prevImage} className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">

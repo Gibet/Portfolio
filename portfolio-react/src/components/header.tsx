@@ -6,7 +6,7 @@ export const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
   const theme = useTheme()
 
   return (
-    <header className='2xl:w-3/4 w-full z-60 backdrop-blur-sm'>
+    <header className='2xl:w-3/4 w-full z-60 backdrop-blur-xs'>
       <nav className="flex justify-between items-center w-full">
         <div className="flex text-lg font-bold">
           <button onClick={theme.toggleTheme}>
