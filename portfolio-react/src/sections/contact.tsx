@@ -11,9 +11,14 @@ import { Alert } from '../components/alert';
 export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCount }, ref) => {
 
   const [state, handleSubmit] = useForm("xkovbadl");
-  /* if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
-  } */
+
+  const handleAlertClose = () => {
+    // Logic to close the alert, e.g., setting a state variable to hide it
+    
+  }
+        
+
+  const formValidation = () => Boolean(state.errors?.getFormErrors) || state.submitting;
 
   return (
     <CustomSection id="contact" pinned={pinned} pinCount={pinCount} ref={ref} zIndex={1}>
@@ -73,7 +78,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
             />
             <button 
               type="submit"
-              disabled={state.submitting}
+              disabled={formValidation()}
               className="font-bold text-sm py-2 px-4">
               <Mail size={20} className='inline-block mr-2' strokeWidth={1.25}/>
               Envoyer
@@ -81,8 +86,12 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
           </form>
         </Container>
       </div>
-      {state.succeeded && (
-        <Alert type="success" message="Message envoyé avec succès !" />
+      {state.result && (
+        <Alert
+          success={state.succeeded}
+          message={state.succeeded ? "Message envoyé avec succès !" : "Une erreur est survenue. Veuillez réessayer."}
+          close={handleAlertClose}
+        />
       )}
 
     </CustomSection>

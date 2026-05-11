@@ -42,6 +42,7 @@ export interface ModalProps {
 export interface SkillProps {
   name: string;
   imageSrc: string;
+  handleHover?: () => void;
 }
 
 
@@ -71,6 +72,9 @@ export interface CommandLineProps {
 }
 
 export interface AlertProps {
-  type: 'success' | 'error' | 'info'
+  success?: boolean
+  /* errors?: string[] */
+  info?: boolean
   message: string
+  close: () => void
 }

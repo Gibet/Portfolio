@@ -6,6 +6,14 @@ import { Skill } from '../components/skill'
 import { Container } from '../components/container'
 import { CommandLine } from '../components/commandLine'
 
+type SkillsType = {
+  name: string;
+  imageSrc: string;
+  related?: SkillKey[];
+}
+
+const skillsData = skills as Record<SkillKey, SkillsType>;
+
 const AboutTabs = ['Competences', 'Éducation', 'Éxperience']
 const languages: SkillKey[] = ['JavaScript', 'TypeScript', 'Golang', 'Python'];
 const frontendSkills: SkillKey[] = ['React', 'ReactNative', 'TailwindCSS', 'Electron', 'Vite', 'Nextjs', 'HTML5', 'CSS3'];
@@ -15,6 +23,19 @@ const toolsSkills: SkillKey[] = ['Git', 'Docker', 'GitHub', 'GithubActions'];
 export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPinned, pinCount, lower = false }, ref) => {
 
   const [currentTab, setCurrentTab] = useState(AboutTabs[0])
+
+  const handleSkillHover = (skillKey: SkillKey) => {
+    const relatedSkills = skillsData[skillKey]?.related;
+    if (relatedSkills) {
+      console.log(`Related skills for ${skillKey}:`, relatedSkills);
+      relatedSkills.forEach((relatedKey) => {
+        const relatedElement = document.querySelector(`#${skillsData[relatedKey]?.name.replace(/[\s.]+/g, '-')}`) as HTMLElement | null;
+        if (relatedElement) {
+          relatedElement.classList.toggle('highlight');
+        }
+      });
+    }
+  };
 
   return (
     <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} lower={lower} ref={ref} zIndex={4}>
@@ -90,7 +111,8 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                 <CommandLine variant='tertiary' title="Langages" />
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {languages.map((lang) => (
-                    <Skill key={lang} name={skills[lang]?.name || lang} imageSrc={skills[lang]?.imageSrc} />
+                    <Skill key={lang} name={skillsData[lang]?.name || lang} imageSrc={skillsData[lang]?.imageSrc}
+                    handleHover={() => {handleSkillHover(lang)}} />
                   ))}
                 </div>
               </div>
@@ -98,7 +120,8 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                 <CommandLine variant='tertiary' title="Front-end" />
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {frontendSkills.map((tech) => (
-                    <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
+                    <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc} 
+                    handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
               </div>
@@ -106,7 +129,8 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                 <CommandLine variant='tertiary' title="Back-end" />
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {backendSkills.map((tech) => (
-                    <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
+                    <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
+                    handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
               </div>
@@ -114,7 +138,8 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                 <CommandLine variant='tertiary' title="Outils" />
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
                   {toolsSkills.map((tech) => (
-                    <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
+                    <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
+                    handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
               </div>

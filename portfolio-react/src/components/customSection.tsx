@@ -8,9 +8,6 @@ const CustomSection = forwardRef<HTMLDivElement, SectionProps>(({ id, pinned, lo
     <div className={`relative overflow-x-hidden h-screen custom-section ${pinned ? 'pinned' : ''}`} style={{ zIndex: lower ? -1 : zIndex }}
       data-first={firstPinned && pinCount > 1}
     >
-      <div id={`${id}-sublayer`} className='sublayer absolute h-full w-full'></div>
-      <div id={`${id}-toplayer`} className='toplayer absolute h-full w-full'></div>
-      <div id={`${id}-offset`} className='offset absolute h-full w-full'></div>
       <div className="grid-layer absolute h-full w-full overflow-hidden">
         <div className='bglayer'></div>
       </div>

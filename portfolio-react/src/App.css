@@ -154,7 +154,7 @@ body {
     mask-composite: intersect;
     animation: flicker 20s infinite linear;
   }
-  .sublayer {
+  /* .sublayer {
     z-index: 0;
     background-color: var(--sublayerColor);
     background-size: 100% 100%;
@@ -174,7 +174,7 @@ body {
   .offset {
     animation: sweep 20s linear infinite reverse;
     animation-delay: -10s
-  }
+  } */
 }
 
 section{
@@ -545,12 +545,17 @@ a:hover {
 .skill {
   cursor: default;
   background-color: var(--background);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--background);
+  transition: transform 0.3s ease, box-shadow 0.3s ease border 0.3s ease;
 }
 
 .skill:hover {
   box-shadow: var(--shadowSecondary);
   transform: scale(1.03);
+}
+
+.highlight {
+  border: 1px solid var(--commandBgMain);
 }
 
 /* projects section */
@@ -628,7 +633,16 @@ a:hover {
 /* contact section */
 
 #contact {
-  
+
+}
+
+.alert {
+  position: absolute;
+  bottom: 280px;
+  right: 20px;
+  box-shadow: var(--shadow);
+  color: var(--text);
+  background-color: var(--background);
 }
 
 input, textarea {

@@ -1,31 +1,38 @@
 {
   "JavaScript": {
     "name": "JavaScript",
-    "imageSrc": "/images/logo/javascript.svg"
+    "imageSrc": "/images/logo/javascript.svg",
+    "related": ["TypeScript", "React", "Nodejs", "Expressjs", "Nextjs", "Vite"]
   },
   "TypeScript": {
     "name": "TypeScript",
-    "imageSrc": "/images/logo/typescript.svg"
+    "imageSrc": "/images/logo/typescript.svg",
+    "related": ["JavaScript", "React", "Nodejs", "Expressjs", "Nextjs", "Vite"]
   },
   "React": {
     "name": "React",
-    "imageSrc": "/images/logo/react.svg"
+    "imageSrc": "/images/logo/react.svg",
+    "related": ["JavaScript", "TypeScript", "Nodejs", "Nextjs", "Vite"]
   },
   "ReactNative": {
     "name": "React Native",
-    "imageSrc": "/images/logo/reactnative.svg"
+    "imageSrc": "/images/logo/reactnative.svg",
+    "related": ["JavaScript", "TypeScript", "React", "Nodejs"]
   },
   "Nextjs": {
     "name": "Next.js",
-    "imageSrc": "/images/logo/nextjs.svg"
+    "imageSrc": "/images/logo/nextjs.svg",
+    "related": ["JavaScript", "TypeScript", "React", "Nodejs"] 
   },
   "Vite": {
     "name": "Vite",
-    "imageSrc": "/images/logo/vitejs.svg"
+    "imageSrc": "/images/logo/vitejs.svg",
+    "related": ["JavaScript", "TypeScript", "React"] 
   },
   "TailwindCSS": {
     "name": "Tailwind CSS",
-    "imageSrc": "/images/logo/tailwindcss.svg"
+    "imageSrc": "/images/logo/tailwindcss.svg",
+    "related": ["CSS3"]
   },
   "HTML5": {
     "name": "HTML5",
@@ -37,23 +44,28 @@
   },
   "Golang": {
     "name": "Golang",
-    "imageSrc": "/images/logo/go.svg"
+    "imageSrc": "/images/logo/go.svg",
+    "related": ["Fiber"]
   },
   "Nodejs": {
     "name": "Node.js",
-    "imageSrc": "/images/logo/nodejs.svg"
+    "imageSrc": "/images/logo/nodejs.svg",
+    "related": ["JavaScript", "TypeScript", "Expressjs", "Nest", "Electron", "Nextjs", "Vite", "React", "ReactNative"]
   },
   "Expressjs": {
     "name": "Express.js",
-    "imageSrc": "/images/logo/express.svg"
+    "imageSrc": "/images/logo/express.svg",
+    "related": ["JavaScript", "TypeScript", "Nodejs"]
   },
   "Nest": {
     "name": "Nest",
-    "imageSrc": "/images/logo/nestjs.svg"
+    "imageSrc": "/images/logo/nestjs.svg",
+    "related": ["JavaScript", "TypeScript", "Nodejs"]
   },
   "Fiber": {
     "name": "Fiber",
-    "imageSrc": "/images/logo/fiber.svg"
+    "imageSrc": "/images/logo/fiber.svg",
+    "related": ["Golang"]
   },
   "MySQL": {
     "name": "MySQL",
@@ -73,19 +85,23 @@
   },
   "Git": {
     "name": "Git",
-    "imageSrc": "/images/logo/git.svg"
+    "imageSrc": "/images/logo/git.svg",
+    "related": ["GitHub", "GithubActions"]
   },
   "GitHub": {
     "name": "GitHub",
-    "imageSrc": "/images/logo/github.svg"
+    "imageSrc": "/images/logo/github.svg",
+    "related": ["Git", "GithubActions"]
   },
   "GithubActions": {
     "name": "GitHub Actions",
-    "imageSrc": "/images/logo/githubactions.svg"
+    "imageSrc": "/images/logo/githubactions.svg",
+    "related": ["Git", "GitHub"]
   },
   "Electron": {
     "name": "Electron",
-    "imageSrc": "/images/logo/electron.svg"
+    "imageSrc": "/images/logo/electron.svg",
+    "related": ["JavaScript", "TypeScript", "Nodejs", "React"]
   },
   "Python": {
     "name": "Python",
