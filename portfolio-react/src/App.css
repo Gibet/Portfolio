@@ -5,7 +5,7 @@
 :root {
   --primary : #f0f0f0;
   --secondary : #333333;
-  --accent : #007acc;
+  --accent : rgb(0, 122, 204);
   --background : #ffffff;
   --sectHeader : #ffffffb5;
   --sectBody : #f0f0f0b5;
@@ -38,6 +38,11 @@
   --commandShadow: 3px 3px 1px rgba(65, 65, 65, 0.1);
   --commandText: #333333;
   --dividerColor: rgba(0, 0, 0, 0.1);
+  --homeMarker: rgba(75, 75, 75, 0.02);
+  --aboutMarker: rgba(75, 75, 75, 0.04);
+  --projectsMarker: rgba(75, 75, 75, 0.06);
+  --contactMarker: rgba(75, 75, 75, 0.08);
+  --activeMarker: rgba(0, 122, 204, 0.10);
 }
 
 [data-theme="dark"] {
@@ -76,6 +81,11 @@
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
   --commandText: #333333;
   --dividerColor: rgba(255, 255, 255, 0.1);
+  --homeMarker: rgba(5, 5, 5, 0.02);
+  --aboutMarker: rgba(5, 5, 5, 0.04);
+  --projectsMarker: rgba(5, 5, 5, 0.06);
+  --contactMarker: rgba(5, 5, 5, 0.08);
+  --activeMarker: rgba(255, 155, 40, 0.1);
 }
 
 /* Fonts */
@@ -154,27 +164,43 @@ body {
     mask-composite: intersect;
     animation: flicker 20s infinite linear;
   }
-  /* .sublayer {
-    z-index: 0;
-    background-color: var(--sublayerColor);
-    background-size: 100% 100%;
-  }
-  .toplayer, .offset {
-    z-index: 1;
-    background-size: 140% 140%;
-    background: linear-gradient(180deg, var(--toplayerColor) 0%, var(--maskBgColor) 50%, var(--toplayerColor) 100%);
-    mask-image: linear-gradient(180deg, var(--toplayerColor) 0%, var(--maskColor) 50%, var(--toplayerColor));
-    -webkit-mask-image: linear-gradient(180deg, var(--toplayerColor) 0%, var(--maskColor) 50%, var(--toplayerColor));
-    mask-repeat: repeat;
-    -webkit-mask-repeat: repeat;
-  }
-  .toplayer {
-    animation: sweep 20s linear infinite;
-  }
-  .offset {
-    animation: sweep 20s linear infinite reverse;
-    animation-delay: -10s
-  } */
+}
+
+.top-markers, .bottom-markers {
+  height: 25rem;
+  width: 50rem;
+  display: flex;
+  align-items: center;
+}
+
+.top-markers {
+  justify-content: end;
+  flex-direction: column-reverse;
+  transform: rotate(135deg) translate(0, -25rem);
+}
+
+.bottom-markers {
+  justify-content: start;
+  flex-direction: column;
+  transform: rotate(135deg) translate(0, 25rem);
+}
+
+.home-marker, .about-marker, .projects-marker, .contact-marker {
+  height: 2.5rem;
+  width: 100%;
+}
+
+.home-marker {
+  background-color: var(--homeMarker);
+}
+.about-marker {
+  background-color: var(--aboutMarker);
+}
+.projects-marker {
+  background-color: var(--projectsMarker);
+}
+.contact-marker {
+  background-color: var(--contactMarker);
 }
 
 section{
@@ -446,6 +472,9 @@ a:hover {
 #home {
   background-size: contain;
   background-position: center;
+  .home-marker {
+    background-color: var(--activeMarker);
+  }
 }
 
 #square1, #square2, #square3 {
@@ -459,7 +488,7 @@ a:hover {
 }
 
 #square1 {
-  background-color: var(--sectBody);
+  background-color: var(--sectHeader);
   padding: 20px;
   box-shadow: var(--shadow);
   will-change: text-shadow;
@@ -477,7 +506,7 @@ a:hover {
 }
 
 #square2 {
-  background-color: var(--sectBody);
+  background-color: var(--sectHeader);
   padding: 20px;
   box-shadow: var(--shadow);
   /* animation: rgbText 3s steps(9) 0s infinite alternate; */
@@ -497,7 +526,7 @@ a:hover {
 }
 
 #square3 {
-  background-color: var(--sectBody);
+  background-color: var(--sectHeader);
   padding: 20px;
   box-shadow: var(--shadow);
 }
@@ -505,7 +534,9 @@ a:hover {
 /* about section */
 
 #about {
-  
+  .about-marker {
+    background-color: var(--activeMarker);
+  }
 }
 
 .chrono-line {
@@ -526,15 +557,19 @@ a:hover {
 }
 
 .event {
-  background-color: var(--background);
+  background-color: var(--sectHeader);
   width: 100%;
   padding: 15px;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* box-shadow: var(--shadow); */
   display: flex;
   flex-direction: column;
   gap: 4px;
+  .skill {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+  } 
 }
 
 .event:hover {
@@ -555,17 +590,19 @@ a:hover {
 }
 
 .highlight {
-  border: 1px solid var(--commandBgMain);
+  border: 1px solid var(--commandBgMain) !important;
 }
 
 /* projects section */
 #projects {
-  
+  .projects-marker {
+    background-color: var(--activeMarker);
+  }
 }
 
 .thumbnail {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: var(--background);
+  background-color: var(--sectHeader);
   overflow: hidden  ;
   img {
     filter: saturate(.05);
@@ -605,6 +642,7 @@ a:hover {
     margin: 10px 0;
     background-color: var(--dividerColor);
   }
+  animation: slideDown 0.3s ease forwards;
 }
 
 .close-button {
@@ -633,7 +671,9 @@ a:hover {
 /* contact section */
 
 #contact {
-
+  .contact-marker {
+    background-color: var(--activeMarker);
+  }
 }
 
 .alert {
@@ -673,16 +713,6 @@ input:focus, textarea:focus {
 
 /* Animations */
 
-@keyframes drift {
-  from { transform: scale(1) translate3d(0,0,0); }
-  to   { transform: scale(1.08) translate3d(-2%, 2%, 0); }
-}
-
-@keyframes sweep {
-  from { transform: translate3d(0%, -100%, 0) }
-  to   { transform: translate3d(0%, 100%, 0) }
-}
-
 @keyframes type {
   0%, 9% {opacity:0; color: transparent; background-color: transparent;}
   10%, 99% {opacity:1; color: transparent; background-color: var(--accent);}
@@ -697,5 +727,16 @@ input:focus, textarea:focus {
 @keyframes flicker {
   to {
     mask-position: 50% 50%, 0 50%;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

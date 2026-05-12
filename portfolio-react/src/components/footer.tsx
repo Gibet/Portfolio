@@ -4,7 +4,7 @@ import { CommandLine } from './commandLine'
 
 export const Footer = (props: HeaderProps) => {
   return (
-    <footer className='2xl:w-3/4 backdrop-blur-xs w-full flex gap-8 justify-center text-center py-12'>
+    <footer className='2xl:w-3/4 backdrop-blur-xs w-full flex gap-8 justify-center text-center pb-12 pt-6'>
       <div className='flex flex-col w-1/3 items-start gap-2'>
         <CommandLine variant='tertiary' title="Menu" />
         <hr className='w-full'/>

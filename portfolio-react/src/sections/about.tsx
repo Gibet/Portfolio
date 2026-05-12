@@ -106,37 +106,37 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </ol>
           )}
           {currentTab === 'Competences' && (
-            <div className="flex flex-col gap-6 sm:gap-4 sm:ml-6 sm:py-6">
-              <div className="flex flex-col gap-3 sm:gap-1">
+            <div className="flex flex-col gap-2 sm:ml-6 sm:py-6">
+              <div className="event flex flex-col gap-3 sm:gap-1">
                 <CommandLine variant='tertiary' title="Langages" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-1'>
                   {languages.map((lang) => (
                     <Skill key={lang} name={skillsData[lang]?.name || lang} imageSrc={skillsData[lang]?.imageSrc}
                     handleHover={() => {handleSkillHover(lang)}} />
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col gap-3 sm:gap-1">
+              <div className="event flex flex-col gap-3 sm:gap-1">
                 <CommandLine variant='tertiary' title="Front-end" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-1'>
                   {frontendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc} 
                     handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col gap-3 sm:gap-1">
+              <div className="event flex flex-col gap-3 sm:gap-1">
                 <CommandLine variant='tertiary' title="Back-end" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-1'>
                   {backendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
                     handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col gap-3 sm:gap-1">
+              <div className="event flex flex-col gap-3 sm:gap-1">
                 <CommandLine variant='tertiary' title="Outils" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-3'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-1'>
                   {toolsSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
                     handleHover={() => {handleSkillHover(tech)}} />

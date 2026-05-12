@@ -2,7 +2,7 @@
   "projects": [
     {
       "category": "Web",
-      "context": "Projet Perso",
+      "context": "Perso",
       "name": "Portfolio",
       "description": "A personal portfolio website built with React and Tailwind CSS to showcase myprojects and skills.",
       "role": ["Design", "Development", "Dev Solo"],
@@ -12,7 +12,7 @@
     },
     {
       "category": "Mobile",
-      "context": "Projet etudiant",
+      "context": "Etudiant",
       "name": "Skillly",
       "description": "Application mobile de recrutement et de recherche d'emploi",
       "imageSrc": "/images/projects/Skillly.svg",
@@ -23,7 +23,7 @@
     },
     {
       "category": "Mobile",
-      "context": "Projet etudiant",
+      "context": "Etudiant",
       "name": "MiliMili",
       "description": "Application mobile de gestion d'emplois du temps pour les étudiants",
       "imageSrc": "/images/projects/MiliMili.png",
@@ -34,7 +34,7 @@
     },
     {
       "category": "Web",
-      "context": "Projet etudiant",      
+      "context": "Etudiant",      
       "name": "SafeBase",
       "description": "Application web de gestion de bases de données",
       "imageSrc": "/images/projects/SafeBase.png",
@@ -44,7 +44,7 @@
     }, 
     {
       "category": "Web",
-      "context": "Projet Pro",
+      "context": "Pro",
       "name": "SRIAS",
       "description": "Plateforme de gestion des échanges entre la SRIAS PACA, ses partenaires et les agents bénéficiaires.",
       "imageSrc": "/images/projects/SRIAS.png",
@@ -53,7 +53,7 @@
     },
     {
       "category": "Web",
-      "context": "Projet Pro",
+      "context": "Pro",
       "name": "Cyberpark",
       "description": "Application interactive accompagnant un escape game pour jeunes (12-18 ans), avec une interface ludique et ergonomique",
       "imageSrc": "/images/projects/Cyberpark.png",
@@ -62,7 +62,7 @@
     },
     {
       "category": "Web",
-      "context": "Projet Perso",
+      "context": "Perso",
       "name": "GW2 Dashboard",
       "description": "Dashboard de suivi de progression pour le jeu Guild Wars 2, avec des fonctionnalités de suivi d'achievements, de statistiques de jeu et de gestion d'inventaire.",
       "imageSrc": "/images/projects/GW2Dashboard.png",
