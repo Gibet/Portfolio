@@ -1,6 +1,7 @@
 import type { SkillProps } from '../utils/types'
+import { memo } from 'react'
 
-export const Skill = ({name, imageSrc, handleHover} : SkillProps) => {
+const Skill: React.FC<SkillProps> = ({name, imageSrc, handleHover}) => {
   return (
     <div id={name.replace(/[\s.]+/g, '-')} className="skill px-2 flex items-center py-1 w-fit"
       {...handleHover ? { onMouseEnter: handleHover, onMouseLeave: handleHover } : {}}
@@ -10,3 +11,5 @@ export const Skill = ({name, imageSrc, handleHover} : SkillProps) => {
     </div>
   )
 }
+
+export default memo(Skill)

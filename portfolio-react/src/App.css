@@ -147,8 +147,11 @@ body {
     display: grid;
     place-items: center;
     background: var(--primary);
+    content-visibility: auto;
+    contain-intrinsic-size: 100vh;
   }
   .bglayer {
+    contain: paint;
     background: conic-gradient(from 180deg at 50% 70%,
       var(--bgPattern1) 0deg,
       var(--bgPattern2) 72.0000010728836deg,
@@ -161,8 +164,12 @@ body {
     mask:
       radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / var(--size) var(--size),
       url("/images/backgrounds/noise-mask.png") 512px 50% / 512px 512px;
+    -webkit-mask: radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / var(--size) var(--size),
+      url("/images/backgrounds/noise-mask.png") 512px 50% / 512px 512px;
     mask-composite: intersect;
+    -webkit-mask-composite: intersect;
     animation: flicker 20s infinite linear;
+    animation-play-state: paused;
   }
   
 }
@@ -282,11 +289,14 @@ footer {
   transition: box-shadow .2s ease-in, transform 0.2s ease-in-out;
   position: sticky;
   bottom: 0;
+  .bglayer {
+    animation-play-state: running;
+  }
 }
 
 .pinned[data-first="true"] {
   transform-origin: bottom center;
-  transform: scaleX(1.01);
+  transform: scaleX(1.005);
 }
 
 .pinned > :last-child {

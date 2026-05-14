@@ -1,9 +1,10 @@
 import { Contact, Home, Info, Cog, Sun, Moon } from 'lucide-react'
 import type { HeaderProps } from '../utils/types'
-import { useTheme } from '../hooks/useTheme'
+import { useTheme } from '../contexts/themeContext'
+import { memo } from 'react'
 
-export const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
-  const theme = useTheme()
+const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
+  const theme = useTheme();
 
   return (
     <header className='2xl:w-3/4 w-full z-60 backdrop-blur-xs'>
@@ -26,3 +27,5 @@ export const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
     </header>
   )
 }
+
+export default memo(Header)
