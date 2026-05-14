@@ -42,7 +42,7 @@
   --aboutMarker: rgba(75, 75, 75, 0.04);
   --projectsMarker: rgba(75, 75, 75, 0.06);
   --contactMarker: rgba(75, 75, 75, 0.08);
-  --activeMarker: rgba(0, 122, 204, 0.10);
+  --activeMarker: rgba(0, 83, 138, 0.1);
 }
 
 [data-theme="dark"] {
@@ -81,11 +81,11 @@
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
   --commandText: #333333;
   --dividerColor: rgba(255, 255, 255, 0.1);
-  --homeMarker: rgba(5, 5, 5, 0.02);
-  --aboutMarker: rgba(5, 5, 5, 0.04);
-  --projectsMarker: rgba(5, 5, 5, 0.06);
-  --contactMarker: rgba(5, 5, 5, 0.08);
-  --activeMarker: rgba(255, 155, 40, 0.1);
+  --homeMarker: rgba(5, 5, 5, 0.03);
+  --aboutMarker: rgba(5, 5, 5, 0.05);
+  --projectsMarker: rgba(5, 5, 5, 0.07);
+  --contactMarker: rgba(5, 5, 5, 0.09);
+  --activeMarker: rgba(0, 58, 97, 0.1);
 }
 
 /* Fonts */
@@ -164,6 +164,7 @@ body {
     mask-composite: intersect;
     animation: flicker 20s infinite linear;
   }
+  
 }
 
 .top-markers, .bottom-markers {
@@ -474,6 +475,7 @@ a:hover {
   background-position: center;
   .home-marker {
     background-color: var(--activeMarker);
+    border: 1px solid var(--background);
   }
 }
 
@@ -536,6 +538,7 @@ a:hover {
 #about {
   .about-marker {
     background-color: var(--activeMarker);
+    border: 1px solid var(--background);
   }
 }
 
@@ -597,6 +600,7 @@ a:hover {
 #projects {
   .projects-marker {
     background-color: var(--activeMarker);
+    border: 1px solid var(--background);
   }
 }
 
@@ -632,17 +636,17 @@ a:hover {
   }
 }
 
-
 .modal {
   background-color: var(--primary);
   box-shadow: var(--shadow);
   z-index: 1001;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  animation: slideDown 0.3s ease-in-out forwards;
   .divider {
     width: 1px;
     margin: 10px 0;
     background-color: var(--dividerColor);
   }
-  animation: slideDown 0.3s ease forwards;
 }
 
 .close-button {
@@ -673,6 +677,7 @@ a:hover {
 #contact {
   .contact-marker {
     background-color: var(--activeMarker);
+    border: 1px solid var(--background);
   }
 }
 
@@ -733,10 +738,21 @@ input:focus, textarea:focus {
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-100%) scaleX(1.01);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scaleX(1);
   }
+}
+
+/* Transitions */
+
+.custom-section, .event, .skill, .thumbnail, .modal, 
+.home-marker, .about-marker, .projects-marker, .contact-marker, header button, footer button, .active, .pinned, .sect-header, .sect-body, .command-line-title, .command-line-sub, .command-line-add, .command-line-link,
+.container, .terminal::before, .chrono-dot, .chrono-line, .top-markers, .bottom-markers, .grid-layer, .bglayer {
+  transition:  
+    background-color 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease;
 }
