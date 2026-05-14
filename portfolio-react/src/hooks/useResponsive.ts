@@ -11,9 +11,18 @@ export const useResponsivePageSize = () => {
   }
 
   useEffect(() => {
-    const handleResize = () => setPageSize(getPageSize())
+    let timeoutId: number | undefined;
+
+    const handleResize = () => {
+      timeoutId = window.setTimeout(() => {
+        setPageSize(getPageSize());
+      }, 150);  
+    }
     window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.clearTimeout(timeoutId);
+    }
   }, [])
 
   return pageSize
