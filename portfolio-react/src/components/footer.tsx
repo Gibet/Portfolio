@@ -1,8 +1,9 @@
 import type { HeaderProps } from '../utils/types'
 import { Cog, Contact, Github, Home, Info, Linkedin } from 'lucide-react'
 import { CommandLine } from './commandLine'
+import { memo } from 'react'
 
-export const Footer = (props: HeaderProps) => {
+const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
   return (
     <footer className='2xl:w-3/4 backdrop-blur-xs w-full flex gap-8 justify-center text-center pb-12 pt-6'>
       <div className='flex flex-col w-1/3 items-start gap-2'>
@@ -27,3 +28,5 @@ export const Footer = (props: HeaderProps) => {
     </footer>
   )
 }
+
+export default memo(Footer)

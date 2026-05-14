@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { ModalProps } from '../../utils/types';
-import { Skill } from '../skill';
+import Skill from '../skill';
 import * as skills from "../../utils/skills.json";
 import { CommandLine } from '../commandLine';
 

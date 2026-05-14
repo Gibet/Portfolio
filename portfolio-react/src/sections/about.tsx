@@ -2,7 +2,7 @@ import { forwardRef, useState } from 'react'
 import type { SectionProps, SkillKey } from '../utils/types'
 import CustomSection from '../components/customSection'
 import * as skills from "../utils/skills.json"
-import { Skill } from '../components/skill'
+import Skill from '../components/skill'
 import { Container } from '../components/container'
 import { CommandLine } from '../components/commandLine'
 

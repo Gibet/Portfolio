@@ -1,12 +1,12 @@
 import './App.css'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { sections } from './utils/types'
-import { Header } from './components/header'
+import Header from './components/header'
 import { Contact } from './sections/contact'
 import { About } from './sections/about'
 import { Projects } from './sections/projects'
-import { useEffect, useRef, useState } from 'react'
 import { Home } from './sections/home'
-import { Footer } from './components/footer'
+import Footer from './components/footer'
 import { SectionNavigation } from './components/navigation'
 
 
@@ -21,7 +21,7 @@ function App() {
   const activeSectionRef = useRef(activeSection)
 
   // Function to handle section visibility change
-  const handleSectionChange = (section: string, from = activeSectionRef.current) => {
+  const handleSectionChange = useCallback ((section: string, from = activeSectionRef.current) => {
     const targetElement = sectionRefs.current[section]
     if (!targetElement) return
 
@@ -72,7 +72,7 @@ function App() {
     } else {
       targetElement?.scrollIntoView({ behavior: 'smooth' })
     }
-  }
+  }, [])
 
   const getSectionZIndex = (sectionName: string) => {
     const baseIndex = sections.indexOf(sectionName)
