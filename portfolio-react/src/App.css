@@ -5,7 +5,7 @@
 :root {
   --primary : #f0f0f0;
   --secondary : #333333;
-  --accent : rgb(0, 122, 204);
+  --accent : rgb(0, 102, 170);
   --background : #ffffff;
   --sectHeader : #ffffffb5;
   --sectBody : #f0f0f0b5;
@@ -38,17 +38,17 @@
   --commandShadow: 3px 3px 1px rgba(65, 65, 65, 0.1);
   --commandText: #333333;
   --dividerColor: rgba(0, 0, 0, 0.1);
-  --homeMarker: rgba(75, 75, 75, 0.02);
-  --aboutMarker: rgba(75, 75, 75, 0.04);
+  --homeMarker: rgba(75, 75, 75, 0.04);
+  --aboutMarker: rgba(75, 75, 75, 0.05);
   --projectsMarker: rgba(75, 75, 75, 0.06);
-  --contactMarker: rgba(75, 75, 75, 0.08);
-  --activeMarker: rgba(0, 83, 138, 0.1);
+  --contactMarker: rgba(75, 75, 75, 0.07);
+  --activeMarker: rgba(0, 83, 138, 0.07);
 }
 
 [data-theme="dark"] {
   --primary : #2c2c2c;
   --secondary : #0f0f0f;
-  --accent : #65aedf;
+  --accent : rgb(204, 173, 0);
   --background : #333333;
   --sectHeader : #333333b5;
   --sectBody : #2c2c2cb5;
@@ -81,11 +81,11 @@
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
   --commandText: #333333;
   --dividerColor: rgba(255, 255, 255, 0.1);
-  --homeMarker: rgba(5, 5, 5, 0.03);
+  --homeMarker: rgba(5, 5, 5, 0.04);
   --aboutMarker: rgba(5, 5, 5, 0.05);
-  --projectsMarker: rgba(5, 5, 5, 0.07);
-  --contactMarker: rgba(5, 5, 5, 0.09);
-  --activeMarker: rgba(0, 58, 97, 0.1);
+  --projectsMarker: rgba(5, 5, 5, 0.06);
+  --contactMarker: rgba(5, 5, 5, 0.07);
+  --activeMarker: rgba(97, 82, 0, 0.07);
 }
 
 /* Fonts */
@@ -183,15 +183,15 @@ body {
 }
 
 .top-markers {
-  justify-content: end;
+  justify-content: start;
   flex-direction: column-reverse;
-  transform: rotate(135deg) translate(0, -25rem);
+  transform: rotate(135deg) translate(0, 25rem);
 }
 
 .bottom-markers {
-  justify-content: start;
+  justify-content: end;
   flex-direction: column;
-  transform: rotate(135deg) translate(0, 25rem);
+  transform: rotate(135deg) translate(0, -25rem);
 }
 
 .home-marker, .about-marker, .projects-marker, .contact-marker {
@@ -370,14 +370,14 @@ a:hover {
   padding: 20px;
   box-shadow: var(--shadow);
   background:
-    linear-gradient(to right, var(--text) 1px, transparent 1px) 0 0,
-    linear-gradient(to right, var(--text) 1px, transparent 1px) 0 100%,
-    linear-gradient(to left, var(--text) 1px, transparent 1px) 100% 0,
-    linear-gradient(to left, var(--text) 1px, transparent 1px) 100% 100%,
-    linear-gradient(to bottom, var(--text) 1px, transparent 1px) 0 0,
-    linear-gradient(to bottom, var(--text) 1px, transparent 1px) 100% 0,
-    linear-gradient(to top, var(--text) 1px, transparent 1px) 0 100%,
-    linear-gradient(to top, var(--text) 1px, transparent 1px) 100% 100%;
+    linear-gradient(to right, var(--dividerColor) 2px, transparent 1px) 0 0,
+    linear-gradient(to right, var(--dividerColor) 2px, transparent 1px) 0 100%,
+    linear-gradient(to left, var(--dividerColor) 2px, transparent 1px) 100% 0,
+    linear-gradient(to left, var(--dividerColor) 2px, transparent 1px) 100% 100%,
+    linear-gradient(to bottom, var(--dividerColor) 2px, transparent 1px) 0 0,
+    linear-gradient(to bottom, var(--dividerColor) 2px, transparent 1px) 100% 0,
+    linear-gradient(to top, var(--dividerColor) 2px, transparent 1px) 0 100%,
+    linear-gradient(to top, var(--dividerColor) 2px, transparent 1px) 100% 100%;
   
   background-repeat: no-repeat;
   background-size: 20px 20px;
@@ -485,8 +485,8 @@ a:hover {
   background-size: contain;
   background-position: center;
   .home-marker {
-    background-color: var(--activeMarker);
-    border: 1px solid var(--background);
+    background: linear-gradient(90deg, var(--homeMarker) 32%, var(--activeMarker) 42%) !important;
+    border: 1px solid var(--dividerColor);
   }
 }
 
@@ -548,13 +548,13 @@ a:hover {
 
 #about {
   .about-marker {
-    background-color: var(--activeMarker);
-    border: 1px solid var(--background);
+    background: linear-gradient(90deg, var(--aboutMarker) 30%, var(--activeMarker) 40%) !important;
+    border: 1px solid var(--dividerColor);
   }
 }
 
 .chrono-line {
-  border-color: var(--background);
+  border-color: var(--dividerColor);
   height: calc(100% - 1.5rem);
   display: block;
 }
@@ -573,13 +573,13 @@ a:hover {
 .event {
   background-color: var(--sectHeader);
   width: 100%;
-  padding: 15px;
+  padding: 12px 15px;
   /* margin-bottom: 1rem; */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* box-shadow: var(--shadow); */
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   .skill {
     background-color: var(--primary);
     border: 1px solid var(--primary);
@@ -610,8 +610,8 @@ a:hover {
 /* projects section */
 #projects {
   .projects-marker {
-    background-color: var(--activeMarker);
-    border: 1px solid var(--background);
+    background: linear-gradient(90deg, var(--projectsMarker) 30%, var(--activeMarker) 40%) !important;
+    border: 1px solid var(--dividerColor);
   }
 }
 
@@ -650,6 +650,7 @@ a:hover {
 .modal {
   background-color: var(--primary);
   box-shadow: var(--shadow);
+  overflow-y: hidden;
   z-index: 1001;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
   animation: slideDown 0.3s ease-in-out forwards;
@@ -687,8 +688,8 @@ a:hover {
 
 #contact {
   .contact-marker {
-    background-color: var(--activeMarker);
-    border: 1px solid var(--background);
+    background: linear-gradient(90deg, var(--contactMarker) 25%, var(--activeMarker) 40%) !important;
+    border: 1px solid var(--dividerColor);
   }
 }
 

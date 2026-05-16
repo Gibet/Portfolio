@@ -86,7 +86,7 @@ const ProjectModal = (props: ModalProps) => {
             )}
           </div>
           <div className="modal-content flex sm:flex-row flex-col overflow-y-auto">
-            <div className="p-6 pt-2 gap-2 flex w-full flex-col">
+            <div className="p-6 pt-2 gap-3 flex w-full flex-col">
               <CommandLine title={props.project.name} subtitle={props.project.context} additionalInfo={props.project.category} link={props.project.github} />
               <p className="terminal text-sm">{props.project.description}</p>
               <div className="modal-stack flex flex-wrap gap-2 items-center">

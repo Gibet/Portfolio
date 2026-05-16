@@ -47,7 +47,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               <button
                 key={tab}
                 onClick={() => setCurrentTab(tab)}
-                className={`px-3 py-1 text-sm ${currentTab === tab ? 'active' : ''}`}
+                className={`px-3 py-1 text-xs ${currentTab === tab ? 'active' : ''}`}
               >
                 {tab}
               </button>
@@ -65,7 +65,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                   <div className='event'>
                     <CommandLine variant='secondary' title="Bachelor Concepteur Développeur d'Applications (CDA)" />
                     <h4 className="terminal text-md font-medium sm:ml-6">La Plateforme_ - 2022-2025</h4>
-                    <ul className='list-disc sm:ml-10 ml-6 text-sm'>
+                    <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Développement full stack, avec JavaScript, Node.js, React et Symfony</li>
                       <li>Développement d’API avec API Platform, Express</li>
                       <li>Développement mobile </li>
@@ -77,7 +77,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                   <div className='event'>
                     <CommandLine variant='secondary' title="Supinfo Marseille" />
                     <h4 className="terminal text-md font-medium sm:ml-6">2012-2016</h4>
-                    <ul className='list-disc sm:ml-10 ml-6 text-sm'>
+                    <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Formation en développement web et mobile, avec JavaScript, Java, PHP, et les frameworks associés</li>
                       <li>Projets de développement en équipe, avec gestion de versions Git et méthodologies agiles</li>
                     </ul>
@@ -95,7 +95,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                   <div className='event'>
                     <CommandLine variant='secondary' title="Développeur Web Junior (Alternance)" />
                     <h4 className="terminal text-md font-medium sm:ml-6">L'Atelier de La Plateforme - 2023-2025</h4>
-                    <ul className='list-disc sm:ml-10 ml-6 text-sm'>
+                    <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Participation à plusieurs projets de développement web et mobile en environnement agile.</li>
                       <li>Contribution au développement full stack (React, Node.js) et à la mise en place de bonnes pratiques (tests,intégration continue, gestion de versions Git).</li>
                     </ul>
@@ -109,7 +109,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
             <div className="flex flex-col gap-2 sm:ml-6 sm:py-6">
               <div className="event flex flex-col gap-3 sm:gap-1">
                 <CommandLine variant='tertiary' title="Langages" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-1'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {languages.map((lang) => (
                     <Skill key={lang} name={skillsData[lang]?.name || lang} imageSrc={skillsData[lang]?.imageSrc}
                     handleHover={() => {handleSkillHover(lang)}} />
@@ -118,7 +118,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </div>
               <div className="event flex flex-col gap-3 sm:gap-1">
                 <CommandLine variant='tertiary' title="Front-end" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-1'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {frontendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc} 
                     handleHover={() => {handleSkillHover(tech)}} />
@@ -127,7 +127,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </div>
               <div className="event flex flex-col gap-3 sm:gap-1">
                 <CommandLine variant='tertiary' title="Back-end" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-1'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {backendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
                     handleHover={() => {handleSkillHover(tech)}} />
@@ -136,7 +136,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
               </div>
               <div className="event flex flex-col gap-3 sm:gap-1">
                 <CommandLine variant='tertiary' title="Outils" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-1'>
+                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {toolsSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
                     handleHover={() => {handleSkillHover(tech)}} />

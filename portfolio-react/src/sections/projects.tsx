@@ -36,7 +36,7 @@ export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firs
               <button
                 key={category}
                 onClick={() => { setCurrentCategory(category); setCurrentPage(1); }}
-                className={`px-3 py-1 text-sm ${currentCategory === category ? 'active' : ''}`}
+                className={`px-3 py-1 text-xs ${currentCategory === category ? 'active' : ''}`}
               >
                 {category}
               </button>
