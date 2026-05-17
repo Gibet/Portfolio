@@ -64,7 +64,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
                     <CommandLine variant='secondary' title="Bachelor Concepteur Développeur d'Applications (CDA)" />
-                    <h4 className="terminal text-md font-medium sm:ml-6">La Plateforme_ - 2022-2025</h4>
+                    <h4 className="terminal text-md font-medium sm:ml-6 items-center">La Plateforme_ - <span className="text-xs">2022-2025</span></h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Développement full stack, avec JavaScript, Node.js, React et Symfony</li>
                       <li>Développement d’API avec API Platform, Express</li>
@@ -76,7 +76,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
                     <CommandLine variant='secondary' title="Supinfo Marseille" />
-                    <h4 className="terminal text-md font-medium sm:ml-6">2012-2016</h4>
+                    <h4 className="terminal text-xs font-medium sm:ml-6 items-center">2012-2016</h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Formation en développement web et mobile, avec JavaScript, Java, PHP, et les frameworks associés</li>
                       <li>Projets de développement en équipe, avec gestion de versions Git et méthodologies agiles</li>
@@ -94,7 +94,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
                     <CommandLine variant='secondary' title="Développeur Web Junior (Alternance)" />
-                    <h4 className="terminal text-md font-medium sm:ml-6">L'Atelier de La Plateforme - 2023-2025</h4>
+                    <h4 className="terminal text-md font-medium sm:ml-6 items-center">L'Atelier de La Plateforme - <span className="text-xs">2023-2025</span></h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Participation à plusieurs projets de développement web et mobile en environnement agile.</li>
                       <li>Contribution au développement full stack (React, Node.js) et à la mise en place de bonnes pratiques (tests,intégration continue, gestion de versions Git).</li>
