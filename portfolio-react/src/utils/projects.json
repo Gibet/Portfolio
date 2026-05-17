@@ -61,7 +61,11 @@
       "name": "SRIAS",
       "description": "Plateforme de gestion des échanges entre la SRIAS PACA, ses partenaires et les agents bénéficiaires.",
       "imageSrc": "/images/projects/SRIAS.png",
-      "role": ["Design", "Development"],
+      "role": ["Maintenance et évolution de l'application web en React avec Vite",
+       "Intégration de nouvelles fonctionnalités en utilisant les technologies React, TypeScript et NestJS",
+       "Collaboration avec les équipes métier pour assurer une bonne compréhension des besoins et une implémentation efficace des fonctionnalités",
+       "Participation au processus de développement agile, incluant la planification des sprints, les revues de code et les tests",
+        "Developpement itératif de nouvelles fonctionnalités en collaboration avec les équipes métier"],
       "stack": ["React","TypeScript", "Nest"]
     },
     {

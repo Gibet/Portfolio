@@ -22,30 +22,18 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
 
   return (
     <CustomSection id="contact" pinned={pinned} pinCount={pinCount} ref={ref} zIndex={1}>
-      <div className='flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-20 py-6'>
+      <div className='flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-12 py-6'>
         <Container variant='header'>
           <CommandLine title="Contactez-moi" />
         </Container>
         <Container variant='body' className="md:w-2/5 sm:mt-8 mt-4">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <input
-              id="name"
-              type="text"
-              name="name"
-              placeholder='> Votre Nom'
-              className='px-4 py-6 text-sm'
-            />
-            <ValidationError 
-              prefix="Name"
-              field="name"
-              errors={state.errors}
-            />
+          <form onSubmit={handleSubmit} className="grid grid-cols-2 grid-rows-4 gap-4">
             <input
               id="email"
               type="email" 
               name="email"
               placeholder='> Votre Email'
-              className='px-4 py-6 text-sm'
+              className='px-4 py-6 text-xs col-span-2 row-span-1'
             />
             <ValidationError 
               prefix="Email" 
@@ -53,11 +41,23 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
               errors={state.errors}
             />
             <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder='> Votre Nom'
+              className='px-4 py-6 text-xs col-span-1 row-span-1'
+            />
+            <ValidationError 
+              prefix="Name"
+              field="name"
+              errors={state.errors}
+            />
+            <input
               id="subject"
               type="text"
               name="subject"
               placeholder='> Sujet'
-              className='px-4 py-6 text-sm'
+              className='px-4 py-6 text-xs col-span-1 row-span-1'
             />
             <ValidationError 
               prefix="Subject" 
@@ -68,7 +68,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
               id="message"
               name="message"
               placeholder='> Votre Message'
-              className='px-4 py-6 text-sm'
+              className='px-4 py-6 text-xs col-span-2 row-span-2 resize-none'
               rows={6}
             />
             <ValidationError 
@@ -79,12 +79,13 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
             <button 
               type="submit"
               disabled={formValidation()}
-              className="font-bold text-sm py-2 px-4">
+              className="font-bold text-sm py-2 px-4 col-span-2">
               <Mail size={20} className='inline-block mr-2' strokeWidth={1.25}/>
               Envoyer
             </button>
           </form>
         </Container>
+        <div className="footer"></div>
       </div>
       {state.result && (
         <Alert
@@ -93,7 +94,6 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
           close={handleAlertClose}
         />
       )}
-
     </CustomSection>
   )
 })

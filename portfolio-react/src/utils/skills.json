@@ -2,32 +2,32 @@
   "JavaScript": {
     "name": "JavaScript",
     "imageSrc": "/images/logo/javascript.svg",
-    "related": ["TypeScript", "React", "Nodejs", "Expressjs", "Nextjs", "Vite"]
+    "related": ["TypeScript", "React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
   },
   "TypeScript": {
     "name": "TypeScript",
     "imageSrc": "/images/logo/typescript.svg",
-    "related": ["JavaScript", "React", "Nodejs", "Expressjs", "Nextjs", "Vite"]
+    "related": ["JavaScript", "React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
   },
   "React": {
     "name": "React",
     "imageSrc": "/images/logo/react.svg",
-    "related": ["JavaScript", "TypeScript", "Nodejs", "Nextjs", "Vite"]
+    "related": ["JavaScript", "TypeScript"]
   },
   "ReactNative": {
     "name": "React Native",
     "imageSrc": "/images/logo/reactnative.svg",
-    "related": ["JavaScript", "TypeScript", "React", "Nodejs"]
+    "related": ["JavaScript", "TypeScript"]
   },
   "Nextjs": {
     "name": "Next.js",
     "imageSrc": "/images/logo/nextjs.svg",
-    "related": ["JavaScript", "TypeScript", "React", "Nodejs"] 
+    "related": ["JavaScript", "TypeScript"] 
   },
   "Vite": {
     "name": "Vite",
     "imageSrc": "/images/logo/vitejs.svg",
-    "related": ["JavaScript", "TypeScript", "React"] 
+    "related": ["JavaScript", "TypeScript"] 
   },
   "TailwindCSS": {
     "name": "Tailwind CSS",
@@ -50,17 +50,17 @@
   "Nodejs": {
     "name": "Node.js",
     "imageSrc": "/images/logo/nodejs.svg",
-    "related": ["JavaScript", "TypeScript", "Expressjs", "Nest", "Electron", "Nextjs", "Vite", "React", "ReactNative"]
+    "related": ["JavaScript", "TypeScript"]
   },
   "Expressjs": {
     "name": "Express.js",
     "imageSrc": "/images/logo/express.svg",
-    "related": ["JavaScript", "TypeScript", "Nodejs"]
+    "related": ["JavaScript", "TypeScript"]
   },
   "Nest": {
     "name": "Nest",
     "imageSrc": "/images/logo/nestjs.svg",
-    "related": ["JavaScript", "TypeScript", "Nodejs"]
+    "related": ["JavaScript", "TypeScript"]
   },
   "Fiber": {
     "name": "Fiber",
@@ -86,7 +86,7 @@
   "Git": {
     "name": "Git",
     "imageSrc": "/images/logo/git.svg",
-    "related": ["GitHub", "GithubActions"]
+    "related": ["GitHub"]
   },
   "GitHub": {
     "name": "GitHub",
@@ -96,12 +96,12 @@
   "GithubActions": {
     "name": "GitHub Actions",
     "imageSrc": "/images/logo/githubactions.svg",
-    "related": ["Git", "GitHub"]
+    "related": ["GitHub"]
   },
   "Electron": {
     "name": "Electron",
     "imageSrc": "/images/logo/electron.svg",
-    "related": ["JavaScript", "TypeScript", "Nodejs", "React"]
+    "related": ["JavaScript", "TypeScript"]
   },
   "Python": {
     "name": "Python",

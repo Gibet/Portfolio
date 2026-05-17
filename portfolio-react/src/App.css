@@ -6,6 +6,7 @@
   --primary : #f0f0f0;
   --secondary : #333333;
   --accent : rgb(0, 102, 170);
+  --secondaryAccent : rgb(255, 220, 40);
   --background : #ffffff;
   --sectHeader : #ffffffb5;
   --sectBody : #f0f0f0b5;
@@ -49,6 +50,7 @@
   --primary : #2c2c2c;
   --secondary : #0f0f0f;
   --accent : rgb(204, 173, 0);
+  --secondaryAccent : rgb(4, 114, 188);
   --background : #333333;
   --sectHeader : #333333b5;
   --sectBody : #2c2c2cb5;
@@ -122,6 +124,8 @@ html, body {
   height: 100%;
   /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dividerColor) transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -394,13 +398,16 @@ a:hover {
   filter: drop-shadow(var(--commandShadow));
 }
 
+.secondary, .tertiary {
+  .command-line-dot {
+    background-color: var(--accent) !important;
+  }
+}
+
 .secondary {
   .command-line-title {
   background-color: var(--buttonBg) !important;
   color: var(--text) !important;
-  }
-  .command-line-dot {
-    /* background-color: var(--buttonBg) !important; */
   }
 }
 
@@ -409,16 +416,13 @@ a:hover {
     background-color: var(--commandBgMainTertiary) !important;
     color: var(--text) !important;
   }
-  .command-line-dot {
-    /* background-color: var(--commandBgMainTertiary) !important; */
-  }
 }
 
 .command-line-dot {
   margin-right: 6px;
   width: 10px;
   height: 10px;
-  background-color: var(--accent);
+  background-color: var(--secondaryAccent);
 }
 
 .command-line-title, .command-line-sub, .command-line-add, .command-line-link {
@@ -469,7 +473,7 @@ a:hover {
 }
 
 .command-line-link {
-  background-color: var(--accent);
+  background-color: var(--secondaryAccent);
   color: var(--text);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -559,12 +563,6 @@ a:hover {
   display: block;
 }
 
-@media (max-width: 640px) {
-  .chrono-line {
-    height: calc(100% - .5rem) !important;
-  }
-}
-
 .chrono-dot {
   background-color: var(--accent);
   filter: drop-shadow(var(--commandShadow));
@@ -638,7 +636,7 @@ a:hover {
     linear-gradient(to top, var(--accent) 1px, transparent 1px) 0 100%,
     linear-gradient(to top, var(--accent) 1px, transparent 1px) 100% 100%;
 
-  background-color: var(--primary);
+  background-color: var(--background);
   background-repeat: no-repeat;
   background-size: 20px 20px;
   img {
@@ -669,8 +667,9 @@ a:hover {
 
 .modal-image-container {
   img {
-    max-width: 100%;
-    max-height: 60vh;
+    width: 100%;
+    height: auto;
+    max-height: 100%
   }
   .image-index {
     display: inline-block;
@@ -767,4 +766,17 @@ input:focus, textarea:focus {
     background-color 250ms ease,
     color 250ms ease,
     border-color 250ms ease;
+}
+
+/* Responsive Design */
+
+@media (max-width: 640px) {
+  .chrono-line {
+    height: calc(100% - .5rem) !important;
+  }
+
+  .modal-image-container img {
+    width: 90vw;
+    height: auto;
+  }
 }

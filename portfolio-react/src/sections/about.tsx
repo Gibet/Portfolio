@@ -39,7 +39,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
 
   return (
     <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} lower={lower} ref={ref} zIndex={4}>
-      <div className='flex flex-col items-center w-11/12 sm:w-5/6 h-full sm:py-20 py-6'>
+      <div className='flex flex-col items-center w-11/12 sm:w-5/6 h-full sm:py-12 py-6'>
         <Container variant='header' className='flex flex-col gap-2'>
           <CommandLine title="A propos de moi" />
           <div className="flex flex-wrap gap-2">
