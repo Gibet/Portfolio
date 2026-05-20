@@ -5,7 +5,7 @@ import { memo } from 'react'
 
 const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
   return (
-    <footer className='backdrop-blur-xs w-full 2xl:max-w-[75vw] flex gap-8 justify-center text-center pb-12 pt-6'>
+    <footer className='backdrop-blur-xs w-full 2xl:max-w-[75vw] flex gap-8 justify-center text-center pb-5 pt-6'>
       <div className='flex flex-col w-1/3 items-start gap-2'>
         <CommandLine variant='tertiary' title="Menu" />
         <hr className='w-full'/>
@@ -24,7 +24,7 @@ const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
           <li><a href="" target="_blank" rel="noopener noreferrer"><Linkedin size={18} strokeWidth={ 1} /><span>LinkedIn</span></a></li>
         </ul>
       </div>
-      <span className='absolute bottom-4 text-xs opacity-50'>© 2025 - Jean-Bernard Laguerre.</span>
+      <span className='absolute bottom-4 right-8 text-xs opacity-50'>© 2025 - Jean-Bernard Laguerre.</span>
     </footer>
   )
 }

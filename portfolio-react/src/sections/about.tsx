@@ -41,7 +41,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
     <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} lower={lower} ref={ref} zIndex={4}>
       <div className='flex flex-col items-center w-11/12 sm:w-5/6 h-full sm:py-12 py-6'>
         <Container variant='header' className='flex flex-col gap-2'>
-          <CommandLine title="A propos de moi" />
+          <CommandLine variant='title' title="A propos de moi" />
           <div className="flex flex-wrap gap-2">
             {AboutTabs.map((tab) => (
               <button
@@ -61,7 +61,7 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
                   <span className="sticky left-1.5 h-full border-l chrono-line"></span>
                 </span>  
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
-                  <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
+                  <span className="absolute left-0 chrono-dot"></span>
                   <div className='event'>
                     <CommandLine variant='secondary' title="Bachelor Concepteur Développeur d'Applications (CDA)" />
                     <h4 className="terminal text-md font-medium sm:ml-6 items-center">La Plateforme_ - <span className="text-xs">2022-2025</span></h4>
