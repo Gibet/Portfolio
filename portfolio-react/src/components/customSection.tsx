@@ -10,17 +10,17 @@ const CustomSection = forwardRef<HTMLDivElement, SectionProps>(({ id, pinned, lo
     >
       <div className="grid-layer absolute h-full w-full overflow-hidden">
         <div className='bglayer'></div>
-        <span className='top-markers absolute bottom-0 right-0'>
-          <span className='contact-marker'></span>
-          <span className='projects-marker'></span>
-          <span className='about-marker'></span>
+        <span className='top-markers absolute top-0 left-0'>
           <span className='home-marker'></span>
+          <span className='about-marker'></span>
+          <span className='projects-marker'></span>
+          <span className='contact-marker'></span>
         </span>
-        <span className="bottom-markers absolute top-0 left-0">
-          <span className='home-marker'></span>
-          <span className='about-marker'></span>
-          <span className='projects-marker'></span>
+        <span className="bottom-markers absolute bottom-0 right-0">
           <span className='contact-marker'></span>
+          <span className='projects-marker'></span>
+          <span className='about-marker'></span>
+          <span className='home-marker'></span>
         </span>
       </div>
       <Element name={id!}>

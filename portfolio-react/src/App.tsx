@@ -149,7 +149,7 @@ function App() {
   return (
     <>
       <Header navigate={handleSectionChange} activeSection={activeSection} />
-      <main id='main-container' className="relative 2xl:w-3/4 w-full flex-1 scroll-smooth light">
+      <main id='main-container' className="relative w-full 2xl:max-w-[75vw] flex-1 scroll-smooth light">
         <Home pinned={pinnedSections.has('home')} firstPinned={getFirstPinnedSection() === 'home'} pinCount={pinnedSections.size} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />
         <About pinned={pinnedSections.has('about')} firstPinned={getFirstPinnedSection() === 'about'} pinCount={pinnedSections.size} lower={lowerSections.has('about')} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
         <Projects pinned={pinnedSections.has('projects')} firstPinned={getFirstPinnedSection() === 'projects'} pinCount={pinnedSections.size} lower={lowerSections.has('projects')} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />

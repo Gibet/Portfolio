@@ -54,12 +54,12 @@ const ProjectModal = (props: ModalProps) => {
 
   return (
     <div className='absolute inset-0 bg-black/50 flex items-center justify-center' onClick={props.onClose}>
-      <div className="relative modal sm:w-fit w-5/6 max-h-5/6 flex flex-col" onClick={e => e.stopPropagation()}>
+      <div className="relative modal xl:w-[60vw] 2xl:w-[50vw] sm:w-5/6 w-11/12 h-[80vh] flex flex-col" onClick={e => e.stopPropagation()}>
         <button onClick={props.onClose} className="close-button h-10 w-10 absolute top-0 right-0">
           X
         </button>
-        <div className="modal-body h-full flex flex-col gap-4">
-          <div className="modal-image-container w-full relative">
+        <div className="modal-body h-full flex flex-col gap-3">
+          <div className="modal-image-container max-h-2/3 col-span-1 w-full relative">
             {loading ? (
               <div className="modal-image mx-auto object-contain flex items-center justify-center">
                 <p>Loading...</p>
@@ -85,9 +85,12 @@ const ProjectModal = (props: ModalProps) => {
               </>
             )}
           </div>
-          <div className="modal-content flex sm:flex-row flex-col overflow-y-auto">
-            <div className="p-6 pt-2 gap-2 flex w-full flex-col">
-              <CommandLine title={props.project.name} subtitle={props.project.context} additionalInfo={props.project.category} link={props.project.github} />
+          <div className="px-6 w-full project-title">
+            <CommandLine title={props.project.name} subtitle={props.project.context} additionalInfo={props.project.category} link={props.project.github} />
+          </div>
+          <div className="modal-content grid sm:grid-cols-2 grid-cols-1 col-span-1 gap-4 overflow-y-auto sm:overflow-y-hidden relative">
+            <div className="px-6 py-1 gap-3 col-span-1 flex flex-col sm:overflow-y-auto overflow-y-visible">
+              <h5 className="text-sm font-bold">Description:</h5>
               <p className="terminal text-sm">{props.project.description}</p>
               <div className="modal-stack flex flex-wrap gap-2 items-center">
                 <h5 className="text-sm font-bold">Stack:</h5>
@@ -96,8 +99,8 @@ const ProjectModal = (props: ModalProps) => {
                 ))}
               </div>
             </div>
-            <span className="self-stretch divider hidden sm:flex"></span>
-            <div className='p-6 sm:pt-2 pt-0 gap-2 flex w-full flex-col'>
+            <span className="self-stretch divider hidden sm:block absolute left-1/2 top-0 bottom-0"></span>
+            <div className='px-6 py-1 gap-2 col-span-1 flex w-full flex-col sm:overflow-y-auto overflow-y-visible'>
               <h5 className="text-sm font-bold">Roles:</h5>
               <div className="flex flex-col">
                 {props.project.role.map((role) => (
