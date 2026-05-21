@@ -8,6 +8,8 @@ import Projects from './sections/projects'
 import Contact from './sections/contact'
 import Footer from './components/footer'
 import SectionNavigation from './components/navigation'
+import { SpeedInsights } from "@vercel/speed-insights/react"
+
 
 
 function App() {
