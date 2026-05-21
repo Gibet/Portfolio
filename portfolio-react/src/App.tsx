@@ -8,7 +8,8 @@ import Projects from './sections/projects'
 import Contact from './sections/contact'
 import Footer from './components/footer'
 import SectionNavigation from './components/navigation'
-import { injectSpeedInsights } from '@vercel/speed-insights';
+import { injectSpeedInsights } from "@vercel/speed-insights"
+
 
 
 function App() {
@@ -167,6 +168,7 @@ function App() {
       { (activeSection === 'contact') &&
         <Footer navigate={handleSectionChange} activeSection={activeSection} />
       }
+      
     </>
   )
 }
