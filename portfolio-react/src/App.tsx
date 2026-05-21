@@ -8,8 +8,7 @@ import Projects from './sections/projects'
 import Contact from './sections/contact'
 import Footer from './components/footer'
 import SectionNavigation from './components/navigation'
-import { SpeedInsights } from "@vercel/speed-insights/next"
-
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 
 function App() {
@@ -148,6 +147,8 @@ function App() {
     return () => observer.disconnect()
   }, [])
 
+  injectSpeedInsights();
+
   return (
     <>
       <Header navigate={handleSectionChange} activeSection={activeSection} />
@@ -166,7 +167,6 @@ function App() {
       { (activeSection === 'contact') &&
         <Footer navigate={handleSectionChange} activeSection={activeSection} />
       }
-      <SpeedInsights />
     </>
   )
 }
