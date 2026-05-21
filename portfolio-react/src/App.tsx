@@ -2,12 +2,12 @@ import './App.css'
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { sections } from './utils/types'
 import Header from './components/header'
-import { Contact } from './sections/contact'
-import { About } from './sections/about'
-import { Projects } from './sections/projects'
-import { Home } from './sections/home'
+import Home from './sections/home'
+import About from './sections/about'
+import Projects from './sections/projects'
+import Contact from './sections/contact'
 import Footer from './components/footer'
-import { SectionNavigation } from './components/navigation'
+import SectionNavigation from './components/navigation'
 
 
 function App() {

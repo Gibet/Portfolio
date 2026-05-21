@@ -1,4 +1,4 @@
-import { forwardRef, useState } from 'react'
+import { memo, forwardRef, useState } from 'react'
 import type { SectionProps, SkillKey } from '../utils/types'
 import CustomSection from '../components/customSection'
 import * as skills from "../utils/skills.json"
@@ -20,7 +20,7 @@ const frontendSkills: SkillKey[] = ['React', 'ReactNative', 'TailwindCSS', 'Elec
 const backendSkills: SkillKey[] = ['Nodejs', 'Expressjs', 'Nest', 'Fiber', 'MySQL', 'PostgreSQL', 'MongoDB'];
 const toolsSkills: SkillKey[] = ['Git', 'Docker', 'GitHub', 'GithubActions'];
 
-export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPinned, pinCount, lower = false }, ref) => {
+const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
   const [currentTab, setCurrentTab] = useState(AboutTabs[0])
 
@@ -149,4 +149,9 @@ export const About = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPi
       </div>
     </CustomSection>
   )
-})
+}
+
+const About = forwardRef<HTMLDivElement, SectionProps>(AboutContent)
+export default memo(About) as React.MemoExoticComponent<
+  React.ForwardRefExoticComponent<SectionProps & React.RefAttributes<HTMLDivElement>>
+>

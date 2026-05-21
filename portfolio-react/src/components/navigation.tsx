@@ -1,8 +1,9 @@
 import type{ NavigationProps } from '../utils/types'
 import { sections } from '../utils/types'
 import { ArrowBigUp, ArrowBigDown } from 'lucide-react'
+import { memo } from 'react'
 
-export const SectionNavigation = (props: NavigationProps) => {
+export const SectionNavigation:React.FC<NavigationProps> = (props: NavigationProps) => {
 
   const getVisibleSection = () => {
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -59,3 +60,5 @@ export const SectionNavigation = (props: NavigationProps) => {
     </div>
   )
 }
+
+export default memo(SectionNavigation)

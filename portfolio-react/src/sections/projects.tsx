@@ -1,4 +1,4 @@
-import { forwardRef, useState } from 'react'
+import { memo, forwardRef, useState } from 'react'
 import type { ProjectProps, SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
 import ProjectThumbnail from '../components/projects/thumbnail'
@@ -13,7 +13,7 @@ const ProjectsList = ProjectsData as { projects: ProjectProps[] }
 const categories = ['Tous', 'Web', 'Mobile']
 /* const pageSize = 10 */
 
-export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPinned, pinCount, lower = false }, ref) => {
+const ProjectsContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
   const [currentCategory, setCurrentCategory] = useState(categories[0])  
   const [currentPage, setCurrentPage] = useState(1)
@@ -64,4 +64,9 @@ export const Projects = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firs
       }
     </CustomSection>
   )
-})
+}
+
+const Projects = forwardRef<HTMLDivElement, SectionProps>(ProjectsContent)
+export default memo(Projects) as React.MemoExoticComponent<
+  React.ForwardRefExoticComponent<SectionProps & React.RefAttributes<HTMLDivElement>>
+>

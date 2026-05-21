@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { memo, forwardRef } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
 import { useForm, ValidationError } from '@formspree/react';
@@ -8,7 +8,7 @@ import  CommandLine from '../components/commandLine';
 import { Alert } from '../components/alert';
 
 
-export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCount }, ref) => {
+const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
   const [state, handleSubmit] = useForm("xkovbadl");
 
@@ -106,4 +106,9 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
       )}
     </CustomSection>
   )
-})
+}
+
+const Contact = forwardRef<HTMLDivElement, SectionProps>(ContactContent)
+export default memo(Contact) as React.MemoExoticComponent<
+  React.ForwardRefExoticComponent<SectionProps & React.RefAttributes<HTMLDivElement>>
+>

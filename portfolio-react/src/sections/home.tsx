@@ -1,11 +1,11 @@
 import { type CSSProperties } from 'react'
-import { forwardRef } from 'react'
+import { memo, forwardRef } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
 import { Github, Linkedin, File} from 'lucide-react'
 
 
-export const Home = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPinned, pinCount }, ref) =>  {
+const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) =>  {
 
   const splittingText = (text: string) => {
     return text.split('').map((char, index) => (
@@ -43,4 +43,10 @@ export const Home = forwardRef<HTMLDivElement, SectionProps>(({ pinned, firstPin
       </div>
     </CustomSection>
   )
-})
+}
+
+const Home = forwardRef<HTMLDivElement, SectionProps>(HomeContent)
+
+export default memo(Home) as React.MemoExoticComponent<
+  React.ForwardRefExoticComponent<SectionProps & React.RefAttributes<HTMLDivElement>>
+>
