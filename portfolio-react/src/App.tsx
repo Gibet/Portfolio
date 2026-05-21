@@ -149,7 +149,7 @@ function App() {
     })
 
     return () => observer.disconnect()
-  }, [])
+  }, [handleEntry])
 
   // Inject Vercel Speed Insights script
   useEffect(() => {

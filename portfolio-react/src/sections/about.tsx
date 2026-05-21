@@ -108,7 +108,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {languages.map((lang) => (
                     <Skill key={lang} name={skillsData[lang]?.name || lang} imageSrc={skillsData[lang]?.imageSrc}
-                    highlighted={hoveredSkill === lang}
+                    highlighted={relatedSkills.has(lang)}
                     handleHover={() => {handleSkillHover(lang)}} />
                   ))}
                 </div>
@@ -118,7 +118,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {frontendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc} 
-                    highlighted={hoveredSkill === tech}
+                    highlighted={relatedSkills.has(tech)}
                     handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
@@ -128,7 +128,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {backendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
-                    highlighted={hoveredSkill === tech}
+                    highlighted={relatedSkills.has(tech)}
                     handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
@@ -139,7 +139,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
                   {toolsSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} 
                       imageSrc={skillsData[tech]?.imageSrc}
-                      highlighted={hoveredSkill === tech}
+                      highlighted={relatedSkills.has(tech)}
                       handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
