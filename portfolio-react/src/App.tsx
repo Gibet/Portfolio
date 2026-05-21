@@ -91,41 +91,74 @@ function App() {
     sectionRefs.current[section] = el
   }
 
+  const getActiveSection = () => {
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const triggerPoint = viewportHeight *.99;
+
+    let candidate: { id: string; distance: number } | null = null;
+
+    for (const name of sections) {
+      const el = sectionRefs.current[name];
+      if (!el) continue;
+
+      const rect = el.getBoundingClientRect();
+      const crossedTrigger = rect.top < triggerPoint && rect.bottom > triggerPoint;
+      if (crossedTrigger) {
+        return name;
+      }
+
+      if (rect.bottom > 0 && rect.top < viewportHeight) {
+        const toTop = Math.abs(rect.top - triggerPoint);
+        if (!candidate || toTop < candidate.distance) {
+          candidate = { id: name, distance: toTop };
+        }
+      }
+    }
+    return candidate?.id || activeSectionRef.current;
+  }
+
   // Intersection Observer to handle pinning sections
   const handleEntry = useCallback((entries: IntersectionObserverEntry[]) => {
     if (keepCurrentPinnedRef.current) return
 
+    /* let nextPinned = new Set<string>(pinnedSections)
     let nextActiveSection = activeSectionRef.current;
+    let maxVisibleTop = Number.POSITIVE_INFINITY;
 
-    setPinnedSections(prev => {
-      const nextPinned = new Set(prev);
 
-      for (const entry of entries) {
-        const id = entry.target.id;
-        const currentIndex = sections.indexOf(id);
+    for (const entry of entries) {
+      const id = entry.target.id;
+      const currentIndex = sections.indexOf(id);
 
-        if (entry.isIntersecting) {
-          nextPinned.add(id);
+      if (entry.isIntersecting) {
+        nextPinned.add(id);
 
-          if (entry.intersectionRatio > 0.5) {
-            nextActiveSection = id;
-          }
-
-          for (let i = currentIndex + 1; i < sections.length; i++) {
-            nextPinned.delete(sections[i]);
-          }
-        } else {
-          nextPinned.delete(id);
+        // Determine the topmost visible section to set as active
+        const top = entry.boundingClientRect.top;
+        if (top >= 0 && top < maxVisibleTop) {
+          maxVisibleTop = top;
+          nextActiveSection = id;
         }
-      }
 
-      return nextPinned;
-    });
+        // Unpin sections that are below the currently active one
+        for (let i = currentIndex + 1; i < sections.length; i++) {
+          nextPinned.delete(sections[i]);
+        }
+      } else {
+        nextPinned.delete(id);
+      }
+    }
+    setPinnedSections(nextPinned); */
+
+    const nextActiveSection = getActiveSection();
+    const nextIndex = sections.indexOf(nextActiveSection);
+
+    setPinnedSections(new Set(sections.slice(0, nextIndex + 1)));
 
     if (nextActiveSection !== activeSectionRef.current) {
       setActiveSection(nextActiveSection);
     }
-  }, [])
+  }, [getActiveSection])
 
   useEffect(() => {
     keepCurrentPinnedRef.current = keepCurrentPinned;
@@ -138,7 +171,7 @@ function App() {
   // Set up the Intersection Observer when the component mounts
   useEffect(() => {
     const observer = new IntersectionObserver(handleEntry, {
-      threshold: [0.01, 0.99],
+      threshold: [0.01, .99],
     });
 
     sections.forEach(section => {

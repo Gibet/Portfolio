@@ -163,9 +163,9 @@ body {
     height: 100%;
     mask:
       radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / var(--size) var(--size),
-      url("/images/backgrounds/noise-mask.png") 512px 50% / 512px 512px;
+      url("/images/backgrounds/noise-mask.png") 256px 50% / 256px 256px;
     -webkit-mask: radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / var(--size) var(--size),
-      url("/images/backgrounds/noise-mask.png") 512px 50% / 512px 512px;
+      url("/images/backgrounds/noise-mask.png") 256px 50% / 256px 256px;
     mask-composite: intersect;
     -webkit-mask-composite: intersect;
     animation: flicker 20s infinite linear;
