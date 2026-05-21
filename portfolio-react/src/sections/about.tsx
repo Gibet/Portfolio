@@ -1,4 +1,4 @@
-import { memo, forwardRef, useState } from 'react'
+import { memo, forwardRef, useState, useMemo } from 'react'
 import type { SectionProps, SkillKey } from '../utils/types'
 import CustomSection from '../components/customSection'
 import * as skills from "../utils/skills.json"
@@ -23,18 +23,14 @@ const toolsSkills: SkillKey[] = ['Git', 'Docker', 'GitHub', 'GithubActions'];
 const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
   const [currentTab, setCurrentTab] = useState(AboutTabs[0])
+  const [hoveredSkill, setHoveredSkill] = useState<SkillKey | null>(null);
+
+  const relatedSkills = useMemo(() => {
+    return new Set(skillsData[hoveredSkill as SkillKey]?.related || []);
+  }, [hoveredSkill]);
 
   const handleSkillHover = (skillKey: SkillKey) => {
-    const relatedSkills = skillsData[skillKey]?.related;
-    if (relatedSkills) {
-      console.log(`Related skills for ${skillKey}:`, relatedSkills);
-      relatedSkills.forEach((relatedKey) => {
-        const relatedElement = document.querySelector(`#${skillsData[relatedKey]?.name.replace(/[\s.]+/g, '-')}`) as HTMLElement | null;
-        if (relatedElement) {
-          relatedElement.classList.toggle('highlight');
-        }
-      });
-    }
+    setHoveredSkill(current => current === skillKey ? null : skillKey);
   };
 
   return (
@@ -112,6 +108,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {languages.map((lang) => (
                     <Skill key={lang} name={skillsData[lang]?.name || lang} imageSrc={skillsData[lang]?.imageSrc}
+                    highlighted={hoveredSkill === lang}
                     handleHover={() => {handleSkillHover(lang)}} />
                   ))}
                 </div>
@@ -121,6 +118,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {frontendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc} 
+                    highlighted={hoveredSkill === tech}
                     handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
@@ -130,6 +128,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {backendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
+                    highlighted={hoveredSkill === tech}
                     handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
@@ -138,8 +137,10 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
                 <CommandLine variant='tertiary' title="Outils" />
                 <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
                   {toolsSkills.map((tech) => (
-                    <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
-                    handleHover={() => {handleSkillHover(tech)}} />
+                    <Skill key={tech} name={skillsData[tech]?.name || tech} 
+                      imageSrc={skillsData[tech]?.imageSrc}
+                      highlighted={hoveredSkill === tech}
+                      handleHover={() => {handleSkillHover(tech)}} />
                   ))}
                 </div>
               </div>

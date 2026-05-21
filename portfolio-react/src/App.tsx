@@ -21,6 +21,7 @@ function App() {
   // Ref to keep track of the current section
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({})
   const activeSectionRef = useRef(activeSection)
+  const keepCurrentPinnedRef = useRef(keepCurrentPinned)
 
   // Function to handle section visibility change
   const handleSectionChange = useCallback ((section: string, from = activeSectionRef.current) => {
@@ -91,44 +92,46 @@ function App() {
   }
 
   // Intersection Observer to handle pinning sections
-  const handleEntry = (entries: IntersectionObserverEntry[]) => {
-    if (keepCurrentPinned) return
+  const handleEntry = useCallback((entries: IntersectionObserverEntry[]) => {
+    if (keepCurrentPinnedRef.current) return
 
-    entries.forEach(entry => {
-      const id = entry.target.id;
-      const currentIndex = sections.indexOf(id);
-      
-      // If the section is intersecting, pin it
-      if (entry.isIntersecting) {
-        setPinnedSections(prev => new Set([...prev, id]));
+    let nextActiveSection = activeSectionRef.current;
 
-        if (entry.intersectionRatio > 0.5) {
-          setActiveSection(id);
-        }
+    setPinnedSections(prev => {
+      const nextPinned = new Set(prev);
 
-        // unpin all sections after it, to ensure only the current section and those before it are pinned
-        setPinnedSections(prev => {
-          const newSet = new Set(prev);
-          
-          // Remove all sections after the current one
+      for (const entry of entries) {
+        const id = entry.target.id;
+        const currentIndex = sections.indexOf(id);
+
+        if (entry.isIntersecting) {
+          nextPinned.add(id);
+
+          if (entry.intersectionRatio > 0.5) {
+            nextActiveSection = id;
+          }
+
           for (let i = currentIndex + 1; i < sections.length; i++) {
-            newSet.delete(sections[i]);
-          }          
-          return newSet;
-        });
-
-      } else {
-        setPinnedSections(prev => {
-          const newSet = new Set(prev);
-          newSet.delete(id);
-          return newSet;
-        });
+            nextPinned.delete(sections[i]);
+          }
+        } else {
+          nextPinned.delete(id);
+        }
       }
+
+      return nextPinned;
     });
-  }
+
+    if (nextActiveSection !== activeSectionRef.current) {
+      setActiveSection(nextActiveSection);
+    }
+  }, [])
 
   useEffect(() => {
-    // Update the active section ref whenever activeSection changes
+    keepCurrentPinnedRef.current = keepCurrentPinned;
+  }, [keepCurrentPinned]);
+
+  useEffect(() => {
     activeSectionRef.current = activeSection;
   }, [activeSection]);
 
@@ -148,7 +151,10 @@ function App() {
     return () => observer.disconnect()
   }, [])
 
-  injectSpeedInsights();
+  // Inject Vercel Speed Insights script
+  useEffect(() => {
+    injectSpeedInsights();
+  }, []);
 
   return (
     <>

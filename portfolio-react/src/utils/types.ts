@@ -42,6 +42,7 @@ export interface ModalProps {
 export interface SkillProps {
   name: string;
   imageSrc: string;
+  highlighted?: boolean;
   handleHover?: () => void;
 }
 
