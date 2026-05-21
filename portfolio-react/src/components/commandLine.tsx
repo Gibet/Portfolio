@@ -5,7 +5,7 @@ import { memo } from 'react'
 const CommandLine: React.FC<CommandLineProps> = (props: CommandLineProps) => {
 
   return (
-    <div className={`command-line flex items-center overflow-x-auto overflow-y-hidden whitespace-nowrap ${props.variant}`}>
+    <div className={`command-line text-sm flex items-center overflow-x-auto overflow-y-hidden whitespace-nowrap ${props.variant}`}>
       <span className="command-line-dot">&nbsp;</span>
       <span className='command-line-title'>{props.title}</span>
       {props.subtitle && <span className="command-line-sub">{props.subtitle}</span>}

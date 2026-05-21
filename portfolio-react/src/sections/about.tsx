@@ -60,7 +60,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
                   <span className="absolute left-0 chrono-dot"></span>
                   <div className='event'>
                     <CommandLine variant='secondary' title="Bachelor Concepteur Développeur d'Applications (CDA)" />
-                    <h4 className="terminal text-md font-medium sm:ml-6 items-center">La Plateforme_ - <span className="text-xs">2022-2025</span></h4>
+                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center">La Plateforme_ - <span className="text-xs">2022-2025</span></h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Développement full stack, avec JavaScript, Node.js, React et Symfony</li>
                       <li>Développement d’API avec API Platform, Express</li>
@@ -90,7 +90,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
                     <CommandLine variant='secondary' title="Développeur Web Junior (Alternance)" />
-                    <h4 className="terminal text-md font-medium sm:ml-6 items-center">L'Atelier de La Plateforme - <span className="text-xs">2023-2025</span></h4>
+                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center">L'Atelier de La Plateforme - <span className="text-xs">2023-2025</span></h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Participation à plusieurs projets de développement web et mobile en environnement agile.</li>
                       <li>Contribution au développement full stack (React, Node.js) et à la mise en place de bonnes pratiques (tests,intégration continue, gestion de versions Git).</li>
