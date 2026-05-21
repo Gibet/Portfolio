@@ -1,6 +1,6 @@
 import type { HeaderProps } from '../utils/types'
 import { Cog, Contact, Github, Home, Info, Linkedin } from 'lucide-react'
-import { CommandLine } from './commandLine'
+import CommandLine from './commandLine'
 import { memo } from 'react'
 
 const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {

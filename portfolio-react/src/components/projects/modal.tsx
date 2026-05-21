@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { ModalProps } from '../../utils/types';
 import Skill from '../skill';
 import * as skills from "../../utils/skills.json";
-import { CommandLine } from '../commandLine';
+import CommandLine from '../commandLine';
 
 const ProjectImages = import.meta.glob<{default: string}>('/src/assets/images/projects/**/*.{png,jpg,jpeg}'); 
 const imagesCache = new Map<string, string[]>();

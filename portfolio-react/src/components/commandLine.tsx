@@ -1,7 +1,8 @@
 import type { CommandLineProps } from '../utils/types'
 import { Github } from 'lucide-react'
+import { memo } from 'react'
 
-export const CommandLine = (props: CommandLineProps) => {
+const CommandLine: React.FC<CommandLineProps> = (props: CommandLineProps) => {
 
   return (
     <div className={`command-line flex items-center overflow-x-auto overflow-y-hidden whitespace-nowrap ${props.variant}`}>
@@ -18,3 +19,5 @@ export const CommandLine = (props: CommandLineProps) => {
     </div>
   )
 }
+
+export default memo(CommandLine)

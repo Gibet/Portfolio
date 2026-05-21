@@ -4,7 +4,7 @@ import CustomSection from '../components/customSection'
 import * as skills from "../utils/skills.json"
 import Skill from '../components/skill'
 import { Container } from '../components/container'
-import { CommandLine } from '../components/commandLine'
+import CommandLine from '../components/commandLine'
 
 type SkillsType = {
   name: string;

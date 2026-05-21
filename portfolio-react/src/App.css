@@ -242,7 +242,7 @@ header {
     background-color: transparent !important;
     transition: color border 0.5s ease;
     padding: 10px;
-    height: 70px;
+    height: 60px;
   }
   button:hover {
     color: var(--accent);

@@ -4,7 +4,7 @@ import CustomSection from '../components/customSection'
 import { useForm, ValidationError } from '@formspree/react';
 import { Container } from '../components/container';
 import { Mail } from 'lucide-react';
-import { CommandLine } from '../components/commandLine';
+import  CommandLine from '../components/commandLine';
 import { Alert } from '../components/alert';
 
 
@@ -27,8 +27,8 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
           <CommandLine variant='title' title="Contactez-moi" />
         </Container>
         <div className="flex flex-col lg:flex-row lg:gap-12 w-full h-full lg:items-start items-center justify-start">
-          <Container variant='body' className="w-full lg:w-3/5 w h-fit sm:mt-8 mt-0">
-            <p className='text-sm'>
+          <Container variant='body' className="w-full lg:w-3/5 w h-fit text-xs sm:mt-8 mt-0">
+            <p className=''>
               Je suis toujours ouvert à de nouvelles opportunités et collaborations. N'hésitez pas à me contacter pour discuter de projets, d'idées ou simplement pour échanger.
             </p>
             <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-1">
@@ -36,7 +36,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
             </a>
           </Container>
           <Container variant='body' className="lg:w-2/5 sm:mt-8 mt-4">
-            <form onSubmit={handleSubmit} className="grid grid-cols-2 grid-rows-4 gap-4">
+            <form onSubmit={handleSubmit} className="grid grid-cols-2 grid-rows-4 gap-1 sm:gap-3">
               <input
                 id="email"
                 type="email"

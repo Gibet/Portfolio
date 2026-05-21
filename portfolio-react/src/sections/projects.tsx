@@ -7,7 +7,7 @@ import ProjectModal from '../components/projects/modal'
 import { useResponsivePageSize } from '../hooks/useResponsive'
 import { Container } from '../components/container'
 import { ProjectsNavigation } from '../components/projects/navigation'
-import { CommandLine } from '../components/commandLine'
+import CommandLine from '../components/commandLine'
 
 const ProjectsList = ProjectsData as { projects: ProjectProps[] }
 const categories = ['Tous', 'Web', 'Mobile']
