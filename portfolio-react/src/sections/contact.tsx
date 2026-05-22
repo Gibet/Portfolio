@@ -1,4 +1,4 @@
-import { memo, forwardRef } from 'react'
+import { memo, forwardRef, useState, useEffect, useEffect } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
 import { useForm, ValidationError } from '@formspree/react';
@@ -11,12 +11,22 @@ import { Alert } from '../components/alert';
 const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
   const [state, handleSubmit] = useForm("xkovbadl");
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleAlertClose = () => {
-    // Logic to close the alert, e.g., setting a state variable to hide it
-    
-  }
-        
+    setShowAlert(false);
+  };
+
+  // Open alert when form submission is complete then auto-close after 5 seconds
+  useEffect(() => {
+    if (state.succeeded || state.errors) {
+      setShowAlert(true);
+      const timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [state]);
 
   const formValidation = () => Boolean(state.errors?.getFormErrors) || state.submitting;
 
@@ -97,7 +107,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
         </div>
         <div className="footer"></div>
       </div>
-      {state.result && (
+      {showAlert && (
         <Alert
           success={state.succeeded}
           message={state.succeeded ? "Message envoyé avec succès !" : "Une erreur est survenue. Veuillez réessayer."}
