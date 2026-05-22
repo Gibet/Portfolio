@@ -9,7 +9,7 @@
         "Déploiment avec Vercel",
         ""],
       "imageSrc": "/images/projects/Portfolio.png",
-      "stack": ["React", "Vite","TailwindCSS"],
+      "stack": ["React", "Vite","TailwindCSS", "CSS3"],
       "github": "#"
     },
     {
