@@ -14,22 +14,17 @@ import { injectSpeedInsights } from "@vercel/speed-insights"
 
 function App() {
   const [pinnedSections, setPinnedSections] = useState(new Set(['home']))
-  const [lowerSections, setLowerSections] = useState(new Set<string>())
   const [activeSection, setActiveSection] = useState('home')
-  const [keepCurrentPinned, setKeepCurrentPinned] = useState(false)
 
   // Ref to keep track of the current section
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({})
   const activeSectionRef = useRef(activeSection)
-  const keepCurrentPinnedRef = useRef(keepCurrentPinned)
+  /* const keepCurrentPinnedRef = useRef(keepCurrentPinned) */
 
   // Function to handle section visibility change
   const handleSectionChange = useCallback ((section: string, from = activeSectionRef.current) => {
     const targetElement = sectionRefs.current[section]
     if (!targetElement) return
-
-    const targetIndex = sections.indexOf(section)
-    const currentIndex = sections.indexOf(from)
     
     // If navigating to the same section, but with another one on top, scroll down to reveal it
     if (section === activeSectionRef.current && from !== activeSectionRef.current) {
@@ -44,42 +39,12 @@ function App() {
         return
       }
     }
-
-    if (Math.abs(targetIndex - currentIndex) > 1) {
-      const start = Math.min(currentIndex, targetIndex)
-      const end = Math.max(currentIndex, targetIndex)
-      const intermediateSections = sections.slice(start + 1, end)
-      
-      // First: Pin intermediate sections behind current section
-      setPinnedSections(prev => {
-        const newSet = new Set(prev)
-        intermediateSections.forEach(sectionName => newSet.add(sectionName))
-        return newSet
-      })
-      
-      // Hide them behind current section with lower z-index
-      setKeepCurrentPinned(true)
-      
-      // Small delay to ensure pinning takes effect, then scroll
-      requestAnimationFrame(() => {
-        targetElement.scrollIntoView({ behavior: 'smooth' })
-        setActiveSection(section)
-      })
-
-      // Clean up after scroll
-      setTimeout(() => {
-        setKeepCurrentPinned(false)
-        setLowerSections(new Set())
-        setPinnedSections(new Set([section]))
-      }, 1000)
-    } else {
-      targetElement?.scrollIntoView({ behavior: 'smooth' })
-    }
+    targetElement?.scrollIntoView({ behavior: 'smooth' })
   }, [])
 
   const getSectionZIndex = (sectionName: string) => {
     const baseIndex = sections.indexOf(sectionName)
-    return lowerSections.has(sectionName) ? -(baseIndex + 1) : baseIndex
+    return baseIndex
   }
 
   const getFirstPinnedSection = () => {
@@ -119,7 +84,6 @@ function App() {
 
   // Intersection Observer to handle pinning sections
   const handleEntry = useCallback(() => {
-    if (keepCurrentPinnedRef.current) return
 
     const nextActiveSection = getActiveSection();
     const nextIndex = sections.indexOf(nextActiveSection);
@@ -131,9 +95,6 @@ function App() {
     }
   }, [getActiveSection])
 
-  useEffect(() => {
-    keepCurrentPinnedRef.current = keepCurrentPinned;
-  }, [keepCurrentPinned]);
 
   useEffect(() => {
     activeSectionRef.current = activeSection;
@@ -165,8 +126,8 @@ function App() {
       <Header navigate={handleSectionChange} activeSection={activeSection} />
       <main id='main-container' className="relative w-full 2xl:max-w-[75vw] flex-1 scroll-smooth light">
         <Home pinned={pinnedSections.has('home')} firstPinned={getFirstPinnedSection() === 'home'} pinCount={pinnedSections.size} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />
-        <About pinned={pinnedSections.has('about')} firstPinned={getFirstPinnedSection() === 'about'} pinCount={pinnedSections.size} lower={lowerSections.has('about')} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
-        <Projects pinned={pinnedSections.has('projects')} firstPinned={getFirstPinnedSection() === 'projects'} pinCount={pinnedSections.size} lower={lowerSections.has('projects')} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />
+        <About pinned={pinnedSections.has('about')} firstPinned={getFirstPinnedSection() === 'about'} pinCount={pinnedSections.size} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
+        <Projects pinned={pinnedSections.has('projects')} firstPinned={getFirstPinnedSection() === 'projects'} pinCount={pinnedSections.size} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />
         <Contact pinned={pinnedSections.has('contact')} firstPinned={getFirstPinnedSection() === 'contact'} pinCount={pinnedSections.size} ref={setSectionRef('contact')} zIndex={getSectionZIndex('contact')} />
         <SectionNavigation
           index={sections.indexOf(activeSection)}

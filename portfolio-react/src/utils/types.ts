@@ -4,7 +4,6 @@ import type { RefObject } from "react";
 export interface SectionProps {
   id?: string;
   pinned: boolean;
-  lower?: boolean;
   children?: React.ReactNode;
   firstPinned?: boolean;
   pinCount?: number;

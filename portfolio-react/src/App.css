@@ -610,7 +610,7 @@ a:hover {
 }
 
 .highlight {
-  border: 1px solid var(--accent) !important;
+  border-bottom: 2px solid var(--accent) !important;
 }
 
 /* projects section */

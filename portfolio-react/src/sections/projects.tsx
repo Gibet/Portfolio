@@ -13,7 +13,7 @@ const ProjectsList = ProjectsData as { projects: ProjectProps[] }
 const categories = ['Tous', 'Web', 'Mobile']
 /* const pageSize = 10 */
 
-const ProjectsContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
+const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
   const [currentCategory, setCurrentCategory] = useState(categories[0])  
   const [currentPage, setCurrentPage] = useState(1)
@@ -27,7 +27,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount, lower = false }: Secti
   }
   
   return (
-    <CustomSection id="projects" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} lower={lower} ref={ref} zIndex={3}>
+    <CustomSection id="projects" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={3}>
       <div className="relative flex flex-col items-center w-11/12 sm:w-5/6 h-full sm:py-12 py-6">
         <Container variant='header' className='flex flex-col gap-2.5'>
           <CommandLine variant='title' title="Mes Projets" />

@@ -20,7 +20,7 @@ const frontendSkills: SkillKey[] = ['React', 'ReactNative', 'TailwindCSS', 'Elec
 const backendSkills: SkillKey[] = ['Nodejs', 'Expressjs', 'Nest', 'Fiber', 'MySQL', 'PostgreSQL', 'MongoDB'];
 const toolsSkills: SkillKey[] = ['Git', 'Docker', 'GitHub', 'GithubActions'];
 
-const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
+const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
   const [currentTab, setCurrentTab] = useState(AboutTabs[0])
   const [hoveredSkill, setHoveredSkill] = useState<SkillKey | null>(null);
@@ -34,7 +34,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount, lower = false }: SectionP
   };
 
   return (
-    <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} lower={lower} ref={ref} zIndex={4}>
+    <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={4}>
       <div className='flex flex-col items-center w-11/12 sm:w-5/6 h-full sm:py-12 py-6'>
         <Container variant='header' className='flex flex-col gap-2'>
           <CommandLine variant='title' title="A propos de moi" />
