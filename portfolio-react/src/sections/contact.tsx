@@ -17,16 +17,12 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
     setShowAlert(false);
   };
 
-  // Open alert when form submission is complete then auto-close after 5 seconds
+  // Open alert when form submission is complete 
   useEffect(() => {
     if (state.succeeded || state.errors) {
       setShowAlert(true);
-      const timer = setTimeout(() => {
-        setShowAlert(false);
-      }, 5000);
-      return () => clearTimeout(timer);
     }
-  }, [state]);
+  }, [state.result]);
 
   const formValidation = () => Boolean(state.errors?.getFormErrors) || state.submitting;
 
@@ -37,7 +33,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
           <CommandLine variant='title' title="Contactez-moi" />
         </Container>
         <div className="flex flex-col lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full lg:items-start items-center justify-start">
-          <Container variant='body' className="w-full lg:w-3/5 w h-fit text-xs sm:mt-8 mt-0">
+          <Container variant='body' className="hidden sm:block w-full lg:w-3/5 w h-fit text-xs sm:mt-8 mt-0">
             <p className=''>
               Je suis toujours ouvert à de nouvelles opportunités et collaborations. N'hésitez pas à me contacter pour discuter de projets, d'idées ou simplement pour échanger.
             </p>

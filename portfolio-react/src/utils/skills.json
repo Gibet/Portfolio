@@ -2,12 +2,12 @@
   "JavaScript": {
     "name": "JavaScript",
     "imageSrc": "/images/logo/javascript.svg",
-    "related": ["TypeScript", "React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
+    "related": ["React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
   },
   "TypeScript": {
     "name": "TypeScript",
     "imageSrc": "/images/logo/typescript.svg",
-    "related": ["JavaScript", "React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
+    "related": ["React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
   },
   "React": {
     "name": "React",
