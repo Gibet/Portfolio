@@ -391,7 +391,6 @@ a:hover {
 
 .command-line {
   color: var(--commandText) !important;
-  /* filter: drop-shadow(var(--commandShadow)); */
 }
 
 .secondary, .tertiary {
@@ -437,6 +436,8 @@ a:hover {
   padding: 2px 20px 2px 24px;
   /* clip right side */
   --tip-depth: 16px; /* how far the tip extends inward */
+  display: inline-flex;
+  align-items: center;
 }
 
 .command-line-title, .command-line-sub, .command-line-add {
@@ -706,7 +707,21 @@ a:hover {
   right: 20px;
   box-shadow: var(--shadow);
   color: var(--text);
+  display: flex;
+  align-items: center;
   background-color: var(--background);
+}
+
+.alert-success {
+  border-bottom: 2px solid rgba(0, 255, 0, 0.7);
+}
+
+.alert-info {
+  border-bottom: 2px solid rgba(0, 0, 255, 0.7);
+}
+
+.alert-error {
+  border-bottom: 2px solid rgba(255, 0, 0, 0.7);
 }
 
 input, textarea {

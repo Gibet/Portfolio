@@ -1,4 +1,4 @@
-import { memo, forwardRef } from 'react'
+import { memo, forwardRef, useState, useEffect } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
 import { useForm, ValidationError } from '@formspree/react';
@@ -10,13 +10,19 @@ import { Alert } from '../components/alert';
 
 const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
-  const [state, handleSubmit] = useForm("xkovbadl");
+  const [state, handleSubmit] = useForm("mredkrzg");
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleAlertClose = () => {
-    // Logic to close the alert, e.g., setting a state variable to hide it
-    
-  }
-        
+    setShowAlert(false);
+  };
+
+  // Open alert when form submission is complete 
+  useEffect(() => {
+    if (state.succeeded || state.errors) {
+      setShowAlert(true);
+    }
+  }, [state.result]);
 
   const formValidation = () => Boolean(state.errors?.getFormErrors) || state.submitting;
 
@@ -26,8 +32,8 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
         <Container variant='header'>
           <CommandLine variant='title' title="Contactez-moi" />
         </Container>
-        <div className="flex flex-col lg:flex-row lg:gap-12 w-full h-full lg:items-start items-center justify-start">
-          <Container variant='body' className="w-full lg:w-3/5 w h-fit text-xs sm:mt-8 mt-0">
+        <div className="flex flex-col lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full lg:items-start items-center justify-start">
+          <Container variant='body' className="hidden sm:block w-full lg:w-3/5 w h-fit text-xs sm:mt-8 mt-0">
             <p className=''>
               Je suis toujours ouvert à de nouvelles opportunités et collaborations. N'hésitez pas à me contacter pour discuter de projets, d'idées ou simplement pour échanger.
             </p>
@@ -97,7 +103,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
         </div>
         <div className="footer"></div>
       </div>
-      {state.result && (
+      {showAlert && (
         <Alert
           success={state.succeeded}
           message={state.succeeded ? "Message envoyé avec succès !" : "Une erreur est survenue. Veuillez réessayer."}
