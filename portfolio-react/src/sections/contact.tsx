@@ -101,8 +101,8 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
               <button
                 type="submit"
                 disabled={formValidation()}
-                className="font-bold text-sm py-2 px-4 col-span-2">
-                <Mail size={20} className='inline-block mr-2' strokeWidth={1.25}/>
+                className="font-bold text-xs py-2 px-4 col-span-2">
+                <Mail size={18} className='inline-block mr-2' strokeWidth={1.25}/>
                 Envoyer
               </button>
             </form>
