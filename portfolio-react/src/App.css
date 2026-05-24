@@ -4,11 +4,12 @@
 
 :root {
   --primary : rgb(240, 240, 240);
-  --secondary : rgb(51, 51, 51);
+  --secondary : rgb(50, 50, 50);
   --accent : rgba(4, 114, 188, 1);
   --secondaryAccent : rgba(255, 220, 40, 0.9);
   --tertiaryAccent : rgba(255, 255, 255, 1);
   --background : rgb(255, 255, 255);
+  --backgroundSecondary : rgb(65, 65, 65);
   --sectHeader : rgba(255, 255, 255, 0.71);
   --sectBody : rgba(240, 240, 240, 0.71);
   --disabled : rgba(150, 150, 150, 0.1);
@@ -17,11 +18,8 @@
   --headerBg : rgba(255, 255, 255, 0.3);
   --buttonBg : rgb(233, 233, 233);
   --shadow : 0px 4px 4px 2px rgba(65, 65, 65, 0.05);
-  --sectionShadow : 0px 75px 30px 20px rgba(0, 0, 0, 0.1);
-  --pinnedShadow : 0px 20px 30px 20px rgba(0, 0, 0, 0.5);
+  --sectionShadow : 0px 50px 30px 0px rgba(0, 0, 0, 0.05);
   --shadowSecondary : 0px 4px 8px rgba(185, 185, 185, 0.3);
-  --shadowTertiary : 0px 4px 25px rgba(185, 185, 185, 0.3);
-  --toplayerColor: rgba(255, 255, 255, 0.2);
   --bgPattern1: rgba(0, 0, 0, 0.05);
   --bgPattern2: rgba(0, 0, 0, 0.1);
   --bgPattern3: rgba(0, 0, 0, 0.15);
@@ -45,12 +43,13 @@
 }
 
 [data-theme="dark"] {
-  --primary : rgb(20, 20, 20);
+  --primary : rgb(25, 25, 25);
   --secondary : rgb(15, 15, 15);
   --accent : rgba(204, 173, 0, 0.9);
   --secondaryAccent : rgba(4, 114, 188, 0.9);
   --tertiaryAccent : rgba(15, 15, 15, 1);
   --background : rgb(40, 40, 40);
+  --backgroundSecondary : rgb(25, 25, 25);
   --sectHeader : rgba(40, 40, 40, 0.71);
   --sectBody : rgba(30, 30, 30, 0.71);
   --disabled : rgba(150, 150, 150, 0.1);
@@ -59,11 +58,8 @@
   --headerBg : rgba(50, 50, 50, 0.3);
   --buttonBg : rgb(20, 20, 20);
   --shadow : 0px 8px 8px 5px rgba(0, 0, 0, 0.05);
-  --sectionShadow : 0px 75px 30px 20px rgba(0, 0, 0, 0.2);
-  --pinnedShadow : 0px 0px 30px 20px rgba(0, 0, 0, 0.5);
-  --shadowSecondary : 0px 4px 8px rgba(35, 35, 35, 0.3);
-  --shadowTertiary : 0px 4px 8px rgba(65, 65, 65, 0.3);
-  --toplayerColor: rgba(55, 55, 55, 0.1);
+  --sectionShadow : 0px 50px 30px 0px rgba(0, 0, 0, 0.05);
+  --shadowSecondary : 0px 4px 8px rgba(35, 35, 35, 0.2);
   --bgPattern1: rgba(100, 100, 100, 0.05);
   --bgPattern2: rgba(100, 100, 100, 0.1);
   --bgPattern3: rgba(100, 100, 100, 0.15);
@@ -134,7 +130,7 @@ body {
 }
 
 #root {
-  background-color: var(--secondary);
+  background: radial-gradient(circle at 50% 50%, var(--backgroundSecondary) 60%, var(--secondary) 100%);
 }
 
 .custom-section {
@@ -261,7 +257,7 @@ footer {
   background-color: var(--headerBg);
   color: var(--text);
   z-index: 1;
-  box-shadow: var(--shadowTertiary);
+  box-shadow: var(--shadowSecondary);
   button {
     color: var(--text);
     cursor: pointer;
@@ -300,20 +296,18 @@ footer {
   transform: scaleX(1.005);
 }
 
-.pinned > :last-child {
-  box-shadow: var(--pinnedShadow);
-}
 
 button {
   color: var(--text);
   cursor: pointer;
   background-color: var(--buttonBg);
-  border: 1px solid var(--primary);
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-button:hover {
+button:hover, .active {
   background-color: var(--background);
-  border: 1px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
   color: var(--accent);
 }
 
@@ -322,12 +316,6 @@ button:disabled {
   color: var(--disabledColor);
   cursor: not-allowed;
   border: none;
-}
-
-.active {
-  background-color: var(--background);
-  border: 1px solid var(--accent);
-  color: var(--accent);
 }
 
 
@@ -361,14 +349,14 @@ a:hover {
     cursor: not-allowed;
   }
   button:hover:not(:disabled) {
-    color: var(--commandBgDot);
+    color: var(--accent);
   }
 }
 
 .container {
   opacity: .9;
   padding: 20px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadowSecondary);
   background:
     linear-gradient(to right, var(--dividerColor) 2px, transparent 1px) 0 0,
     linear-gradient(to right, var(--dividerColor) 2px, transparent 1px) 0 100%,
@@ -431,9 +419,9 @@ a:hover {
 }
 
 .command-line-title, .command-line-sub, .command-line-add, .command-line-link {
-  height: 28px;
-  text-shadow: var(--shadowTertiary);
-  padding: 2px 20px 2px 24px;
+  height: 25px;
+  text-shadow: var(--shadowSecondary);
+  padding: 0px 20px 0px 24px;
   /* clip right side */
   --tip-depth: 16px; /* how far the tip extends inward */
   display: inline-flex;
@@ -582,7 +570,6 @@ a:hover {
   padding: 12px 15px;
   /* margin-bottom: 1rem; */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* box-shadow: var(--shadow); */
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -605,7 +592,6 @@ a:hover {
 }
 
 .skill:hover {
-  box-shadow: var(--shadowSecondary);
   transform: scale(1.03);
 }
 
@@ -631,9 +617,9 @@ a:hover {
   }
 }
 
-.thumbnail:hover {
-  box-shadow: var(--shadowSecondary);
-  transform: scale(1.02);
+.thumbnail:hover,
+input:hover, input:focus,
+textarea:hover, textarea:focus {
   background:
     linear-gradient(to right, var(--accent) 1px, transparent 1px) 0 0,
     linear-gradient(to right, var(--accent) 1px, transparent 1px) 0 100%,
@@ -647,8 +633,12 @@ a:hover {
   background-color: var(--background);
   background-repeat: no-repeat;
   background-size: 20px 20px;
+} 
+
+.thumbnail:hover {
+  box-shadow: var(--shadowSecondary);
+  transform: scale(1.02);
   img {
-    filter: drop-shadow(var(--shadowTertiary));
     filter: saturate(1);
   }
 }
@@ -728,26 +718,17 @@ a:hover {
 input, textarea {
   background-color: var(--background);
   color: var(--text);
-  border: 1px solid var(--primary);
   padding: 10px;
   margin-bottom: 10px;
   width: 100%;
+  outline: none;
 }
 
-form button {
-  background-color: var(--buttonBg);
-  color: var(--text);
-  border: 1px solid transparent;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-input:hover, textarea:hover {
-  border: 1px solid var(--accent);
+input {
+  background-size: 10px 10px !important;
 }
 
 input:focus, textarea:focus {
-  border: 1px solid var(--accent);
   outline: none;
 }
 
