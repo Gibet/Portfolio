@@ -34,18 +34,18 @@
   --commandBgSub: rgba(255, 155, 40, 1);
   --commandShadow: 3px 3px 1px rgba(65, 65, 65, 0.1);
   --commandText: rgb(51, 51, 51);
-  --dividerColor: rgba(0, 0, 0, 0.1);
+  --dividerColor: rgba(0, 0, 0, 0.25);
   --homeMarker: rgba(75, 75, 75, 0.04);
   --aboutMarker: rgba(75, 75, 75, 0.05);
   --projectsMarker: rgba(75, 75, 75, 0.06);
   --contactMarker: rgba(75, 75, 75, 0.07);
-  --activeMarker: rgba(0, 83, 138, 0.15);
+  --activeMarker: rgba(0, 83, 138, 0.3);
 }
 
 [data-theme="dark"] {
   --primary : rgb(25, 25, 25);
   --secondary : rgb(15, 15, 15);
-  --accent : rgba(204, 173, 0, 0.9);
+  --accent : rgba(204, 173, 0, 1);
   --secondaryAccent : rgba(4, 114, 188, 0.9);
   --tertiaryAccent : rgba(15, 15, 15, 1);
   --background : rgb(40, 40, 40);
@@ -74,12 +74,12 @@
   --commandBgSub: rgba(255, 155, 40, 1);
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
   --commandText: rgb(51, 51, 51);
-  --dividerColor: rgba(255, 255, 255, 0.1);
+  --dividerColor: rgba(255, 255, 255, 0.25);
   --homeMarker: rgba(5, 5, 5, 0.04);
   --aboutMarker: rgba(5, 5, 5, 0.05);
   --projectsMarker: rgba(5, 5, 5, 0.06);
   --contactMarker: rgba(5, 5, 5, 0.07);
-  --activeMarker: rgba(97, 82, 0, 0.15);
+  --activeMarker: rgba(97, 82, 0, 0.3);
 }
 
 /* Fonts */
