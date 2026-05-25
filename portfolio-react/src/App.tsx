@@ -10,9 +10,30 @@ import Footer from './components/footer'
 import SectionNavigation from './components/navigation'
 import { injectSpeedInsights } from "@vercel/speed-insights"
 
+type ScrollBehaviorMode = ScrollBehavior
 
+// get appropriate scroll behavior based on user preferences and device capabilities
+const getScrollBehavior = (): ScrollBehaviorMode => {
+  if (typeof window === 'undefined') return 'auto'
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  const nav = navigator as Navigator & {
+    deviceMemory?: number
+    connection?: {
+      saveData?: boolean
+    }
+  }
+
+  const lowMem = nav.deviceMemory !== undefined && nav.deviceMemory <= 4
+  const saveData = nav.connection?.saveData
+  const lowCpu = nav.hardwareConcurrency !== undefined && nav.hardwareConcurrency <= 2
+
+  if (prefersReducedMotion || saveData || lowMem || lowCpu) return 'auto'
+  return 'smooth'
+}
 
 function App() {
+  const scrollBehavior = useRef(getScrollBehavior())
   const [pinnedSections, setPinnedSections] = useState(new Set(['home']))
   const [activeSection, setActiveSection] = useState('home')
 
@@ -35,11 +56,11 @@ function App() {
         
         // Scroll down by the delta to reveal the section below
         const rootElement = document.getElementById('root')
-        rootElement?.scrollBy({ top: delta, behavior: 'smooth' })
+        rootElement?.scrollBy({ top: delta, behavior: scrollBehavior.current })
         return
       }
     }
-    targetElement?.scrollIntoView({ behavior: 'smooth' })
+    targetElement?.scrollIntoView({ behavior: scrollBehavior.current })
   }, [])
 
   const getSectionZIndex = (sectionName: string) => {
@@ -124,7 +145,7 @@ function App() {
   return (
     <>
       <Header navigate={handleSectionChange} activeSection={activeSection} />
-      <main id='main-container' className="relative w-full 2xl:max-w-[75vw] flex-1 scroll-smooth light">
+      <main id='main-container' className="relative w-full 2xl:max-w-[75vw] flex-1">
         <Home pinned={pinnedSections.has('home')} firstPinned={getFirstPinnedSection() === 'home'} pinCount={pinnedSections.size} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />
         <About pinned={pinnedSections.has('about')} firstPinned={getFirstPinnedSection() === 'about'} pinCount={pinnedSections.size} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
         <Projects pinned={pinnedSections.has('projects')} firstPinned={getFirstPinnedSection() === 'projects'} pinCount={pinnedSections.size} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />
