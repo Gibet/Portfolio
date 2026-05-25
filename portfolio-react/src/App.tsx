@@ -63,14 +63,17 @@ function App() {
     targetElement?.scrollIntoView({ behavior: scrollBehavior.current })
   }, [])
 
+  // Get the z-index for a section based on its order in the sections array
   const getSectionZIndex = (sectionName: string) => {
     const baseIndex = sections.indexOf(sectionName)
     return baseIndex
   }
 
-  const getFirstPinnedSection = () => {
-    if (pinnedSections.size === 0) return null
-    return [...pinnedSections][0]
+  // Get the section above the currently active for animation purposes
+  const getAbovePinnedSection = () => {
+    const prevActiveIndex = sections.indexOf(activeSectionRef.current)
+    if (prevActiveIndex === 0) return null
+    return sections[prevActiveIndex-1]
   }
 
   const setSectionRef = (section: string) => (el: HTMLDivElement | null) => {
@@ -117,6 +120,7 @@ function App() {
   }, [getActiveSection])
 
 
+  // Update the active section ref whenever it changes
   useEffect(() => {
     activeSectionRef.current = activeSection;
   }, [activeSection]);
@@ -146,10 +150,10 @@ function App() {
     <>
       <Header navigate={handleSectionChange} activeSection={activeSection} />
       <main id='main-container' className="relative w-full 2xl:max-w-[75vw] flex-1">
-        <Home pinned={pinnedSections.has('home')} firstPinned={getFirstPinnedSection() === 'home'} pinCount={pinnedSections.size} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />
-        <About pinned={pinnedSections.has('about')} firstPinned={getFirstPinnedSection() === 'about'} pinCount={pinnedSections.size} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
-        <Projects pinned={pinnedSections.has('projects')} firstPinned={getFirstPinnedSection() === 'projects'} pinCount={pinnedSections.size} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />
-        <Contact pinned={pinnedSections.has('contact')} firstPinned={getFirstPinnedSection() === 'contact'} pinCount={pinnedSections.size} ref={setSectionRef('contact')} zIndex={getSectionZIndex('contact')} />
+        <Home pinned={pinnedSections.has('home')} firstPinned={getAbovePinnedSection() === 'home'} pinCount={pinnedSections.size} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />
+        <About pinned={pinnedSections.has('about')} firstPinned={getAbovePinnedSection() === 'about'} pinCount={pinnedSections.size} ref={setSectionRef('about')} zIndex={getSectionZIndex('about')} />
+        <Projects pinned={pinnedSections.has('projects')} firstPinned={getAbovePinnedSection() === 'projects'} pinCount={pinnedSections.size} ref={setSectionRef('projects')} zIndex={getSectionZIndex('projects')} />
+        <Contact pinned={pinnedSections.has('contact')} firstPinned={getAbovePinnedSection() === 'contact'} pinCount={pinnedSections.size} ref={setSectionRef('contact')} zIndex={getSectionZIndex('contact')} />
         <SectionNavigation
           index={sections.indexOf(activeSection)}
           sectionRefs={sectionRefs}
