@@ -103,7 +103,7 @@ function App() {
   // Set up the Intersection Observer when the component mounts
   useEffect(() => {
     const observer = new IntersectionObserver(handleEntry, {
-      threshold: [0, 1],
+      threshold: [0],
     });
 
     sections.forEach(section => {
