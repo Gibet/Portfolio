@@ -40,6 +40,8 @@
   --projectsMarker: rgba(75, 75, 75, 0.06);
   --contactMarker: rgba(75, 75, 75, 0.07);
   --activeMarker: rgba(0, 83, 138, 0.3);
+
+  --loader-animation-speed: 0.75s;
 }
 
 [data-theme="dark"] {
@@ -74,12 +76,12 @@
   --commandBgSub: rgba(255, 155, 40, 1);
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
   --commandText: rgb(51, 51, 51);
-  --dividerColor: rgba(255, 255, 255, 0.25);
+  --dividerColor: rgba(255, 255, 255, 0.15);
   --homeMarker: rgba(5, 5, 5, 0.04);
   --aboutMarker: rgba(5, 5, 5, 0.05);
   --projectsMarker: rgba(5, 5, 5, 0.06);
   --contactMarker: rgba(5, 5, 5, 0.07);
-  --activeMarker: rgba(97, 82, 0, 0.3);
+  --activeMarker: rgba(97, 82, 0, 0.2);
 }
 
 /* Fonts */
@@ -165,7 +167,6 @@ body {
     animation: flicker 20s infinite linear;
     animation-play-state: paused;
   }
-  
 }
 
 
@@ -213,7 +214,6 @@ section{
     background-size: cover;
     color : var(--text);
 
-    padding-top: 64px; /* Adjusted for header height */
     transition: transform 0.3s ease;
 }
 
@@ -369,7 +369,11 @@ a:hover {
   background-size: 20px 20px;
 }
 .sect-header {
+  padding: 90px 8% 25px 8%;
   background-color: var(--sectHeader);
+  border-bottom: 1px solid var(--dividerColor);
+  width: 100%;
+
 }
 .sect-body {
   background-color: var(--sectBody);
@@ -530,7 +534,7 @@ a:hover {
     opacity: 0;
     animation: blink 1.25s step-start infinite;
     animation-delay: calc(var(--typeSpeed) * 27 + 1.6s);
-    margin-left: 5px;
+    margin-left: 6px;
     color: var(--accent);
   }
 }
@@ -680,6 +684,27 @@ textarea:hover, textarea:focus {
   }
 }
 
+.bars-loader .morphing-bar {
+  transform-origin: center;
+}
+
+.bars-loader .morphing-bar {
+  transform-origin: center;
+  animation: morphingBar var(--loader-animation-speed) ease-in-out infinite;
+}
+
+.bars-loader .morphing-bar-left {
+  animation-delay: calc(var(--loader-animation-speed) / 2.5);
+}
+
+.bars-loader .morphing-bar-center {
+  animation-delay: calc(var(--loader-animation-speed) / 5);
+}
+
+.bars-loader .morphing-bar-right {
+  animation-delay: calc(var(--loader-animation-speed) / 7.5);
+}
+
 /* contact section */
 
 #contact {
@@ -770,6 +795,17 @@ input:focus, textarea:focus {
     transform: translateX(0) scaleX(1);
   }
 }
+
+@keyframes morphingBar {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.5);
+  }
+}
+
 /* Transitions */
 
 .custom-section, .event, .skill, .thumbnail, .modal, 

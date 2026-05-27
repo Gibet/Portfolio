@@ -28,22 +28,22 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
   
   return (
     <CustomSection id="projects" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={3}>
+      <Container variant='header' className='flex flex-col gap-2.5'>
+        <CommandLine variant='title' title="Mes Projets" />
+        <div className="flex flex-wrap gap-2">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => { setCurrentCategory(category); setCurrentPage(1); }}
+              className={`px-3 py-1 text-xs ${currentCategory === category ? 'active' : ''}`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </Container>
       <div className="relative flex flex-col items-center w-11/12 sm:w-5/6 h-full sm:py-12 py-6">
-        <Container variant='header' className='flex flex-col gap-2.5'>
-          <CommandLine variant='title' title="Mes Projets" />
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => { setCurrentCategory(category); setCurrentPage(1); }}
-                className={`px-3 py-1 text-xs ${currentCategory === category ? 'active' : ''}`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </Container>
-        <Container variant='body' className="sm: mt-4 flex flex-col w-full h-full gap-5">
+        <Container variant='body' className="sm:mt-4 flex flex-col w-full h-full gap-5">
             <div className="flex flex-wrap content-start sm:m-6 lg:gap-5 gap-2 h-full">
               {ProjectsList.projects.filter(project => currentCategory === 'Tous' || project.category === currentCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize).map((project) => (
                 <ProjectThumbnail key={project.name} project={project} onClick={() => {openModal(project)}} />

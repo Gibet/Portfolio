@@ -3,6 +3,7 @@ import type { ModalProps } from '../../utils/types';
 import Skill from '../skill';
 import * as skills from "../../utils/skills.json";
 import CommandLine from '../commandLine';
+import loadingSVG from '../loading';
 
 const ProjectImages = import.meta.glob<{default: string}>('/src/assets/images/projects/**/*.{png,jpg,jpeg}'); 
 const imagesCache = new Map<string, string[]>();
@@ -62,7 +63,7 @@ const ProjectModal = (props: ModalProps) => {
           <div className="modal-image-container max-h-2/3 col-span-1 w-full relative">
             {loading ? (
               <div className="modal-image mx-auto object-contain flex items-center justify-center">
-                <p>Loading...</p>
+                {loadingSVG}
               </div>
             ) : (
               <img src={images[currentImageIndex]} alt={`${props.project.name} screenshot`} className="modal-image mx-auto object-contain" />

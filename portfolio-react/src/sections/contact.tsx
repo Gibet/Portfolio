@@ -33,20 +33,20 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
 
   return (
     <CustomSection id="contact" pinned={pinned} pinCount={pinCount} ref={ref} zIndex={1}>
+      <Container variant='header' className='px-1/12 sm:px-0 pt-8'>
+        <CommandLine variant='title' title="Contactez-moi" />
+      </Container>
       <div className='flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-12 py-6'>
-        <Container variant='header'>
-          <CommandLine variant='title' title="Contactez-moi" />
-        </Container>
         <div className="flex flex-col lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full lg:items-start items-center justify-start">
-          <Container variant='header' className="hidden sm:block w-full lg:w-3/5 w h-fit text-xs sm:mt-8 mt-0">
+          <Container variant='body' className="hidden sm:block w-full lg:w-3/5 w h-fit text-xs sm:mt-8 mt-0">
             <p className=''>
-              Je suis toujours ouvert à de nouvelles opportunités et collaborations. N'hésitez pas à me contacter pour discuter de projets, d'idées ou simplement pour échanger.
+              Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter pour discuter de projets ou simplement pour échanger des idées !
             </p>
             <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-1">
               laguerre.jb.dev@gmail.com
             </a>
           </Container>
-          <Container variant='body' className="lg:w-2/5 sm:mt-8 mt-4">
+          <Container variant='body' className="lg:w-2/5 sm:mt-8">
             <form onSubmit={handleSubmit} className="grid grid-cols-2 grid-rows-4 gap-1 sm:gap-3">
               <input
                 required

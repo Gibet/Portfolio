@@ -35,22 +35,22 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
 
   return (
     <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={4}>
+      <Container variant='header' className='flex flex-col gap-2'>
+        <CommandLine variant='title' title="A propos de moi" />
+        <div className="flex flex-wrap gap-2">
+          {AboutTabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setCurrentTab(tab)}
+              className={`px-3 py-1 text-xs ${currentTab === tab ? 'active' : ''}`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+      </Container>
       <div className='flex flex-col items-center w-11/12 sm:w-5/6 h-full sm:py-12 py-6'>
-        <Container variant='header' className='flex flex-col gap-2'>
-          <CommandLine variant='title' title="A propos de moi" />
-          <div className="flex flex-wrap gap-2">
-            {AboutTabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setCurrentTab(tab)}
-                className={`px-3 py-1 text-xs ${currentTab === tab ? 'active' : ''}`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </Container>
-        <Container variant='body' className="mt-4 w-full h-full overflow-y-auto">
+        <Container variant='body' className="sm:mt-4 w-full h-full overflow-y-auto">
           {currentTab === 'Éducation' && (
               <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative overflow-y-auto'>
                 <span className="pointer-events-none absolute inset-y-0 top-5 bottom-0 left-1.5 w-0">

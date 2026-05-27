@@ -9,7 +9,7 @@ const variants = {
   default: 'container',
   wide: 'container wide',
   body: 'container sect-body',
-  header: 'container sect-header gap-4',
+  header: 'sect-header gap-4',
 }
 
 export const Container = ({variant = 'default', children, className}: ContainerProps) => {

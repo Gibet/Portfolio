@@ -6,8 +6,7 @@
       "name": "Portfolio",
       "description": "Mon portfolio personnel, conçu pour présenter mes projets et compétences.",
       "role": ["Design et développement de l'application web en React avec Vite",
-        "Déploiment avec Vercel",
-        ""],
+        "Déploiment avec Vercel"],
       "imageSrc": "/images/projects/Portfolio.png",
       "stack": ["React", "Vite","TailwindCSS", "CSS3"],
       "github": "#"
