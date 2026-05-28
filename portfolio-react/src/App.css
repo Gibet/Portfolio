@@ -677,6 +677,7 @@ textarea:hover, textarea:focus {
 
 .modal-image-container {
   background-color: #000000;
+  aspect-ratio: 16 / 9;
   img {
     width: 100%;
     height: auto;
@@ -695,16 +696,13 @@ textarea:hover, textarea:focus {
 }
 
 .modal-image-container[data-loading="true"] {
-  width: 100%;
-  aspect-ratio: 16 / 9;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bars-loader .morphing-bar {
-  transform-origin: center;
-}
-
-.bars-loader .morphing-bar {
+  color: var(--accent);
   transform-origin: center;
   animation: morphingBar var(--loader-animation-speed) ease-in-out infinite;
 }
@@ -847,11 +845,6 @@ input:focus, textarea:focus {
   .modal-image-container img {
     width: 90vw;
     height: auto;
-  }
-  .modal-image-container[data-loading="true"] {
-    width: 90vw;
-    aspect-ratio: 16 / 9;
-    max-height: 200px;
   }
   .line-1 {
     --charThickness: -3px;
