@@ -39,7 +39,7 @@
   --aboutMarker: rgba(75, 75, 75, 0.05);
   --projectsMarker: rgba(75, 75, 75, 0.06);
   --contactMarker: rgba(75, 75, 75, 0.07);
-  --activeMarker: rgba(0, 83, 138, 0.3);
+  --activeMarker: rgba(0, 83, 138, 0.5);
 
   --loader-animation-speed: 0.75s;
 }
@@ -81,7 +81,7 @@
   --aboutMarker: rgba(5, 5, 5, 0.05);
   --projectsMarker: rgba(5, 5, 5, 0.06);
   --contactMarker: rgba(5, 5, 5, 0.07);
-  --activeMarker: rgba(97, 82, 0, 0.3);
+  --activeMarker: rgba(204, 173, 0, .5);
 }
 
 /* Fonts */
@@ -190,7 +190,7 @@ body {
 }
 
 .home-marker, .about-marker, .projects-marker, .contact-marker {
-  height: 2.5rem;
+  height: 3rem;
   width: 100%;
 }
 
@@ -356,14 +356,14 @@ a:hover {
   padding: 20px;
   box-shadow: var(--shadowSecondary);
   background:
-    linear-gradient(to right, var(--activeMarker) 2px, transparent 1px) 0 0,
-    linear-gradient(to right, var(--activeMarker) 2px, transparent 1px) 0 100%,
-    linear-gradient(to left, var(--activeMarker) 2px, transparent 1px) 100% 0,
-    linear-gradient(to left, var(--activeMarker) 2px, transparent 1px) 100% 100%,
-    linear-gradient(to bottom, var(--activeMarker) 2px, transparent 1px) 0 0,
-    linear-gradient(to bottom, var(--activeMarker) 2px, transparent 1px) 100% 0,
-    linear-gradient(to top, var(--activeMarker) 2px, transparent 1px) 0 100%,
-    linear-gradient(to top, var(--activeMarker) 2px, transparent 1px) 100% 100%;
+    linear-gradient(to right, var(--dividerColor) 2px, transparent 1px) 0 0,
+    linear-gradient(to right, var(--dividerColor) 2px, transparent 1px) 0 100%,
+    linear-gradient(to left, var(--dividerColor) 2px, transparent 1px) 100% 0,
+    linear-gradient(to left, var(--dividerColor) 2px, transparent 1px) 100% 100%,
+    linear-gradient(to bottom, var(--dividerColor) 2px, transparent 1px) 0 0,
+    linear-gradient(to bottom, var(--dividerColor) 2px, transparent 1px) 100% 0,
+    linear-gradient(to top, var(--dividerColor) 2px, transparent 1px) 0 100%,
+    linear-gradient(to top, var(--dividerColor) 2px, transparent 1px) 100% 100%;
   
   background-repeat: no-repeat;
   background-size: 20px 20px;
@@ -579,20 +579,18 @@ a:hover {
 .event {
   background-color: var(--sectHeader);
   width: 100%;
-  padding: 12px 15px;
-  /* margin-bottom: 1rem; */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
+  padding: 12px 15px;
   flex-direction: column;
+  transition: transform 0.3s ease;
   gap: 6px;
   .skill {
     background-color: var(--primary);
-    border: 1px solid var(--primary);
+    border: 2px solid var(--primary);
   } 
 }
 
 .event:hover {
-  box-shadow: var(--shadowSecondary);
   transform: scale(1.005);
 }
 
@@ -604,7 +602,7 @@ a:hover {
 }
 
 .skill:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .highlight {
