@@ -694,9 +694,9 @@ textarea:hover, textarea:focus {
   }
 }
 
-.modal-loading {
+.modal-image-container[data-loading="true"] {
   width: 100%;
-  height: clamp(200px, 50vh, 600px);
+  height: clamp(200px, 50vw, 600px);
   display: flex;
 }
 
@@ -847,6 +847,10 @@ input:focus, textarea:focus {
   .modal-image-container img {
     width: 90vw;
     height: auto;
+  }
+  .modal-image-container[data-loading="true"] {
+    width: 90vw;
+    max-height: 200px;
   }
   .line-1 {
     --charThickness: -3px;
