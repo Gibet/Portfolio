@@ -696,7 +696,7 @@ textarea:hover, textarea:focus {
 
 .modal-image-container[data-loading="true"] {
   width: 100%;
-  height: clamp(200px, 50vw, 600px);
+  aspect-ratio: 16 / 9;
   display: flex;
 }
 
@@ -850,6 +850,7 @@ input:focus, textarea:focus {
   }
   .modal-image-container[data-loading="true"] {
     width: 90vw;
+    aspect-ratio: 16 / 9;
     max-height: 200px;
   }
   .line-1 {
