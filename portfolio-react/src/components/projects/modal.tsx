@@ -62,7 +62,7 @@ const ProjectModal = (props: ModalProps) => {
         <div className="modal-body h-full flex flex-col gap-3">
           <div className="modal-image-container max-h-2/3 col-span-1 w-full relative">
             {loading ? (
-              <div className="modal-image mx-auto object-contain flex items-center justify-center">
+              <div className="modal-loading w-full flex items-center justify-center">
                 {loadingSVG}
               </div>
             ) : (

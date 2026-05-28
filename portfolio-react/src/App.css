@@ -19,7 +19,7 @@
   --buttonBg : rgb(233, 233, 233);
   --shadow : 0px 4px 4px 2px rgba(65, 65, 65, 0.05);
   --sectionShadow : 0px 50px 30px 0px rgba(0, 0, 0, 0.05);
-  --shadowSecondary : 0px 4px 8px rgba(185, 185, 185, 0.3);
+  --shadowSecondary : 0px 4px 8px rgba(185, 185, 185, 0.1);
   --bgPattern1: rgba(0, 0, 0, 0.05);
   --bgPattern2: rgba(0, 0, 0, 0.1);
   --bgPattern3: rgba(0, 0, 0, 0.15);
@@ -34,7 +34,7 @@
   --commandBgSub: rgba(255, 155, 40, 1);
   --commandShadow: 3px 3px 1px rgba(65, 65, 65, 0.1);
   --commandText: rgb(51, 51, 51);
-  --dividerColor: rgba(0, 0, 0, 0.25);
+  --dividerColor: rgba(0, 0, 0, 0.15);
   --homeMarker: rgba(75, 75, 75, 0.04);
   --aboutMarker: rgba(75, 75, 75, 0.05);
   --projectsMarker: rgba(75, 75, 75, 0.06);
@@ -61,13 +61,13 @@
   --buttonBg : rgb(20, 20, 20);
   --shadow : 0px 8px 8px 5px rgba(0, 0, 0, 0.05);
   --sectionShadow : 0px 50px 30px 0px rgba(0, 0, 0, 0.05);
-  --shadowSecondary : 0px 4px 8px rgba(35, 35, 35, 0.2);
-  --bgPattern1: rgba(100, 100, 100, 0.05);
-  --bgPattern2: rgba(100, 100, 100, 0.1);
-  --bgPattern3: rgba(100, 100, 100, 0.15);
-  --bgPattern4: rgba(100, 100, 100, 0.2);
-  --bgPattern5: rgba(100, 100, 100, 0.25);
-  --bgPattern6: rgba(100, 100, 100, 0.3);
+  --shadowSecondary : 0px 4px 8px rgba(35, 35, 35, 0.1);
+  --bgPattern1: rgba(125, 125, 125, 0.05);
+  --bgPattern2: rgba(125, 125, 125, 0.1);
+  --bgPattern3: rgba(125, 125, 125, 0.15);
+  --bgPattern4: rgba(125, 125, 125, 0.2);
+  --bgPattern5: rgba(125, 125, 125, 0.25);
+  --bgPattern6: rgba(125, 125, 125, 0.3);
   --commandBgDot: rgba(4, 114, 188, 1);
   --commandBgMain: rgba(255, 220, 40, 1);
   --commandBgTitle: rgba(255, 220, 40, 0.9);
@@ -76,12 +76,12 @@
   --commandBgSub: rgba(255, 155, 40, 1);
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
   --commandText: rgb(51, 51, 51);
-  --dividerColor: rgba(255, 255, 255, 0.15);
+  --dividerColor: rgba(255, 255, 255, 0.1);
   --homeMarker: rgba(5, 5, 5, 0.04);
   --aboutMarker: rgba(5, 5, 5, 0.05);
   --projectsMarker: rgba(5, 5, 5, 0.06);
   --contactMarker: rgba(5, 5, 5, 0.07);
-  --activeMarker: rgba(97, 82, 0, 0.2);
+  --activeMarker: rgba(97, 82, 0, 0.3);
 }
 
 /* Fonts */
@@ -134,7 +134,7 @@ body {
 }
 
 .custom-section {
-  --size: 12px;
+  --size: 25px;
   overflow-y: hidden;
   .sublayer, .toplayer {
     pointer-events: none;
@@ -371,7 +371,8 @@ a:hover {
 .sect-header {
   padding: 90px 8% 25px 8%;
   background-color: var(--sectHeader);
-  border-bottom: 1px solid var(--dividerColor);
+  border-image: linear-gradient(90deg, var(--sectHeader) 0%, var(--activeMarker) 100%) 1;
+  border-width: 0 0 2px 0;
   width: 100%;
 
 }
@@ -486,8 +487,8 @@ a:hover {
   background-size: contain;
   background-position: center;
   .home-marker {
-    background: linear-gradient(90deg, var(--homeMarker) 32%, var(--activeMarker) 42%) !important;
-    border: 1px solid var(--dividerColor);
+    border-image: linear-gradient(90deg, var(--dividerColor) 32%, var(--activeMarker) 42%) 1;
+    border-width: 1px 0;
   }
 }
 
@@ -495,6 +496,15 @@ a:hover {
   color: var(--text);
   --typeSpeed: 45ms;
 }
+
+.line-1 {
+  --charThickness: -10px;
+}
+.line-2, .line-3 {
+  --charThickness: -5px;
+}
+
+
 
 .line-1 .char, .line-2 .char, .line-3 .char {
   opacity: 0;
@@ -530,7 +540,7 @@ a:hover {
     animation-delay: calc(var(--typeSpeed) * var(--char-index) + 1.6s);
   }
   .blink-cursor::after {
-    content: '█';
+    content: '_';
     opacity: 0;
     animation: blink 1.25s step-start infinite;
     animation-delay: calc(var(--typeSpeed) * 27 + 1.6s);
@@ -549,8 +559,8 @@ a:hover {
 
 #about {
   .about-marker {
-    background: linear-gradient(90deg, var(--aboutMarker) 30%, var(--activeMarker) 40%) !important;
-    border: 1px solid var(--dividerColor);
+    border-image: linear-gradient(90deg, var(--dividerColor) 30%, var(--activeMarker) 40%) 1;
+    border-width: 1px 0;
   }
 }
 
@@ -604,8 +614,8 @@ a:hover {
 /* projects section */
 #projects {
   .projects-marker {
-    background: linear-gradient(90deg, var(--projectsMarker) 30%, var(--activeMarker) 40%) !important;
-    border: 1px solid var(--dividerColor);
+    border-image: linear-gradient(90deg, var(--dividerColor) 30%, var(--activeMarker) 40%) 1;
+    border-width: 1px 0;
   }
 }
 
@@ -684,6 +694,12 @@ textarea:hover, textarea:focus {
   }
 }
 
+.modal-loading {
+  width: 100%;
+  height: clamp(200px, 50vh, 600px);
+  display: flex;
+}
+
 .bars-loader .morphing-bar {
   transform-origin: center;
 }
@@ -709,8 +725,8 @@ textarea:hover, textarea:focus {
 
 #contact {
   .contact-marker {
-    background: linear-gradient(90deg, var(--contactMarker) 25%, var(--activeMarker) 40%) !important;
-    border: 1px solid var(--dividerColor);
+    border-image: linear-gradient(90deg, var(--dividerColor) 25%, var(--activeMarker) 40%) 1;
+    border-width: 1px 0;
   }
 }
 
@@ -759,7 +775,11 @@ input:focus, textarea:focus {
 
 @keyframes type {
   0%, 9% {opacity:0; color: transparent; background-color: transparent;}
-  10%, 99% {opacity:1; color: transparent; background-color: var(--accent);}
+  10%, 99% {
+    opacity: 1;
+    color: transparent;
+    box-shadow: inset 0 var(--charThickness) 0 0 var(--accent);
+  }
   100% {opacity:1; color: var(--text); background-color: transparent;}
 }
 
@@ -827,5 +847,11 @@ input:focus, textarea:focus {
   .modal-image-container img {
     width: 90vw;
     height: auto;
+  }
+  .line-1 {
+    --charThickness: -3px;
+  }
+  .line-2, .line-3 {
+    --charThickness: -2px;
   }
 }
