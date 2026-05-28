@@ -129,9 +129,7 @@ body {
   font-family: 'Ubuntu Mono', monospace;
 }
 
-#root {
-  background: radial-gradient(circle at 50% 50%, var(--backgroundSecondary) 60%, var(--secondary) 100%);
-}
+#root {background: radial-gradient(circle at 50% 50%, var(--backgroundSecondary) 60%, var(--secondary) 100%);}
 
 .custom-section {
   --size: 25px;
@@ -194,18 +192,10 @@ body {
   width: 100%;
 }
 
-.home-marker {
-  background-color: var(--homeMarker);
-}
-.about-marker {
-  background-color: var(--aboutMarker);
-}
-.projects-marker {
-  background-color: var(--projectsMarker);
-}
-.contact-marker {
-  background-color: var(--contactMarker);
-}
+.home-marker {background-color: var(--homeMarker);}
+.about-marker {background-color: var(--aboutMarker);}
+.projects-marker {background-color: var(--projectsMarker);}
+.contact-marker {background-color: var(--contactMarker);}
 
 section{
     position: relative;
@@ -213,7 +203,6 @@ section{
     align-items: center;
     background-size: cover;
     color : var(--text);
-
     transition: transform 0.3s ease;
 }
 
@@ -243,10 +232,7 @@ header {
     border: none;
     background-color: transparent;
   }
-
-  .active {
-    border-bottom: 3px solid var(--accent) !important;
-  }
+  .active {border-bottom: 3px solid var(--accent) !important;}
 }
 
 footer {
@@ -274,9 +260,7 @@ footer {
     align-items: center;
     gap: 8px;
   }
-  hr {
-    color: var(--dividerColor);
-  }
+  hr {color: var(--dividerColor);}
 }
 
 .pinned {
@@ -321,10 +305,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-a:hover {
-  color: var(--accent);
-}
+a:hover {color: var(--accent);}
 
 #arrow-nav {
   position: fixed;
@@ -376,13 +357,9 @@ a:hover {
   width: 100%;
 
 }
-.sect-body {
-  background-color: var(--sectBody);
-}
+.sect-body {background-color: var(--sectBody);}
 
-.command-line {
-  color: var(--commandText) !important;
-}
+.command-line {color: var(--commandText) !important;}
 
 .secondary, .tertiary {
   .command-line-dot {
@@ -431,9 +408,7 @@ a:hover {
   align-items: center;
 }
 
-.command-line-title, .command-line-sub, .command-line-add {
-  cursor: default;
-}
+.command-line-title, .command-line-sub, .command-line-add {cursor: default;}
 
 .command-line-sub, .command-line-add, .command-line-link {
   /* clip left side */
@@ -461,9 +436,7 @@ a:hover {
   );
 }
 
-.command-line-sub {
-  background-color: var(--commandBgSub);
-}
+.command-line-sub {background-color: var(--commandBgSub);}
 
 .command-line-add {
   background-color: var(--commandBgMain);
@@ -475,11 +448,7 @@ a:hover {
   color: var(--text);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.command-line-link:hover {
-  /* background-color: var(--accent); */
-  color: var(--background);
-}
+.command-line-link:hover {color: var(--background);}
 
 /* home section */
 
@@ -494,17 +463,11 @@ a:hover {
 
 #square1, #square2, #square3 {
   color: var(--text);
-  --typeSpeed: 45ms;
+  --typeSpeed: 60ms;
 }
 
-.line-1 {
-  --charThickness: -10px;
-}
-.line-2, .line-3 {
-  --charThickness: -5px;
-}
-
-
+.line-1 {--charThickness: -10px;}
+.line-2, .line-3 {--charThickness: -5px;}
 
 .line-1 .char, .line-2 .char, .line-3 .char {
   opacity: 0;
@@ -520,12 +483,12 @@ a:hover {
   .line-1 .char {
     color: transparent;
     animation: type var(--typeSpeed) forwards;
-    animation-delay: calc(var(--typeSpeed) * var(--char-index));
+    animation-delay: calc(var(--typeSpeed) * var(--char-index) + 0.5s);
   }
   .line-2 .char {
     color: transparent;
     animation: type var(--typeSpeed) forwards;
-    animation-delay: calc(var(--typeSpeed) * var(--char-index) + .7s);
+    animation-delay: calc(var(--typeSpeed) * var(--char-index) + 1.2s);
   }
 }
 
@@ -537,13 +500,13 @@ a:hover {
   .line-3 .char {
     color: transparent;
     animation: type var(--typeSpeed) forwards;
-    animation-delay: calc(var(--typeSpeed) * var(--char-index) + 1.6s);
+    animation-delay: calc(var(--typeSpeed) * var(--char-index) + 2.1s);
   }
   .blink-cursor::after {
     content: '_';
     opacity: 0;
     animation: blink 1.25s step-start infinite;
-    animation-delay: calc(var(--typeSpeed) * 27 + 1.6s);
+    animation-delay: calc(var(--typeSpeed) * 27 + 2.1s);
     margin-left: 6px;
     color: var(--accent);
   }
@@ -590,9 +553,7 @@ a:hover {
   } 
 }
 
-.event:hover {
-  transform: scale(1.005);
-}
+.event:hover {transform: scale(1.005);}
 
 .skill {
   cursor: default;
@@ -601,13 +562,8 @@ a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease border 0.3s ease;
 }
 
-.skill:hover {
-  transform: scale(1.02);
-}
-
-.highlight {
-  border-bottom: 2px solid var(--accent) !important;
-}
+.skill:hover {transform: scale(1.02);}
+.highlight {border-bottom: 2px solid var(--accent) !important;}
 
 /* projects section */
 #projects {
@@ -648,9 +604,7 @@ textarea:hover, textarea:focus {
 .thumbnail:hover {
   box-shadow: var(--shadowSecondary);
   transform: scale(1.02);
-  img {
-    filter: saturate(1);
-  }
+  img {filter: saturate(1);}
 }
 
 .modal {
@@ -699,23 +653,17 @@ textarea:hover, textarea:focus {
   justify-content: center;
 }
 
+.modal-image {animation: fadeIn 0.5s ease-in-out forwards;}
+
 .bars-loader .morphing-bar {
   color: var(--accent);
   transform-origin: center;
   animation: morphingBar var(--loader-animation-speed) ease-in-out infinite;
 }
-
-.bars-loader .morphing-bar-left {
-  animation-delay: calc(var(--loader-animation-speed) / 2.5);
-}
-
-.bars-loader .morphing-bar-center {
-  animation-delay: calc(var(--loader-animation-speed) / 5);
-}
-
-.bars-loader .morphing-bar-right {
-  animation-delay: calc(var(--loader-animation-speed) / 7.5);
-}
+.bars-loader rect {fill: var(--activeMarker);}
+.bars-loader .morphing-bar-left {animation-delay: calc(var(--loader-animation-speed) / 2.5);}
+.bars-loader .morphing-bar-center {animation-delay: calc(var(--loader-animation-speed) / 5);}
+.bars-loader .morphing-bar-right {animation-delay: calc(var(--loader-animation-speed) / 7.5);}
 
 /* contact section */
 
@@ -738,17 +686,9 @@ textarea:hover, textarea:focus {
   animation: slideIn 0.3s ease-out forwards;
 }
 
-.alert-success {
-  border-bottom: 2px solid rgba(0, 255, 0, 0.7);
-}
-
-.alert-info {
-  border-bottom: 2px solid rgba(0, 0, 255, 0.7);
-}
-
-.alert-error {
-  border-bottom: 2px solid rgba(255, 0, 0, 0.7);
-}
+.alert-success {border-bottom: 2px solid rgba(0, 255, 0, 0.7);}
+.alert-info {border-bottom: 2px solid rgba(0, 0, 255, 0.7);}
+.alert-error {border-bottom: 2px solid rgba(255, 0, 0, 0.7);}
 
 input, textarea {
   background-color: var(--background);
@@ -759,13 +699,8 @@ input, textarea {
   outline: none;
 }
 
-input {
-  background-size: 10px 10px !important;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-}
+input {background-size: 10px 10px !important;}
+input:focus, textarea:focus {outline: none;}
 
 /* Animations */
 
@@ -785,9 +720,12 @@ input:focus, textarea:focus {
 }
 
 @keyframes flicker {
-  to {
-    mask-position: 50% 50%, 0 50%;
-  }
+  to {mask-position: 50% 50%, 0 50%;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @keyframes slideDown {
@@ -814,12 +752,8 @@ input:focus, textarea:focus {
 
 @keyframes morphingBar {
   0%,
-  100% {
-    transform: scaleY(1);
-  }
-  50% {
-    transform: scaleY(0.5);
-  }
+  100% {transform: scaleY(1);}
+  50% {transform: scaleY(0.5);}
 }
 
 /* Transitions */
@@ -836,18 +770,12 @@ input:focus, textarea:focus {
 /* Responsive Design */
 
 @media (max-width: 640px) {
-  .chrono-line {
-    height: calc(100% - .5rem) !important;
-  }
+  .chrono-line {height: calc(100% - .5rem) !important;}
 
   .modal-image-container img {
     width: 90vw;
     height: auto;
   }
-  .line-1 {
-    --charThickness: -3px;
-  }
-  .line-2, .line-3 {
-    --charThickness: -2px;
-  }
+  .line-1 {--charThickness: -3px;}
+  .line-2, .line-3 {--charThickness: -2px;}
 }

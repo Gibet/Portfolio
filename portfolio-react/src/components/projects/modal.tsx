@@ -62,7 +62,7 @@ const ProjectModal = (props: ModalProps) => {
         <div className="modal-body h-full flex flex-col gap-3">
           <div className="modal-image-container flex items-center justify-center max-h-2/3 col-span-1 w-full relative" data-loading={loading}>
             {loading ? (
-                <>{loadingSVG}</>
+              <>{loadingSVG}</>
             ) : (
               <img src={images[currentImageIndex]} alt={`${props.project.name} screenshot`} className="modal-image mx-auto object-contain" />
             )}

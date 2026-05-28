@@ -2,18 +2,18 @@
 const loadingSVG = (
   <svg
     xmlns="http://www.w3.org/2000/svg" 
-    width="64" height="48" 
+    width="48" height="36" 
     viewBox="0 0 32 24"
     className="bars-loader">
     <rect 
       className="morphing-bar morphing-bar-left" 
-      width="8" height="24" />
+      width="6" height="20" />
     <rect 
       className="morphing-bar morphing-bar-center" 
-      width="8" height="24" x="12" />
+      width="6" height="20" x="9" />
     <rect 
       className="morphing-bar morphing-bar-right" 
-      width="8" height="24" x="24" />
+      width="6" height="20" x="18" />
   </svg>
 );
 
