@@ -2,7 +2,7 @@ import React from 'react'
 
 interface ContainerProps
   extends React.ComponentProps<'div'> {
-  variant ?: 'default' | 'wide' | 'body' | 'header';
+  variant ?: 'default' | 'wide' | 'body' | 'header' | 'text';
 }
 
 const variants = {
@@ -10,6 +10,7 @@ const variants = {
   wide: 'container wide',
   body: 'container sect-body',
   header: 'sect-header gap-4',
+  text: 'container sect-text'
 }
 
 export const Container = ({variant = 'default', children, className}: ContainerProps) => {

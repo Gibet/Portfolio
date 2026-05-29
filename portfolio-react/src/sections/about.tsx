@@ -5,6 +5,7 @@ import * as skills from "../utils/skills.json"
 import Skill from '../components/skill'
 import { Container } from '../components/container'
 import CommandLine from '../components/commandLine'
+import { splittingText } from '../utils/utils'
 
 type SkillsType = {
   name: string;
@@ -49,8 +50,8 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
           ))}
         </div>
       </Container>
-      <div className='flex flex-col items-center w-11/12 sm:w-5/6 h-full sm:py-12 py-6'>
-        <Container variant='body' className="sm:mt-4 w-full h-full overflow-y-auto">
+      <div className='grid md:grid-cols-5 gap-4 items-start w-11/12 sm:w-5/6 h-full sm:py-12 py-6'>
+        <Container variant='body' className="sm:mt-4 col-span-3 w-full h-full overflow-y-auto">
           {currentTab === 'Éducation' && (
               <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative overflow-y-auto'>
                 <span className="pointer-events-none absolute inset-y-0 top-5 bottom-0 left-1.5 w-0">
@@ -64,11 +65,11 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Développement full stack, avec JavaScript, Node.js, React et Symfony</li>
                       <li>Développement d’API avec API Platform, Express</li>
-                      <li>Développement mobile </li>
+                      <li>Développement d'applications mobiles </li>
                     </ul>
                   </div>
                 </li>
-                <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
+                {/* <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
                     <CommandLine variant='secondary' title="Supinfo Marseille" />
@@ -78,7 +79,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                       <li>Projets de développement en équipe, avec gestion de versions Git et méthodologies agiles</li>
                     </ul>
                   </div>
-                </li>
+                </li> */}
               </ol>
           )}
           {currentTab === 'Éxperience' && (
@@ -102,10 +103,10 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
               </ol>
           )}
           {currentTab === 'Competences' && (
-            <div className="flex flex-col gap-2 sm:ml-6 sm:py-6">
-              <div className="event flex flex-col gap-3 sm:gap-1">
+            <div className="flex flex-col gap-2 sm:ml-6 sm:py-6 skills-container">
+              <div className="event flex flex-col gap-1 sm:gap-1">
                 <CommandLine variant='tertiary' title="Langages" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
+                <div className='flex flex-wrap sm:gap-2 gap-1 sm:px-6 sm:py-0.5'>
                   {languages.map((lang) => (
                     <Skill key={lang} name={skillsData[lang]?.name || lang} imageSrc={skillsData[lang]?.imageSrc}
                     highlighted={relatedSkills.has(lang)}
@@ -113,9 +114,9 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                   ))}
                 </div>
               </div>
-              <div className="event flex flex-col gap-3 sm:gap-1">
+              <div className="event flex flex-col gap-1 sm:gap-1">
                 <CommandLine variant='tertiary' title="Front-end" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
+                <div className='flex flex-wrap sm:gap-2 gap-1 sm:px-6 sm:py-0.5'>
                   {frontendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc} 
                     highlighted={relatedSkills.has(tech)}
@@ -125,7 +126,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
               </div>
               <div className="event flex flex-col gap-3 sm:gap-1">
                 <CommandLine variant='tertiary' title="Back-end" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
+                <div className='flex flex-wrap sm:gap-2 gap-1 sm:px-6 sm:py-0.5'>
                   {backendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
                     highlighted={relatedSkills.has(tech)}
@@ -135,7 +136,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
               </div>
               <div className="event flex flex-col gap-3 sm:gap-1">
                 <CommandLine variant='tertiary' title="Outils" />
-                <div className='flex flex-wrap gap-2 sm:px-6 sm:py-0.5'>
+                <div className='flex flex-wrap sm:gap-2 gap-1 sm:px-6 sm:py-0.5'>
                   {toolsSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} 
                       imageSrc={skillsData[tech]?.imageSrc}
@@ -146,6 +147,9 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
               </div>
             </div>
           )}
+        </Container>
+        <Container variant='text' className="sm:mt-4 col-span-2 text-sm hidden md:block">
+          <p className='terminal typed'>{splittingText("Découvrez mon parcours et mes compétences dans le domaine du développement web.")}</p>
         </Container>
       </div>
     </CustomSection>

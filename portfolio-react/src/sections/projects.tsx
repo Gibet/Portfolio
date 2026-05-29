@@ -8,6 +8,7 @@ import { useResponsivePageSize } from '../hooks/useResponsive'
 import { Container } from '../components/container'
 import { ProjectsNavigation } from '../components/projects/navigation'
 import CommandLine from '../components/commandLine'
+import { splittingText } from '../utils/utils'
 
 const ProjectsList = ProjectsData as { projects: ProjectProps[] }
 const categories = ['Tous', 'Web', 'Mobile']
@@ -42,8 +43,11 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
           ))}
         </div>
       </Container>
-      <div className="relative flex flex-col items-center w-11/12 sm:w-5/6 h-full sm:py-12 py-6">
-        <Container variant='body' className="sm:mt-4 flex flex-col w-full h-full gap-5">
+      <div className="relative grid md:grid-cols-5 gap-4 items-start w-11/12 sm:w-5/6 h-full md:py-12 py-6">
+        <Container variant='text' className="text-sm hidden md:mt-4 md:block lg:col-span-1">
+          <p className='terminal typed'>{splittingText("Voici une sélection de mes projets, mettant en avant mes compétences en développement web et mobile.")}</p>
+        </Container>
+        <Container variant='body' className="md:mt-4 md:col-span-4 flex flex-col w-full h-full gap-5">
             <div className="flex flex-wrap content-start sm:m-6 lg:gap-5 gap-2 h-full">
               {ProjectsList.projects.filter(project => currentCategory === 'Tous' || project.category === currentCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize).map((project) => (
                 <ProjectThumbnail key={project.name} project={project} onClick={() => {openModal(project)}} />

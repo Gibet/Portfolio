@@ -35,10 +35,10 @@
   --commandShadow: 3px 3px 1px rgba(65, 65, 65, 0.1);
   --commandText: rgb(51, 51, 51);
   --dividerColor: rgba(0, 0, 0, 0.15);
-  --homeMarker: rgba(75, 75, 75, 0.04);
-  --aboutMarker: rgba(75, 75, 75, 0.05);
-  --projectsMarker: rgba(75, 75, 75, 0.06);
-  --contactMarker: rgba(75, 75, 75, 0.07);
+  --homeMarker: rgba(75, 75, 75, 0.03);
+  --aboutMarker: rgba(75, 75, 75, 0.04);
+  --projectsMarker: rgba(75, 75, 75, 0.05);
+  --contactMarker: rgba(75, 75, 75, 0.06);
   --activeMarker: rgba(0, 83, 138, 0.5);
 
   --loader-animation-speed: 0.75s;
@@ -77,10 +77,10 @@
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
   --commandText: rgb(51, 51, 51);
   --dividerColor: rgba(255, 255, 255, 0.1);
-  --homeMarker: rgba(5, 5, 5, 0.04);
-  --aboutMarker: rgba(5, 5, 5, 0.05);
-  --projectsMarker: rgba(5, 5, 5, 0.06);
-  --contactMarker: rgba(5, 5, 5, 0.07);
+  --homeMarker: rgba(5, 5, 5, 0.03);
+  --aboutMarker: rgba(5, 5, 5, 0.04);
+  --projectsMarker: rgba(5, 5, 5, 0.05);
+  --contactMarker: rgba(5, 5, 5, 0.06);
   --activeMarker: rgba(204, 173, 0, .5);
 }
 
@@ -102,6 +102,13 @@
 
 @font-face {
   font-family: 'Ubuntu Mono';
+  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
   src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
@@ -110,6 +117,11 @@
 .ubuntu-bold {
   font-family: 'Ubuntu Mono', monospace;
   font-weight: 700;
+}
+
+.ubuntu-semi-bold {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 600;
 }
 
 /* Global Styles */
@@ -271,6 +283,15 @@ footer {
   .bglayer {
     animation-play-state: running;
   }
+  .typed .char {
+    --tSpeed: 30ms;
+    --charThickness: -2px;
+
+    opacity: 0;
+    display: inline;
+    animation: type var(--tSpeed) forwards;
+    animation-delay: calc(var(--tSpeed) * var(--char-index));
+  }
 }
 
 .pinned[data-first="true"] {
@@ -358,6 +379,7 @@ a:hover {color: var(--accent);}
 
 }
 .sect-body {background-color: var(--sectBody);}
+.sect-text {background-color: var(--sectHeader);}
 
 .command-line {color: var(--commandText) !important;}
 
@@ -456,14 +478,16 @@ a:hover {color: var(--accent);}
   background-size: contain;
   background-position: center;
   .home-marker {
-    border-image: linear-gradient(90deg, var(--dividerColor) 32%, var(--activeMarker) 42%) 1;
-    border-width: 1px 0;
+    border-image: linear-gradient(90deg, var(--tertiaryAccent) 32%, var(--activeMarker) 42%) 1;
+    border-width: 2px 0;
   }
 }
 
 #square1, #square2, #square3 {
+  border-image: linear-gradient(90deg, var(--sectHeader) 0%, var(--activeMarker) 100%) 1;
+  border-width: 0 0 2px 0;
   color: var(--text);
-  --typeSpeed: 60ms;
+  --typeSpeed: 50ms;
 }
 
 .line-1 {--charThickness: -10px;}
@@ -522,8 +546,8 @@ a:hover {color: var(--accent);}
 
 #about {
   .about-marker {
-    border-image: linear-gradient(90deg, var(--dividerColor) 30%, var(--activeMarker) 40%) 1;
-    border-width: 1px 0;
+    border-image: linear-gradient(90deg, var(--tertiaryAccent) 30%, var(--activeMarker) 40%) 1;
+    border-width: 2px 0;
   }
 }
 
@@ -540,6 +564,8 @@ a:hover {color: var(--accent);}
 }
 
 .event {
+  border-image: linear-gradient(90deg, var(--tertiaryAccent) 0%, var(--dividerColor) 100%) 1;
+  border-width: 0 0 2px 0;
   background-color: var(--sectHeader);
   width: 100%;
   display: flex;
@@ -568,8 +594,8 @@ a:hover {color: var(--accent);}
 /* projects section */
 #projects {
   .projects-marker {
-    border-image: linear-gradient(90deg, var(--dividerColor) 30%, var(--activeMarker) 40%) 1;
-    border-width: 1px 0;
+    border-image: linear-gradient(90deg, var(--tertiaryAccent) 30%, var(--activeMarker) 40%) 1;
+    border-width: 2px 0;
   }
 }
 
@@ -669,8 +695,8 @@ textarea:hover, textarea:focus {
 
 #contact {
   .contact-marker {
-    border-image: linear-gradient(90deg, var(--dividerColor) 25%, var(--activeMarker) 40%) 1;
-    border-width: 1px 0;
+    border-image: linear-gradient(90deg, var(--tertiaryAccent) 25%, var(--activeMarker) 40%) 1;
+    border-width: 2px 0;
   }
 }
 
@@ -778,4 +804,7 @@ input:focus, textarea:focus {outline: none;}
   }
   .line-1 {--charThickness: -3px;}
   .line-2, .line-3 {--charThickness: -2px;}
+  .skills-container .event {
+    padding: 6px 10px;
+  }
 }

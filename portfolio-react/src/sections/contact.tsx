@@ -6,6 +6,7 @@ import { Container } from '../components/container';
 import { Mail } from 'lucide-react';
 import  CommandLine from '../components/commandLine';
 import { Alert } from '../components/alert';
+import { splittingText } from '../utils/utils';
 
 
 const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
@@ -38,9 +39,9 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
       </Container>
       <div className='flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-12 py-6'>
         <div className="flex flex-col lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full lg:items-start items-center justify-start">
-          <Container variant='body' className="hidden sm:block w-full lg:w-3/5 w h-fit text-xs sm:mt-8 mt-0">
-            <p className=''>
-              Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter pour discuter de projets ou simplement pour échanger des idées !
+          <Container variant='text' className="hidden sm:block w-full lg:w-3/5 w h-fit text-xs sm:mt-8 mt-0">
+            <p className='terminal typed'>
+              {splittingText("Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter !")}
             </p>
             <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-1">
               laguerre.jb.dev@gmail.com
