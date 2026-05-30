@@ -7,7 +7,6 @@ import { Mail } from 'lucide-react';
 import  CommandLine from '../components/commandLine';
 import { Alert } from '../components/alert';
 import { splittingText } from '../utils/utils';
-import mailIcon from '../assets/images/mailIcon.svg'
 import MailLogo from '../components/logo/mail';
 
 

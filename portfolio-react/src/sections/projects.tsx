@@ -9,7 +9,6 @@ import { Container } from '../components/container'
 import { ProjectsNavigation } from '../components/projects/navigation'
 import CommandLine from '../components/commandLine'
 import { splittingText } from '../utils/utils'
-import projectsIcon from '../assets/images/projectsIcon.svg'
 import ProjectsLogo from '../components/logo/projects'
 
 const ProjectsList = ProjectsData as { projects: ProjectProps[] }
