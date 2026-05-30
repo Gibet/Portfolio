@@ -9,6 +9,8 @@ import { Container } from '../components/container'
 import { ProjectsNavigation } from '../components/projects/navigation'
 import CommandLine from '../components/commandLine'
 import { splittingText } from '../utils/utils'
+import projectsIcon from '../assets/images/projectsIcon.svg'
+import ProjectsLogo from '../components/logo/projects'
 
 const ProjectsList = ProjectsData as { projects: ProjectProps[] }
 const categories = ['Tous', 'Web', 'Mobile']
@@ -46,11 +48,19 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
       <div className="relative grid md:grid-cols-5 gap-4 items-start w-11/12 sm:w-5/6 h-full md:py-12 py-6">
         <Container variant='text' className="text-sm hidden md:mt-4 md:block lg:col-span-1">
           <p className='terminal typed'>{splittingText("Voici une sélection de mes projets, mettant en avant mes compétences en développement web et mobile.")}</p>
+          <div className="logo-container w-full flex justify-center items-center mt-6">
+            <ProjectsLogo 
+              color={'var(--accent)'}
+              primaryColor={'var(--primary)'}
+              strokeWidth={4}
+              className='w-5/6 h-auto'
+            />
+          </div>
         </Container>
         <Container variant='body' className="md:mt-4 md:col-span-4 flex flex-col w-full h-full gap-5">
-            <div className="flex flex-wrap content-start sm:m-6 lg:gap-5 gap-2 h-full">
-              {ProjectsList.projects.filter(project => currentCategory === 'Tous' || project.category === currentCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize).map((project) => (
-                <ProjectThumbnail key={project.name} project={project} onClick={() => {openModal(project)}} />
+            <div className="projects flex flex-wrap content-start sm:m-6 lg:gap-5 gap-2 h-full">
+              {ProjectsList.projects.filter(project => currentCategory === 'Tous' || project.category === currentCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize).map((project, index) => (
+                <ProjectThumbnail key={project.name} project={project} onClick={() => {openModal(project)}} style={{ '--thumbnail--index': index } as React.CSSProperties} />
               ))}
             </div>
             <ProjectsNavigation

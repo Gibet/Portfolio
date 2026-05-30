@@ -28,7 +28,8 @@ export interface ProjectProps {
   role: string[];
 }
 
-export interface ThumbnailProps {
+export interface ThumbnailProps 
+  extends React.ComponentProps<'div'> {
   project: ProjectProps;
   onClick: () => void
 }
@@ -77,4 +78,11 @@ export interface AlertProps {
   info?: boolean
   message: string
   close: () => void
+}
+
+export type LogoProps = React.SVGProps<SVGSVGElement> & {
+  size?: number;
+  color?: string;
+  primaryColor?: string;
+  strokeWidth?: number;
 }

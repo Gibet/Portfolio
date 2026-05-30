@@ -7,6 +7,8 @@ import { Mail } from 'lucide-react';
 import  CommandLine from '../components/commandLine';
 import { Alert } from '../components/alert';
 import { splittingText } from '../utils/utils';
+import mailIcon from '../assets/images/mailIcon.svg'
+import MailLogo from '../components/logo/mail';
 
 
 const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
@@ -38,16 +40,23 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
         <CommandLine variant='title' title="Contactez-moi" />
       </Container>
       <div className='flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-12 py-6'>
-        <div className="flex flex-col lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full lg:items-start items-center justify-start">
-          <Container variant='text' className="hidden sm:block w-full lg:w-3/5 w h-fit text-xs sm:mt-8 mt-0">
+        <div className="grid grid-cols-1 md:gap-4 md:grid-cols-5 lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full items-start justify-center">
+          <Container variant='text' className="hidden md:block col-span-2 w-full h-fit text-xs sm:mt-8 mt-0 pb-0">
             <p className='terminal typed'>
               {splittingText("Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter !")}
             </p>
             <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-1">
               laguerre.jb.dev@gmail.com
             </a>
+            <div className="logo-container w-full flex justify-center items-center">
+              <MailLogo 
+                color={'var(--accent)'}
+                className='w-2/5 h-auto'
+                strokeWidth={.15}
+              />
+            </div>
           </Container>
-          <Container variant='body' className="lg:w-2/5 sm:mt-8">
+          <Container variant='body' className="sm:mt-8 col-span-3 w-full">
             <form onSubmit={handleSubmit} className="grid grid-cols-2 grid-rows-4 gap-1 sm:gap-3">
               <input
                 required
