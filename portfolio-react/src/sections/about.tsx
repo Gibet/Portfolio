@@ -54,7 +54,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
       <div className='grid md:grid-cols-3 gap-4 items-start w-11/12 sm:w-5/6 h-full sm:py-12 py-6'>
         <Container variant='body' className="sm:mt-4 col-span-2 w-full h-full overflow-y-auto">
           {currentTab === 'Éducation' && (
-              <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative overflow-y-auto'>
+              <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative'>
                 <span className="pointer-events-none absolute inset-y-0 top-5 bottom-0 left-1.5 w-0">
                   <span className="sticky left-1.5 h-full border-l chrono-line"></span>
                 </span>  
@@ -84,7 +84,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
               </ol>
           )}
           {currentTab === 'Éxperience' && (
-              <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative overflow-y-auto'>
+              <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative'>
                 <span className="pointer-events-none absolute inset-y-0 left-1.5 top-5 bottom-0 w-0">
                   <span className="sticky left-1.5 h-full border-l chrono-line"></span>
                 </span> 
