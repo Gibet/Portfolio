@@ -510,6 +510,12 @@ a:hover {color: var(--accent);}
   }
 }
 
+#home-arrow {
+  bottom: 5%; 
+  left: 50%;
+  padding: 10px;
+}
+
 #square1, #square2, #square3 {
   border-image: linear-gradient(90deg, var(--sectHeader) 0%, var(--activeMarker) 100%) 1;
   border-width: 0 0 1px 0;

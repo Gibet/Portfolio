@@ -36,7 +36,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
   return (
     <CustomSection id="contact" pinned={pinned} pinCount={pinCount} ref={ref} zIndex={1}>
       <Container variant='header' className='px-1/12 sm:px-0 pt-8'>
-        <CommandLine variant='title' title="Contactez-moi" />
+        <CommandLine variant='title' title="Me contacter" />
       </Container>
       <div className='flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-12 py-6'>
         <div className="grid grid-cols-1 md:gap-4 md:grid-cols-5 lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full items-start justify-center">

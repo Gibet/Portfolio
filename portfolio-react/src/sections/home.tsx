@@ -32,6 +32,11 @@ const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React
           </div>
         </div>
       </div>
+      <div id="home-arrow" className="absolute left-1/2 -translate-x-1/2 animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="var(--accent)" className="w-6 h-6">
+          <path strokeLinecap="square" strokeLinejoin="miter" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </div>
     </CustomSection>
   )
 }
