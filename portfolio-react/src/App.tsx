@@ -60,6 +60,7 @@ function App() {
         return
       }
     }
+    targetElement.classList.add('animated')
     targetElement?.scrollIntoView({ behavior: scrollBehavior.current })
   }, [])
 

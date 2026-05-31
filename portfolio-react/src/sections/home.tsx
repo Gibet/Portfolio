@@ -10,7 +10,7 @@ const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React
     <CustomSection id="home" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={5}>
       <div className="flex flex-col flex-1 items-center justify-center h-full gap-6">
         <div className='flex flex-col items-end items-center gap-6'>
-          <div id='square1' className='w-full flex flex-col gap-6'>
+          <div id='square1' className='w-full flex flex-col gap-3'>
             <h1 className="md:text-9xl text-6xl ubuntu-semi-bold line-1">{splittingText("Laguerre")}</h1>
             <h2 className="md:text-5xl text-2xl font-normal line-2">{splittingText("Jean-Bernard")}</h2>
           </div>

@@ -64,6 +64,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
                 name="email"
                 placeholder='> Votre Email'
                 className='px-4 py-6 text-xs col-span-2 row-span-1'
+                style={{ '--input--index': 0 } as React.CSSProperties}
               />
               <ValidationError
                 prefix="Email"
@@ -76,6 +77,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
                 name="name"
                 placeholder='> Votre Nom'
                 className='px-4 py-6 text-xs col-span-1 row-span-1'
+                style={{ '--input--index': 1 } as React.CSSProperties}
               />
               <ValidationError
                 prefix="Name"
@@ -88,6 +90,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
                 name="subject"
                 placeholder='> Sujet'
                 className='px-4 py-6 text-xs col-span-1 row-span-1'
+                style={{ '--input--index': 2 } as React.CSSProperties}
               />
               <ValidationError
                 prefix="Subject"
@@ -100,6 +103,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
                 name="message"
                 placeholder='> Votre Message'
                 className='px-4 py-6 text-xs col-span-2 row-span-2 resize-none'
+                style={{ '--input--index': 3 } as React.CSSProperties}
                 rows={6}
               />
               <ValidationError
@@ -110,7 +114,9 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
               <button
                 type="submit"
                 disabled={formValidation()}
-                className="font-bold text-xs py-2 px-4 col-span-2">
+                className="font-bold text-xs py-2 px-4 col-span-2"
+                style={{ '--input--index': 4 } as React.CSSProperties}
+              >
                 <Mail size={18} className='inline-block mr-2' strokeWidth={1.25}/>
                 Envoyer
               </button>

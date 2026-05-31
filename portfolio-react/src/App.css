@@ -283,6 +283,9 @@ footer {
   .bglayer {
     animation-play-state: running;
   }
+}
+
+.animated {
   .typed .char {
     --tSpeed: 20ms;
     --charThickness: -2px;
@@ -305,7 +308,14 @@ footer {
   .sect-text .logo-container {
     animation: fadeIn 1.5s ease-in-out forwards;
   }
+
+  form input, form textarea, form button {
+    opacity: 0;
+    animation: slideUp 1s ease-in-out forwards;
+    animation-delay: calc(100ms * var(--input--index));
+  }
 }
+  
 
 .pinned[data-first="true"] {
   transform-origin: bottom center;
@@ -317,7 +327,7 @@ button {
   color: var(--text);
   cursor: pointer;
   background-color: var(--buttonBg);
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
