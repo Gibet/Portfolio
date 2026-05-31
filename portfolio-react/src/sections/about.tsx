@@ -51,7 +51,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
           ))}
         </div>
       </Container>
-      <div className='grid md:grid-cols-3 gap-4 items-start w-11/12 sm:w-5/6 h-full sm:py-12 py-6'>
+      <div className='sect-main grid md:grid-cols-3 gap-4 items-start w-11/12 sm:w-5/6 h-full sm:py-12 py-6'>
         <Container variant='body' className="sm:mt-4 col-span-2 w-full h-full overflow-y-auto">
           {currentTab === 'Éducation' && (
               <ol className='sm:ml-6 sm:py-10 sm:pr-6 h-full relative'>

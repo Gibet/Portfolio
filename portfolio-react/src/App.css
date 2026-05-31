@@ -866,3 +866,9 @@ input:focus, textarea:focus {outline: none;}
     padding: 6px 10px;
   }
 }
+
+@media (max-height: 840px) {
+  .sect-main {
+    padding-top: 0 !important;
+  }
+}

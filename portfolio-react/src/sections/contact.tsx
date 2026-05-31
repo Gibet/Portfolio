@@ -38,9 +38,9 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
       <Container variant='header' className='px-1/12 sm:px-0 pt-8'>
         <CommandLine variant='title' title="Me contacter" />
       </Container>
-      <div className='flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-12 py-6'>
+      <div className='sect-main flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-12 py-6'>
         <div className="grid grid-cols-1 md:gap-4 md:grid-cols-5 lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full items-start justify-center">
-          <Container variant='text' className="hidden md:block col-span-2 w-full h-fit text-xs sm:mt-8 mt-0 pb-0">
+          <Container variant='text' className="hidden md:block col-span-2 w-full h-fit text-xs sm:mt-4 mt-0 pb-0">
             <p className='terminal typed'>
               {splittingText("Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter !")}
             </p>
@@ -55,7 +55,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
               />
             </div>
           </Container>
-          <Container variant='body' className="sm:mt-8 col-span-3 w-full">
+          <Container variant='body' className="sm:mt-4 col-span-3 w-full">
             <form onSubmit={handleSubmit} className="grid grid-cols-2 grid-rows-4 gap-1 sm:gap-3">
               <input
                 required
