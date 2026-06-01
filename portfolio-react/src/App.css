@@ -5,8 +5,6 @@
 :root {
   --primary : rgb(240, 240, 240);
   --secondary : rgb(30, 30, 30);
-  --accent : rgba(4, 114, 188, 1);
-  --secondaryAccent : rgba(255, 220, 40, 0.9);
   --tertiaryAccent : rgba(255, 255, 255, 1);
   --background : rgb(255, 255, 255);
   --backgroundSecondary : rgb(65, 65, 65);
@@ -26,20 +24,25 @@
   --bgPattern4: rgba(0, 0, 0, 0.2);
   --bgPattern5: rgba(0, 0, 0, 0.25);
   --bgPattern6: rgba(0, 0, 0, 0.3);
-  --commandBgDot: rgba(4, 114, 188, 0.9);
-  --commandBgMain: rgba(255, 220, 40, 1);
-  --commandBgTitle: rgba(4, 114, 188, 1);
-  --commandBgMainSecondary: rgba(151, 193, 221, 1);
-  --commandBgMainTertiary: rgba(255, 255, 255, 0.9);
-  --commandBgSub: rgba(255, 155, 40, 1);
   --commandShadow: 3px 3px 1px rgba(65, 65, 65, 0.1);
-  --commandText: rgb(51, 51, 51);
+  --commandText: rgb(50, 50, 50);
   --dividerColor: rgba(0, 0, 0, 0.15);
   --homeMarker: rgba(75, 75, 75, 0.03);
   --aboutMarker: rgba(75, 75, 75, 0.04);
   --projectsMarker: rgba(75, 75, 75, 0.05);
   --contactMarker: rgba(75, 75, 75, 0.06);
-  --activeMarker: rgba(0, 83, 138, 0.5);
+  
+  --accent : rgba(221, 149, 113, 1);
+  --secondaryAccent : rgba(184, 198, 192, 0.9);
+  
+  --commandBgDot: rgba(70, 129, 137, 0.9);
+  --commandBgMain: rgba(184, 198, 192, 1);
+  --commandBgTitle: rgba(70, 129, 137, 1);
+  --commandBgMainSecondary: rgba(151, 193, 221, 1);
+  --commandBgMainTertiary: rgba(255, 255, 255, 1);
+  --commandBgSub: rgb(221, 149, 113);
+
+  --activeMarker: rgba(70, 129, 137, 0.5);
 
   --loader-animation-speed: 0.75s;
 }
@@ -47,8 +50,6 @@
 [data-theme="dark"] {
   --primary : rgb(25, 25, 25);
   --secondary : rgb(0, 0, 0);
-  --accent : rgba(204, 173, 0, 1);
-  --secondaryAccent : rgba(4, 114, 188, 0.9);
   --tertiaryAccent : rgba(15, 15, 15, 1);
   --background : rgb(40, 40, 40);
   --backgroundSecondary : rgb(15, 15, 15);
@@ -68,20 +69,25 @@
   --bgPattern4: rgba(125, 125, 125, 0.2);
   --bgPattern5: rgba(125, 125, 125, 0.25);
   --bgPattern6: rgba(125, 125, 125, 0.3);
-  --commandBgDot: rgba(4, 114, 188, 1);
-  --commandBgMain: rgba(255, 220, 40, 1);
-  --commandBgTitle: rgba(255, 220, 40, 0.9);
-  --commandBgMainSecondary: rgba(151, 193, 221, 1);
-  --commandBgMainTertiary: rgba(36, 36, 36, 0.8);
-  --commandBgSub: rgba(255, 155, 40, 1);
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
-  --commandText: rgb(51, 51, 51);
+  --commandText: rgb(20, 20, 20);
   --dividerColor: rgba(255, 255, 255, 0.1);
   --homeMarker: rgba(5, 5, 5, 0.03);
   --aboutMarker: rgba(5, 5, 5, 0.04);
   --projectsMarker: rgba(5, 5, 5, 0.05);
   --contactMarker: rgba(5, 5, 5, 0.06);
-  --activeMarker: rgba(204, 173, 0, .4);
+  
+  --accent : rgba(222, 186, 111, 1);
+  --secondaryAccent : rgba(147, 125, 98, 0.9);
+  
+  --commandBgDot: rgba(155, 174, 152, 1);
+  --commandBgMain: rgba(70, 129, 137, 1);
+  --commandBgTitle: rgba(222, 186, 111, 0.9);
+  --commandBgMainSecondary: rgba(151, 193, 221, 1);
+  --commandBgMainTertiary: rgba(30, 30, 30, 0.9);
+  --commandBgSub: rgba(222, 186, 111, 1);
+  
+  --activeMarker: rgba(75, 64, 49, 0.4);
 }
 
 /* Fonts */
@@ -365,14 +371,14 @@ a:hover {color: var(--accent);}
   padding: 20px;
   box-shadow: var(--shadowSecondary);
   background:
-    linear-gradient(to right, var(--dividerColor) 2px, transparent 1px) 0 0,
-    linear-gradient(to right, var(--dividerColor) 2px, transparent 1px) 0 100%,
-    linear-gradient(to left, var(--dividerColor) 2px, transparent 1px) 100% 0,
-    linear-gradient(to left, var(--dividerColor) 2px, transparent 1px) 100% 100%,
-    linear-gradient(to bottom, var(--dividerColor) 2px, transparent 1px) 0 0,
-    linear-gradient(to bottom, var(--dividerColor) 2px, transparent 1px) 100% 0,
-    linear-gradient(to top, var(--dividerColor) 2px, transparent 1px) 0 100%,
-    linear-gradient(to top, var(--dividerColor) 2px, transparent 1px) 100% 100%;
+    linear-gradient(to right, var(--activeMarker) 2px, transparent 1px) 0 0,
+    linear-gradient(to right, var(--activeMarker) 2px, transparent 1px) 0 100%,
+    linear-gradient(to left, var(--activeMarker) 2px, transparent 1px) 100% 0,
+    linear-gradient(to left, var(--activeMarker) 2px, transparent 1px) 100% 100%,
+    linear-gradient(to bottom, var(--activeMarker) 2px, transparent 1px) 0 0,
+    linear-gradient(to bottom, var(--activeMarker) 2px, transparent 1px) 100% 0,
+    linear-gradient(to top, var(--activeMarker) 2px, transparent 1px) 0 100%,
+    linear-gradient(to top, var(--activeMarker) 2px, transparent 1px) 100% 100%;
   
   background-repeat: no-repeat;
   background-size: 20px 20px;
@@ -478,7 +484,7 @@ a:hover {color: var(--accent);}
 
 .command-line-link {
   background-color: var(--commandBgDot);
-  color: var(--text);
+  color: var(--commandText);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .command-line-link:hover {color: var(--background);}
