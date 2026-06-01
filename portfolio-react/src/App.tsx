@@ -60,7 +60,6 @@ function App() {
         return
       }
     }
-    targetElement.classList.add('animated')
     targetElement?.scrollIntoView({ behavior: scrollBehavior.current })
   }, [])
 
@@ -124,6 +123,7 @@ function App() {
   // Update the active section ref whenever it changes
   useEffect(() => {
     activeSectionRef.current = activeSection;
+    sectionRefs.current[activeSection]?.classList.add('animated');
   }, [activeSection]);
 
   // Set up the Intersection Observer when the component mounts
