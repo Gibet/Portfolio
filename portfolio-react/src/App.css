@@ -33,12 +33,10 @@
   --contactMarker: rgba(75, 75, 75, 0.06);
   
   --accent : rgba(221, 149, 113, 1);
-  --secondaryAccent : rgba(184, 198, 192, 0.9);
   
   --commandBgDot: rgba(70, 129, 137, 0.9);
   --commandBgMain: rgba(184, 198, 192, 1);
   --commandBgTitle: rgba(70, 129, 137, 1);
-  --commandBgMainSecondary: rgba(151, 193, 221, 1);
   --commandBgMainTertiary: rgba(255, 255, 255, 1);
   --commandBgSub: rgb(221, 149, 113);
 
@@ -78,16 +76,14 @@
   --contactMarker: rgba(5, 5, 5, 0.06);
   
   --accent : rgba(222, 186, 111, 1);
-  --secondaryAccent : rgba(147, 125, 98, 0.9);
   
   --commandBgDot: rgba(70, 129, 137, 1);
-  --commandBgMain: rgba(155, 174, 152, 1);
-  --commandBgTitle: rgba(222, 186, 111, 0.9);
-  --commandBgMainSecondary: rgba(151, 193, 221, 1);
+  --commandBgMain: rgba(133, 156, 129, 1);
+  --commandBgTitle: rgba(70, 129, 137, 0.9);
   --commandBgMainTertiary: rgba(30, 30, 30, 0.9);
   --commandBgSub: rgba(222, 186, 111, 1);
   
-  --activeMarker: rgba(75, 64, 49, 0.4);
+  --activeMarker: rgba(100, 86, 66, 0.4);
 }
 
 /* Fonts */
@@ -150,7 +146,7 @@ body {
 #root {
   background: radial-gradient(circle at 50% 50%, var(--backgroundSecondary) 60%, var(--secondary) 100%);
   .pattern-layer {
-    background: url('/images/backgrounds/bg-secondary.png') repeat;
+    background: url('/images/backgrounds/bg-main.png') repeat;
     background-blend-mode: overlay, normal;
     content-visibility: auto;
     contain-intrinsic-size: 100vh;
@@ -161,8 +157,8 @@ body {
   --size: 25px;
   overflow-y: hidden;
   background: var(--primary);
-  .grid-layer {
-    background: url('/images/backgrounds/bg-main.png') repeat;
+  .texture-layer {
+    background: url('/images/backgrounds/bg-secondary.png') repeat;
     background-blend-mode: overlay, normal; 
     content-visibility: auto;
     contain-intrinsic-size: 100vh;
@@ -408,7 +404,7 @@ a:hover {color: var(--accent);}
 
 .title {
   .command-line-dot {
-    background-color: var(--secondaryAccent) !important;
+    background-color: var(--accent) !important;
   }
   .command-line-title {
     background-color: var(--commandBgTitle) !important;

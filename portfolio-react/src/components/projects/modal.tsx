@@ -68,10 +68,10 @@ const ProjectModal = (props: ModalProps) => {
             )}
             {images.length > 1 && (
               <>
-                <button onClick={prevImage} className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
+                <button onClick={prevImage} aria-label="Previous image" className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
                   &lt;
                 </button>
-                <button onClick={nextImage} className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
+                <button onClick={nextImage} aria-label="Next image" className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
                   &gt;
                 </button>
                 <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white px-2 py-1 text-sm">

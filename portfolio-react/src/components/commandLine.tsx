@@ -11,7 +11,7 @@ const CommandLine: React.FC<CommandLineProps> = (props: CommandLineProps) => {
       {props.subtitle && <span className="command-line-sub">{props.subtitle}</span>}
       {props.additionalInfo && <span className="command-line-add">{props.additionalInfo}</span>}
       {props.link && (
-        <a href={props.link} target="_blank" rel="noopener noreferrer" className="command-line-link flex items-center">
+        <a href={props.link} target="_blank" rel="noopener noreferrer" aria-label="View on GitHub" className="command-line-link flex items-center">
           <Github size={16} />
         </a>
       )}

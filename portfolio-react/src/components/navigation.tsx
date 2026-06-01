@@ -47,12 +47,12 @@ export const SectionNavigation:React.FC<NavigationProps> = (props: NavigationPro
 
   return (
     <div id='arrow-nav' className='flex flex-col gap-1'>
-      <button disabled={props.index <= 0} id='prev' onClick={() => {
+      <button disabled={props.index <= 0} id='prev' aria-label='Previous section' onClick={() => {
         prev()
       }}>
         <ArrowBigUp strokeWidth={1.25} />
       </button>
-      <button disabled={handleNextDisabled()} id='next' onClick={() => {
+      <button disabled={handleNextDisabled()} id='next' aria-label='Next section' onClick={() => {
         next()
       }}>
         <ArrowBigDown strokeWidth={1.25} />

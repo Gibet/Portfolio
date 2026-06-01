@@ -8,7 +8,7 @@ const CustomSection = forwardRef<HTMLDivElement, SectionProps>(({ id, pinned, ch
     <div id={id} className={`relative overflow-x-hidden h-screen custom-section ${pinned ? 'pinned' : ''}`} style={{ zIndex: zIndex }}
       data-first={firstPinned && pinCount > 1}
     >
-      <div className="grid-layer absolute h-full w-full overflow-hidden">
+      <div className="texture-layer absolute h-full w-full overflow-hidden">
         <span className='top-markers absolute top-0 left-0'>
           <span className='home-marker'></span>
           <span className='about-marker'></span>

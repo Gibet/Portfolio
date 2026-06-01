@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
     <header className='w-full 2xl:max-w-[75vw] z-60 backdrop-blur-xs'>
       <nav className="flex justify-between items-center w-full">
         <div className="flex text-lg font-bold">
-          <button onClick={theme.toggleTheme}>
+          <button onClick={theme.toggleTheme} aria-label="Toggle theme">
             { theme.theme === 'light' ? 
               <Sun size={20} strokeWidth={1} className='cursor-pointer' /> :
               <Moon size={20} strokeWidth={1} className='cursor-pointer' />
@@ -18,10 +18,18 @@ const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
           </button>
         </div>
         <div className="flex">
-          <button onClick={() => navigate('home')} className={activeSection === 'home' ? 'active' : ''}><Home size={24} strokeWidth={activeSection === 'home' ? 1.5 : 1} /></button>
-          <button onClick={() => navigate('about')} className={activeSection === 'about' ? 'active' : ''}><Info size={24} strokeWidth={activeSection === 'about' ? 1.5 : 1} /></button>
-          <button onClick={() => navigate('projects')} className={activeSection === 'projects' ? 'active' : ''}><Cog size={24} strokeWidth={activeSection === 'projects' ? 1.5 : 1} /></button>
-          <button onClick={() => navigate('contact')} className={activeSection === 'contact' ? 'active' : ''}><Contact size={24} strokeWidth={activeSection === 'contact' ? 1.5 : 1} /></button>
+          <button onClick={() => navigate('home')} className={activeSection === 'home' ? 'active' : ''} aria-label="Go to home section">
+            <Home size={24} strokeWidth={activeSection === 'home' ? 1.5 : 1} />
+          </button>
+          <button onClick={() => navigate('about')} className={activeSection === 'about' ? 'active' : ''} aria-label="Go to about section">
+            <Info size={24} strokeWidth={activeSection === 'about' ? 1.5 : 1} />
+          </button>
+          <button onClick={() => navigate('projects')} className={activeSection === 'projects' ? 'active' : ''} aria-label="Go to projects section">
+            <Cog size={24} strokeWidth={activeSection === 'projects' ? 1.5 : 1} />
+          </button>
+          <button onClick={() => navigate('contact')} className={activeSection === 'contact' ? 'active' : ''} aria-label="Go to contact section">
+            <Contact size={24} strokeWidth={activeSection === 'contact' ? 1.5 : 1} />
+          </button>
         </div>
       </nav>
     </header>
