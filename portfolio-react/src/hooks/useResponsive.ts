@@ -11,20 +11,19 @@ export const useResponsivePageSize = () => {
     const usableHeight = Math.max(height - 280, 320)
 
     let columns = 1
-    if (width >= 640) {
-      columns = 5
-    } else if (width >= 1280) {
-      columns = 4
-    } else if (width >= 1024) {
+    if (width >= 1024) {
       columns = 3
-    } else if (width >= 768) {
+    } else if (width >= 640) {
       columns = 2
     }
 
-    let cardHeight = 90
-    if (width >= 640) {
-      cardHeight = 170
+    let cardHeight = 110
+    if (width >= 1280) {
+      cardHeight = 180
+    } else if (width >= 640) {
+      cardHeight = 140
     }
+
     const rows = Math.max(1, Math.floor(usableHeight / cardHeight))
 
     // Keep pagination stable and avoid extreme values on very small/large screens.

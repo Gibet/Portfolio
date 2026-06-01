@@ -57,7 +57,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
           </div>
         </Container>
         <Container variant='body' className="md:mt-4 md:col-span-4 flex flex-col w-full h-full gap-5">
-            <div className="projects flex flex-wrap content-start sm:m-6 lg:gap-5 gap-2 h-full">
+            <div className="projects grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xlg:grid-cols-5 content-start lg:gap-5 gap-2 h-full">
               {ProjectsList.projects.filter(project => currentCategory === 'Tous' || project.category === currentCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize).map((project, index) => (
                 <ProjectThumbnail key={project.name} project={project} onClick={() => {openModal(project)}} style={{ '--thumbnail--index': index } as React.CSSProperties} />
               ))}
