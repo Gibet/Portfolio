@@ -32,13 +32,13 @@
   --projectsMarker: rgba(75, 75, 75, 0.05);
   --contactMarker: rgba(75, 75, 75, 0.06);
   
-  --accent : rgba(221, 149, 113, 1);
+  --accent : rgba(221, 149, 113, 0.9);
   
   --commandBgDot: rgba(70, 129, 137, 0.9);
-  --commandBgMain: rgba(184, 198, 192, 1);
-  --commandBgTitle: rgba(70, 129, 137, 1);
-  --commandBgMainTertiary: rgba(255, 255, 255, 1);
-  --commandBgSub: rgb(221, 149, 113);
+  --commandBgMain: rgba(184, 198, 192, 0.9);
+  --commandBgTitle: rgba(70, 129, 137, 0.9);
+  --commandBgMainTertiary: rgba(255, 255, 255, 0.9);
+  --commandBgSub: rgba(221, 149, 113, 0.9);
 
   --activeMarker: rgba(70, 129, 137, 0.5);
 
@@ -75,13 +75,13 @@
   --projectsMarker: rgba(5, 5, 5, 0.05);
   --contactMarker: rgba(5, 5, 5, 0.06);
   
-  --accent : rgba(222, 186, 111, 1);
+  --accent : rgba(222, 186, 111, 0.9);
   
-  --commandBgDot: rgba(70, 129, 137, 1);
-  --commandBgMain: rgba(133, 156, 129, 1);
+  --commandBgDot: rgba(70, 129, 137, 0.9);
+  --commandBgMain: rgba(222, 186, 111, 0.9);
   --commandBgTitle: rgba(70, 129, 137, 0.9);
   --commandBgMainTertiary: rgba(30, 30, 30, 0.9);
-  --commandBgSub: rgba(222, 186, 111, 1);
+  --commandBgSub: rgba(133, 156, 129, 0.9);
   
   --activeMarker: rgba(100, 86, 66, 0.4);
 }
@@ -157,14 +157,14 @@ body {
   --size: 25px;
   overflow-y: hidden;
   background: var(--primary);
-  .texture-layer {
-    background: url('/images/backgrounds/bg-secondary.png') repeat;
-    background-blend-mode: overlay, normal; 
-    content-visibility: auto;
-    contain-intrinsic-size: 100vh;
-  }
 }
 
+.texture-layer, .modal-body {
+  background: url('/images/backgrounds/bg-secondary.png') repeat;
+  background-blend-mode: overlay, normal; 
+  content-visibility: auto;
+  contain-intrinsic-size: 100vh;
+}
 
 .top-markers, .bottom-markers {
   height: 25rem;
