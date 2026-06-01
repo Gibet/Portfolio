@@ -80,8 +80,8 @@
   --accent : rgba(222, 186, 111, 1);
   --secondaryAccent : rgba(147, 125, 98, 0.9);
   
-  --commandBgDot: rgba(155, 174, 152, 1);
-  --commandBgMain: rgba(70, 129, 137, 1);
+  --commandBgDot: rgba(70, 129, 137, 1);
+  --commandBgMain: rgba(155, 174, 152, 1);
   --commandBgTitle: rgba(222, 186, 111, 0.9);
   --commandBgMainSecondary: rgba(151, 193, 221, 1);
   --commandBgMainTertiary: rgba(30, 30, 30, 0.9);
