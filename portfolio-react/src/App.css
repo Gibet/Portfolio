@@ -856,6 +856,13 @@ input:focus, textarea:focus {outline: none;}
 
 @media (max-height: 840px) {
   .sect-main {
-    padding-top: 0 !important;
+    padding-top: 12px !important;
+  }
+}
+
+@media (max-height: 768px) {
+  .skill img {
+    width: 15px;
+    height: 15px;
   }
 }
