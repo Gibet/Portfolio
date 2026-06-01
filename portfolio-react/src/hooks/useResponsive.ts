@@ -21,7 +21,7 @@ export const useResponsivePageSize = () => {
       columns = 2
     }
 
-    let cardHeight = 110
+    let cardHeight = 90
     if (width >= 640) {
       cardHeight = 170
     }
