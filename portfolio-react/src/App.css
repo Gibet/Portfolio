@@ -483,7 +483,7 @@ a:hover {color: var(--accent);}
   color: var(--commandText);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.command-line-link:hover {color: var(--background);}
+.command-line-link:hover {color: rgb(223, 223, 223) ;}
 
 /* home section */
 
