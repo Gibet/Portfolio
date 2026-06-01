@@ -9,7 +9,6 @@ const CustomSection = forwardRef<HTMLDivElement, SectionProps>(({ id, pinned, ch
       data-first={firstPinned && pinCount > 1}
     >
       <div className="grid-layer absolute h-full w-full overflow-hidden">
-        {/* <div className='bglayer'></div> */}
         <span className='top-markers absolute top-0 left-0'>
           <span className='home-marker'></span>
           <span className='about-marker'></span>

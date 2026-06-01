@@ -52,7 +52,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
               color={'var(--accent)'}
               primaryColor={'var(--primary)'}
               strokeWidth={4}
-              className='w-5/6 h-auto'
+              className='w-full h-auto'
             />
           </div>
         </Container>

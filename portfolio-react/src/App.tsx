@@ -149,6 +149,7 @@ function App() {
 
   return (
     <>
+      <div className="pattern-layer absolute h-full w-full overflow-hidden"></div>
       <Header navigate={handleSectionChange} activeSection={activeSection} />
       <main id='main-container' className="relative w-full 2xl:max-w-[75vw] flex-1">
         <Home pinned={pinnedSections.has('home')} firstPinned={getAbovePinnedSection() === 'home'} pinCount={pinnedSections.size} ref={setSectionRef('home')} zIndex={getSectionZIndex('home')} />

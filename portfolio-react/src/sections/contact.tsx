@@ -50,7 +50,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
             <div className="logo-container w-full flex justify-center items-center">
               <MailLogo 
                 color={'var(--accent)'}
-                className='w-2/5 h-auto'
+                className='w-1/2 h-auto'
                 strokeWidth={.15}
               />
             </div>
