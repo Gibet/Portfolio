@@ -96,8 +96,7 @@
       "description": "Jeu de frappe à la ligne, permettant aux utilisateurs de s'entraîner et d'améliorer leur vitesse de frappe.",
       "imageSrc": "/images/projects/TypingGame.png",
       "role": ["Design et développement de l'interface utilisateur avec React et Tailwind CSS",
-        "Implémentation d'un système de scoring et de suivi des performances",
-        "Création de différents niveaux de difficulté pour s'adapter aux utilisateurs débutants et avancés"],
+        "Implémentation d'un système de scoring et de suivi des performances"],
       "stack": ["React","JavaScript", "Sass", "Expressjs", "MySQL"],
       "github": "#"
       }

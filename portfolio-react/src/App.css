@@ -8,8 +8,8 @@
   --tertiaryAccent : rgba(255, 255, 255, 1);
   --background : rgb(255, 255, 255);
   --backgroundSecondary : rgb(50, 50, 50);
-  --sectHeader : rgba(255, 255, 255, 0.71);
-  --sectBody : rgba(240, 240, 240, 0.71);
+  --sectHeader : rgba(255, 255, 255, 0.7);
+  --sectBody : rgba(240, 240, 240, 0.7);
   --disabled : rgba(150, 150, 150, 0.1);
   --disabledColor : rgba(150, 150, 150, 0.2);
   --text : rgb(37, 37, 37);
@@ -51,8 +51,8 @@
   --tertiaryAccent : rgba(15, 15, 15, 1);
   --background : rgb(40, 40, 40);
   --backgroundSecondary : rgb(15, 15, 15);
-  --sectHeader : rgba(40, 40, 40, 0.71);
-  --sectBody : rgba(30, 30, 30, 0.71);
+  --sectHeader : rgba(40, 40, 40, 0.7);
+  --sectBody : rgba(30, 30, 30, 0.7);
   --disabled : rgba(150, 150, 150, 0.1);
   --disabledColor : rgba(150, 150, 150, 0.2);
   --text : rgb(223, 223, 223) ;
