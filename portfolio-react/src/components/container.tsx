@@ -7,10 +7,10 @@ interface ContainerProps
 
 const variants = {
   default: 'container',
-  wide: 'container wide',
-  body: 'container sect-body',
-  header: 'sect-header gap-4',
-  text: 'container sect-text'
+  wide: 'container wide textured-main',
+  body: 'container sect-body textured-main',
+  header: 'sect-header gap-4 textured-main',
+  text: 'container sect-text textured-main'
 }
 
 export const Container = ({variant = 'default', children, className}: ContainerProps) => {

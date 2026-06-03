@@ -7,7 +7,7 @@ const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
   const theme = useTheme();
 
   return (
-    <header className='w-full 2xl:max-w-[75vw] z-60 backdrop-blur-xs'>
+    <header className='textured-main w-full 2xl:max-w-[75vw] z-60 backdrop-blur-xs'>
       <nav className="flex justify-between items-center w-full">
         <div className="flex text-lg font-bold">
           <button onClick={theme.toggleTheme} aria-label="Toggle theme">

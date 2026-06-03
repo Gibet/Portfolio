@@ -59,7 +59,7 @@ const ProjectModal = (props: ModalProps) => {
         <button onClick={props.onClose} className="close-button h-10 w-10 absolute top-0 right-0">
           X
         </button>
-        <div className="modal-body h-full flex flex-col gap-3">
+        <div className="modal-body textured-main h-full flex flex-col gap-3">
           <div className="modal-image-container flex items-center justify-center max-h-2/3 col-span-1 w-full relative" data-loading={loading}>
             {loading ? (
               <>{loadingSVG}</>
