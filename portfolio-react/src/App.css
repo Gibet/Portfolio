@@ -159,8 +159,7 @@ body {
   background: var(--primary);
 }
 
-.event, .square1, .square2, .square3,
- #arrow-nav button, footer,
+.event, .square1, .square2, .square3, footer,
  .textured-main {
   background: url('/images/backgrounds/bg-secondary.png') repeat;
   background-blend-mode: normal; 
