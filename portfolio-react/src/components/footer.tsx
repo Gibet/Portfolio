@@ -24,7 +24,7 @@ const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
           <li><a href="" target="_blank" rel="noopener noreferrer"><Linkedin size={14} strokeWidth={ 1} /><span>LinkedIn</span></a></li>
         </ul>
       </div>
-      <span className='absolute bottom-4 right-8 text-xs opacity-50'>© 2025 - Jean-Bernard Laguerre.</span>
+      <span className='absolute bottom-4 right-8 text-xs opacity-50'>© 2026 - Jean-Bernard Laguerre.</span>
     </footer>
   )
 }

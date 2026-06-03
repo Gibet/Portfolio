@@ -47,7 +47,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
       <div className="sect-main relative grid md:grid-cols-5 gap-4 items-start w-11/12 sm:w-5/6 h-full md:py-12 py-6">
         <Container variant='text' className="text-sm hidden md:mt-4 md:block lg:col-span-1">
           <p className='terminal typed'>{splittingText("Voici une sélection de mes projets, mettant en avant mes compétences en développement web et mobile.")}</p>
-          <div className="logo-container w-full flex justify-center items-center mt-6">
+          <div className="logo-container w-full flex justify-center items-center mt-3">
             <ProjectsLogo 
               color={'var(--accent)'}
               primaryColor={'var(--primary)'}

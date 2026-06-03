@@ -9,7 +9,7 @@ const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
   return (
     <header className='textured-main w-full 2xl:max-w-[75vw] z-60 backdrop-blur-xs'>
       <nav className="flex justify-between items-center w-full">
-        <div className="flex text-lg font-bold">
+        <div className="flex">
           <button onClick={theme.toggleTheme} aria-label="Toggle theme">
             { theme.theme === 'light' ? 
               <Sun size={20} strokeWidth={1} className='cursor-pointer' /> :

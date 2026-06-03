@@ -151,7 +151,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
         </Container>
         <Container variant='text' className="sm:mt-4 col-span-1 text-sm hidden md:block">
           <p className='terminal typed'>{splittingText("Découvrez mon parcours et mes compétences dans le domaine du développement web.")}</p>
-          <div className="logo-container w-full flex justify-center items-center mt-6">
+          <div className="logo-container w-full flex justify-center items-center mt-3">
             <DevLogo
               color={'var(--accent)'}
               primaryColor={'var(--primary)'}

@@ -40,14 +40,14 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
       </Container>
       <div className='sect-main flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-12 py-6'>
         <div className="grid grid-cols-1 md:gap-4 md:grid-cols-5 lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full items-start justify-center">
-          <Container variant='text' className="hidden md:block col-span-2 w-full h-fit text-xs sm:mt-4 mt-0 pb-0">
+          <Container variant='text' className="hidden md:block col-span-2 w-full h-fit text-sm sm:mt-4 mt-0 pb-0">
             <p className='terminal typed'>
               {splittingText("Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter !")}
             </p>
-            <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-1">
+            <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-3">
               laguerre.jb.dev@gmail.com
             </a>
-            <div className="logo-container w-full flex justify-center items-center mt-6">
+            <div className="logo-container w-full flex justify-center items-center mt-3">
               <MailLogo 
                 color={'var(--accent)'}
                 primaryColor={'var(--primary)'}
