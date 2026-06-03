@@ -144,9 +144,6 @@ function App() {
 
   // Inject Vercel Speed Insights and Analytics scripts
   useEffect(() => {
-    const g = globalThis as any;
-    if (g.window === 'undefined' || g.process.env.NODE_ENV !== 'production') return;
-
     let cancelled = false;
 
     (async () => {
