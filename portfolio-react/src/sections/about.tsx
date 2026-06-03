@@ -155,7 +155,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
             <DevLogo
               color={'var(--accent)'}
               primaryColor={'var(--primary)'}
-              strokeWidth={.5}
+              strokeWidth={.4}
               className='w-1/2 h-auto'
             
             />

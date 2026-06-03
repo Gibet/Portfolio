@@ -51,7 +51,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
             <ProjectsLogo 
               color={'var(--accent)'}
               primaryColor={'var(--primary)'}
-              strokeWidth={4}
+              strokeWidth={3}
               className='w-full h-auto'
             />
           </div>

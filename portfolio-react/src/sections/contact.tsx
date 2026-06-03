@@ -47,11 +47,12 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
             <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-1">
               laguerre.jb.dev@gmail.com
             </a>
-            <div className="logo-container w-full flex justify-center items-center">
+            <div className="logo-container w-full flex justify-center items-center mt-6">
               <MailLogo 
                 color={'var(--accent)'}
+                primaryColor={'var(--primary)'}
                 className='w-1/2 h-auto'
-                strokeWidth={.15}
+                strokeWidth={.4}
               />
             </div>
           </Container>

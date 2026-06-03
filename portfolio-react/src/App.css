@@ -28,9 +28,9 @@
   --commandText: rgb(50, 50, 50);
   --dividerColor: rgba(0, 0, 0, 0.15);
   --homeMarker: rgba(75, 75, 75, 0.03);
-  --aboutMarker: rgba(75, 75, 75, 0.04);
-  --projectsMarker: rgba(75, 75, 75, 0.05);
-  --contactMarker: rgba(75, 75, 75, 0.06);
+  --aboutMarker: rgba(75, 75, 75, 0.05);
+  --projectsMarker: rgba(75, 75, 75, 0.07);
+  --contactMarker: rgba(75, 75, 75, 0.09);
   
   --accent : rgba(221, 149, 113, 0.9);
   
@@ -70,18 +70,18 @@
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
   --commandText: rgb(20, 20, 20);
   --dividerColor: rgba(255, 255, 255, 0.1);
-  --homeMarker: rgba(0, 0, 0, 0.04);
-  --aboutMarker: rgba(0, 0, 0, 0.05);
-  --projectsMarker: rgba(0, 0, 0, 0.06);
-  --contactMarker: rgba(0, 0, 0, 0.07);
+  --homeMarker: rgba(0, 0, 0, 0.05);
+  --aboutMarker: rgba(0, 0, 0, 0.07);
+  --projectsMarker: rgba(0, 0, 0, 0.09);
+  --contactMarker: rgba(0, 0, 0, 0.11);
   
   --accent : rgba(222, 186, 111, 0.9);
   
   --commandBgDot: rgba(70, 129, 137, 0.9);
-  --commandBgMain: rgba(222, 186, 111, 0.9);
+  --commandBgMain: rgba(133, 156, 129, 0.9);
   --commandBgTitle: rgba(70, 129, 137, 0.9);
   --commandBgMainTertiary: rgba(30, 30, 30, 0.9);
-  --commandBgSub: rgba(133, 156, 129, 0.9);
+  --commandBgSub: rgba(222, 186, 111, 0.9);
   
   --activeMarker: rgba(100, 86, 66, 0.4);
 }
@@ -329,7 +329,7 @@ button {
   cursor: pointer;
   background-color: var(--buttonBg);
   border: 2px solid transparent;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
 }
 
 button:hover, .active {
@@ -760,9 +760,6 @@ textarea:hover, textarea:focus {
       border-image: linear-gradient(90deg, var(--activeMarker) 65%, var(--tertiaryAccent) 80%) 1;
       border-width: 1px 0 0 0;
     }
-  }
-  .container:first-child {
-    padding-bottom: 0;
   }
 }
 
