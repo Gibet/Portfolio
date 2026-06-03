@@ -159,9 +159,13 @@ body {
   background: var(--primary);
 }
 
-.texture-layer, .modal-body {
+.texture-layer, .modal-body, .thumbnail, .skill, .command-line-dot,
+.command-line-title, .command-line-sub, .command-line-add, .command-line-link,
+.event, .sect-header, .sect-text,
+.square1, .square2, .square3,
+header, footer {
   background: url('/images/backgrounds/bg-secondary.png') repeat;
-  background-blend-mode: overlay, normal; 
+  background-blend-mode: normal; 
   content-visibility: auto;
   contain-intrinsic-size: 100vh;
 }
@@ -622,7 +626,7 @@ a:hover {color: var(--accent);}
   gap: 6px;
   .skill {
     background-color: var(--primary);
-    border: 2px solid var(--primary);
+    border: 2px solid transparent;
   } 
 }
 
