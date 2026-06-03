@@ -8,7 +8,7 @@ import Projects from './sections/projects'
 import Contact from './sections/contact'
 import Footer from './components/footer'
 import SectionNavigation from './components/navigation'
-import { injectSpeedInsights } from "@vercel/speed-insights"
+
 
 type ScrollBehaviorMode = ScrollBehavior
 
@@ -142,9 +142,32 @@ function App() {
     return () => observer.disconnect()
   }, [handleEntry])
 
-  // Inject Vercel Speed Insights script
+  // Inject Vercel Speed Insights and Analytics scripts
   useEffect(() => {
-    injectSpeedInsights();
+    const g = globalThis as any;
+    if (g.window === 'undefined' || g.process.env.NODE_ENV !== 'production') return;
+
+    let cancelled = false;
+
+    (async () => {
+      // small delay so that the scripts don't interfere with the initial page load and rendering
+      await new Promise(resolve => setTimeout(resolve, 800));
+      if (cancelled) return;
+
+      try {
+        const [{ injectSpeedInsights }, { inject }] = await Promise.all([
+          import('@vercel/speed-insights'),
+          import('@vercel/analytics'),
+        ]);
+        if (cancelled) return;
+        injectSpeedInsights?.();
+        inject?.();
+      } catch (e) {
+        // fail silently
+      }
+    })();
+
+    return () => { cancelled = true; };
   }, []);
 
   return (
