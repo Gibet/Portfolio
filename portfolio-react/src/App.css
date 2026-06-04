@@ -16,7 +16,7 @@
   --headerBg : rgba(255, 255, 255, 0.3);
   --buttonBg : rgb(233, 233, 233);
   --shadow : 0px 4px 4px 2px rgba(65, 65, 65, 0.05);
-  --sectionShadow : 0px 50px 30px 0px rgba(0, 0, 0, 0.02);
+  --sectionShadow : 0px 0px 25px rgba(0, 0, 0, 0.05);
   --shadowSecondary : 0px 4px 8px rgba(185, 185, 185, 0.1);
   --bgPattern1: rgba(0, 0, 0, 0.05);
   --bgPattern2: rgba(0, 0, 0, 0.1);
@@ -59,7 +59,7 @@
   --headerBg : rgba(50, 50, 50, 0.3);
   --buttonBg : rgb(20, 20, 20);
   --shadow : 0px 8px 8px 5px rgba(0, 0, 0, 0.05);
-  --sectionShadow : 0px 50px 30px 0px rgba(0, 0, 0, 0.02);
+  --sectionShadow : 0px 0px 25px rgba(0, 0, 0, 0.1);
   --shadowSecondary : 0px 4px 8px rgba(35, 35, 35, 0.1);
   --bgPattern1: rgba(125, 125, 125, 0.05);
   --bgPattern2: rgba(125, 125, 125, 0.1);
@@ -321,7 +321,7 @@ footer {
 
 .pinned[data-first="true"] {
   transform-origin: bottom center;
-  transform: scaleX(1.005);
+  /* transform: scaleX(1.005); */
 }
 
 
@@ -715,7 +715,8 @@ textarea:hover, textarea:focus {
   img {
     width: 100%;
     height: auto;
-    max-height: 100%
+    max-height: 100%;
+    animation: fadeIn 0.5s ease-in-out forwards;
   }
   .image-index {
     display: inline-block;
@@ -734,8 +735,6 @@ textarea:hover, textarea:focus {
   align-items: center;
   justify-content: center;
 }
-
-.modal-image {animation: fadeIn 0.5s ease-in-out forwards;}
 
 .bars-loader .morphing-bar {
   color: var(--accent);
@@ -821,44 +820,44 @@ input:focus, textarea:focus {outline: none;}
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-100vh) scaleX(1.01);
+    transform: translateY(-100vh);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scaleX(1);
+    transform: translateY(0);
   }
 }
 
 @keyframes slideRight {
   from {
     opacity: 0;
-    transform: translateX(100vw) scaleX(1.01);
+    transform: translateX(100vw);
   }
   to {
     opacity: 1;
-    transform: translateX(0) scaleX(1);
+    transform: translateX(0);
   }
 }
 
 @keyframes slideLeft {
   from {
     opacity: 0;
-    transform: translateX(-100vw) scaleX(1.01);
+    transform: translateX(-100vw);
   }
   to {
     opacity: 1;
-    transform: translateX(0) scaleX(1);
+    transform: translateX(0);
   }
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(100vh) scaleX(1.01);
+    transform: translateY(100vh);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scaleX(1);
+    transform: translateY(0);
   }
 }
 
