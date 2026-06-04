@@ -160,7 +160,7 @@ body {
 }
 
 .event, .square1, .square2, .square3, footer,
- .textured-main {
+.textured-main {
   background: url('/images/backgrounds/bg-secondary.png') repeat;
   background-blend-mode: normal; 
   content-visibility: auto;
@@ -242,6 +242,7 @@ footer {
   color: var(--text);
   z-index: 1;
   box-shadow: var(--shadowSecondary);
+  padding: 24px 8% 48px 8%;
   button {
     color: var(--text);
     cursor: pointer;
@@ -891,6 +892,9 @@ input:focus, textarea:focus {outline: none;}
   .line-2, .line-3 {--charThickness: -2px;}
   .skills-container .event {
     padding: 6px 10px;
+  }
+  footer {
+    padding: 24px 1% 48px 1%;
   }
 }
 
