@@ -159,7 +159,7 @@ body {
   background: var(--primary);
 }
 
-.event, .square1, .square2, .square3, footer,
+.event, .square1, .square2, .square3,
 .textured-main {
   background: url('/images/backgrounds/bg-secondary.png') repeat;
   background-blend-mode: normal; 

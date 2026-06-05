@@ -5,7 +5,7 @@ import { memo } from "react";
 
 const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
   return (
-    <footer className="backdrop-blur-xs w-full 2xl:max-w-[75vw] grid grid-cols-2 justify-center items-center text-center pt-6">
+    <footer className="textured-main backdrop-blur-xs w-full 2xl:max-w-[75vw] grid grid-cols-2 justify-center items-center text-center pt-6">
       <div className="col-span-1 flex flex-col justify-self-center w-full px-4 items-start gap-2">
         <CommandLine variant="tertiary" title="Menu" />
         <hr className="w-full" />
