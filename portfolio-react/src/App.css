@@ -312,16 +312,16 @@ footer {
     animation: fadeIn 1.5s ease-in-out forwards;
   }
 
-  #dev-logo { --logoDuration: 20s; }
+  #dev-logo { --logoDuration: 10s; }
   #projects-logo { --logoDuration: 3s; }
-  #mail-logo { --logoDuration: 20s; }
+  #mail-logo { --logoDuration: 10s; }
 
   .logo-draw path, .logo-draw line, .logo-draw polyline,
   .logo-draw polygon, .logo-draw circle, .logo-draw ellipse,
   .logo-draw rect {
     stroke-dasharray: 3000;
     stroke-dashoffset: 3000;
-    animation: logo-draw var(--logoDuration) ease forwards;
+    animation: logo-draw var(--logoDuration) ease-in-out forwards;
   }
 
   form input, form textarea, form button {
