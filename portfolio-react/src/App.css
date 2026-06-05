@@ -242,7 +242,7 @@ footer {
   color: var(--text);
   z-index: 1;
   box-shadow: var(--shadowSecondary);
-  padding: 24px 8% 48px 8%;
+  padding: 24px 8% 72px 8%;
   button {
     color: var(--text);
     cursor: pointer;
@@ -255,7 +255,7 @@ footer {
     border: none;
     background-color: transparent;
   }
-  li a, button{
+  a, button{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -312,6 +312,18 @@ footer {
     animation: fadeIn 1.5s ease-in-out forwards;
   }
 
+  #dev-logo { --logoDuration: 20s; }
+  #projects-logo { --logoDuration: 3s; }
+  #mail-logo { --logoDuration: 20s; }
+
+  .logo-draw path, .logo-draw line, .logo-draw polyline,
+  .logo-draw polygon, .logo-draw circle, .logo-draw ellipse,
+  .logo-draw rect {
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+    animation: logo-draw var(--logoDuration) ease forwards;
+  }
+
   form input, form textarea, form button {
     opacity: 0;
     animation: slideUp 1s ease-in-out forwards;
@@ -322,7 +334,6 @@ footer {
 
 .pinned[data-first="true"] {
   transform-origin: bottom center;
-  /* transform: scaleX(1.005); */
 }
 
 
@@ -703,6 +714,8 @@ textarea:hover, textarea:focus {
     background-color: var(--dividerColor);
   }
 }
+#modal {animation: fadeIn 0.3s ease-in-out forwards;}
+#modal[data-closing="true"] {animation: fadeOut 0.3s ease-in-out forwards;}
 
 .close-button {
   z-index: 1002;
@@ -775,7 +788,7 @@ textarea:hover, textarea:focus {
   background-color: var(--background);
   animation: slideRight 0.3s ease-out forwards;
 }
-
+.alert[data-closing="true"] {animation: fadeOut 0.3s ease-out forwards;}
 .alert-success {border-bottom: 2px solid rgba(0, 255, 0, 0.7);}
 .alert-info {border-bottom: 2px solid rgba(0, 0, 255, 0.7);}
 .alert-error {border-bottom: 2px solid rgba(255, 0, 0, 0.7);}
@@ -816,6 +829,10 @@ input:focus, textarea:focus {outline: none;}
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity: 0;}
 }
 
 @keyframes slideDown {
@@ -866,6 +883,12 @@ input:focus, textarea:focus {outline: none;}
   0%,
   100% {transform: scaleY(1);}
   50% {transform: scaleY(0.5);}
+}
+
+@keyframes logo-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* Transitions */

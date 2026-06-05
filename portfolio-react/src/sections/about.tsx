@@ -156,7 +156,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
               color={'var(--accent)'}
               primaryColor={'var(--primary)'}
               strokeWidth={.4}
-              className='w-1/2 h-auto'
+              className='w-1/2 h-auto logo-draw'
             
             />
           </div>

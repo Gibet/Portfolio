@@ -6,7 +6,7 @@ const DevLogo = (props: LogoProps) => (
     stroke={props.color || "#000000"}
     strokeWidth={props.strokeWidth || 0}
     version="1.1"
-    id="Capa_1"
+    id="dev-logo"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="-6 -6 72.00 72.00"

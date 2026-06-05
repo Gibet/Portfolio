@@ -51,7 +51,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
               <MailLogo 
                 color={'var(--accent)'}
                 primaryColor={'var(--primary)'}
-                className='w-1/2 h-auto'
+                className='w-1/2 h-auto logo-draw'
                 strokeWidth={.4}
               />
             </div>

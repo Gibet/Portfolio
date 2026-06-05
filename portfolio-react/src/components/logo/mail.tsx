@@ -3,6 +3,7 @@ import { type LogoProps } from "../../utils/types";
 const MailLogo = (props: LogoProps) => (
   <svg
     fill="none"
+    id="mail-logo"
     stroke={props.color || "#000000"}
     strokeWidth={props.strokeWidth || "0"}
     viewBox="-1.28 -1.28 66.56 66.56"

@@ -11,6 +11,7 @@ const imagesCache = new Map<string, string[]>();
 const ProjectModal = (props: ModalProps) => {
 
   const [loading, setLoading] = useState(true);
+  const [isClosing, setIsClosing] = useState(false);
 
   const [images, setImages] = useState<string[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -41,6 +42,14 @@ const ProjectModal = (props: ModalProps) => {
     setLoading(false);
   }
 
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      props.onClose();
+      setIsClosing(false);
+    }, 300);
+  }
+
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   }
@@ -54,9 +63,9 @@ const ProjectModal = (props: ModalProps) => {
   }, [props.project.name]);
 
   return (
-    <div className='absolute inset-0 bg-black/50 flex items-center justify-center' onClick={props.onClose}>
+    <div data-closing={isClosing} id='modal' className='absolute inset-0 bg-black/50 flex items-center justify-center' onClick={handleClose}>
       <div className="relative modal xl:w-[60vw] 2xl:w-[50vw] sm:w-5/6 w-11/12 h-[80vh] flex flex-col" onClick={e => e.stopPropagation()}>
-        <button onClick={props.onClose} className="close-button h-10 w-10 absolute top-0 right-0">
+        <button onClick={handleClose} className="close-button h-10 w-10 absolute top-0 right-0">
           X
         </button>
         <div className="modal-body textured-main h-full flex flex-col gap-3">
