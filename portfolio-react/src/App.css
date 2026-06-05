@@ -899,7 +899,6 @@ input:focus, textarea:focus {outline: none;}
 .container, .terminal::before, .chrono-dot, .chrono-line, .top-markers, .bottom-markers, .grid-layer, .bglayer {
   transition:  
     background-color 250ms ease,
-    color 250ms ease,
     border-color 250ms ease;
 }
 
