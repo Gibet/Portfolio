@@ -611,6 +611,7 @@ a:hover {color: var(--accent);}
   }
 }
 
+.sect-body .chrono-line, .sect-body .chrono-dot { animation: fadeIn 1s ease-in-out forwards; }
 .chrono-line {
   border-color: var(--dividerColor);
   height: calc(100% - 1.5rem);
@@ -707,7 +708,7 @@ textarea:hover, textarea:focus {
   overflow-y: hidden;
   z-index: 1001;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-  animation: slideDown .6s ease-in-out forwards;
+  animation: fadeIn .6s ease-in-out forwards;
   .divider {
     width: 1px;
     margin: 10px 0;
