@@ -1,5 +1,5 @@
 import type { CommandLineProps } from '../utils/types'
-import { Github, GraduationCap } from 'lucide-react'
+import { Github } from 'lucide-react'
 import { memo } from 'react'
 
 const CommandLine: React.FC<CommandLineProps> = (props: CommandLineProps) => {
