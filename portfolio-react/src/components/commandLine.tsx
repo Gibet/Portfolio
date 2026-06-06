@@ -8,7 +8,7 @@ const CommandLine: React.FC<CommandLineProps> = (props: CommandLineProps) => {
     <div className={`command-line text-sm ubuntu-semi-bold flex items-center overflow-x-auto overflow-y-hidden whitespace-nowrap ${props.variant}`}>
       <span className="command-line-dot textured-main">&nbsp;</span>
       <span className='command-line-title textured-main'>{props.title}
-        {props.variant === 'diplome' && <GraduationCap size={20} className="ml-2" color="var(--accent)" />}
+        {props.children}
       </span>
       {props.subtitle && <span className="command-line-sub textured-main">{props.subtitle}</span>}
       {props.additionalInfo && <span className="command-line-add textured-main">{props.additionalInfo}</span>}

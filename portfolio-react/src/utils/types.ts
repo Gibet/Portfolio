@@ -70,6 +70,7 @@ export interface CommandLineProps {
   additionalInfo?: string
   link?: string
   variant?: 'primary' | 'title' | 'secondary' | 'tertiary' | 'diplome' 
+  children?: React.ReactNode
 }
 
 export interface AlertProps {

@@ -440,7 +440,7 @@ a:hover {color: var(--accent);}
   }
 }
 
-.diplome svg {margin-left: 6px;}
+.command-line-title svg {margin-left: 6px;}
 .secondary, .diplome {
   .command-line-title {
   background-color: var(--buttonBg) !important;

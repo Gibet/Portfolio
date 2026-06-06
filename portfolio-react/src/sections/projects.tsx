@@ -10,6 +10,7 @@ import { ProjectsNavigation } from '../components/projects/navigation'
 import CommandLine from '../components/commandLine'
 import { splittingText } from '../utils/utils'
 import ProjectsLogo from '../components/logo/projects'
+import { Cog } from 'lucide-react'
 
 const ProjectsList = ProjectsData as { projects: ProjectProps[] }
 const categories = ['Tous', 'Web', 'Mobile']
@@ -31,7 +32,9 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
   return (
     <CustomSection id="projects" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={3}>
       <Container variant='header' className='flex flex-col gap-2.5'>
-        <CommandLine variant='title' title="Mes Projets" />
+        <CommandLine variant='title' title="" subtitle="Mes Projets">
+          <Cog size={18} className="ml-2" />
+        </CommandLine>
         <div className="flex flex-wrap gap-2">
           {categories.map((category) => (
             <button

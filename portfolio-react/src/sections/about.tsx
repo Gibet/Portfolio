@@ -7,6 +7,7 @@ import { Container } from '../components/container'
 import CommandLine from '../components/commandLine'
 import { splittingText } from '../utils/utils'
 import DevLogo from '../components/logo/dev'
+import { GraduationCap, Info } from 'lucide-react'
 
 type SkillsType = {
   name: string;
@@ -38,7 +39,9 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
   return (
     <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={4}>
       <Container variant='header' className='flex flex-col gap-2'>
-        <CommandLine variant='title' title="A propos de moi" />
+        <CommandLine variant='title' title="" subtitle="A propos de moi">
+          <Info size={18} className="ml-2" />
+        </CommandLine>
         <div className="flex flex-wrap gap-2">
           {AboutTabs.map((tab) => (
             <button
@@ -63,7 +66,9 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center' style={{ '--event--index': 0 } as React.CSSProperties}>
                   <span className="absolute left-0 chrono-dot"></span>
                   <div className="event">
-                    <CommandLine variant='diplome' title="" subtitle="Bachelor Concepteur Développeur d'Applications (CDA)" />
+                    <CommandLine variant='diplome' title="" subtitle="Bachelor Concepteur Développeur d'Applications (CDA)">
+                      <GraduationCap size={20} className="ml-2" color="var(--accent)"/>
+                    </CommandLine>
                   </div>
                 </li>
                 <li className='mb-2 sm:ml-10 sm:mt-4 ml-6 flex items-center' style={{ '--event--index': 1 } as React.CSSProperties}>
