@@ -1,5 +1,5 @@
 import type { HeaderProps } from "../utils/types";
-import { Cog, Contact, Github, Home, Info, Linkedin, Mail } from "lucide-react";
+import { Cog, Contact, Github, Home, Info, Linkedin, Mail, MapPin } from "lucide-react";
 import CommandLine from "./commandLine";
 import { memo } from "react";
 
@@ -54,13 +54,15 @@ const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
           </li>
         </ul>
       </div>
-      <div id="contact-info" className="col-span-1 sm:col-start-2 flex flex-col justify-self-center w-full px-4 pt-3 items-start gap-2 md:hidden text-xs text-left">
-        <span>
+      <div id="contact-info" className="col-span-2 sm:col-span-1  sm:col-start-2 grid grid-cols-1 gap-3 justify-self-center w-full px-4 pt-3 items-start gap-2 md:hidden text-xs text-left">
           <a href="" target="_blank" rel="noopener noreferrer">
             <Mail size={14} strokeWidth={1} />
             <span> laguerre.jb.dev@gmail.com</span>
           </a>
-        </span>
+          <span className="flex items-center">
+            <MapPin size={14} strokeWidth={1} />
+            <span> Marseille, France</span>
+          </span>
       </div>
       <span className="absolute bottom-4 right-8 text-xs opacity-50">
         © 2026 - Jean-Bernard Laguerre.

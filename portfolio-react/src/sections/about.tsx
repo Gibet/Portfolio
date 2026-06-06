@@ -60,16 +60,23 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
           ) }
           {currentTab === 'Éducation' && (
               <ol className='sm:ml-6 sm:pr-6 h-full relative'>
-                <li className='mb-2 sm:ml-10 sm:mt-4 ml-6 flex items-center' style={{ '--event--index': 0 } as React.CSSProperties}>
+                <li className='mb-2 sm:ml-10 ml-6 flex items-center' style={{ '--event--index': 0 } as React.CSSProperties}>
+                  <span className="absolute left-0 chrono-dot"></span>
+                  <div className="event">
+                    <CommandLine variant='diplome' title="" subtitle="Bachelor Concepteur Développeur d'Applications (CDA)" />
+                  </div>
+                </li>
+                <li className='mb-2 sm:ml-10 sm:mt-4 ml-6 flex items-center' style={{ '--event--index': 1 } as React.CSSProperties}>
                   <span className="absolute left-0 chrono-dot"></span>
                   <div className='event'>
-                    <CommandLine variant='secondary' title="Bachelor Concepteur Développeur d'Applications (CDA)" />
-                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center">La Plateforme_ - <span className="text-xs">2022-2025</span></h4>
+                    <CommandLine variant='secondary' title="La Plateforme_" />
+                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center"><span className="text-xs">2023-2025: </span>Bachelor: Developpement Web et Mobile</h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Développement full stack, avec JavaScript, Node.js, React et Symfony</li>
                       <li>Développement d’API avec API Platform, Express</li>
                       <li>Développement d'applications mobiles </li>
                     </ul>
+                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center"><span className="text-xs">2022-2023: </span>Prepa Bachelor</h4>
                   </div>
                 </li>
                 {/* <li className='mb-2 sm:ml-10 ml-6 flex items-center'>

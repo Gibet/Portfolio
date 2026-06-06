@@ -11,8 +11,8 @@ const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React
       <div className="flex flex-col flex-1 items-center justify-center h-full gap-6">
         <div className='flex flex-col items-end items-center gap-6'>
           <div id='square1' className='w-full flex flex-col gap-3'>
-            <h1 className="md:text-9xl text-6xl ubuntu-semi-bold line-1">{splittingText("Laguerre")}</h1>
-            <h2 className="md:text-5xl text-2xl font-normal line-2">{splittingText("Jean-Bernard")}</h2>
+            <h1 className="md:text-9xl text-7xl ubuntu-semi-bold line-1">{splittingText("Laguerre")}</h1>
+            <h2 className="md:text-5xl text-3xl font-normal line-2">{splittingText("Jean-Bernard")}</h2>
           </div>
           <div id='square2' className='w-full'>
             <h1 className="md:text-4xl text-xl text-center line-3 terminal blink-cursor">{splittingText("Développeur Web Full Stack")}</h1>

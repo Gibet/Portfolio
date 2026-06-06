@@ -242,7 +242,7 @@ footer {
   color: var(--text);
   z-index: 1;
   box-shadow: var(--shadowSecondary);
-  padding: 24px 8% 72px 8%;
+  padding: 24px 8% 54px 8%;
   button {
     color: var(--text);
     cursor: pointer;
@@ -255,7 +255,7 @@ footer {
     border: none;
     background-color: transparent;
   }
-  a, button{
+  a, span, button{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -418,13 +418,13 @@ a:hover {color: var(--accent);}
 }
 .sect-body {background-color: var(--sectBody);}
 .sect-text {background-color: var(--sectHeader);}
-.sect-text img {
-  color: var(--accent);
-}
+.sect-text img {color: var(--accent);}
+.sect-text a:hover {color: var(--commandBgTitle);}
+.pin {margin-left: -3px;}
 
 .command-line {color: var(--commandText) !important;}
 
-.secondary, .tertiary {
+.secondary, .tertiary, .diplome {
   .command-line-dot {
     background-color: var(--commandBgMain) !important;
   }
@@ -440,7 +440,8 @@ a:hover {color: var(--accent);}
   }
 }
 
-.secondary {
+.diplome svg {margin-left: 6px;}
+.secondary, .diplome {
   .command-line-title {
   background-color: var(--buttonBg) !important;
   color: var(--text) !important;
@@ -931,5 +932,9 @@ input:focus, textarea:focus {outline: none;}
   .skill img {
     width: 15px;
     height: 15px;
+  }
+  #message {
+    height: 60px;
+    grid-row: span 2;
   }
 }

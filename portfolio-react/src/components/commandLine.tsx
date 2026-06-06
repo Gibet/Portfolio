@@ -1,5 +1,5 @@
 import type { CommandLineProps } from '../utils/types'
-import { Github } from 'lucide-react'
+import { Github, GraduationCap } from 'lucide-react'
 import { memo } from 'react'
 
 const CommandLine: React.FC<CommandLineProps> = (props: CommandLineProps) => {
@@ -7,7 +7,9 @@ const CommandLine: React.FC<CommandLineProps> = (props: CommandLineProps) => {
   return (
     <div className={`command-line text-sm ubuntu-semi-bold flex items-center overflow-x-auto overflow-y-hidden whitespace-nowrap ${props.variant}`}>
       <span className="command-line-dot textured-main">&nbsp;</span>
-      <span className='command-line-title textured-main'>{props.title}</span>
+      <span className='command-line-title textured-main'>{props.title}
+        {props.variant === 'diplome' && <GraduationCap size={20} className="ml-2" color="var(--accent)" />}
+      </span>
       {props.subtitle && <span className="command-line-sub textured-main">{props.subtitle}</span>}
       {props.additionalInfo && <span className="command-line-add textured-main">{props.additionalInfo}</span>}
       {props.link && (

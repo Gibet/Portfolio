@@ -69,7 +69,7 @@ export interface CommandLineProps {
   subtitle?: string
   additionalInfo?: string
   link?: string
-  variant?: 'primary' | 'title' | 'secondary' | 'tertiary'
+  variant?: 'primary' | 'title' | 'secondary' | 'tertiary' | 'diplome' 
 }
 
 export interface AlertProps {

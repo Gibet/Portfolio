@@ -3,7 +3,7 @@ import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
 import { useForm, ValidationError } from '@formspree/react';
 import { Container } from '../components/container';
-import { Mail } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import  CommandLine from '../components/commandLine';
 import { Alert } from '../components/alert';
 import { splittingText } from '../utils/utils';
@@ -44,7 +44,11 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
             <p className='terminal typed'>
               {splittingText("Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter !")}
             </p>
-            <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-3">
+            <span className="pin flex items-center mt-2 gap-2">
+              <MapPin size={14} strokeWidth={2} color="var(--accent)" />
+              <span> Marseille, France</span>
+            </span>
+            <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-2">
               laguerre.jb.dev@gmail.com
             </a>
             <div className="logo-container w-full flex justify-center items-center mt-3">
