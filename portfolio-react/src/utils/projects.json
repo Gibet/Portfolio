@@ -9,7 +9,7 @@
         "Déploiment avec Vercel"],
       "imageSrc": "/images/projects/Portfolio.png",
       "stack": ["React", "Vite","TailwindCSS", "CSS3"],
-      "github": "#"
+      "github": "https://github.com/Gibet/Portfolio"
     },
     {
       "category": "Mobile",
@@ -24,7 +24,7 @@
         "Design et développement de l'application mobile en React Native avec Expo",
         "Mise en place de tests unitaires et d'intégration pour assurer la qualité du code"],
       "stack": ["Golang","TypeScript","ReactNative", "PostgreSQL", "Docker", "MongoDB"],
-      "github": "#"
+      "github": "https://github.com/jean-bernard-laguerre/skillly"
     },
     {
       "category": "Mobile",
@@ -38,8 +38,7 @@
         "Creation d'une API REST avec NestJS",
         "Design system et Maquettage de l'application mobile avec Figma"
       ],
-      "stack": ["TypeScript","ReactNative", "Nest", "MySQL"],
-      "github": "#"
+      "stack": ["TypeScript","ReactNative", "Nest", "MySQL"]
     },
     {
       "category": "Web",
@@ -52,7 +51,7 @@
         "Planification des sauvegardes avec cron et gestion des tâches en arrière-plan avec goroutines",
         "Design et développement de l'application web en React avec Vite"],
       "stack": ["React","TypeScript","Golang", "PostgreSQL", "Docker", "MySQL"],
-      "github": "#"
+      "github": "https://github.com/jean-bernard-laguerre/ci-cd"
     }, 
     {
       "category": "Web",
@@ -86,7 +85,7 @@
         "Design et développement de l'interface utilisateur avec React et Tailwind CSS",
         "Traitement des données de l'API afin de correspondre à l'expérience en jeu"],
       "stack": ["React","JavaScript", "TailwindCSS"],
-      "github": "#"
+      "github": "https://github.com/Gibet/GW2-dashboard"
     },
     {
       "category": "Web",
@@ -97,7 +96,7 @@
       "role": ["Design et développement de l'interface utilisateur avec React et Tailwind CSS",
         "Implémentation d'un système de scoring et de suivi des performances"],
       "stack": ["React","JavaScript", "Sass", "Expressjs", "MySQL"],
-      "github": "#"
+      "github": "https://github.com/Gibet/speller-test"
       }
   ]
 }

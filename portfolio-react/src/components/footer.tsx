@@ -41,13 +41,13 @@ const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
         <hr className="w-full" />
         <ul className="text-left text-xs grid grid-cols-1 gap-3">
           <li>
-            <a href="" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Gibet" target="_blank" rel="noopener noreferrer">
               <Github size={14} strokeWidth={1} />
               <span>GitHub</span>
             </a>
           </li>
           <li>
-            <a href="" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/jean-bernard-laguerre/" target="_blank" rel="noopener noreferrer">
               <Linkedin size={14} strokeWidth={1} />
               <span>LinkedIn</span>
             </a>
@@ -55,7 +55,7 @@ const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
         </ul>
       </div>
       <div id="contact-info" className="col-span-2 sm:col-span-1  sm:col-start-2 grid grid-cols-1 gap-3 justify-self-center w-full px-4 pt-3 items-start gap-2 md:hidden text-xs text-left">
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a href="mailto:laguerre.jb.dev@gmail.com" target="_blank" rel="noopener noreferrer">
             <Mail size={14} strokeWidth={1} />
             <span> laguerre.jb.dev@gmail.com</span>
           </a>
