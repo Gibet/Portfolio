@@ -98,10 +98,10 @@ const ProjectModal = (props: ModalProps) => {
           </div>
           <div className="modal-content grid sm:grid-cols-2 grid-cols-1 col-span-1 gap-4 overflow-y-auto sm:overflow-y-hidden relative">
             <div className="px-6 py-1 sm:pb-4 gap-3 col-span-1 flex flex-col sm:overflow-y-auto overflow-y-visible">
-              <h5 className="text-sm ubuntu-semi-bold">Description:</h5>
+              <h5 className="text-sm font-semibold">Description:</h5>
               <p className="terminal text-sm">{props.project.description}</p>
               <div className="modal-stack flex flex-wrap gap-2 items-center">
-                <h5 className="text-sm ubuntu-semi-bold">Stack:</h5>
+                <h5 className="text-sm font-semibold">Stack:</h5>
                 {props.project.stack.map((tech) => (
                   <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
                 ))}
@@ -109,7 +109,7 @@ const ProjectModal = (props: ModalProps) => {
             </div>
             <span className="self-stretch divider hidden sm:block absolute left-1/2 top-0 bottom-0"></span>
             <div className='px-6 py-1 gap-2 col-span-1 flex w-full flex-col sm:overflow-y-auto overflow-y-visible'>
-              <h5 className="text-sm ubuntu-semi-bold">Taches:</h5>
+              <h5 className="text-sm font-semibold">Taches:</h5>
               <div className="flex flex-col pb-2">
                 {props.project.role.map((role) => (
                   <span key={role} className="terminal text-sm px-2 py-1">

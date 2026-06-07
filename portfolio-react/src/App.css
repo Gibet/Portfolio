@@ -28,9 +28,9 @@
   --commandText: rgb(50, 50, 50);
   --dividerColor: rgba(0, 0, 0, 0.15);
   --homeMarker: rgba(75, 75, 75, 0.03);
-  --aboutMarker: rgba(75, 75, 75, 0.05);
-  --projectsMarker: rgba(75, 75, 75, 0.07);
-  --contactMarker: rgba(75, 75, 75, 0.09);
+  --aboutMarker: rgba(75, 75, 75, 0.06);
+  --projectsMarker: rgba(75, 75, 75, 0.09);
+  --contactMarker: rgba(75, 75, 75, 0.12);
   
   --accent : rgba(221, 149, 113, 0.9);
   
@@ -70,10 +70,10 @@
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
   --commandText: rgb(20, 20, 20);
   --dividerColor: rgba(255, 255, 255, 0.1);
-  --homeMarker: rgba(0, 0, 0, 0.05);
-  --aboutMarker: rgba(0, 0, 0, 0.07);
-  --projectsMarker: rgba(0, 0, 0, 0.09);
-  --contactMarker: rgba(0, 0, 0, 0.11);
+  --homeMarker: rgba(0, 0, 0, 0.06);
+  --aboutMarker: rgba(0, 0, 0, 0.09);
+  --projectsMarker: rgba(0, 0, 0, 0.12);
+  --contactMarker: rgba(0, 0, 0, 0.15);
   
   --accent : rgba(222, 186, 111, 0.9);
   
@@ -89,41 +89,14 @@
 /* Fonts */
 
 @font-face {
-  font-family: 'Ubuntu Mono';
-  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-Regular.ttf') format('truetype');
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
   font-weight: 400;
-  font-style: normal;
 }
 
-@font-face {
-  font-family: 'Ubuntu Mono';
-  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Ubuntu Mono';
-  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Ubuntu Mono';
-  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-Italic.ttf') format('truetype');
+.jetbrains {
+  font-family: 'JetBrains Mono', monospace;
   font-weight: 400;
-  font-style: italic;
-}
-
-.ubuntu-bold {
-  font-family: 'Ubuntu Mono', monospace;
-  font-weight: 700;
-}
-
-.ubuntu-semi-bold {
-  font-family: 'Ubuntu Mono', monospace;
-  font-weight: 600;
 }
 
 /* Global Styles */
@@ -140,7 +113,7 @@ body {
   padding: 0;
   margin: 0;
   color : var(--text);
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 #root {
