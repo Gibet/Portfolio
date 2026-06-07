@@ -64,7 +64,6 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
           {currentTab === 'Éducation' && (
               <ol className='sm:ml-6 sm:pr-6 h-full relative'>
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center' style={{ '--event--index': 0 } as React.CSSProperties}>
-                  <span className="absolute left-0 chrono-dot"></span>
                   <div className="event">
                     <CommandLine variant='diplome' title="" subtitle="Bachelor Concepteur Développeur d'Applications (CDA)">
                       <GraduationCap size={20} className="ml-2" color="var(--accent)"/>
