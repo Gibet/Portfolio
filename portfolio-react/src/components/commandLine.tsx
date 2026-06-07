@@ -1,16 +1,19 @@
 import type { CommandLineProps } from '../utils/types'
 import { Github } from 'lucide-react'
+import { memo } from 'react'
 
-export const CommandLine = (props: CommandLineProps) => {
+const CommandLine: React.FC<CommandLineProps> = (props: CommandLineProps) => {
 
   return (
-    <div className={`command-line flex items-center overflow-x-auto overflow-y-hidden whitespace-nowrap ${props.variant}`}>
-      <span className="command-line-dot">&nbsp;</span>
-      <span className='command-line-title'>{props.title}</span>
-      {props.subtitle && <span className="command-line-sub">{props.subtitle}</span>}
-      {props.additionalInfo && <span className="command-line-add">{props.additionalInfo}</span>}
+    <div className={`command-line text-sm font-semibold flex items-center overflow-x-auto overflow-y-hidden whitespace-nowrap ${props.variant}`}>
+      <span className="command-line-dot textured-main">&nbsp;</span>
+      <span className='command-line-title textured-main'>{props.title}
+        {props.children}
+      </span>
+      {props.subtitle && <span className="command-line-sub textured-main">{props.subtitle}</span>}
+      {props.additionalInfo && <span className="command-line-add textured-main">{props.additionalInfo}</span>}
       {props.link && (
-        <a href={props.link} target="_blank" rel="noopener noreferrer" className="command-line-link flex items-center">
+        <a href={props.link} target="_blank" rel="noopener noreferrer" aria-label="View on GitHub" className="command-line-link flex items-center">
           <Github size={16} />
         </a>
       )}
@@ -18,3 +21,5 @@ export const CommandLine = (props: CommandLineProps) => {
     </div>
   )
 }
+
+export default memo(CommandLine)

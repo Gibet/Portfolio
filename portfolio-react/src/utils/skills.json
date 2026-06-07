@@ -2,12 +2,12 @@
   "JavaScript": {
     "name": "JavaScript",
     "imageSrc": "/images/logo/javascript.svg",
-    "related": ["TypeScript", "React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
+    "related": ["React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
   },
   "TypeScript": {
     "name": "TypeScript",
     "imageSrc": "/images/logo/typescript.svg",
-    "related": ["JavaScript", "React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
+    "related": ["React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
   },
   "React": {
     "name": "React",
@@ -40,7 +40,8 @@
   },
   "CSS3": {
     "name": "CSS3",
-    "imageSrc": "/images/logo/css3.svg"
+    "imageSrc": "/images/logo/css3.svg",
+    "related": ["Sass", "TailwindCSS"]
   },
   "Golang": {
     "name": "Golang",
@@ -69,11 +70,13 @@
   },
   "MySQL": {
     "name": "MySQL",
-    "imageSrc": "/images/logo/mysql.svg"
+    "imageSrc": "/images/logo/mysql.svg",
+    "related": ["SQL"]
   },
   "PostgreSQL": {
     "name": "PostgreSQL",
-    "imageSrc": "/images/logo/postgresql.svg"
+    "imageSrc": "/images/logo/postgresql.svg",
+    "related": ["SQL"]
   },
   "MongoDB": {
     "name": "MongoDB",
@@ -106,5 +109,15 @@
   "Python": {
     "name": "Python",
     "imageSrc": "/images/logo/python.svg"
+  },
+  "SQL": {
+    "name": "SQL",
+    "imageSrc": "/images/logo/sql.svg",
+    "related": ["MySQL", "PostgreSQL"]
+  },
+  "Sass": {
+    "name": "Sass",
+    "imageSrc": "/images/logo/sass.svg",
+    "related": ["CSS3"]
   }
 }

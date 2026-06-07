@@ -3,123 +3,108 @@
 /* Variables */
 
 :root {
-  --primary : #f0f0f0;
-  --secondary : #333333;
-  --accent : rgba(4, 114, 188, 1);
-  --secondaryAccent : rgba(255, 220, 40, 0.9);
+  --primary : rgb(240, 240, 240);
+  --secondary : rgb(20, 20, 20);
   --tertiaryAccent : rgba(255, 255, 255, 1);
-  --background : #ffffff;
-  --sectHeader : #ffffffb5;
-  --sectBody : #f0f0f0b5;
+  --background : rgb(255, 255, 255);
+  --backgroundSecondary : rgb(50, 50, 50);
+  --sectHeader : rgba(255, 255, 255, 0.7);
+  --sectBody : rgba(240, 240, 240, 0.7);
   --disabled : rgba(150, 150, 150, 0.1);
   --disabledColor : rgba(150, 150, 150, 0.2);
-  --text : #252525;
+  --text : rgb(37, 37, 37);
   --headerBg : rgba(255, 255, 255, 0.3);
-  --buttonBg : #e9e9e9;
+  --buttonBg : rgb(233, 233, 233);
   --shadow : 0px 4px 4px 2px rgba(65, 65, 65, 0.05);
-  --sectionShadow : 0px 75px 30px 20px rgba(0, 0, 0, 0.1);
-  --pinnedShadow : 0px 20px 30px 20px rgba(0, 0, 0, 0.5);
-  --shadowSecondary : 0px 4px 8px rgba(185, 185, 185, 0.3);
-  --shadowTertiary : 0px 4px 25px rgba(185, 185, 185, 0.3);
-  --toplayerColor: rgba(255, 255, 255, 0.2);
+  --sectionShadow : 0px 0px 25px rgba(0, 0, 0, 0.05);
+  --shadowSecondary : 0px 4px 8px rgba(185, 185, 185, 0.1);
   --bgPattern1: rgba(0, 0, 0, 0.05);
   --bgPattern2: rgba(0, 0, 0, 0.1);
   --bgPattern3: rgba(0, 0, 0, 0.15);
   --bgPattern4: rgba(0, 0, 0, 0.2);
   --bgPattern5: rgba(0, 0, 0, 0.25);
   --bgPattern6: rgba(0, 0, 0, 0.3);
-  --commandBgDot: rgba(4, 114, 188, 0.9);
-  --commandBgMain: rgba(255, 220, 40, 1);
-  --commandBgTitle: rgba(4, 114, 188, 1);
-  --commandBgMainSecondary: rgba(151, 193, 221, 1);
-  --commandBgMainTertiary: rgba(255, 255, 255, 0.9);
-  --commandBgSub: rgba(255, 155, 40, 1);
   --commandShadow: 3px 3px 1px rgba(65, 65, 65, 0.1);
-  --commandText: #333333;
-  --dividerColor: rgba(0, 0, 0, 0.1);
-  --homeMarker: rgba(75, 75, 75, 0.04);
-  --aboutMarker: rgba(75, 75, 75, 0.05);
-  --projectsMarker: rgba(75, 75, 75, 0.06);
-  --contactMarker: rgba(75, 75, 75, 0.07);
-  --activeMarker: rgba(0, 83, 138, 0.15);
+  --commandText: rgb(50, 50, 50);
+  --dividerColor: rgba(0, 0, 0, 0.15);
+  --homeMarker: rgba(75, 75, 75, 0.03);
+  --aboutMarker: rgba(75, 75, 75, 0.06);
+  --projectsMarker: rgba(75, 75, 75, 0.09);
+  --contactMarker: rgba(75, 75, 75, 0.12);
+  
+  --accent : rgba(221, 149, 113, 0.9);
+  
+  --commandBgDot: rgba(70, 129, 137, 0.9);
+  --commandBgMain: rgba(184, 198, 192, 0.9);
+  --commandBgTitle: rgba(70, 129, 137, 0.9);
+  --commandBgMainTertiary: rgba(255, 255, 255, 0.9);
+  --commandBgSub: rgba(221, 149, 113, 0.9);
+
+  --activeMarker: rgba(70, 129, 137, 0.5);
+
+  --loader-animation-speed: 0.75s;
 }
 
 [data-theme="dark"] {
-  --primary : #2c2c2c;
-  --secondary : #0f0f0f;
-  --accent : rgba(204, 173, 0, 0.9);
-  --secondaryAccent : rgba(4, 114, 188, 0.9);
-  --tertiaryAccent : rgba(25, 25, 25, 1);
-  --background : #333333;
-  --sectHeader : #333333b5;
-  --sectBody : #2c2c2cb5;
+  --primary : rgb(25, 25, 25);
+  --secondary : rgb(0, 0, 0);
+  --tertiaryAccent : rgba(15, 15, 15, 1);
+  --background : rgb(40, 40, 40);
+  --backgroundSecondary : rgb(15, 15, 15);
+  --sectHeader : rgba(40, 40, 40, 0.7);
+  --sectBody : rgba(30, 30, 30, 0.7);
   --disabled : rgba(150, 150, 150, 0.1);
   --disabledColor : rgba(150, 150, 150, 0.2);
-  --text : #dfdfdf ;
-  --headerBg : rgba(75, 75, 75, 0.3);
-  --buttonBg : #222222;
+  --text : rgb(223, 223, 223) ;
+  --headerBg : rgba(50, 50, 50, 0.3);
+  --buttonBg : rgb(20, 20, 20);
   --shadow : 0px 8px 8px 5px rgba(0, 0, 0, 0.05);
-  --sectionShadow : 0px 75px 30px 20px rgba(0, 0, 0, 0.2);
-  --pinnedShadow : 0px 0px 30px 20px rgba(0, 0, 0, 0.5);
-  --shadowSecondary : 0px 4px 8px rgba(65, 65, 65, 0.3);
-  --shadowTertiary : 0px 4px 8px rgba(65, 65, 65, 0.3);
-  --toplayerColor: rgba(55, 55, 55, 0.1);
-  --bgPattern1: rgba(150, 150, 150, 0.05);
-  --bgPattern2: rgba(150, 150, 150, 0.1);
-  --bgPattern3: rgba(150, 150, 150, 0.15);
-  --bgPattern4: rgba(150, 150, 150, 0.2);
-  --bgPattern5: rgba(150, 150, 150, 0.25);
-  --bgPattern6: rgba(150, 150, 150, 0.3);
-  --commandBgDot: rgba(4, 114, 188, 1);
-  --commandBgMain: rgba(255, 220, 40, 1);
-  --commandBgTitle: rgba(255, 220, 40, 0.9);
-  --commandBgMainSecondary: rgba(151, 193, 221, 1);
-  --commandBgMainTertiary: rgba(36, 36, 36, 0.8);
-  --commandBgSub: rgba(255, 155, 40, 1);
+  --sectionShadow : 0px 0px 25px rgba(0, 0, 0, 0.1);
+  --shadowSecondary : 0px 4px 8px rgba(35, 35, 35, 0.1);
+  --bgPattern1: rgba(125, 125, 125, 0.05);
+  --bgPattern2: rgba(125, 125, 125, 0.1);
+  --bgPattern3: rgba(125, 125, 125, 0.15);
+  --bgPattern4: rgba(125, 125, 125, 0.2);
+  --bgPattern5: rgba(125, 125, 125, 0.25);
+  --bgPattern6: rgba(125, 125, 125, 0.3);
   --commandShadow: 3px 3px 1px rgba(0, 0, 0, 0.05);
-  --commandText: #333333;
+  --commandText: rgb(20, 20, 20);
   --dividerColor: rgba(255, 255, 255, 0.1);
-  --homeMarker: rgba(5, 5, 5, 0.04);
-  --aboutMarker: rgba(5, 5, 5, 0.05);
-  --projectsMarker: rgba(5, 5, 5, 0.06);
-  --contactMarker: rgba(5, 5, 5, 0.07);
-  --activeMarker: rgba(97, 82, 0, 0.15);
+  --homeMarker: rgba(0, 0, 0, 0.06);
+  --aboutMarker: rgba(0, 0, 0, 0.09);
+  --projectsMarker: rgba(0, 0, 0, 0.12);
+  --contactMarker: rgba(0, 0, 0, 0.15);
+  
+  --accent : rgba(222, 186, 111, 0.9);
+  
+  --commandBgDot: rgba(70, 129, 137, 0.9);
+  --commandBgMain: rgba(133, 156, 129, 0.9);
+  --commandBgTitle: rgba(70, 129, 137, 0.9);
+  --commandBgMainTertiary: rgba(20, 20, 20, 0.9);
+  --commandBgSub: rgba(222, 186, 111, 0.9);
+  
+  --activeMarker: rgba(100, 86, 66, 0.4);
 }
 
 /* Fonts */
 
 @font-face {
-  font-family: 'Ubuntu Mono';
-  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-Regular.ttf') format('truetype');
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
   font-weight: 400;
-  font-style: normal;
+  font-style: swap;
 }
 
-@font-face {
-  font-family: 'Ubuntu Mono';
-  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Ubuntu Mono';
-  src: url('fonts/Ubuntu Sans Mono/UbuntuSansMono-Italic.ttf') format('truetype');
+.jetbrains {
+  font-family: 'JetBrains Mono', monospace;
   font-weight: 400;
-  font-style: italic;
-}
-
-.ubuntu-bold {
-  font-family: 'Ubuntu Mono', monospace;
-  font-weight: 700;
 }
 
 /* Global Styles */
 
 html, body {
   height: 100%;
-  /* scroll-snap-type: y mandatory; */
-  scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--dividerColor) transparent;
   -webkit-font-smoothing: antialiased;
@@ -130,50 +115,32 @@ body {
   padding: 0;
   margin: 0;
   color : var(--text);
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 #root {
-  background-color: var(--secondary);
-}
-
-.custom-section {
-  --size: 12px;
-  overflow-y: hidden;
-  .sublayer, .toplayer {
-    pointer-events: none;
-  }
-  .grid-layer {
-    display: grid;
-    place-items: center;
-    background: var(--primary);
+  background: radial-gradient(circle at 50% 50%, var(--backgroundSecondary) 60%, var(--secondary) 100%);
+  .pattern-layer {
+    background: url('/images/backgrounds/bg-main.png') repeat;
+    background-blend-mode: overlay, normal;
     content-visibility: auto;
     contain-intrinsic-size: 100vh;
   }
-  .bglayer {
-    contain: paint;
-    background: conic-gradient(from 180deg at 50% 70%,
-      var(--bgPattern1) 0deg,
-      var(--bgPattern2) 72.0000010728836deg,
-      var(--bgPattern3) 144.0000021457672deg,
-      var(--bgPattern4) 216.00000858306885deg,
-      var(--bgPattern5) 288.0000042915344deg,
-      var(--bgPattern1) 1turn);
-    width: 100%;
-    height: 100%;
-    mask:
-      radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / var(--size) var(--size),
-      url("/images/backgrounds/noise-mask.png") 512px 50% / 512px 512px;
-    -webkit-mask: radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / var(--size) var(--size),
-      url("/images/backgrounds/noise-mask.png") 512px 50% / 512px 512px;
-    mask-composite: intersect;
-    -webkit-mask-composite: intersect;
-    animation: flicker 20s infinite linear;
-    animation-play-state: paused;
-  }
-  
 }
 
+.custom-section {
+  --size: 25px;
+  overflow-y: hidden;
+  background: var(--primary);
+}
+
+.event, .square1, .square2, .square3,
+.textured-main {
+  background: url('/images/backgrounds/bg-secondary.png') repeat;
+  background-blend-mode: normal; 
+  content-visibility: auto;
+  contain-intrinsic-size: 100vh;
+}
 
 .top-markers, .bottom-markers {
   height: 25rem;
@@ -183,6 +150,7 @@ body {
 }
 
 .top-markers {
+  overflow: hidden;
   justify-content: start;
   flex-direction: column-reverse;
   transform: rotate(135deg) translate(0, 25rem);
@@ -195,22 +163,14 @@ body {
 }
 
 .home-marker, .about-marker, .projects-marker, .contact-marker {
-  height: 2.5rem;
+  height: 3rem;
   width: 100%;
 }
 
-.home-marker {
-  background-color: var(--homeMarker);
-}
-.about-marker {
-  background-color: var(--aboutMarker);
-}
-.projects-marker {
-  background-color: var(--projectsMarker);
-}
-.contact-marker {
-  background-color: var(--contactMarker);
-}
+.home-marker {background-color: var(--homeMarker);}
+.about-marker {background-color: var(--aboutMarker);}
+.projects-marker {background-color: var(--projectsMarker);}
+.contact-marker {background-color: var(--contactMarker);}
 
 section{
     position: relative;
@@ -218,8 +178,6 @@ section{
     align-items: center;
     background-size: cover;
     color : var(--text);
-
-    padding-top: 64px; /* Adjusted for header height */
     transition: transform 0.3s ease;
 }
 
@@ -242,26 +200,24 @@ header {
     background-color: transparent !important;
     transition: color border 0.5s ease;
     padding: 10px;
-    height: 70px;
+    height: 60px;
   }
   button:hover {
     color: var(--accent);
     border: none;
     background-color: transparent;
   }
-
-  .active {
-    border-bottom: 3px solid var(--accent) !important;
-  }
+  .active {border-bottom: 3px solid var(--accent) !important;}
 }
 
 footer {
   position: fixed;
   bottom: 0;
-  background-color: var(--headerBg);
+  background-color: var(--sectHeader);
   color: var(--text);
   z-index: 1;
-  box-shadow: var(--shadowTertiary);
+  box-shadow: var(--shadowSecondary);
+  padding: 24px 8% 54px 8%;
   button {
     color: var(--text);
     cursor: pointer;
@@ -274,15 +230,13 @@ footer {
     border: none;
     background-color: transparent;
   }
-  li a, button{
+  a, span, button{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
   }
-  hr {
-    color: var(--dividerColor);
-  }
+  hr {color: var(--dividerColor);}
 }
 
 .pinned {
@@ -293,27 +247,82 @@ footer {
   .bglayer {
     animation-play-state: running;
   }
+  .top-markers {
+    .home-marker, .about-marker, .projects-marker, .contact-marker {
+      opacity: 0;
+      animation: slideLeft 1s ease-in-out forwards;
+      animation-delay: calc(100ms * var(--marker-index));
+    }
+  }
+  .bottom-markers {
+    .home-marker, .about-marker, .projects-marker, .contact-marker {
+      opacity: 0;
+      animation: slideRight 1s ease-in-out forwards;
+      animation-delay: calc(100ms * var(--marker-index));
+    }
+  }
 }
+
+.animated {
+  .typed .char {
+    --tSpeed: 20ms;
+    --charThickness: -2px;
+
+    opacity: 0;
+    display: inline;
+    animation: type var(--tSpeed) forwards;
+    animation-delay: calc(var(--tSpeed) * var(--char-index));
+  }
+  .container .event {
+    opacity: 0;
+    animation: slideUp 1s ease-in-out forwards;
+    animation-delay: calc(100ms * var(--event--index));
+  }
+  .projects .thumbnail {
+    opacity: 0;
+    animation: slideRight 1s ease-in-out forwards;
+    animation-delay: calc(100ms * var(--thumbnail--index));
+  }
+  .sect-text .logo-container {
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+
+  #dev-logo { --logoDuration: 10s; }
+  #projects-logo { --logoDuration: 3s; }
+  #mail-logo { --logoDuration: 10s; }
+
+  .logo-draw path, .logo-draw line, .logo-draw polyline,
+  .logo-draw polygon, .logo-draw circle, .logo-draw ellipse,
+  .logo-draw rect {
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+    animation: logo-draw var(--logoDuration) ease-in-out forwards;
+  }
+
+  form input, form textarea, form button {
+    opacity: 0;
+    animation: slideUp 1s ease-in-out forwards;
+    animation-delay: calc(100ms * var(--input--index));
+  }
+}
+  
 
 .pinned[data-first="true"] {
   transform-origin: bottom center;
-  transform: scaleX(1.005);
 }
 
-.pinned > :last-child {
-  box-shadow: var(--pinnedShadow);
-}
 
 button {
   color: var(--text);
   cursor: pointer;
   background-color: var(--buttonBg);
-  border: 1px solid var(--primary);
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
 }
 
-button:hover {
+button:hover, .active {
   background-color: var(--background);
-  border: 1px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
   color: var(--accent);
 }
 
@@ -324,21 +333,12 @@ button:disabled {
   border: none;
 }
 
-.active {
-  background-color: var(--background);
-  border: 1px solid var(--accent);
-  color: var(--accent);
-}
-
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
-a:hover {
-  color: var(--accent);
-}
+a:hover {color: var(--accent);}
 
 #arrow-nav {
   position: fixed;
@@ -361,40 +361,45 @@ a:hover {
     cursor: not-allowed;
   }
   button:hover:not(:disabled) {
-    color: var(--commandBgDot);
+    color: var(--accent);
   }
 }
 
 .container {
   opacity: .9;
   padding: 20px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadowSecondary);
   background:
-    linear-gradient(to right, var(--dividerColor) 2px, transparent 1px) 0 0,
-    linear-gradient(to right, var(--dividerColor) 2px, transparent 1px) 0 100%,
-    linear-gradient(to left, var(--dividerColor) 2px, transparent 1px) 100% 0,
-    linear-gradient(to left, var(--dividerColor) 2px, transparent 1px) 100% 100%,
-    linear-gradient(to bottom, var(--dividerColor) 2px, transparent 1px) 0 0,
-    linear-gradient(to bottom, var(--dividerColor) 2px, transparent 1px) 100% 0,
-    linear-gradient(to top, var(--dividerColor) 2px, transparent 1px) 0 100%,
-    linear-gradient(to top, var(--dividerColor) 2px, transparent 1px) 100% 100%;
+    linear-gradient(to right, var(--activeMarker) 2px, transparent 1px) 0 0,
+    linear-gradient(to right, var(--activeMarker) 2px, transparent 1px) 0 100%,
+    linear-gradient(to left, var(--activeMarker) 2px, transparent 1px) 100% 0,
+    linear-gradient(to left, var(--activeMarker) 2px, transparent 1px) 100% 100%,
+    linear-gradient(to bottom, var(--activeMarker) 2px, transparent 1px) 0 0,
+    linear-gradient(to bottom, var(--activeMarker) 2px, transparent 1px) 100% 0,
+    linear-gradient(to top, var(--activeMarker) 2px, transparent 1px) 0 100%,
+    linear-gradient(to top, var(--activeMarker) 2px, transparent 1px) 100% 100%;
   
   background-repeat: no-repeat;
   background-size: 20px 20px;
+  overflow: hidden;
 }
 .sect-header {
+  padding: 90px 8% 25px 8%;
   background-color: var(--sectHeader);
-}
-.sect-body {
-  background-color: var(--sectBody);
-}
+  border-image: linear-gradient(90deg, var(--sectHeader) 0%, var(--activeMarker) 100%) 1;
+  border-width: 0 0 1px 0;
+  width: 100%;
 
-.command-line {
-  color: var(--commandText) !important;
-  /* filter: drop-shadow(var(--commandShadow)); */
 }
+.sect-body {background-color: var(--sectBody);}
+.sect-text {background-color: var(--sectHeader);}
+.sect-text img {color: var(--accent);}
+.sect-text a:hover {color: var(--commandBgTitle);}
+.pin {margin-left: -3px;}
 
-.secondary, .tertiary {
+.command-line {color: var(--commandText) !important;}
+
+.secondary, .tertiary, .diplome {
   .command-line-dot {
     background-color: var(--commandBgMain) !important;
   }
@@ -402,7 +407,7 @@ a:hover {
 
 .title {
   .command-line-dot {
-    background-color: var(--secondaryAccent) !important;
+    background-color: var(--accent) !important;
   }
   .command-line-title {
     background-color: var(--commandBgTitle) !important;
@@ -410,7 +415,8 @@ a:hover {
   }
 }
 
-.secondary {
+.command-line-title svg {margin-left: 6px;}
+.secondary, .diplome {
   .command-line-title {
   background-color: var(--buttonBg) !important;
   color: var(--text) !important;
@@ -432,16 +438,16 @@ a:hover {
 }
 
 .command-line-title, .command-line-sub, .command-line-add, .command-line-link {
-  height: 28px;
-  text-shadow: var(--shadowTertiary);
-  padding: 2px 20px 2px 24px;
+  height: 25px;
+  text-shadow: var(--shadowSecondary);
+  padding: 0px 20px 0px 24px;
   /* clip right side */
   --tip-depth: 16px; /* how far the tip extends inward */
+  display: inline-flex;
+  align-items: center;
 }
 
-.command-line-title, .command-line-sub, .command-line-add {
-  cursor: default;
-}
+.command-line-title, .command-line-sub, .command-line-add {cursor: default;}
 
 .command-line-sub, .command-line-add, .command-line-link {
   /* clip left side */
@@ -469,9 +475,7 @@ a:hover {
   );
 }
 
-.command-line-sub {
-  background-color: var(--commandBgSub);
-}
+.command-line-sub {background-color: var(--commandBgSub);}
 
 .command-line-add {
   background-color: var(--commandBgMain);
@@ -480,30 +484,42 @@ a:hover {
 
 .command-line-link {
   background-color: var(--commandBgDot);
-  color: var(--text);
+  color: var(--commandText);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.command-line-link:hover {
-  /* background-color: var(--accent); */
-  color: var(--background);
-}
+.command-line-link:hover {color: rgb(223, 223, 223) ;}
 
 /* home section */
 
 #home {
   background-size: contain;
   background-position: center;
-  .home-marker {
-    background: linear-gradient(90deg, var(--homeMarker) 32%, var(--activeMarker) 42%) !important;
-    border: 1px solid var(--dividerColor);
+  .bottom-markers .home-marker {
+    border-image: linear-gradient(90deg, var(--tertiaryAccent) 32%, var(--activeMarker) 42%) 1;
+    border-width: 0 0 1px 0;
+  }
+  .top-markers .home-marker {
+    border-image: linear-gradient(90deg, var(--activeMarker) 62%, var(--tertiaryAccent) 72%) 1;
+    border-width: 1px 0 0 0;
   }
 }
 
-#square1, #square2, #square3 {
-  color: var(--text);
-  --typeSpeed: 45ms;
+#home-arrow {
+  bottom: 5%; 
+  left: 50%;
+  padding: 10px;
 }
+
+#square1, #square2, #square3 {
+  border-image: linear-gradient(90deg, var(--sectHeader) 0%, var(--activeMarker) 100%) 1;
+  border-width: 0 0 1px 0;
+  color: var(--text);
+  --typeSpeed: 50ms;
+}
+
+.line-1 {--charThickness: -8px;}
+.line-2 {--charThickness: -4px;}
+.line-3 {--charThickness: -3px;}
 
 .line-1 .char, .line-2 .char, .line-3 .char {
   opacity: 0;
@@ -519,12 +535,12 @@ a:hover {
   .line-1 .char {
     color: transparent;
     animation: type var(--typeSpeed) forwards;
-    animation-delay: calc(var(--typeSpeed) * var(--char-index));
+    animation-delay: calc(var(--typeSpeed) * var(--char-index) + 0.5s);
   }
   .line-2 .char {
     color: transparent;
     animation: type var(--typeSpeed) forwards;
-    animation-delay: calc(var(--typeSpeed) * var(--char-index) + .7s);
+    animation-delay: calc(var(--typeSpeed) * var(--char-index) + 1.2s);
   }
 }
 
@@ -536,14 +552,14 @@ a:hover {
   .line-3 .char {
     color: transparent;
     animation: type var(--typeSpeed) forwards;
-    animation-delay: calc(var(--typeSpeed) * var(--char-index) + 1.6s);
+    animation-delay: calc(var(--typeSpeed) * var(--char-index) + 2.1s);
   }
   .blink-cursor::after {
-    content: '█';
+    content: '_';
     opacity: 0;
     animation: blink 1.25s step-start infinite;
-    animation-delay: calc(var(--typeSpeed) * 27 + 1.6s);
-    margin-left: 5px;
+    animation-delay: calc(var(--typeSpeed) * 27 + 2.1s);
+    margin-left: 6px;
     color: var(--accent);
   }
 }
@@ -557,12 +573,21 @@ a:hover {
 /* about section */
 
 #about {
-  .about-marker {
-    background: linear-gradient(90deg, var(--aboutMarker) 30%, var(--activeMarker) 40%) !important;
-    border: 1px solid var(--dividerColor);
+  .bottom-markers {
+    .about-marker, .home-marker {
+      border-image: linear-gradient(90deg, var(--tertiaryAccent) 30%, var(--activeMarker) 40%) 1;
+      border-width: 0 0 1px 0;
+    }
+  }
+  .top-markers {
+    .about-marker, .home-marker {
+      border-image: linear-gradient(90deg, var(--activeMarker) 70%, var(--tertiaryAccent) 80%) 1;
+      border-width: 1px 0 0 0;
+    }
   }
 }
 
+.sect-body .chrono-line, .sect-body .chrono-dot { animation: fadeIn 1s ease-in-out forwards; }
 .chrono-line {
   border-color: var(--dividerColor);
   height: calc(100% - 1.5rem);
@@ -576,25 +601,22 @@ a:hover {
 }
 
 .event {
+  border-image: linear-gradient(90deg, var(--tertiaryAccent) 0%, var(--dividerColor) 100%) 1;
+  border-width: 0 0 1px 0;
   background-color: var(--sectHeader);
   width: 100%;
-  padding: 12px 15px;
-  /* margin-bottom: 1rem; */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* box-shadow: var(--shadow); */
   display: flex;
+  padding: 12px 15px;
   flex-direction: column;
+  transition: transform 0.3s ease;
   gap: 6px;
   .skill {
     background-color: var(--primary);
-    border: 1px solid var(--primary);
+    border: 2px solid transparent;
   } 
 }
 
-.event:hover {
-  box-shadow: var(--shadowSecondary);
-  transform: scale(1.005);
-}
+.event:hover {transform: scale(1.005);}
 
 .skill {
   cursor: default;
@@ -603,20 +625,22 @@ a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease border 0.3s ease;
 }
 
-.skill:hover {
-  box-shadow: var(--shadowSecondary);
-  transform: scale(1.03);
-}
-
-.highlight {
-  border: 1px solid var(--accent) !important;
-}
+.skill:hover {transform: scale(1.03);}
+.highlight {border-bottom: 2px solid var(--accent) !important;}
 
 /* projects section */
 #projects {
-  .projects-marker {
-    background: linear-gradient(90deg, var(--projectsMarker) 30%, var(--activeMarker) 40%) !important;
-    border: 1px solid var(--dividerColor);
+  .bottom-markers {
+    .projects-marker, .about-marker, .home-marker {
+      border-image: linear-gradient(90deg, var(--tertiaryAccent) 30%, var(--activeMarker) 40%) 1;
+      border-width: 0 0 1px 0;
+    }
+  }
+  .top-markers {
+    .projects-marker, .about-marker, .home-marker {
+      border-image: linear-gradient(90deg, var(--activeMarker) 65%, var(--tertiaryAccent) 75%) 1;
+      border-width: 1px 0 0 0;
+    }
   }
 }
 
@@ -630,9 +654,9 @@ a:hover {
   }
 }
 
-.thumbnail:hover {
-  box-shadow: var(--shadowSecondary);
-  transform: scale(1.02);
+.thumbnail:hover,
+input:hover, input:focus,
+textarea:hover, textarea:focus {
   background:
     linear-gradient(to right, var(--accent) 1px, transparent 1px) 0 0,
     linear-gradient(to right, var(--accent) 1px, transparent 1px) 0 100%,
@@ -646,10 +670,12 @@ a:hover {
   background-color: var(--background);
   background-repeat: no-repeat;
   background-size: 20px 20px;
-  img {
-    filter: drop-shadow(var(--shadowTertiary));
-    filter: saturate(1);
-  }
+} 
+
+.thumbnail:hover {
+  box-shadow: var(--shadowSecondary);
+  transform: scale(1.02);
+  img {filter: saturate(1);}
 }
 
 .modal {
@@ -658,13 +684,15 @@ a:hover {
   overflow-y: hidden;
   z-index: 1001;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-  animation: slideDown 0.3s ease-in-out forwards;
+  animation: fadeIn .6s ease-in-out forwards;
   .divider {
     width: 1px;
     margin: 10px 0;
     background-color: var(--dividerColor);
   }
 }
+#modal {animation: fadeIn 0.3s ease-in-out forwards;}
+#modal[data-closing="true"] {animation: fadeOut 0.3s ease-in-out forwards;}
 
 .close-button {
   z-index: 1002;
@@ -674,10 +702,12 @@ a:hover {
 
 .modal-image-container {
   background-color: #000000;
+  aspect-ratio: 16 / 9;
   img {
     width: 100%;
     height: auto;
-    max-height: 100%
+    max-height: 100%;
+    animation: fadeIn 0.5s ease-in-out forwards;
   }
   .image-index {
     display: inline-block;
@@ -691,12 +721,36 @@ a:hover {
   }
 }
 
+.modal-image-container[data-loading="true"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bars-loader .morphing-bar {
+  color: var(--accent);
+  transform-origin: center;
+  animation: morphingBar var(--loader-animation-speed) ease-in-out infinite;
+}
+.bars-loader rect {fill: var(--activeMarker);}
+.bars-loader .morphing-bar-left {animation-delay: calc(var(--loader-animation-speed) / 2.5);}
+.bars-loader .morphing-bar-center {animation-delay: calc(var(--loader-animation-speed) / 5);}
+.bars-loader .morphing-bar-right {animation-delay: calc(var(--loader-animation-speed) / 7.5);}
+
 /* contact section */
 
 #contact {
-  .contact-marker {
-    background: linear-gradient(90deg, var(--contactMarker) 25%, var(--activeMarker) 40%) !important;
-    border: 1px solid var(--dividerColor);
+  .bottom-markers {
+    .contact-marker, .projects-marker, .about-marker, .home-marker {
+      border-image: linear-gradient(90deg, var(--tertiaryAccent) 25%, var(--activeMarker) 40%) 1;
+      border-width: 0 0 1px 0;
+    }
+  }
+  .top-markers {
+    .contact-marker, .projects-marker, .about-marker, .home-marker {
+      border-image: linear-gradient(90deg, var(--activeMarker) 65%, var(--tertiaryAccent) 80%) 1;
+      border-width: 1px 0 0 0;
+    }
   }
 }
 
@@ -706,40 +760,37 @@ a:hover {
   right: 20px;
   box-shadow: var(--shadow);
   color: var(--text);
+  display: flex;
+  align-items: center;
   background-color: var(--background);
+  animation: slideRight 0.3s ease-out forwards;
 }
+.alert[data-closing="true"] {animation: fadeOut 0.3s ease-out forwards;}
+.alert-success {border-bottom: 2px solid rgba(0, 255, 0, 0.7);}
+.alert-info {border-bottom: 2px solid rgba(0, 0, 255, 0.7);}
+.alert-error {border-bottom: 2px solid rgba(255, 0, 0, 0.7);}
 
 input, textarea {
   background-color: var(--background);
   color: var(--text);
-  border: 1px solid var(--primary);
   padding: 10px;
   margin-bottom: 10px;
   width: 100%;
-}
-
-form button {
-  background-color: var(--buttonBg);
-  color: var(--text);
-  border: 1px solid transparent;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-input:hover, textarea:hover {
-  border: 1px solid var(--accent);
-}
-
-input:focus, textarea:focus {
-  border: 1px solid var(--accent);
   outline: none;
 }
+
+input {background-size: 10px 10px !important;}
+input:focus, textarea:focus {outline: none;}
 
 /* Animations */
 
 @keyframes type {
   0%, 9% {opacity:0; color: transparent; background-color: transparent;}
-  10%, 99% {opacity:1; color: transparent; background-color: var(--accent);}
+  10%, 99% {
+    opacity: 1;
+    color: transparent;
+    box-shadow: inset 0 var(--charThickness) 0 0 var(--accent);
+  }
   100% {opacity:1; color: var(--text); background-color: transparent;}
 }
 
@@ -749,19 +800,71 @@ input:focus, textarea:focus {
 }
 
 @keyframes flicker {
-  to {
-    mask-position: 50% 50%, 0 50%;
-  }
+  to {mask-position: 50% 50%, 0 50%;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity: 0;}
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-100%) scaleX(1.01);
+    transform: translateY(-100vh);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scaleX(1);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes morphingBar {
+  0%,
+  100% {transform: scaleY(1);}
+  50% {transform: scaleY(0.5);}
+}
+
+@keyframes logo-draw {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
@@ -772,19 +875,41 @@ input:focus, textarea:focus {
 .container, .terminal::before, .chrono-dot, .chrono-line, .top-markers, .bottom-markers, .grid-layer, .bglayer {
   transition:  
     background-color 250ms ease,
-    color 250ms ease,
     border-color 250ms ease;
 }
 
 /* Responsive Design */
 
 @media (max-width: 640px) {
-  .chrono-line {
-    height: calc(100% - .5rem) !important;
-  }
+  .chrono-line {height: calc(100% - .5rem) !important;}
 
   .modal-image-container img {
     width: 90vw;
     height: auto;
+  }
+  .line-1 {--charThickness: -3px;}
+  .line-2, .line-3 {--charThickness: -2px;}
+  .skills-container .event {
+    padding: 6px 10px;
+  }
+  footer {
+    padding: 24px 1% 48px 1%;
+  }
+}
+
+@media (max-height: 840px) {
+  .sect-main {
+    padding-top: 12px !important;
+  }
+}
+
+@media (max-height: 768px) {
+  .skill img {
+    width: 15px;
+    height: 15px;
+  }
+  #message {
+    height: 60px;
+    grid-row: span 2;
   }
 }

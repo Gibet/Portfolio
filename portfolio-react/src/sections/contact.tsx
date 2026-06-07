@@ -1,48 +1,77 @@
-import { forwardRef } from 'react'
+import { memo, forwardRef, useState, useEffect } from 'react'
 import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
 import { useForm, ValidationError } from '@formspree/react';
 import { Container } from '../components/container';
-import { Mail } from 'lucide-react';
-import { CommandLine } from '../components/commandLine';
+import { ContactIcon, Mail, MapPin } from 'lucide-react';
+import  CommandLine from '../components/commandLine';
 import { Alert } from '../components/alert';
+import { splittingText } from '../utils/utils';
+import MailLogo from '../components/logo/mail';
 
 
-export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCount }, ref) => {
+const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
-  const [state, handleSubmit] = useForm("xkovbadl");
+  const [state, handleSubmit] = useForm("mredkrzg");
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleAlertClose = () => {
-    // Logic to close the alert, e.g., setting a state variable to hide it
-    
-  }
-        
+    setShowAlert(false);
+    // reset form if error
+    if (state.errors) {
+      const form = document.querySelector('form');
+      form?.reset();
+    }
+  };
+
+  // Open alert when form submission is complete 
+  useEffect(() => {
+    if (state.succeeded || state.errors) {
+      setShowAlert(true);
+    }
+  }, [state.result, state.errors ]);
 
   const formValidation = () => Boolean(state.errors?.getFormErrors) || state.submitting;
 
   return (
     <CustomSection id="contact" pinned={pinned} pinCount={pinCount} ref={ref} zIndex={1}>
-      <div className='flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-12 py-6'>
-        <Container variant='header'>
-          <CommandLine variant='title' title="Contactez-moi" />
-        </Container>
-        <div className="flex flex-col lg:flex-row lg:gap-12 w-full h-full lg:items-start items-center justify-start">
-          <Container variant='body' className="w-full lg:w-3/5 w h-fit sm:mt-8 mt-0">
-            <p className='text-sm'>
-              Je suis toujours ouvert à de nouvelles opportunités et collaborations. N'hésitez pas à me contacter pour discuter de projets, d'idées ou simplement pour échanger.
+      <Container variant='header' className='px-1/12 sm:px-0 pt-8'>
+        <CommandLine variant='title' title="" subtitle="Me contacter">
+          <ContactIcon size={18} className="ml-2"/>
+        </CommandLine>
+      </Container>
+      <div className='sect-main flex flex-col h-full items-center w-11/12 sm:w-5/6 gap-6 sm:py-12 py-6'>
+        <div className="grid grid-cols-1 md:gap-4 md:grid-cols-5 lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full items-start justify-center">
+          <Container variant='text' className="hidden md:block col-span-2 w-full h-fit text-sm sm:mt-4 mt-0 pb-0">
+            <p className='terminal typed'>
+              {splittingText("Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter !")}
             </p>
-            <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-1">
+            <span className="pin flex items-center mt-2 gap-2">
+              <MapPin size={14} strokeWidth={2} color="var(--accent)" />
+              <span> Marseille, France</span>
+            </span>
+            <a href="mailto:laguerre.jb.dev@gmail.com" className="terminal block mt-2">
               laguerre.jb.dev@gmail.com
             </a>
+            <div className="logo-container w-full flex justify-center items-center mt-3">
+              <MailLogo 
+                color={'var(--accent)'}
+                primaryColor={'var(--primary)'}
+                className='w-1/2 h-auto logo-draw'
+                strokeWidth={.4}
+              />
+            </div>
           </Container>
-          <Container variant='body' className="lg:w-2/5 sm:mt-8 mt-4">
-            <form onSubmit={handleSubmit} className="grid grid-cols-2 grid-rows-4 gap-4">
+          <Container variant='body' className="sm:mt-4 col-span-3 w-full">
+            <form onSubmit={handleSubmit} className="grid grid-cols-2 grid-rows-4 gap-1 sm:gap-3">
               <input
+                required
                 id="email"
                 type="email"
                 name="email"
                 placeholder='> Votre Email'
                 className='px-4 py-6 text-xs col-span-2 row-span-1'
+                style={{ '--input--index': 0 } as React.CSSProperties}
               />
               <ValidationError
                 prefix="Email"
@@ -55,6 +84,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
                 name="name"
                 placeholder='> Votre Nom'
                 className='px-4 py-6 text-xs col-span-1 row-span-1'
+                style={{ '--input--index': 1 } as React.CSSProperties}
               />
               <ValidationError
                 prefix="Name"
@@ -67,6 +97,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
                 name="subject"
                 placeholder='> Sujet'
                 className='px-4 py-6 text-xs col-span-1 row-span-1'
+                style={{ '--input--index': 2 } as React.CSSProperties}
               />
               <ValidationError
                 prefix="Subject"
@@ -74,10 +105,12 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
                 errors={state.errors}
               />
               <textarea
+                required
                 id="message"
                 name="message"
                 placeholder='> Votre Message'
                 className='px-4 py-6 text-xs col-span-2 row-span-2 resize-none'
+                style={{ '--input--index': 3 } as React.CSSProperties}
                 rows={6}
               />
               <ValidationError
@@ -88,8 +121,10 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
               <button
                 type="submit"
                 disabled={formValidation()}
-                className="font-bold text-sm py-2 px-4 col-span-2">
-                <Mail size={20} className='inline-block mr-2' strokeWidth={1.25}/>
+                className="font-bold text-xs py-2 px-4 col-span-2"
+                style={{ '--input--index': 4 } as React.CSSProperties}
+              >
+                <Mail size={18} className='inline-block mr-2' strokeWidth={1.25}/>
                 Envoyer
               </button>
             </form>
@@ -97,7 +132,7 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
         </div>
         <div className="footer"></div>
       </div>
-      {state.result && (
+      {showAlert && (
         <Alert
           success={state.succeeded}
           message={state.succeeded ? "Message envoyé avec succès !" : "Une erreur est survenue. Veuillez réessayer."}
@@ -106,4 +141,9 @@ export const Contact = forwardRef<HTMLDivElement, SectionProps>(({ pinned, pinCo
       )}
     </CustomSection>
   )
-})
+}
+
+const Contact = forwardRef<HTMLDivElement, SectionProps>(ContactContent)
+export default memo(Contact) as React.MemoExoticComponent<
+  React.ForwardRefExoticComponent<SectionProps & React.RefAttributes<HTMLDivElement>>
+>

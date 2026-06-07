@@ -6,17 +6,16 @@
       "name": "Portfolio",
       "description": "Mon portfolio personnel, conçu pour présenter mes projets et compétences.",
       "role": ["Design et développement de l'application web en React avec Vite",
-        "Déploiment avec Vercel",
-        ""],
+        "Déploiment avec Vercel"],
       "imageSrc": "/images/projects/Portfolio.png",
-      "stack": ["React", "Vite","TailwindCSS"],
-      "github": "#"
+      "stack": ["React", "Vite","TailwindCSS", "CSS3"],
+      "github": "https://github.com/Gibet/Portfolio"
     },
     {
       "category": "Mobile",
       "context": "Etudiant",
       "name": "Skillly",
-      "description": "Application mobile de recrutement et de recherche d'emploi, permettant aux utilisateurs de créer des profils professionnels, de rechercher des offres d'emploi et de postuler directement depuis l'application, avec un système de messagerie en temps réel pour faciliter la communication entre les candidats et les recruteurs.",
+      "description": "Application mobile de recrutement et de recherche d'emploi, permettant aux utilisateurs de chercher et de postuler a des offres et au recruteur de gérer les candidatures et les offres d'emploi.",
       "imageSrc": "/images/projects/Skillly.svg",
       "videoSrc": "https://drive.google.com/file/d/1yXlrHW62z5QKOlisd5XtkLaONVTXHyTi/view?usp=drive_link",
       "role": ["Conception et Mise en place de la base de données",
@@ -25,7 +24,7 @@
         "Design et développement de l'application mobile en React Native avec Expo",
         "Mise en place de tests unitaires et d'intégration pour assurer la qualité du code"],
       "stack": ["Golang","TypeScript","ReactNative", "PostgreSQL", "Docker", "MongoDB"],
-      "github": "#"
+      "github": "https://github.com/jean-bernard-laguerre/skillly"
     },
     {
       "category": "Mobile",
@@ -39,8 +38,7 @@
         "Creation d'une API REST avec NestJS",
         "Design system et Maquettage de l'application mobile avec Figma"
       ],
-      "stack": ["TypeScript","ReactNative", "Nest", "MySQL"],
-      "github": "#"
+      "stack": ["TypeScript","ReactNative", "Nest", "MySQL"]
     },
     {
       "category": "Web",
@@ -53,7 +51,7 @@
         "Planification des sauvegardes avec cron et gestion des tâches en arrière-plan avec goroutines",
         "Design et développement de l'application web en React avec Vite"],
       "stack": ["React","TypeScript","Golang", "PostgreSQL", "Docker", "MySQL"],
-      "github": "#"
+      "github": "https://github.com/jean-bernard-laguerre/ci-cd"
     }, 
     {
       "category": "Web",
@@ -61,18 +59,17 @@
       "name": "SRIAS",
       "description": "Plateforme de gestion des échanges entre la SRIAS PACA, ses partenaires et les agents bénéficiaires.",
       "imageSrc": "/images/projects/SRIAS.png",
-      "role": ["Maintenance et évolution de l'application web en React avec Vite",
-       "Intégration de nouvelles fonctionnalités en utilisant les technologies React, TypeScript et NestJS",
-       "Collaboration avec les équipes métier pour assurer une bonne compréhension des besoins et une implémentation efficace des fonctionnalités",
-       "Participation au processus de développement agile, incluant la planification des sprints, les revues de code et les tests",
-        "Developpement itératif de nouvelles fonctionnalités en collaboration avec les équipes métier"],
-      "stack": ["React","TypeScript", "Nest"]
+      "role": ["Developpement du frontend de l'application web en React avec NextJS",
+        "Backend en NestJS pour la gestion des données et des fonctionnalités de l'application",
+        "Implémentation de fonctionnalités de gestions des transactions, déclarations, subventions et de suivi des demandes avec différents rôles d'utilisateurs",
+        "Collaboration avec les équipes métier pour assurer une bonne compréhension des besoins et une implémentation efficace des fonctionnalités"],
+      "stack": ["React","TypeScript", "Nest", "Nextjs"]
     },
     {
       "category": "Web",
       "context": "Pro",
       "name": "Cyberpark",
-      "description": "Application interactive accompagnant un escape game pour jeunes (12-18 ans), avec une interface ludique et ergonomique, conçue pour imiter un système d'exploitation, permettant aux joueurs de résoudre des énigmes et de progresser dans le jeu.",
+      "description": "Application interactive accompagnant un escape game pour jeunes (12-18 ans), avec une interface ludique imitant un système d'exploitation, permettant aux joueurs de résoudre des énigmes et de progresser dans le jeu.",
       "imageSrc": "/images/projects/Cyberpark.png",
       "role": ["Design et développement de l'application web en React avec Electron pour une expérience immersive",
         "Travail en collaboration avec les concepteurs de l'escape game pour assurer une intégration fluide de l'application dans le scénario du jeu"],
@@ -82,13 +79,24 @@
       "category": "Web",
       "context": "Perso",
       "name": "GW2 Dashboard",
-      "description": "Dashboard de suivi de progression pour le jeu Guild Wars 2, avec des fonctionnalités de suivi d'achievements, de statistiques de jeu et de gestion d'inventaire.",
+      "description": "Dashboard de suivi de progression pour le jeu Guild Wars 2, avec des fonctionnalités de suivi de succès, de statistiques de jeu et de gestion d'inventaire.",
       "imageSrc": "/images/projects/GW2Dashboard.png",
       "role": ["Utilisation de l'API officielle de Guild Wars 2 pour récupérer les données de jeu en temps réel",
         "Design et développement de l'interface utilisateur avec React et Tailwind CSS",
         "Traitement des données de l'API afin de correspondre à l'expérience en jeu"],
-      "stack": ["React","TypeScript", "TailwindCSS"],
-      "github": "#"
-    }
+      "stack": ["React","JavaScript", "TailwindCSS"],
+      "github": "https://github.com/Gibet/GW2-dashboard"
+    },
+    {
+      "category": "Web",
+      "context": "Perso",
+      "name": "Typing Game",
+      "description": "Jeu de frappe au clavier, permettant aux utilisateurs de s'entraîner et d'améliorer leur vitesse de frappe.",
+      "imageSrc": "/images/projects/TypingGame.png",
+      "role": ["Design et développement de l'interface utilisateur avec React et Tailwind CSS",
+        "Implémentation d'un système de scoring et de suivi des performances"],
+      "stack": ["React","JavaScript", "Sass", "Expressjs", "MySQL"],
+      "github": "https://github.com/Gibet/speller-test"
+      }
   ]
 }

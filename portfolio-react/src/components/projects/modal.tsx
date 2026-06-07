@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import type { ModalProps } from '../../utils/types';
 import Skill from '../skill';
 import * as skills from "../../utils/skills.json";
-import { CommandLine } from '../commandLine';
+import CommandLine from '../commandLine';
+import loadingSVG from '../loading';
 
 const ProjectImages = import.meta.glob<{default: string}>('/src/assets/images/projects/**/*.{png,jpg,jpeg}'); 
 const imagesCache = new Map<string, string[]>();
@@ -10,6 +11,7 @@ const imagesCache = new Map<string, string[]>();
 const ProjectModal = (props: ModalProps) => {
 
   const [loading, setLoading] = useState(true);
+  const [isClosing, setIsClosing] = useState(false);
 
   const [images, setImages] = useState<string[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -40,6 +42,14 @@ const ProjectModal = (props: ModalProps) => {
     setLoading(false);
   }
 
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      props.onClose();
+      setIsClosing(false);
+    }, 300);
+  }
+
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   }
@@ -53,26 +63,24 @@ const ProjectModal = (props: ModalProps) => {
   }, [props.project.name]);
 
   return (
-    <div className='absolute inset-0 bg-black/50 flex items-center justify-center' onClick={props.onClose}>
+    <div data-closing={isClosing} id='modal' className='absolute inset-0 bg-black/50 flex items-center justify-center' onClick={handleClose}>
       <div className="relative modal xl:w-[60vw] 2xl:w-[50vw] sm:w-5/6 w-11/12 h-[80vh] flex flex-col" onClick={e => e.stopPropagation()}>
-        <button onClick={props.onClose} className="close-button h-10 w-10 absolute top-0 right-0">
+        <button onClick={handleClose} className="close-button h-10 w-10 absolute top-0 right-0">
           X
         </button>
-        <div className="modal-body h-full flex flex-col gap-3">
-          <div className="modal-image-container max-h-2/3 col-span-1 w-full relative">
+        <div className="modal-body textured-main h-full flex flex-col gap-3">
+          <div className="modal-image-container flex items-center justify-center max-h-2/3 col-span-1 w-full relative" data-loading={loading}>
             {loading ? (
-              <div className="modal-image mx-auto object-contain flex items-center justify-center">
-                <p>Loading...</p>
-              </div>
+              <>{loadingSVG}</>
             ) : (
               <img src={images[currentImageIndex]} alt={`${props.project.name} screenshot`} className="modal-image mx-auto object-contain" />
             )}
             {images.length > 1 && (
               <>
-                <button onClick={prevImage} className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
+                <button onClick={prevImage} aria-label="Previous image" className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
                   &lt;
                 </button>
-                <button onClick={nextImage} className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
+                <button onClick={nextImage} aria-label="Next image" className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2">
                   &gt;
                 </button>
                 <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white px-2 py-1 text-sm">
@@ -89,11 +97,11 @@ const ProjectModal = (props: ModalProps) => {
             <CommandLine title={props.project.name} subtitle={props.project.context} additionalInfo={props.project.category} link={props.project.github} />
           </div>
           <div className="modal-content grid sm:grid-cols-2 grid-cols-1 col-span-1 gap-4 overflow-y-auto sm:overflow-y-hidden relative">
-            <div className="px-6 py-1 gap-3 col-span-1 flex flex-col sm:overflow-y-auto overflow-y-visible">
-              <h5 className="text-sm font-bold">Description:</h5>
+            <div className="px-6 py-1 sm:pb-4 gap-3 col-span-1 flex flex-col sm:overflow-y-auto overflow-y-visible">
+              <h5 className="text-sm font-semibold">Description:</h5>
               <p className="terminal text-sm">{props.project.description}</p>
               <div className="modal-stack flex flex-wrap gap-2 items-center">
-                <h5 className="text-sm font-bold">Stack:</h5>
+                <h5 className="text-sm font-semibold">Stack:</h5>
                 {props.project.stack.map((tech) => (
                   <Skill key={tech} name={skills[tech]?.name || tech} imageSrc={skills[tech]?.imageSrc} />
                 ))}
@@ -101,8 +109,8 @@ const ProjectModal = (props: ModalProps) => {
             </div>
             <span className="self-stretch divider hidden sm:block absolute left-1/2 top-0 bottom-0"></span>
             <div className='px-6 py-1 gap-2 col-span-1 flex w-full flex-col sm:overflow-y-auto overflow-y-visible'>
-              <h5 className="text-sm font-bold">Roles:</h5>
-              <div className="flex flex-col">
+              <h5 className="text-sm font-semibold">Taches:</h5>
+              <div className="flex flex-col pb-2">
                 {props.project.role.map((role) => (
                   <span key={role} className="terminal text-sm px-2 py-1">
                     {role}

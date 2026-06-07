@@ -4,7 +4,6 @@ import type { RefObject } from "react";
 export interface SectionProps {
   id?: string;
   pinned: boolean;
-  lower?: boolean;
   children?: React.ReactNode;
   firstPinned?: boolean;
   pinCount?: number;
@@ -29,7 +28,8 @@ export interface ProjectProps {
   role: string[];
 }
 
-export interface ThumbnailProps {
+export interface ThumbnailProps 
+  extends React.ComponentProps<'div'> {
   project: ProjectProps;
   onClick: () => void
 }
@@ -42,6 +42,7 @@ export interface ModalProps {
 export interface SkillProps {
   name: string;
   imageSrc: string;
+  highlighted?: boolean;
   handleHover?: () => void;
 }
 
@@ -68,7 +69,8 @@ export interface CommandLineProps {
   subtitle?: string
   additionalInfo?: string
   link?: string
-  variant?: 'primary' | 'title' | 'secondary' | 'tertiary'
+  variant?: 'primary' | 'title' | 'secondary' | 'tertiary' | 'diplome' 
+  children?: React.ReactNode
 }
 
 export interface AlertProps {
@@ -77,4 +79,11 @@ export interface AlertProps {
   info?: boolean
   message: string
   close: () => void
+}
+
+export type LogoProps = React.SVGProps<SVGSVGElement> & {
+  size?: number;
+  color?: string;
+  primaryColor?: string;
+  strokeWidth?: number;
 }
