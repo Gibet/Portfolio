@@ -84,7 +84,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
               />
             </div>
           </Container>
-          <Container variant='body' className='mt-4 xl:block hidden'>
+          <Container variant='body' className='mt-4 github_activity hidden xl:block'>
             <CommandLine title="" subtitle='Activité'>
               <Github size={18} className="ml-2" color='var(--primary)'/>
             </CommandLine>
