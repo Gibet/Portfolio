@@ -96,6 +96,9 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
                 transformData={getLastThreeMonth}
                 className='mt-4'
                 theme={ActivityColorTheme}
+                labels={{
+                  months: ['Jan', 'Fev', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sept', 'Oct', 'Nov', 'Dec']
+                }}
                 tooltips={{
                   activity: {
                     text: activity => `${activity.level} activité${activity.level > 1 ? 's' : ''} le ${activity.date}`,
