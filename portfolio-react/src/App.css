@@ -902,9 +902,12 @@ input:focus, textarea:focus {outline: none;}
   }
 }
 
-@media (max-height: 840px) {
+@media (max-height: 900px) {
   .sect-main {
     padding-top: 12px !important;
+  }
+  .github_activity {
+    display: none !important;
   }
 }
 
