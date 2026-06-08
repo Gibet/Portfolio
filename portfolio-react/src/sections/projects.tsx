@@ -10,7 +10,9 @@ import { ProjectsNavigation } from '../components/projects/navigation'
 import CommandLine from '../components/commandLine'
 import { splittingText } from '../utils/utils'
 import ProjectsLogo from '../components/logo/projects'
-import { Cog } from 'lucide-react'
+import { GitHubCalendar } from 'react-github-calendar';
+import 'react-activity-calendar/tooltips.css'
+import { Cog, Github } from 'lucide-react'
 
 const ProjectsList = ProjectsData as { projects: ProjectProps[] }
 const categories = ['Tous', 'Web', 'Mobile']
@@ -27,6 +29,28 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
   const openModal = (project : ProjectProps) => {
     setCurrentProject(project)
     setViewModal(true)
+  }
+
+  const ActivityColorTheme = {
+    light: ['var(--buttonBg)', 'var(--accent)'],
+    dark: ['var(--buttonBg)', 'var(--accent)']
+  }
+
+  const getLastThreeMonth = (contributions: any) => {
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
+    const shownMonths = 3;
+
+    return contributions.filter((activity: any) => {
+      const date = new Date(activity.date);
+      const monthOfDay = date.getMonth();
+
+      return (
+        date.getFullYear() === currentYear &&
+        monthOfDay > currentMonth - shownMonths &&
+        monthOfDay <= currentMonth
+      );
+    });
   }
   
   return (
@@ -48,17 +72,49 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
         </div>
       </Container>
       <div className="sect-main relative grid md:grid-cols-5 gap-4 items-start w-11/12 sm:w-5/6 h-full md:py-12 py-6">
-        <Container variant='text' className="text-sm hidden md:mt-4 md:block lg:col-span-1">
-          <p className='terminal typed'>{splittingText("Voici une sélection de mes projets, mettant en avant mes compétences en développement web et mobile.")}</p>
-          <div className="logo-container w-full flex justify-center items-center mt-3">
-            <ProjectsLogo 
-              color={'var(--accent)'}
-              primaryColor={'var(--primary)'}
-              strokeWidth={3}
-              className='w-full h-auto logo-draw'
-            />
-          </div>
-        </Container>
+        <div className='hidden md:mt-4 md:block lg:col-span-1'>
+          <Container variant='text' className="text-sm">
+            <p className='terminal typed'>{splittingText("Voici une sélection de mes projets, mettant en avant mes compétences en développement web et mobile.")}</p>
+            <div className="logo-container w-full flex justify-center items-center mt-3">
+              <ProjectsLogo 
+                color={'var(--accent)'}
+                primaryColor={'var(--primary)'}
+                strokeWidth={3}
+                className='w-full h-auto logo-draw'
+              />
+            </div>
+          </Container>
+          <Container variant='body' className='mt-4 github_activity hidden xl:block'>
+            <CommandLine title="" subtitle='Activité'>
+              <Github size={18} className="ml-2" color='var(--primary)'/>
+            </CommandLine>
+            <div className="w-full flex items-center justify-center">
+              <GitHubCalendar username='Gibet'
+                showTotalCount={false}
+                showColorLegend={false}
+                weekStart={1}
+                transformData={getLastThreeMonth}
+                className='mt-4'
+                theme={ActivityColorTheme}
+                labels={{
+                  months: ['Jan', 'Fev', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sept', 'Oct', 'Nov', 'Dec']
+                }}
+                tooltips={{
+                  activity: {
+                    text: activity => `${activity.level} activité${activity.level > 1 ? 's' : ''} le ${activity.date}`,
+                    placement: 'right',
+                    offset: 6,
+                    transitionStyles: {
+                      duration: 100,
+                      common: { fontFamily: 'JetBrains Mono' },
+                    },
+                    withArrow: true,
+                  },
+                }}
+              />
+            </div>
+          </Container>
+        </div>
         <Container variant='body' className="md:mt-4 md:col-span-4 flex flex-col w-full h-full gap-5">
             <div className="projects grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xlg:grid-cols-5 content-start lg:gap-5 gap-2 h-full">
               {ProjectsList.projects.filter(project => currentCategory === 'Tous' || project.category === currentCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize).map((project, index) => (
