@@ -15,7 +15,7 @@ const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React
             <h2 className="md:text-5xl text-3xl font-normal line-2">{splittingText("Jean-Bernard")}</h2>
           </div>
           <div id='square2' className='w-full'>
-            <h1 className="md:text-4xl text-xl text-center line-3 terminal blink-cursor">{splittingText("Développeur Web Full Stack")}</h1>
+            <h2 className="md:text-4xl text-xl text-center line-3 terminal blink-cursor">{splittingText("Développeur Web Full Stack")}</h2>
           </div>
           <div id='square3' className='left'>
             <div className="flex space-x-4">

@@ -736,6 +736,11 @@ textarea:hover, textarea:focus {
 .bars-loader .morphing-bar-left {animation-delay: calc(var(--loader-animation-speed) / 2.5);}
 .bars-loader .morphing-bar-center {animation-delay: calc(var(--loader-animation-speed) / 5);}
 .bars-loader .morphing-bar-right {animation-delay: calc(var(--loader-animation-speed) / 7.5);}
+.react-activity-calendar__tooltip {
+  background-color: var(--sectHeader) !important;
+  color: var(--text) !important;
+  z-index: 9999;
+}
 
 /* contact section */
 
