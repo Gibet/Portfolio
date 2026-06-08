@@ -283,7 +283,7 @@ footer {
     animation: slideRight 1s ease-in-out forwards;
     animation-delay: calc(100ms * var(--thumbnail--index));
   }
-  .sect-text .logo-container {
+  .sect-text .logo-container, .github_activity article, .github_activity .command-line {
     animation: fadeIn 1.5s ease-in-out forwards;
   }
 
