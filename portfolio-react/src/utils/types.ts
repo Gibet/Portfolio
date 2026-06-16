@@ -26,6 +26,7 @@ export interface ProjectProps {
   stack: SkillKey[];
   github: string;
   role: string[];
+  demo?: string
 }
 
 export interface ThumbnailProps 
@@ -69,6 +70,7 @@ export interface CommandLineProps {
   subtitle?: string
   additionalInfo?: string
   link?: string
+  demo?: string
   variant?: 'primary' | 'title' | 'secondary' | 'tertiary' | 'diplome' 
   children?: React.ReactNode
 }

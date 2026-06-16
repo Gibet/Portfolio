@@ -1,5 +1,5 @@
 import type { CommandLineProps } from '../utils/types'
-import { Github } from 'lucide-react'
+import { Github, Link } from 'lucide-react'
 import { memo } from 'react'
 
 const CommandLine: React.FC<CommandLineProps> = (props: CommandLineProps) => {
@@ -16,6 +16,11 @@ const CommandLine: React.FC<CommandLineProps> = (props: CommandLineProps) => {
       {props.link && (
         <a href={props.link} target="_blank" rel="noopener noreferrer" aria-label="View on GitHub" className="command-line-link flex items-center">
           <Github size={16} />
+        </a>
+      )}
+      {props.demo && (
+        <a href={props.demo} target="_blank" rel="noopener noreferrer" aria-label="View on GitHub" className="command-line-demo flex items-center">
+          <Link size={16} />
         </a>
       )}
 
