@@ -123,7 +123,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                         <CommandLine title='Projets' variant='title'/>
                         <ul className='mt-3 flex flex-col gap-2'>
                           <li className='terminal'>SRIAS: Projet avec lead dev pour la <a href="https://www.srias.paca.gouv.fr/">SRIAS PACA</a> de création d'une nouvelle platefore de gestion de leurs opérations.</li>
-                          <li className='terminal'><a href="https://laplateforme.io/cyberpark/">Cyberpark</a>: Projet solo pour L'inovation Lab de plateforme_, Application Electron ayant pour but d'accompagner une escape game.</li>
+                          <li className='terminal'><a href="https://laplateforme.io/cyberpark/">Cyberpark</a>: Projet solo pour L'inovation Lab de La Plateforme_, Application Electron ayant pour but d'accompagner une escape game.</li>
                           <li className='terminal'>Toolbox (Projet interne): Outil de gestion de projet (création de repo github, monitoring des sites déployés, gestions des pull requests, emploi du temps, etc...).</li>
                         </ul>
                       </div>
