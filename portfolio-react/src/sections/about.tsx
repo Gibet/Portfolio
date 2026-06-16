@@ -76,11 +76,17 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                     <CommandLine variant='secondary' title="La Plateforme_" />
                     <h4 className="terminal text-sm font-medium sm:ml-6 items-center"><span className="text-xs">2023-2025: </span>Bachelor: Developpement Web et Mobile</h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
-                      <li>Développement full stack, avec JavaScript, Node.js, React et Symfony</li>
-                      <li>Développement d’API avec API Platform, Express</li>
+                      <li>Développement full stack, avec JavaScript, TypeScript, Node.js, React et Symfony</li>
+                      <li>Développement d’API avec API Platform, Express, Integration de tests</li>
                       <li>Développement d'applications mobiles </li>
+                      <li>Gestion de projets </li>
+                      <li>CI/CD: Intégration et le déploiement continus, declenchement de workflow et automatisation de pipeline</li>
                     </ul>
                     <h4 className="terminal text-sm font-medium sm:ml-6 items-center"><span className="text-xs">2022-2023: </span>Prepa Bachelor</h4>
+                    <ul className='list-disc sm:ml-10 ml-6 text-xs'>
+                      <li>HTML – CSS: Creation de site responsive</li>
+                      <li>JavaScript – React JS – Node JS, PHP: manipulation du DOM, traitement de données et utilisation d'APIs</li>
+                    </ul>
                   </div>
                 </li>
                 {/* <li className='mb-2 sm:ml-10 ml-6 flex items-center'>
@@ -113,6 +119,14 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
                       <li>Participation à plusieurs projets de développement web et mobile en environnement agile.</li>
                       <li>Contribution au développement full stack (React, Node.js) et à la mise en place de bonnes pratiques (tests,intégration continue, gestion de versions Git).</li>
+                      <div className='mt-3'>
+                        <CommandLine title='Projets' variant='title'/>
+                        <ul className='mt-3 flex flex-col gap-2'>
+                          <li className='terminal'>SRIAS: Projet avec lead dev pour la <a href="https://www.srias.paca.gouv.fr/">SRIAS PACA</a> de création d'une nouvelle platefore de gestion de leurs opérations.</li>
+                          <li className='terminal'><a href="https://laplateforme.io/cyberpark/">Cyberpark</a>: Projet solo pour L'inovation Lab de plateforme_, Application Electron ayant pour but d'accompagner une escape game.</li>
+                          <li className='terminal'>Toolbox (Projet interne): Outil de gestion de projet (création de repo github, monitoring des sites déployés, gestions des pull requests, emploi du temps, etc...).</li>
+                        </ul>
+                      </div>
                     </ul>
                   </div>
                 </li>

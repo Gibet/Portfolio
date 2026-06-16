@@ -437,7 +437,7 @@ a:hover {color: var(--accent);}
   background-color: var(--commandBgDot);
 }
 
-.command-line-title, .command-line-sub, .command-line-add, .command-line-link {
+.command-line-title, .command-line-sub, .command-line-add, .command-line-link, .command-line-demo {
   height: 25px;
   text-shadow: var(--shadowSecondary);
   padding: 0px 20px 0px 24px;
@@ -449,7 +449,7 @@ a:hover {color: var(--accent);}
 
 .command-line-title, .command-line-sub, .command-line-add {cursor: default;}
 
-.command-line-sub, .command-line-add, .command-line-link {
+.command-line-sub, .command-line-add, .command-line-link, .command-line-demo {
   /* clip left side */
   margin-left: calc(-1 * var(--tip-depth) - 1px);
   clip-path: polygon(
@@ -475,19 +475,18 @@ a:hover {color: var(--accent);}
   );
 }
 
-.command-line-sub {background-color: var(--commandBgSub);}
+.command-line-sub, .command-line-demo {background-color: var(--commandBgSub);}
 
 .command-line-add {
   background-color: var(--commandBgMain);
   margin-right: 12px;
 }
-
+.command-line-demo, .command-line-link {color: var(--commandText);}
 .command-line-link {
   background-color: var(--commandBgDot);
-  color: var(--commandText);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.command-line-link:hover {color: rgb(223, 223, 223) ;}
+.command-line-link:hover, .command-line-demo:hover {color: rgb(223, 223, 223) ;}
 
 /* home section */
 
