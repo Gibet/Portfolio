@@ -1,11 +1,11 @@
 import type { HeaderProps } from "../utils/types";
-import { Cog, Contact, Github, Home, Info, Linkedin, Mail, MapPin } from "lucide-react";
+import { Cog, Contact, File, Github, Home, Info, Linkedin, Mail, MapPin } from "lucide-react";
 import CommandLine from "./commandLine";
 import { memo } from "react";
 
 const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
   return (
-    <footer className="textured-main backdrop-blur-xs w-full 2xl:max-w-[75vw] grid grid-cols-2 justify-center items-center text-center pt-6">
+    <footer className="textured-main backdrop-blur-xs w-full 2xl:max-w-[75vw] grid grid-cols-2 justify-center items-start text-center pt-6">
       <div className="col-span-1 flex flex-col justify-self-center w-full px-4 items-start gap-2">
         <CommandLine variant="tertiary" title="Menu" />
         <hr className="w-full" />
@@ -50,6 +50,12 @@ const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
             <a href="https://www.linkedin.com/in/jean-bernard-laguerre/" target="_blank" rel="noopener noreferrer">
               <Linkedin size={14} strokeWidth={1} />
               <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://drive.google.com/file/d/1WNzqjbk3Fsrm1IGslo6uUO7oRfox-LRd/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <File size={14} strokeWidth={1} />
+              <span>CV</span>
             </a>
           </li>
         </ul>

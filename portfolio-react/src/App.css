@@ -367,7 +367,7 @@ a:hover {color: var(--accent);}
 
 .container {
   opacity: .9;
-  padding: 20px;
+  padding: 16px;
   box-shadow: var(--shadowSecondary);
   background:
     linear-gradient(to right, var(--activeMarker) 2px, transparent 1px) 0 0,
