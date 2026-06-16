@@ -80,7 +80,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                       <li>Développement d’API avec API Platform, Express, Integration de tests</li>
                       <li>Développement d'applications mobiles </li>
                       <li>Gestion de projets </li>
-                      <li>CI/CD: Intégration et le déploiement continus, declenchement de workflow et automatisation de pipeline</li>
+                      <li>CI/CD: Intégration et déploiement continus, declenchement de workflow et automatisation de pipeline</li>
                     </ul>
                     <h4 className="terminal text-sm font-medium sm:ml-6 items-center"><span className="text-xs">2022-2023: </span>Prepa Bachelor</h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
