@@ -74,7 +74,7 @@
       "role": ["Design et développement de l'application web en React avec Electron pour une expérience immersive",
         "Travail en collaboration avec les concepteurs de l'escape game pour assurer une intégration fluide de l'application dans le scénario du jeu"],
       "stack": ["React","Electron"],
-      "demo": "https://laplateforme.io/cyberpark/"
+      "link": "https://laplateforme.io/cyberpark/"
     },
     {
       "category": "Web",
@@ -86,7 +86,9 @@
         "Design et développement de l'interface utilisateur avec React et Tailwind CSS",
         "Traitement des données de l'API afin de correspondre à l'expérience en jeu"],
       "stack": ["React","JavaScript", "TailwindCSS"],
-      "github": "https://github.com/Gibet/GW2-dashboard"
+      "github": "https://github.com/Gibet/GW2-dashboard",
+      "link": "https://gw2dashboard-ten.vercel.app/",
+      "demo": true
     },
     {
       "category": "Web",

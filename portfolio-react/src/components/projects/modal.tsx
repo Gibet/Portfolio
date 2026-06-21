@@ -94,7 +94,7 @@ const ProjectModal = (props: ModalProps) => {
             )}
           </div>
           <div className="px-6 w-full project-title">
-            <CommandLine title={props.project.name} subtitle={props.project.context} additionalInfo={props.project.category} link={props.project.github} demo={props.project.demo} />
+            <CommandLine title={props.project.name} subtitle={props.project.context} additionalInfo={props.project.category} link={props.project.github} demo={props.project.link} />
           </div>
           <div className="modal-content grid sm:grid-cols-2 grid-cols-1 col-span-1 gap-4 overflow-y-auto sm:overflow-y-hidden relative">
             <div className="px-6 py-1 sm:pb-4 gap-3 col-span-1 flex flex-col sm:overflow-y-auto overflow-y-visible">

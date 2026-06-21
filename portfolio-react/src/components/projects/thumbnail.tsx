@@ -1,4 +1,6 @@
+import { ChevronRight } from 'lucide-react';
 import type { ThumbnailProps } from '../../utils/types';
+import CommandLine from '../commandLine';
 
 const ProjectThumbnail = (props: ThumbnailProps) => {
   return (
@@ -7,6 +9,9 @@ const ProjectThumbnail = (props: ThumbnailProps) => {
       <div className='absolute bottom-0'>
         <h3 className="terminal text-xs mt-2 py-1 px-2">{props.project.name}</h3>
       </div>
+      {props.project.demo && <div className="absolute bottom-2 right-2">
+        <CommandLine variant='title' title='Live Demo'/>
+      </div>}
     </div>
   );
 }

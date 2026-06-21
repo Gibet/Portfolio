@@ -2,36 +2,37 @@ import type React from "react";
 import type { RefObject } from "react";
 
 export interface SectionProps {
-  id?: string;
-  pinned: boolean;
-  children?: React.ReactNode;
-  firstPinned?: boolean;
-  pinCount?: number;
-  zIndex?: number;
+  id?: string
+  pinned: boolean
+  children?: React.ReactNode
+  firstPinned?: boolean
+  pinCount?: number
+  zIndex?: number
 }
 
 export interface HeaderProps {
   navigate: (section: string) => void;
-  activeSection: string;
+  activeSection: string
 }
 
 export type SkillKey = keyof typeof import("./skills.json");
 export interface ProjectProps {
-  category: string;
-  context: string;
-  name: string;
-  description: string;
-  imageSrc: string;
-  videoSrc?: string;
-  stack: SkillKey[];
-  github: string;
-  role: string[];
-  demo?: string
+  category: string
+  context: string
+  name: string
+  description: string
+  imageSrc: string
+  videoSrc?: string
+  stack: SkillKey[]
+  github: string
+  role: string[]
+  link: string
+  demo?: boolean
 }
 
-export interface ThumbnailProps 
+export interface ThumbnailProps
   extends React.ComponentProps<'div'> {
-  project: ProjectProps;
+  project: ProjectProps
   onClick: () => void
 }
 
@@ -41,28 +42,28 @@ export interface ModalProps {
 }
 
 export interface SkillProps {
-  name: string;
-  imageSrc: string;
-  highlighted?: boolean;
-  handleHover?: () => void;
+  name: string
+  imageSrc: string
+  highlighted?: boolean
+  handleHover?: () => void
 }
 
 
 export const sections = ['home', 'about', 'projects', 'contact'];
 export interface NavigationProps {
-  index: number;
-  sectionRefs: RefObject<{ [key: string]: HTMLElement | null }>;
-  activeSectionRef: RefObject<string>;
-  handleSectionChange: (section: string, from?: string) => void;
+  index: number
+  sectionRefs: RefObject<{ [key: string]: HTMLElement | null }>
+  activeSectionRef: RefObject<string>
+  handleSectionChange: (section: string, from?: string) => void
 }
 
 export interface ProjectNavProps {
-  ProjectsList: { projects: ProjectProps[] },
-  currentCategory: string,
-  currentPage: number,
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>,
-  openModal: (project: ProjectProps) => void,
-  pageSize: number;
+  ProjectsList: { projects: ProjectProps[] }
+  currentCategory: string
+  currentPage: number
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>
+  openModal: (project: ProjectProps) => void
+  pageSize: number
 };
 
 export interface CommandLineProps {
@@ -71,7 +72,7 @@ export interface CommandLineProps {
   additionalInfo?: string
   link?: string
   demo?: string
-  variant?: 'primary' | 'title' | 'secondary' | 'tertiary' | 'diplome' 
+  variant?: 'primary' | 'title' | 'secondary' | 'tertiary' | 'diplome'
   children?: React.ReactNode
 }
 
@@ -84,8 +85,8 @@ export interface AlertProps {
 }
 
 export type LogoProps = React.SVGProps<SVGSVGElement> & {
-  size?: number;
-  color?: string;
-  primaryColor?: string;
-  strokeWidth?: number;
+  size?: number
+  color?: string
+  primaryColor?: string
+  strokeWidth?: number
 }
