@@ -1,4 +1,3 @@
-import { ChevronRight } from 'lucide-react';
 import type { ThumbnailProps } from '../../utils/types';
 import CommandLine from '../commandLine';
 
