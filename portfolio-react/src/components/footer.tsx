@@ -53,7 +53,7 @@ const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
             </a>
           </li>
           <li>
-            <a href="https://drive.google.com/file/d/1WNzqjbk3Fsrm1IGslo6uUO7oRfox-LRd/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1M1VR3DCBn6lERS2H2oUcULZt19GsVWh1/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <File size={14} strokeWidth={1} />
               <span>CV</span>
             </a>

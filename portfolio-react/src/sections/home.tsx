@@ -25,7 +25,7 @@ const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React
               <a href="http://github.com/gibet" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <Github size={20} strokeWidth={1.25}/>
               </a>
-              <a href="https://drive.google.com/file/d/1WNzqjbk3Fsrm1IGslo6uUO7oRfox-LRd/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Télécharger le CV">
+              <a href="https://drive.google.com/file/d/1M1VR3DCBn6lERS2H2oUcULZt19GsVWh1/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Télécharger le CV">
                 <File size={20} strokeWidth={1.25}/>
               </a>
             </div>
