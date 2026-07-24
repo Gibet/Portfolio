@@ -7,7 +7,7 @@
   "TypeScript": {
     "name": "TypeScript",
     "imageSrc": "/images/logo/typescript.svg",
-    "related": ["React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
+    "related": ["Angular", "React", "ReactNative", "Nodejs", "Expressjs", "Nextjs", "Vite"]
   },
   "React": {
     "name": "React",

@@ -1,0 +1,10 @@
+{
+    "greeting": "Bonjour",
+    "greeting_with_name": "Bonjour, %{name}!",
+    "greeting_with_count": "Bonjour, vous avez %{count} messages non lus.",
+    "greeting_with_name_and_count": "Bonjour, %{name}, vous avez %{count} messages non lus.",
+    "greeting_with_name_and_count_plural": {
+        "one": "Bonjour, %{name}, vous avez %{count} message non lu.",
+        "other": "Bonjour, %{name}, vous avez %{count} messages non lus."
+    }
+}

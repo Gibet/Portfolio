@@ -1,0 +1,10 @@
+{
+    "greeting": "Hello!",
+    "greeting_with_name": "Hello, %{name}!",
+    "greeting_with_count": "Hello, you have %{count} unread messages.",
+    "greeting_with_name_and_count": "Hello, %{name}, you have %{count} unread messages.",
+    "greeting_with_name_and_count_plural": {
+        "one": "Hello, %{name}, you have %{count} unread message.",
+        "other": "Hello, %{name}, you have %{count} unread messages."
+    }
+}
