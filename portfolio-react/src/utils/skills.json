@@ -19,6 +19,11 @@
     "imageSrc": "/images/logo/reactnative.svg",
     "related": ["JavaScript", "TypeScript"]
   },
+  "Angular": {
+    "name": "Angular",
+    "imageSrc": "/images/logo/angular.svg",
+    "related": ["TypeScript"]
+  },
   "Nextjs": {
     "name": "Next.js",
     "imageSrc": "/images/logo/nextjs.svg",

@@ -19,7 +19,7 @@ const skillsData = skills as Record<SkillKey, SkillsType>;
 
 const AboutTabs = ['Competences', 'Éducation', 'Éxperience']
 const languages: SkillKey[] = ['JavaScript', 'TypeScript', 'Golang', 'Python', 'SQL'];
-const frontendSkills: SkillKey[] = ['React', 'ReactNative', 'TailwindCSS', 'Electron', 'Vite', 'Nextjs', 'HTML5', 'CSS3', 'Sass'];
+const frontendSkills: SkillKey[] = ['Angular', 'React', 'ReactNative', 'TailwindCSS', 'Electron', 'Vite', 'Nextjs', 'HTML5', 'CSS3', 'Sass'];
 const backendSkills: SkillKey[] = ['Nodejs', 'Expressjs', 'Nest', 'Fiber', 'MySQL', 'PostgreSQL', 'MongoDB'];
 const toolsSkills: SkillKey[] = ['Git', 'Docker', 'GitHub', 'GithubActions'];
 
