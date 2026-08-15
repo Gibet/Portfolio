@@ -13,6 +13,7 @@ import ProjectsLogo from '../components/logo/projects'
 import { GitHubCalendar } from 'react-github-calendar';
 import 'react-activity-calendar/tooltips.css'
 import { Cog, Github } from 'lucide-react'
+import i18n from '../i18n'
 
 const ProjectsList = ProjectsData as { projects: ProjectProps[] }
 const categories = ['Tous', 'Web', 'Mobile']
@@ -56,7 +57,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
   return (
     <CustomSection id="projects" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={3}>
       <Container variant='header' className='flex flex-col gap-2.5'>
-        <CommandLine variant='title' title="" subtitle="Mes Projets">
+        <CommandLine variant='title' title="" subtitle={i18n.t("projects.title")}>
           <Cog size={18} className="ml-2" />
         </CommandLine>
         <div className="flex flex-wrap gap-2">
@@ -74,7 +75,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
       <div className="sect-main relative grid md:grid-cols-5 gap-4 items-start w-11/12 sm:w-5/6 h-full md:py-12 py-6">
         <div className='hidden md:mt-4 md:block lg:col-span-1'>
           <Container variant='text' className="text-sm">
-            <p className='terminal typed'>{splittingText("Voici une sélection de mes projets, mettant en avant mes compétences en développement web et mobile.")}</p>
+            <p className='terminal typed'>{splittingText(i18n.t("projects.description"))}</p>
             <div className="logo-container w-full flex justify-center items-center mt-3">
               <ProjectsLogo 
                 color={'var(--accent)'}

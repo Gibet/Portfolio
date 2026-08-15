@@ -3,6 +3,7 @@ import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
 import { Github, Linkedin, File} from 'lucide-react'
 import { splittingText } from '../utils/utils'
+import i18n from '../i18n'
 
 const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) =>  {
 
@@ -15,7 +16,7 @@ const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React
             <h2 className="md:text-5xl text-3xl font-normal line-2">{splittingText("Jean-Bernard")}</h2>
           </div>
           <div id='square2' className='w-full'>
-            <h2 className="md:text-4xl text-xl text-center line-3 terminal blink-cursor">{splittingText("Développeur Web Full Stack")}</h2>
+            <h2 className="md:text-4xl text-xl text-center line-3 terminal blink-cursor">{splittingText(i18n.t("home.jobTitle"))}</h2>
           </div>
           <div id='square3' className='left'>
             <div className="flex space-x-4">

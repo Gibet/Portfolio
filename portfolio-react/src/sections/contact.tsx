@@ -8,6 +8,7 @@ import  CommandLine from '../components/commandLine';
 import { Alert } from '../components/alert';
 import { splittingText } from '../utils/utils';
 import MailLogo from '../components/logo/mail';
+import i18n from '../i18n'
 
 
 const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
@@ -36,7 +37,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
   return (
     <CustomSection id="contact" pinned={pinned} pinCount={pinCount} ref={ref} zIndex={1}>
       <Container variant='header' className='px-1/12 sm:px-0 pt-8'>
-        <CommandLine variant='title' title="" subtitle="Me contacter">
+        <CommandLine variant='title' title="" subtitle={i18n.t("contact.title")}>
           <ContactIcon size={18} className="ml-2"/>
         </CommandLine>
       </Container>
@@ -44,7 +45,7 @@ const ContactContent = ({ pinned, pinCount }: SectionProps, ref: React.Ref<HTMLD
         <div className="grid grid-cols-1 md:gap-4 md:grid-cols-5 lg:flex-row lg:gap-12 w-11/12 sm:w-5/6 h-full items-start justify-center">
           <Container variant='text' className="hidden md:block col-span-2 w-full h-fit text-sm sm:mt-4 mt-0 pb-0">
             <p className='terminal typed'>
-              {splittingText("Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter !")}
+              {splittingText(i18n.t("contact.description"))}
             </p>
             <span className="pin flex items-center mt-2 gap-2">
               <MapPin size={14} strokeWidth={2} color="var(--accent)" />

@@ -8,6 +8,7 @@ import CommandLine from '../components/commandLine'
 import { splittingText } from '../utils/utils'
 import DevLogo from '../components/logo/dev'
 import { GraduationCap, Info, BriefcaseBusiness } from 'lucide-react'
+import i18n from '../i18n'
 
 type SkillsType = {
   name: string;
@@ -39,7 +40,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
   return (
     <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={4}>
       <Container variant='header' className='flex flex-col gap-2'>
-        <CommandLine variant='title' title="" subtitle="A propos de moi">
+        <CommandLine variant='title' title="" subtitle={i18n.t("about.title")}>
           <Info size={18} className="ml-2" />
         </CommandLine>
         <div className="flex flex-wrap gap-2">
@@ -181,7 +182,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
           )}
         </Container>
         <Container variant='text' className="sm:mt-4 col-span-1 text-sm hidden md:block">
-          <p className='terminal typed'>{splittingText("Découvrez mon parcours et mes compétences dans le domaine du développement web.")}</p>
+          <p className='terminal typed'>{splittingText(i18n.t("about.description"))}</p>
           <div className="logo-container w-full flex justify-center items-center mt-3">
             <DevLogo
               color={'var(--accent)'}

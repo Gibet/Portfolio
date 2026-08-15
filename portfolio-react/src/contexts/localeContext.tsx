@@ -1,10 +1,8 @@
-import React, {createContext, useState, useEffect, useMemo} from 'react'
-import { I18n } from 'i18n-js'; // Assuming you're using i18n-js or a similar library
-import * as Localization from 'expo-localization';
+import React, {createContext, useState, useEffect, useMemo, useContext} from 'react'
 import { translations } from '../utils/localisation'; // Adjust the path to your translations
 
 interface LocaleContextType {
-    i18n: I18n,
+    locale: string;
     changeLocale: (language: string) => void
 }
 
@@ -13,43 +11,41 @@ interface LocaleProviderProps {
 }
 
 export const LocaleContext = createContext<LocaleContextType>({
-    i18n: new I18n(translations),
+    locale: 'fr-FR',
     changeLocale: () => {}
 });
 
-const LocaleProvider = ({children}: LocaleProviderProps) => {
-    const [i18n, setI18n] = useState<I18n>(new I18n(translations));
+const mapBrowserToAppLocale = (nav: string | undefined) => {
+  if (!nav) return 'fr-FR';
+  if (nav.startsWith('fr')) return 'fr-FR';
+  return 'en-GB';
+};
+
+const resolveInitialLocale = () => {
+  const stored = localStorage.getItem('locale');
+  if (stored) return stored;
+  const nav = (navigator.languages && navigator.languages[0]) || navigator.language;
+  return mapBrowserToAppLocale(nav);
+};
+
+export const LocaleProvider = ({children}: LocaleProviderProps) => {
+    const [locale, setLocale] = useState<string>(() => resolveInitialLocale())
     
     useEffect(() => {
-        i18n.locale = Localization.getLocales()[0].languageTag || 'fr-FR';
-        i18n.enableFallback = true;
-        i18n.defaultLocale = 'fr-FR';
-        getUserLocale();
-    }, []);
+        localStorage.setItem('locale', locale)
+    }, [locale]);
 
-    const getUserLocale = async () => {
-        const storedLocale = localStorage.getItem('locale');
-        if (storedLocale) {
-            changeLocale(storedLocale);
-        } else {
-            changeLocale(i18n.locale);
-        }
-    }
 
     const changeLocale = (language: string) => {
-        const newI18n = new I18n(translations);
-        newI18n.locale = language;
-        newI18n.enableFallback = true;
-        newI18n.defaultLocale = 'fr-FR';
-        setI18n(newI18n);
-        localStorage.setItem('locale', language);
+        const map = mapBrowserToAppLocale(language);
+        setLocale(map)
     }
 
     return useMemo(() => (
-        <LocaleContext.Provider value={{i18n, changeLocale}}>
+        <LocaleContext.Provider value={{locale, changeLocale}}>
             {children}
         </LocaleContext.Provider>
-    ), [i18n, children]);
+    ), [locale, children]);
 }
 
-export default LocaleProvider;
+export const useLocale = () => useContext(LocaleContext);
