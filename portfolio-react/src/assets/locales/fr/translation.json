@@ -1,7 +1,10 @@
 {
   "home": {
     "title": "Accueil",
-    "jobTitle": "Developpeur Web Full Stack"
+    "jobTitle": "Developpeur Web Full Stack",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "cv": "CV"
   },
   "about": {
     "title": "A Propos de moi",

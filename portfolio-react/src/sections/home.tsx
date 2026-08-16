@@ -22,13 +22,13 @@ const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React
           </div>
           <div id='square3' className='left'>
             <div className="flex space-x-4">
-              <a href="http://linkedin.com/in/jean-bernard-laguerre"  target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a title={t("home.linkedin")} href="http://linkedin.com/in/jean-bernard-laguerre"  target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin size={20} strokeWidth={1.25}/>
               </a>
-              <a href="http://github.com/gibet" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a title={t("home.github")} href="http://github.com/gibet" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <Github size={20} strokeWidth={1.25}/>
               </a>
-              <a href="https://drive.google.com/file/d/1M1VR3DCBn6lERS2H2oUcULZt19GsVWh1/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Télécharger le CV">
+              <a title={t("home.cv")} href="https://drive.google.com/file/d/1M1VR3DCBn6lERS2H2oUcULZt19GsVWh1/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Télécharger le CV">
                 <File size={20} strokeWidth={1.25}/>
               </a>
             </div>
