@@ -1,0 +1,156 @@
+{
+  "home": {
+    "title": "Home",
+    "jobTitle": "Full Stack Web Developer"
+  },
+  "about": {
+    "title": "About me",
+    "skills": "Skills",
+    "education": "Education",
+    "experience": "Experience",
+    "description": "Discover my background and skills in the field of web development.",
+    "educationDetails": {
+      "degree": "Bachelor's Degree in Application Developer (CDA)",
+      "items": [
+        {
+          "school": "La Plateforme_",
+          "formation": "Bachelor: Web and Mobile Development",
+          "period": "2023-2025",
+          "description": [
+            "Full-stack development with JavaScript, TypeScript, Node.js, React and Symfony",
+            "API development with API Platform, Express, and test integration",
+            "Mobile application development",
+            "Project management",
+            "CI/CD: continuous integration and deployment, workflow triggering and pipeline automation"
+          ],
+          "prepaTitle": "Preparatory Bachelor Year",
+          "prepaPeriod": "2022-2023",
+          "prepaDescription": [
+            "HTML - CSS: creating responsive websites",
+            "JavaScript - React JS - Node JS, PHP: DOM manipulation, data processing and API usage"
+          ]
+        }
+      ]
+    },
+    "experienceDetails": {
+      "headline": "2 years of professional experience",
+      "items": [
+        {
+          "position": "Junior Web Developer (Apprenticeship)",
+          "company": "L'Atelier de La Plateforme",
+          "period": "2023-2025",
+          "description": [
+            "Participation in several web and mobile development projects in an agile environment.",
+            "Contribution to full-stack development (React, Node.js) and the implementation of best practices (testing, continuous integration, Git version management)."
+          ],
+          "projectsTitle": "Projects",
+          "projects": [
+            "project with the lead developer for SRIAS PACA to create a new operations management platform.",
+            "solo project for La Plateforme_'s Innovation Lab, an Electron application designed to support an escape game.",
+            "Toolbox (internal project): project management tool (creating GitHub repositories, monitoring deployed websites, managing pull requests, schedules, etc.)."
+          ]
+        }
+      ]
+    },
+    "languages": "Languages",
+    "frontend": "Front-end",
+    "backend": "Back-end",
+    "tools": "Tools"
+  },
+  "projects": {
+    "title": "My Projects",
+    "all": "All",
+    "web": "Web",
+    "mobile": "Mobile",
+    "activity": "Activity",
+    "description": "Here is a selection of my projects, highlighting my skills in web and mobile development.",
+    "perso": "Personal",
+    "etudiant": "Student",
+    "pro": "Pro",
+    "tasks": "Tasks",
+    "months": ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"],
+    "items": {
+      "Portfolio": {
+        "description": "My personal portfolio, designed to showcase my projects and skills.",
+        "role": [
+          "Design and development of the web application in React with Vite",
+          "Deployment with Vercel"
+        ]
+      },
+      "Skillly": {
+        "description": "Mobile recruitment and job search application, allowing users to search for and apply to jobs, and recruiters to manage applications and job offers.",
+        "role": [
+          "Design and setup of the database",
+          "Creation of a REST API with Golang and gin",
+          "Implementation of websockets for the real-time messaging system",
+          "Design and development of the mobile application in React Native with Expo",
+          "Setup of unit and integration tests to ensure code quality"
+        ]
+      },
+      "MiliMili": {
+        "description": "Mobile schedule management application for students, helping them organize their activities through a timetable optimization system powered by an intelligent task scheduling algorithm.",
+        "role": [
+          "Design and development of the mobile application in React Native and Expo",
+          "Design and setup of the database",
+          "Creation of a REST API with NestJS",
+          "Design system and mockups for the mobile application with Figma"
+        ]
+      },
+      "SafeBase": {
+        "description": "Web application for database management, offering backup and restore features as well as maintenance task scheduling.",
+        "role": [
+          "Design and setup of the database",
+          "Creation of a backup and restore system for databases with Golang",
+          "Scheduling backups with cron and managing background tasks with goroutines",
+          "Design and development of the web application in React with Vite"
+        ]
+      },
+      "SRIAS": {
+        "description": "Platform for managing exchanges between SRIAS PACA, its partners and beneficiary agents.",
+        "role": [
+          "Frontend development of the web application in React with NextJS",
+          "Backend in NestJS for data management and application features",
+          "Implementation of transaction management, declarations, grants and request tracking features with different user roles",
+          "Collaboration with business teams to ensure strong understanding of requirements and efficient feature implementation"
+        ]
+      },
+      "Cyberpark": {
+        "description": "Interactive application supporting an escape game for young people (14-18), with a playful interface mimicking an operating system, allowing players to solve puzzles and progress through the game.",
+        "role": [
+          "Design and development of the web application in React with Electron for an immersive experience",
+          "Collaboration with escape game designers to ensure smooth integration of the application into the game scenario"
+        ]
+      },
+      "GW2 Dashboard": {
+        "description": "Progress tracking dashboard for the Guild Wars 2 game, with features for tracking achievements, gameplay statistics and inventory management.",
+        "role": [
+          "Use of the official Guild Wars 2 API to retrieve game data in real time",
+          "Design and development of the user interface with React and Tailwind CSS",
+          "Processing API data to match the in-game experience"
+        ]
+      },
+      "Typing Game": {
+        "description": "Typing game that allows users to practice and improve their typing speed.",
+        "role": [
+          "Design and development of the user interface with React and Tailwind CSS",
+          "Implementation of a scoring system and performance tracking"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "description": "I am currently looking for professional opportunities. Feel free to get in touch!",
+    "form": {
+      "email": "> Your Email",
+      "name": "> Your Name",
+      "subject": "> Subject",
+      "message": "> Your Message",
+      "submit": "Send"
+    }
+  },
+  "footer": {
+    "menu": "Menu",
+    "links": "Links"
+  }
+}

@@ -8,6 +8,7 @@ import Projects from './sections/projects'
 import Contact from './sections/contact'
 import Footer from './components/footer'
 import SectionNavigation from './components/navigation'
+import { useLocale } from './contexts/localeContext'
 
 
 type ScrollBehaviorMode = ScrollBehavior
@@ -33,6 +34,7 @@ const getScrollBehavior = (): ScrollBehaviorMode => {
 }
 
 function App() {
+  const { locale } = useLocale()
   const scrollBehavior = useRef(getScrollBehavior())
   const [pinnedSections, setPinnedSections] = useState(new Set(['home']))
   const [activeSection, setActiveSection] = useState('home')
@@ -125,6 +127,25 @@ function App() {
     activeSectionRef.current = activeSection;
     sectionRefs.current[activeSection]?.classList.add('animated');
   }, [activeSection]);
+
+  // replay animation when the locale changes
+  useEffect(() => {
+    activeSectionRef.current = activeSection;
+
+    Object.values(sectionRefs.current).forEach((section) => {
+      section?.classList.remove('animated');
+    });
+
+    // Trigger reflow to restart the animation
+    const currentSection = sectionRefs.current[activeSection];
+    if (!currentSection) return;
+
+    const animationFrame = requestAnimationFrame(() => {
+      currentSection.classList.add('animated');
+    });
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [locale]);
 
   // Set up the Intersection Observer when the component mounts
   useEffect(() => {
