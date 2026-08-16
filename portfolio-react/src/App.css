@@ -239,10 +239,6 @@ footer {
   hr {color: var(--dividerColor);}
 }
 
-option:focus, option:hover {
-  background: var(--accent);
-}
-
 .pinned {
   box-shadow: var(--sectionShadow);
   transition: box-shadow .2s ease-in, transform 0.2s ease-in-out;
@@ -659,8 +655,7 @@ a:hover {color: var(--accent);}
 
 .thumbnail:hover,
 input:hover, input:focus,
-textarea:hover, textarea:focus,
-option:hover, option:focus {
+textarea:hover, textarea:focus {
   background:
     linear-gradient(to right, var(--accent) 1px, transparent 1px) 0 0,
     linear-gradient(to right, var(--accent) 1px, transparent 1px) 0 100%,

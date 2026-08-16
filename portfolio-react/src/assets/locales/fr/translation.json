@@ -1,62 +1,74 @@
 {
-  "home" : {
+  "home": {
     "title": "Accueil",
     "jobTitle": "Developpeur Web Full Stack"
   },
-  "about" : {
-    "title" : "A Propos de moi",
-    "skills" : "Compétences",
+  "about": {
+    "title": "A Propos de moi",
+    "skills": "Compétences",
     "education": "Éducation",
     "experience": "Éxperience",
-    "description" : "Découvrez mon parcours et mes compétences dans le domaine du développement web.",
+    "description": "Découvrez mon parcours et mes compétences dans le domaine du développement web.",
     "educationDetails": {
       "degree": "Bachelor Concepteur Développeur d'Applications (CDA)",
-      "items" : {
-        "school": "La Plateforme_",
-        "formation": "Bachelor : Développement Web et Mobile",
-        "period": "2023-2025",
-        "description": [
-          "Développement full stack, avec JavaScript, TypeScript, Node.js, React et Symfony",
-          "Développement d’API avec API Platform, Express, intégration de tests",
-          "Développement d'applications mobiles",
-          "Gestion de projets",
-          "CI/CD : intégration et déploiement continus, déclenchement de workflows et automatisation de pipelines"
-        ],
-        "preparatoryTitle": "Prépa Bachelor",
-        "preparatoryPeriod": "2022-2023",
-        "preparatoryDescription": [
-          "HTML – CSS : création de sites responsives",
-          "JavaScript – React JS – Node JS, PHP : manipulation du DOM, traitement de données et utilisation d'APIs"
-        ]
-      }
+      "items": [
+        {
+          "school": "La Plateforme_",
+          "formation": "Bachelor : Développement Web et Mobile",
+          "period": "2023-2025",
+          "description": [
+            "Développement full stack, avec JavaScript, TypeScript, Node.js, React et Symfony",
+            "Développement d’API avec API Platform, Express, intégration de tests",
+            "Développement d'applications mobiles",
+            "Gestion de projets",
+            "CI/CD : intégration et déploiement continus, déclenchement de workflows et automatisation de pipelines"
+          ],
+          "prepaTitle": "Prépa Bachelor",
+          "prepaPeriod": "2022-2023",
+          "prepaDescription": [
+            "HTML – CSS : création de sites responsives",
+            "JavaScript – React JS – Node JS, PHP : manipulation du DOM, traitement de données et utilisation d'APIs"
+          ]
+        }
+      ]
     },
     "experienceDetails": {
       "headline": "2 ans d'expérience professionnelle",
-      "items" : {
-        "position": "Développeur Web Junior (Alternance)",
-        "company": "L'Atelier de La Plateforme",
-        "period": "2023-2025",
-        "description": [
-          "Participation à plusieurs projets de développement web et mobile en environnement agile.",
-          "Contribution au développement full stack (React, Node.js) et à la mise en place de bonnes pratiques (tests, intégration continue, gestion de versions Git)."
-        ],
-        "projectsTitle": "Projets",
-        "projects": [
-          "SRIAS : projet avec lead dev pour la SRIAS PACA de création d'une nouvelle plateforme de gestion de leurs opérations.",
-          "Cyberpark : projet solo pour l'Innovation Lab de La Plateforme_, application Electron ayant pour but d'accompagner un escape game.",
-          "Toolbox (projet interne) : outil de gestion de projet (création de dépôts GitHub, monitoring des sites déployés, gestion des pull requests, emploi du temps, etc.)."
-        ]
-      }
-    }
-    
+      "items": [
+        {
+          "position": "Développeur Web Junior (Alternance)",
+          "company": "L'Atelier de La Plateforme",
+          "period": "2023-2025",
+          "description": [
+            "Participation à plusieurs projets de développement web et mobile en environnement agile.",
+            "Contribution au développement full stack (React, Node.js) et à la mise en place de bonnes pratiques (tests, intégration continue, gestion de versions Git)."
+          ],
+          "projectsTitle": "Projets",
+          "projects": [
+            "SRIAS : projet avec lead dev pour la SRIAS PACA de création d'une nouvelle plateforme de gestion de leurs opérations.",
+            "Cyberpark : projet solo pour l'Innovation Lab de La Plateforme_, application Electron ayant pour but d'accompagner un escape game.",
+            "Toolbox (projet interne) : outil de gestion de projet (création de dépôts GitHub, monitoring des sites déployés, gestion des pull requests, emploi du temps, etc.)."
+          ]
+        }
+      ]
+    },
+    "languages": "Langages",
+    "frontend": "Front-end",
+    "backend": "Back-end",
+    "tools": "Outils"
   },
-  "projects" : {
-    "title" : "Mes Projets",
-    "all" : "Compétences",
-    "web": "Éducation",
-    "mobile": "Éxperience",
+  "projects": {
+    "title": "Mes Projets",
+    "all": "Tous",
+    "web": "Web",
+    "mobile": "Mobile",
     "activity": "Activité",
-    "description" : "Voici une sélection de mes projets, mettant en avant mes compétences en développement web et mobile.",
+    "description": "Voici une sélection de mes projets, mettant en avant mes compétences en développement web et mobile.",
+    "perso": "Perso",
+    "etudiant": "Etudiant",
+    "pro": "Pro",
+    "tasks": "Taches",
+    "months": ["Jan", "Fev", "Mars", "Avr", "Mai", "Juin", "Juil", "Aout", "Sept", "Oct", "Nov", "Dec"],
     "items": {
       "Portfolio": {
         "description": "Mon portfolio personnel, conçu pour présenter mes projets et compétences.",
@@ -126,18 +138,18 @@
       }
     }
   },
-  "contact" : {
-    "title" : "Contactez moi",
-    "description" : "Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter !",
-    "form" : {
-      "email": "Votre Email",
-      "name": "Votre Nom",
-      "subject": "Sujet",
-      "message": "Votre Message",
+  "contact": {
+    "title": "Contactez moi",
+    "description": "Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter !",
+    "form": {
+      "email": "> Votre Email",
+      "name": "> Votre Nom",
+      "subject": "> Sujet",
+      "message": "> Votre Message",
       "submit": "Envoyer"
     }
   },
-  "footer" : {
+  "footer": {
     "menu": "Menu",
     "links": "Liens"
   }

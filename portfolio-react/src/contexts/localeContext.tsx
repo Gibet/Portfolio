@@ -1,6 +1,5 @@
 import React, {createContext, useState, useEffect, useMemo, useContext} from 'react'
-import { translations } from '../utils/localisation'; // Adjust the path to your translations
-
+import i18n from '../i18n'
 interface LocaleContextType {
     locale: string;
     changeLocale: (language: string) => void
@@ -33,6 +32,7 @@ export const LocaleProvider = ({children}: LocaleProviderProps) => {
     
     useEffect(() => {
         localStorage.setItem('locale', locale)
+        void i18n.changeLanguage(locale)
     }, [locale]);
 
 

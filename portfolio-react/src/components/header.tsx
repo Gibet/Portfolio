@@ -3,11 +3,12 @@ import type { HeaderProps } from '../utils/types'
 import { useTheme } from '../contexts/themeContext'
 import { memo } from 'react'
 import { useLocale } from '../contexts/localeContext'
-import i18n from '../i18n'
+import { useTranslation } from 'react-i18next'
 
 const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
   const theme = useTheme();
   const locale = useLocale()
+  const { t } = useTranslation()
 
   const handleLanguageChange = (lang: string) => {
     locale.changeLocale(lang);
@@ -34,16 +35,16 @@ const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
           </div>
         </div>
         <div className="flex">
-          <button title={i18n.t("home.title")} onClick={() => navigate('home')} className={activeSection === 'home' ? 'active' : ''} aria-label="Go to home section">
+          <button title={t("home.title")} onClick={() => navigate('home')} className={activeSection === 'home' ? 'active' : ''} aria-label="Go to home section">
             <Home size={24} strokeWidth={activeSection === 'home' ? 1.5 : 1} />
           </button>
-          <button title={i18n.t("about.title")} onClick={() => navigate('about')} className={activeSection === 'about' ? 'active' : ''} aria-label="Go to about section">
+          <button title={t("about.title")} onClick={() => navigate('about')} className={activeSection === 'about' ? 'active' : ''} aria-label="Go to about section">
             <Info size={24} strokeWidth={activeSection === 'about' ? 1.5 : 1} />
           </button>
-          <button title={i18n.t("projects.title")} onClick={() => navigate('projects')} className={activeSection === 'projects' ? 'active' : ''} aria-label="Go to projects section">
+          <button title={t("projects.title")} onClick={() => navigate('projects')} className={activeSection === 'projects' ? 'active' : ''} aria-label="Go to projects section">
             <Cog size={24} strokeWidth={activeSection === 'projects' ? 1.5 : 1} />
           </button>
-          <button title={i18n.t("contact.title")} onClick={() => navigate('contact')} className={activeSection === 'contact' ? 'active' : ''} aria-label="Go to contact section">
+          <button title={t("contact.title")} onClick={() => navigate('contact')} className={activeSection === 'contact' ? 'active' : ''} aria-label="Go to contact section">
             <Contact size={24} strokeWidth={activeSection === 'contact' ? 1.5 : 1} />
           </button>
         </div>

@@ -3,9 +3,11 @@ import type { SectionProps } from '../utils/types'
 import CustomSection from '../components/customSection'
 import { Github, Linkedin, File} from 'lucide-react'
 import { splittingText } from '../utils/utils'
-import i18n from '../i18n'
+import { useTranslation } from 'react-i18next'
 
 const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) =>  {
+
+  const { t } = useTranslation()
 
   return (
     <CustomSection id="home" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={5}>
@@ -16,7 +18,7 @@ const HomeContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React
             <h2 className="md:text-5xl text-3xl font-normal line-2">{splittingText("Jean-Bernard")}</h2>
           </div>
           <div id='square2' className='w-full'>
-            <h2 className="md:text-4xl text-xl text-center line-3 terminal blink-cursor">{splittingText(i18n.t("home.jobTitle"))}</h2>
+            <h2 className="md:text-4xl text-xl text-center line-3 terminal blink-cursor">{splittingText(t("home.jobTitle"))}</h2>
           </div>
           <div id='square3' className='left'>
             <div className="flex space-x-4">

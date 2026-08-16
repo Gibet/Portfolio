@@ -8,7 +8,7 @@ import CommandLine from '../components/commandLine'
 import { splittingText } from '../utils/utils'
 import DevLogo from '../components/logo/dev'
 import { GraduationCap, Info, BriefcaseBusiness } from 'lucide-react'
-import i18n from '../i18n'
+import { useTranslation } from 'react-i18next'
 
 type SkillsType = {
   name: string;
@@ -18,7 +18,7 @@ type SkillsType = {
 
 const skillsData = skills as Record<SkillKey, SkillsType>;
 
-const AboutTabs = ['Competences', 'Éducation', 'Éxperience']
+const AboutTabs = ['Skills', 'Education', 'Experience']
 const languages: SkillKey[] = ['JavaScript', 'TypeScript', 'Golang', 'Python', 'SQL'];
 const frontendSkills: SkillKey[] = ['Angular', 'React', 'ReactNative', 'TailwindCSS', 'Electron', 'Vite', 'Nextjs', 'HTML5', 'CSS3', 'Sass'];
 const backendSkills: SkillKey[] = ['Nodejs', 'Expressjs', 'Nest', 'Fiber', 'MySQL', 'PostgreSQL', 'MongoDB'];
@@ -26,6 +26,7 @@ const toolsSkills: SkillKey[] = ['Git', 'Docker', 'GitHub', 'GithubActions'];
 
 const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
+  const { t } = useTranslation()
   const [currentTab, setCurrentTab] = useState(AboutTabs[0])
   const [hoveredSkill, setHoveredSkill] = useState<SkillKey | null>(null);
 
@@ -37,10 +38,15 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
     setHoveredSkill(current => current === skillKey ? null : skillKey);
   };
 
+  const getI18nArray = (name: string) => {
+    const array = t(name, { returnObjects: true }) as string[];
+    return array || [];
+  }
+
   return (
     <CustomSection id='about' pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={4}>
       <Container variant='header' className='flex flex-col gap-2'>
-        <CommandLine variant='title' title="" subtitle={i18n.t("about.title")}>
+        <CommandLine variant='title' title="" subtitle={t("about.title")}>
           <Info size={18} className="ml-2" />
         </CommandLine>
         <div className="flex flex-wrap gap-2">
@@ -50,23 +56,23 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
               onClick={() => setCurrentTab(tab)}
               className={`px-3 py-1 text-xs ${currentTab === tab ? 'active' : ''}`}
             >
-              {tab}
+              {t(`about.${tab.toLowerCase()}`)}
             </button>
           ))}
         </div>
       </Container>
       <div className='sect-main grid md:grid-cols-3 gap-4 items-start w-11/12 sm:w-5/6 h-full sm:py-12 py-6'>
         <Container variant='body' className="relative sm:mt-4 col-span-2 w-full h-full overflow-y-auto">
-          { (currentTab === 'Éducation' || currentTab === 'Éxperience') && (
+          { (currentTab === 'Education' || currentTab === 'Experience') && (
             <span className="pointer-events-none absolute inset-y-0 top-5 bottom-0 left-6 sm:left-12.5 w-0">
               <span className="sticky left-1.5 h-full border-l chrono-line"></span>
             </span> 
           ) }
-          {currentTab === 'Éducation' && (
+          {currentTab === 'Education' && (
               <ol className='sm:ml-6 sm:pr-6 h-full relative'>
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center' style={{ '--event--index': 0 } as React.CSSProperties}>
                   <div className="event">
-                    <CommandLine variant='diplome' title="" subtitle="Bachelor Concepteur Développeur d'Applications (CDA)">
+                    <CommandLine variant='diplome' title="" subtitle={t("about.educationDetails.degree")}>
                       <GraduationCap size={20} className="ml-2" color="var(--accent)"/>
                     </CommandLine>
                   </div>
@@ -74,19 +80,18 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                 <li className='mb-2 sm:ml-10 sm:mt-4 ml-6 flex items-center' style={{ '--event--index': 1 } as React.CSSProperties}>
                   <span className="absolute left-0 chrono-dot"></span>
                   <div className='event'>
-                    <CommandLine variant='secondary' title="La Plateforme_" />
-                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center"><span className="text-xs">2023-2025: </span>Bachelor: Developpement Web et Mobile</h4>
+                    <CommandLine variant='secondary' title={t("about.educationDetails.items.0.school")} />
+                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center"><span className="text-xs">{t("about.educationDetails.items.0.period")}: </span>{t("about.educationDetails.items.0.formation")}</h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
-                      <li>Développement full stack, avec JavaScript, TypeScript, Node.js, React et Symfony</li>
-                      <li>Développement d’API avec API Platform, Express, Integration de tests</li>
-                      <li>Développement d'applications mobiles </li>
-                      <li>Gestion de projets </li>
-                      <li>CI/CD: Intégration et déploiement continus, declenchement de workflow et automatisation de pipeline</li>
+                      {getI18nArray("about.educationDetails.items.0.description").map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      ))}
                     </ul>
-                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center"><span className="text-xs">2022-2023: </span>Prepa Bachelor</h4>
+                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center"><span className="text-xs">{t("about.educationDetails.items.0.prepaPeriod")}: </span>{t("about.educationDetails.items.0.prepaTitle")}</h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
-                      <li>HTML – CSS: Creation de site responsive</li>
-                      <li>JavaScript – React JS – Node JS, PHP: manipulation du DOM, traitement de données et utilisation d'APIs</li>
+                      {getI18nArray("about.educationDetails.items.0.prepaDescription").map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      ))}
                     </ul>
                   </div>
                 </li>
@@ -103,11 +108,11 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                 </li> */}
               </ol>
           )}
-          {currentTab === 'Éxperience' && (
+          {currentTab === 'Experience' && (
               <ol className='sm:ml-6 sm:mt-4 sm:pr-6 h-full relative'>
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center' style={{ '--event--index': 0 } as React.CSSProperties}>
                   <div className="event">
-                    <CommandLine variant='secondary' title="" subtitle="2 ans d'expérience professionnelle">
+                    <CommandLine variant='secondary' title="" subtitle={t("about.experienceDetails.headline")}>
                       <BriefcaseBusiness size={20} className="ml-2" color="var(--accent)"/>
                     </CommandLine>
                   </div>
@@ -115,17 +120,18 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                 <li className='mb-2 sm:ml-10 ml-6 flex items-center' style={{ '--event--index': 1 } as React.CSSProperties}>
                   <span className="absolute left-0 w-3.5 h-3.5 chrono-dot"></span>
                   <div className='event'>
-                    <CommandLine variant='secondary' title="Développeur Web Junior (Alternance)" />
-                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center">L'Atelier de La Plateforme - <span className="text-xs">2023-2025</span></h4>
+                    <CommandLine variant='secondary' title={t("about.experienceDetails.items.0.position")} />
+                    <h4 className="terminal text-sm font-medium sm:ml-6 items-center"><a href="https://laplateforme.io/atelier/">{t("about.experienceDetails.items.0.company")}</a> - <span className="text-xs">{t("about.experienceDetails.items.0.period")}</span></h4>
                     <ul className='list-disc sm:ml-10 ml-6 text-xs'>
-                      <li>Participation à plusieurs projets de développement web et mobile en environnement agile.</li>
-                      <li>Contribution au développement full stack (React, Node.js) et à la mise en place de bonnes pratiques (tests,intégration continue, gestion de versions Git).</li>
+                      {getI18nArray("about.experienceDetails.items.0.description").map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      ))}
                       <div className='mt-3'>
-                        <CommandLine title='Projets' variant='title'/>
+                        <CommandLine title={t("about.experienceDetails.items.0.projectsTitle")} variant='title'/>
                         <ul className='mt-3 flex flex-col gap-2'>
-                          <li className='terminal'>SRIAS: Projet avec lead dev pour la <a href="https://www.srias.paca.gouv.fr/">SRIAS PACA</a> de création d'une nouvelle platefore de gestion de leurs opérations.</li>
-                          <li className='terminal'><a href="https://laplateforme.io/cyberpark/">Cyberpark</a>: Projet solo pour L'inovation Lab de La Plateforme_, Application Electron ayant pour but d'accompagner une escape game.</li>
-                          <li className='terminal'>Toolbox (Projet interne): Outil de gestion de projet (création de repo github, monitoring des sites déployés, gestions des pull requests, emploi du temps, etc...).</li>
+                          <li className='terminal'><a href="https://www.srias.paca.gouv.fr/">SRIAS</a>: {t("about.experienceDetails.items.0.projects.0")}</li>
+                          <li className='terminal'><a href="https://laplateforme.io/cyberpark/">Cyberpark</a>: {t("about.experienceDetails.items.0.projects.1")}</li>
+                          <li className='terminal'>{t("about.experienceDetails.items.0.projects.2")}</li>
                         </ul>
                       </div>
                     </ul>
@@ -135,10 +141,10 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                 </li>
               </ol>
           )}
-          {currentTab === 'Competences' && (
+          {currentTab === 'Skills' && (
             <div className="flex flex-col gap-2 skills-container">
               <div className="event flex flex-col gap-1 sm:gap-1" style={{ '--event--index': 0 } as React.CSSProperties}>
-                <CommandLine variant='tertiary' title="Langages" />
+                <CommandLine variant='tertiary' title={t('about.languages')} />
                 <div className='flex flex-wrap sm:gap-2 gap-1 sm:px-6 sm:py-0.5'>
                   {languages.map((lang) => (
                     <Skill key={lang} name={skillsData[lang]?.name || lang} imageSrc={skillsData[lang]?.imageSrc}
@@ -148,7 +154,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                 </div>
               </div>
               <div className="event flex flex-col gap-1 sm:gap-1" style={{ '--event--index': 1 } as React.CSSProperties}>
-                <CommandLine variant='tertiary' title="Front-end" />
+                <CommandLine variant='tertiary' title={t('about.frontend')} />
                 <div className='flex flex-wrap sm:gap-2 gap-1 sm:px-6 sm:py-0.5'>
                   {frontendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc} 
@@ -158,7 +164,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                 </div>
               </div>
               <div className="event flex flex-col gap-3 sm:gap-1" style={{ '--event--index': 2 } as React.CSSProperties}>
-                <CommandLine variant='tertiary' title="Back-end" />
+                <CommandLine variant='tertiary' title={t('about.backend')} />
                 <div className='flex flex-wrap sm:gap-2 gap-1 sm:px-6 sm:py-0.5'>
                   {backendSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} imageSrc={skillsData[tech]?.imageSrc}
@@ -168,7 +174,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
                 </div>
               </div>
               <div className="event flex flex-col gap-3 sm:gap-1" style={{ '--event--index': 3 } as React.CSSProperties}>
-                <CommandLine variant='tertiary' title="Outils" />
+                <CommandLine variant='tertiary' title={t('about.tools')} />
                 <div className='flex flex-wrap sm:gap-2 gap-1 sm:px-6 sm:py-0.5'>
                   {toolsSkills.map((tech) => (
                     <Skill key={tech} name={skillsData[tech]?.name || tech} 
@@ -182,7 +188,7 @@ const AboutContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: Reac
           )}
         </Container>
         <Container variant='text' className="sm:mt-4 col-span-1 text-sm hidden md:block">
-          <p className='terminal typed'>{splittingText(i18n.t("about.description"))}</p>
+          <p className='terminal typed'>{splittingText(t("about.description"))}</p>
           <div className="logo-container w-full flex justify-center items-center mt-3">
             <DevLogo
               color={'var(--accent)'}

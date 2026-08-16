@@ -13,14 +13,15 @@ import ProjectsLogo from '../components/logo/projects'
 import { GitHubCalendar } from 'react-github-calendar';
 import 'react-activity-calendar/tooltips.css'
 import { Cog, Github } from 'lucide-react'
-import i18n from '../i18n'
+import { useTranslation } from 'react-i18next'
 
 const ProjectsList = ProjectsData as { projects: ProjectProps[] }
-const categories = ['Tous', 'Web', 'Mobile']
+const categories = ['All', 'Web', 'Mobile']
 /* const pageSize = 10 */
 
 const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: React.Ref<HTMLDivElement>) => {
 
+  const { t } = useTranslation()
   const [currentCategory, setCurrentCategory] = useState(categories[0])  
   const [currentPage, setCurrentPage] = useState(1)
   const [viewModal, setViewModal] = useState(false)
@@ -57,7 +58,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
   return (
     <CustomSection id="projects" pinned={pinned} firstPinned={firstPinned} pinCount={pinCount} ref={ref} zIndex={3}>
       <Container variant='header' className='flex flex-col gap-2.5'>
-        <CommandLine variant='title' title="" subtitle={i18n.t("projects.title")}>
+        <CommandLine variant='title' title="" subtitle={t("projects.title")}>
           <Cog size={18} className="ml-2" />
         </CommandLine>
         <div className="flex flex-wrap gap-2">
@@ -67,7 +68,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
               onClick={() => { setCurrentCategory(category); setCurrentPage(1); }}
               className={`px-3 py-1 text-xs ${currentCategory === category ? 'active' : ''}`}
             >
-              {category}
+              {t(`projects.${category.toLowerCase()}`)}
             </button>
           ))}
         </div>
@@ -75,7 +76,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
       <div className="sect-main relative grid md:grid-cols-5 gap-4 items-start w-11/12 sm:w-5/6 h-full md:py-12 py-6">
         <div className='hidden md:mt-4 md:block lg:col-span-1'>
           <Container variant='text' className="text-sm">
-            <p className='terminal typed'>{splittingText(i18n.t("projects.description"))}</p>
+            <p className='terminal typed'>{splittingText(t("projects.description"))}</p>
             <div className="logo-container w-full flex justify-center items-center mt-3">
               <ProjectsLogo 
                 color={'var(--accent)'}
@@ -86,7 +87,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
             </div>
           </Container>
           <Container variant='body' className='mt-4 github_activity hidden xl:block'>
-            <CommandLine title="" subtitle='Activité'>
+            <CommandLine title="" subtitle={t("projects.activity")}>
               <Github size={18} className="ml-2" color='var(--primary)'/>
             </CommandLine>
             <div className="w-full flex items-center justify-center">
@@ -98,7 +99,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
                 className='mt-4'
                 theme={ActivityColorTheme}
                 labels={{
-                  months: ['Jan', 'Fev', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sept', 'Oct', 'Nov', 'Dec']
+                  months: t("projects.months", { returnObjects: true }) as string[],
                 }}
                 tooltips={{
                   activity: {
@@ -118,7 +119,7 @@ const ProjectsContent = ({ pinned, firstPinned, pinCount }: SectionProps, ref: R
         </div>
         <Container variant='body' className="md:mt-4 md:col-span-4 flex flex-col w-full h-full gap-5">
             <div className="projects grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xlg:grid-cols-5 content-start lg:gap-5 gap-2 h-full">
-              {ProjectsList.projects.filter(project => currentCategory === 'Tous' || project.category === currentCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize).map((project, index) => (
+              {ProjectsList.projects.filter(project => currentCategory === 'All' || project.category === currentCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize).map((project, index) => (
                 <ProjectThumbnail key={project.name} project={project} onClick={() => {openModal(project)}} style={{ '--thumbnail--index': index } as React.CSSProperties} />
               ))}
             </div>

@@ -4,13 +4,14 @@ import Skill from '../skill';
 import * as skills from "../../utils/skills.json";
 import CommandLine from '../commandLine';
 import loadingSVG from '../loading';
-import i18n from '../../i18n';
+import { useTranslation } from 'react-i18next';
 
 const ProjectImages = import.meta.glob<{default: string}>('/src/assets/images/projects/**/*.{png,jpg,jpeg}'); 
 const imagesCache = new Map<string, string[]>();
 
 const ProjectModal = (props: ModalProps) => {
 
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
 
@@ -59,7 +60,7 @@ const ProjectModal = (props: ModalProps) => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   }
 
-  const tasks = i18n.t(`projects.items.${props.project.name}.role`, { returnObjects: true }) as string[];
+  const tasks = t(`projects.items.${props.project.name}.role`, { returnObjects: true }) as string[];
 
   useEffect(() => {
     getProjectImage(props.project.name);
@@ -97,12 +98,12 @@ const ProjectModal = (props: ModalProps) => {
             )}
           </div>
           <div className="px-6 w-full project-title">
-            <CommandLine title={props.project.name} subtitle={props.project.context} additionalInfo={props.project.category} link={props.project.github} demo={props.project.link} />
+            <CommandLine title={props.project.name} subtitle={t(`projects.${props.project.context.toLowerCase()}`)} additionalInfo={props.project.category} link={props.project.github} demo={props.project.link} />
           </div>
           <div className="modal-content grid sm:grid-cols-2 grid-cols-1 col-span-1 gap-4 overflow-y-auto sm:overflow-y-hidden relative">
             <div className="px-6 py-1 sm:pb-4 gap-3 col-span-1 flex flex-col sm:overflow-y-auto overflow-y-visible">
               <h5 className="text-sm font-semibold">Description:</h5>
-              <p className="terminal text-sm">{i18n.t(`projects.items.${props.project.name}.description`)}</p>
+              <p className="terminal text-sm">{t(`projects.items.${props.project.name}.description`)}</p>
               <div className="modal-stack flex flex-wrap gap-2 items-center">
                 <h5 className="text-sm font-semibold">Stack:</h5>
                 {props.project.stack.map((tech) => (
@@ -112,7 +113,7 @@ const ProjectModal = (props: ModalProps) => {
             </div>
             <span className="self-stretch divider hidden sm:block absolute left-1/2 top-0 bottom-0"></span>
             <div className='px-6 py-1 gap-2 col-span-1 flex w-full flex-col sm:overflow-y-auto overflow-y-visible'>
-              <h5 className="text-sm font-semibold">Taches:</h5>
+              <h5 className="text-sm font-semibold">{t(`projects.tasks`)}:</h5>
               <div className="flex flex-col pb-2">
                 {tasks.map((role) => (
                   <span key={role} className="terminal text-sm px-2 py-1">

@@ -11,51 +11,64 @@
     "description": "Discover my background and skills in the field of web development.",
     "educationDetails": {
       "degree": "Bachelor's Degree in Application Developer (CDA)",
-      "items": {
-        "school": "La Plateforme_",
-        "formation": "Bachelor: Web and Mobile Development",
-        "period": "2023-2025",
-        "description": [
-          "Full-stack development with JavaScript, TypeScript, Node.js, React and Symfony",
-          "API development with API Platform, Express, and test integration",
-          "Mobile application development",
-          "Project management",
-          "CI/CD: continuous integration and deployment, workflow triggering and pipeline automation"
-        ],
-        "preparatoryTitle": "Preparatory Bachelor Year",
-        "preparatoryPeriod": "2022-2023",
-        "preparatoryDescription": [
-          "HTML - CSS: creating responsive websites",
-          "JavaScript - React JS - Node JS, PHP: DOM manipulation, data processing and API usage"
-        ]
-      }
+      "items": [
+        {
+          "school": "La Plateforme_",
+          "formation": "Bachelor: Web and Mobile Development",
+          "period": "2023-2025",
+          "description": [
+            "Full-stack development with JavaScript, TypeScript, Node.js, React and Symfony",
+            "API development with API Platform, Express, and test integration",
+            "Mobile application development",
+            "Project management",
+            "CI/CD: continuous integration and deployment, workflow triggering and pipeline automation"
+          ],
+          "prepaTitle": "Preparatory Bachelor Year",
+          "prepaPeriod": "2022-2023",
+          "prepaDescription": [
+            "HTML - CSS: creating responsive websites",
+            "JavaScript - React JS - Node JS, PHP: DOM manipulation, data processing and API usage"
+          ]
+        }
+      ]
     },
     "experienceDetails": {
       "headline": "2 years of professional experience",
-      "items": {
-        "position": "Junior Web Developer (Apprenticeship)",
-        "company": "L'Atelier de La Plateforme",
-        "period": "2023-2025",
-        "description": [
-          "Participation in several web and mobile development projects in an agile environment.",
-          "Contribution to full-stack development (React, Node.js) and the implementation of best practices (testing, continuous integration, Git version management)."
-        ],
-        "projectsTitle": "Projects",
-        "projects": [
-          "SRIAS: project with the lead developer for SRIAS PACA to create a new operations management platform.",
-          "Cyberpark: solo project for La Plateforme_'s Innovation Lab, an Electron application designed to support an escape game.",
-          "Toolbox (internal project): project management tool (creating GitHub repositories, monitoring deployed websites, managing pull requests, schedules, etc.)."
-        ]
-      }
-    }
+      "items": [
+        {
+          "position": "Junior Web Developer (Apprenticeship)",
+          "company": "L'Atelier de La Plateforme",
+          "period": "2023-2025",
+          "description": [
+            "Participation in several web and mobile development projects in an agile environment.",
+            "Contribution to full-stack development (React, Node.js) and the implementation of best practices (testing, continuous integration, Git version management)."
+          ],
+          "projectsTitle": "Projects",
+          "projects": [
+            "project with the lead developer for SRIAS PACA to create a new operations management platform.",
+            "solo project for La Plateforme_'s Innovation Lab, an Electron application designed to support an escape game.",
+            "Toolbox (internal project): project management tool (creating GitHub repositories, monitoring deployed websites, managing pull requests, schedules, etc.)."
+          ]
+        }
+      ]
+    },
+    "languages": "Languages",
+    "frontend": "Front-end",
+    "backend": "Back-end",
+    "tools": "Tools"
   },
   "projects": {
     "title": "My Projects",
-    "all": "Skills",
-    "web": "Education",
-    "mobile": "Experience",
+    "all": "All",
+    "web": "Web",
+    "mobile": "Mobile",
     "activity": "Activity",
     "description": "Here is a selection of my projects, highlighting my skills in web and mobile development.",
+    "perso": "Personal",
+    "etudiant": "Student",
+    "pro": "Pro",
+    "tasks": "Tasks",
+    "months": ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"],
     "items": {
       "Portfolio": {
         "description": "My personal portfolio, designed to showcase my projects and skills.",
@@ -129,16 +142,15 @@
     "title": "Contact me",
     "description": "I am currently looking for professional opportunities. Feel free to get in touch!",
     "form": {
-      "email": "Your Email",
-      "name": "Your Name",
-      "subject": "Subject",
-      "message": "Your Message",
+      "email": "> Your Email",
+      "name": "> Your Name",
+      "subject": "> Subject",
+      "message": "> Your Message",
       "submit": "Send"
     }
   },
-  "footer" : {
+  "footer": {
     "menu": "Menu",
     "links": "Links"
   }
 }
-
