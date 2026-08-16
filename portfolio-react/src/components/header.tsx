@@ -3,7 +3,7 @@ import type { HeaderProps } from '../utils/types'
 import { useTheme } from '../contexts/themeContext'
 import { memo } from 'react'
 import { useLocale } from '../contexts/localeContext'
-import { useTranslation } from 'react-i18next'
+import { useTranslation} from 'react-i18next'
 
 const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
   const theme = useTheme();
@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ navigate, activeSection }) => {
               <Moon size={20} strokeWidth={1} className='cursor-pointer' />
             }
           </button>
-          <div className="flex items-center gap-2 ml-4">
+          <div className="select flex items-center ml-4">
             <div>
               <LanguagesIcon size={20} strokeWidth={1} className='cursor-pointer' />
             </div>
