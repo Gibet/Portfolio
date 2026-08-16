@@ -202,7 +202,7 @@ header {
     padding: 10px;
     height: 60px;
   }
-  button:hover {
+  button:hover, .select:hover {
     color: var(--accent);
     border: none;
     background-color: transparent;
@@ -780,6 +780,10 @@ input, textarea {
   padding: 10px;
   margin-bottom: 10px;
   width: 100%;
+  outline: none;
+}
+
+select {
   outline: none;
 }
 

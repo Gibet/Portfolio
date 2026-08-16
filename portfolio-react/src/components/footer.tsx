@@ -2,42 +2,45 @@ import type { HeaderProps } from "../utils/types";
 import { Cog, Contact, File, Github, Home, Info, Linkedin, Mail, MapPin } from "lucide-react";
 import CommandLine from "./commandLine";
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
+
+  const { t } = useTranslation();
   return (
     <footer className="textured-main backdrop-blur-xs w-full 2xl:max-w-[75vw] grid grid-cols-2 justify-center items-start text-center pt-6">
       <div className="col-span-1 flex flex-col justify-self-center w-full px-4 items-start gap-2">
-        <CommandLine variant="tertiary" title="Menu" />
+        <CommandLine variant="tertiary" title={t("footer.menu")} />
         <hr className="w-full" />
         <ul className="text-left w-full text-xs grid grid-cols-2 md:grid-cols-3 gap-3 text-nowrap">
           <li className="col-span-1">
-            <button onClick={() => props.navigate("home")}>
+            <button title="Accueil" onClick={() => props.navigate("home")}>
               <Home size={14} strokeWidth={1} />
-              <span>Accueil</span>
+              <span>{t("home.title")}</span>
             </button>
           </li>
           <li className="md:col-span-2 col-span-1">
-            <button onClick={() => props.navigate("about")}>
+            <button title="À propos" onClick={() => props.navigate("about")}>
               <Info size={14} strokeWidth={1} />
-              <span>À propos</span>
+              <span>{t("about.title")}</span>
             </button>
           </li>
           <li className="col-span-1">
-            <button onClick={() => props.navigate("projects")}>
+            <button title="Projets" onClick={() => props.navigate("projects")}>
               <Cog size={14} strokeWidth={1} />
-              <span>Projets</span>
+              <span>{t("projects.title")}</span>
             </button>
           </li>
           <li className="col-span-1">
-            <button onClick={() => props.navigate("contact")}>
+            <button title="Contact" onClick={() => props.navigate("contact")}>
               <Contact size={14} strokeWidth={1} />
-              <span>Contact</span>
+              <span>{t("contact.title")}</span>
             </button>
           </li>
         </ul>
       </div>
       <div className="col-span-1 flex flex-col justify-self-center w-full px-4 items-start gap-2">
-        <CommandLine variant="tertiary" title="Liens" />
+        <CommandLine variant="tertiary" title={t("footer.links")} />
         <hr className="w-full" />
         <ul className="text-left text-xs grid grid-cols-1 gap-3">
           <li>
