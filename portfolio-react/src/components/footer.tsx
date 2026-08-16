@@ -46,19 +46,19 @@ const Footer: React.FC<HeaderProps> = (props: HeaderProps) => {
           <li>
             <a href="https://github.com/Gibet" target="_blank" rel="noopener noreferrer">
               <Github size={14} strokeWidth={1} />
-              <span>GitHub</span>
+              <span>{t("home.github")}</span>
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/jean-bernard-laguerre/" target="_blank" rel="noopener noreferrer">
               <Linkedin size={14} strokeWidth={1} />
-              <span>LinkedIn</span>
+              <span>{t("home.linkedin")}</span>
             </a>
           </li>
           <li>
             <a href="https://drive.google.com/file/d/1M1VR3DCBn6lERS2H2oUcULZt19GsVWh1/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <File size={14} strokeWidth={1} />
-              <span>CV</span>
+              <span>{t("home.cv")}</span>
             </a>
           </li>
         </ul>
