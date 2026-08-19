@@ -48,8 +48,8 @@
           ],
           "projectsTitle": "Projets",
           "projects": [
-            "SRIAS : projet avec lead dev pour la SRIAS PACA de création d'une nouvelle plateforme de gestion de leurs opérations.",
-            "Cyberpark : projet solo pour l'Innovation Lab de La Plateforme_, application Electron ayant pour but d'accompagner un escape game.",
+            "projet avec lead dev pour la SRIAS PACA de création d'une nouvelle plateforme de gestion de leurs opérations.",
+            "projet solo pour l'Innovation Lab de La Plateforme_, application Electron ayant pour but d'accompagner un escape game.",
             "Toolbox (projet interne) : outil de gestion de projet (création de dépôts GitHub, monitoring des sites déployés, gestion des pull requests, emploi du temps, etc.)."
           ]
         }
